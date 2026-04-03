@@ -87,6 +87,7 @@ export default function App() {
       {showStarBar && (
         <StarBar
           stars={progress.stars}
+          streak={progress.streak || 0}
           onParentClick={() => setScreen('parent-login')}
         />
       )}

@@ -6,7 +6,7 @@
 - Update "Last updated" when editing
 
 **Last updated:** 2026-04-03  
-**Current version:** v1.4.0
+**Current version:** v1.5.0
 
 ---
 
@@ -108,7 +108,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low  
 **Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.
 
-### [ ] FEAT-004: Daily streak tracking
+### [x] FEAT-004: Daily streak tracking
 **Priority:** Medium  
 **Description:** Show a streak counter (🔥 3 days in a row!) to encourage daily sessions. Track in localStorage.
 
@@ -165,7 +165,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 **Notes:** This would be a new top-level section alongside Reading World and Math World. Parent dashboard should track which activities have been explored and how many rounds completed.
 
-### [ ] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
+### [x] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
 **Priority:** High  
 **Description:** Expand the existing `PhonicsRules` component into a comprehensive, structured teaching guide covering all major English reading rules in a child-friendly way. Key rules to include:
 - **Magic E / Silent E** — the final "e" makes the vowel before it say its name (cap → cape, pin → pine, hop → hope)
@@ -207,6 +207,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 - Fixed sight word tracking display (seen vs mastered)
 - Increased font sizes across child UI
 - Switched to Lexend font for better letter clarity
+
+### 2026-04-03 – PhonicsRules expansion + daily streak v1.5.0
+- FEAT-011: Added Bossy R Vowels as new Stage 3 rule (AR/OR/ER/IR/UR, 4 examples, parent tips)
+- FEAT-011: Added 🎯 Practice Quiz to every rule — 3-4 tap-to-answer questions with sound feedback
+- FEAT-004: Daily streak tracked in useProgress (computeStreak on each recordSession); displayed as 🔥 N days in StarBar
 
 ### 2026-04-03 – Calendar module + sound effects + tablet polish v1.4.0
 - FEAT-009: Calendar Time section added to home screen — Days of the Week and Months of the Year each have Explore mode (tap cards, sing along) and Quiz mode ("What comes next?", 10 rounds, stars)

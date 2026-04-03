@@ -1,6 +1,15 @@
-export const VERSION = '1.4.0'
+export const VERSION = '1.5.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.5.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-011: Added Bossy R Vowels rule to PhonicsRules (Stage 3) — AR/OR/ER/IR/UR with 4 examples each',
+      'FEAT-011: Added 🎯 Practice Quiz to every phonics rule — 3-4 questions per rule, tap-to-answer with correct/wrong sounds',
+      'FEAT-004: Daily streak tracking — plays consecutive days, shown as 🔥 N days in StarBar',
+    ],
+  },
   {
     version: '1.4.0',
     date: '2026-04-03',
