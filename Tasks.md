@@ -128,6 +128,41 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low — after Mina masters addition  
 **Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.
 
+### [ ] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
+**Priority:** Medium  
+**Description:** A stars-gated reward activity that unlocks after earning enough stars in a session. Art-based, colorful, and educational — teaches color theory while being genuinely fun.
+
+**Concept: "Mina's Art Studio"**
+- Unlocks as a special reward button on the home screen when Mina has earned enough stars (e.g. 10+ in a session)
+- Canvas-based free drawing with a large crayon/brush palette
+- **Color mixing game** — tap two color buckets together to discover what they make (red + yellow = orange, blue + yellow = green, etc.) — teaches primary/secondary colors
+- **Color-by-number** — simple outlined pictures (sun, frog, rainbow) where each zone has a number matching a color; Mina taps the zone then taps the right color
+- **Stamp & sticker** tool — place emoji/shape stamps on the canvas for imaginative play
+- Celebrates with confetti and reads the color names aloud as she picks them
+
+**Educational value:** Color recognition, color naming (vocabulary), cause & effect (mixing), number-to-color matching, fine motor via drawing.  
+**Notes:** Use HTML5 Canvas for drawing. No external libraries needed. Save last artwork to localStorage as a data URL so Mina can see her last creation when she returns.
+
+### [ ] FEAT-012: Cognitive & Problem-Solving Skills section
+**Priority:** Medium  
+**Objective:** Encourage reasoning, memory, and curiosity through interactive activities.  
+**Skills to target:**
+- Completes simple puzzles (10–20 pieces)
+- Understands cause and effect
+- Follows multi-step instructions
+- Engages in imaginative play
+- Asks "why" and "how" questions
+- Categorizes objects and ideas
+
+**Planned activities:**
+- **Puzzle game** — drag-and-drop pieces to complete a simple picture (10–20 pieces)
+- **Cause & Effect** — "What happens if…" scenarios: tap an action, see the result (e.g. water a plant → it grows)
+- **Sorting & Categories** — drag objects into groups (animals vs. food, big vs. small, colors)
+- **Follow the Steps** — multi-step instruction game (e.g. "First pick up the ball, then put it in the box")
+- **Pretend Play** — interactive scenario chooser (store, kitchen, doctor) with role-play prompts read aloud
+
+**Notes:** This would be a new top-level section alongside Reading World and Math World. Parent dashboard should track which activities have been explored and how many rounds completed.
+
 ### [ ] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
 **Priority:** High  
 **Description:** Expand the existing `PhonicsRules` component into a comprehensive, structured teaching guide covering all major English reading rules in a child-friendly way. Key rules to include:
