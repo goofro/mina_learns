@@ -58,6 +58,14 @@ const ACTIVITIES = [
     color: '#f97316',
     shadow: '#ea580c',
   },
+  {
+    id: 'lettertracing',
+    emoji: '✏️',
+    title: 'Letter Tracing',
+    subtitle: 'Trace letters & numbers',
+    color: '#7c3aed',
+    shadow: '#5b21b6',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

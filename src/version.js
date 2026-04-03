@@ -1,6 +1,16 @@
-export const VERSION = '1.5.0'
+export const VERSION = '1.6.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.6.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-001: Added Letter Tracing to Reading World — HTML5 Canvas tracing for A–Z and 0–9',
+      '7 crayon colors to pick from, clear button, ◀▶ letter navigation',
+      '"I traced it!" button unlocks after 3+ strokes and awards 3 stars',
+      'Pointer events (mouse + touch) with touchAction:none for smooth tablet tracing',
+    ],
+  },
   {
     version: '1.5.0',
     date: '2026-04-03',

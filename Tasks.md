@@ -6,7 +6,7 @@
 - Update "Last updated" when editing
 
 **Last updated:** 2026-04-03  
-**Current version:** v1.5.0
+**Current version:** v1.6.0
 
 ---
 
@@ -96,9 +96,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 ## 📋 Backlog (Future Features)
 
-### [ ] FEAT-001: Writing practice module
+### [x] FEAT-001: Writing practice module
 **Priority:** Medium  
-**Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.
+**Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
+**Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
 
 ### [ ] FEAT-002: Audio recording – Mina reads aloud
 **Priority:** Medium  
@@ -207,6 +208,13 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 - Fixed sight word tracking display (seen vs mastered)
 - Increased font sizes across child UI
 - Switched to Lexend font for better letter clarity
+
+### 2026-04-03 – Letter Tracing module v1.6.0
+- FEAT-001: Canvas letter/number tracing in Reading World
+- HTML5 Canvas with pointer events (works mouse + touch/finger/stylus)
+- Guide letter shown as large filled+outlined shape behind the canvas
+- 7 crayon colors, ◀▶ navigation, clear button, star reward on completion
+- Two modes: Trace Letters A–Z and Trace Numbers 0–9
 
 ### 2026-04-03 – PhonicsRules expansion + daily streak v1.5.0
 - FEAT-011: Added Bossy R Vowels as new Stage 3 rule (AR/OR/ER/IR/UR, 4 examples, parent tips)
