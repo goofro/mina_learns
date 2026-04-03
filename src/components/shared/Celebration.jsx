@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { playCelebration, playStar } from '../../utils/sounds'
 
 const CONFETTI_COLORS = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6bff', '#ff9f43']
 
@@ -33,6 +34,7 @@ export function Celebration({ show, onDone }) {
 
   useEffect(() => {
     if (show) {
+      playCelebration()
       const timer = setTimeout(() => onDone?.(), 2500)
       return () => clearTimeout(timer)
     }
@@ -76,6 +78,7 @@ export function Celebration({ show, onDone }) {
 }
 
 export function StarBurst({ show, stars = 1 }) {
+  useEffect(() => { if (show) playStar() }, [show])
   if (!show) return null
   return (
     <div

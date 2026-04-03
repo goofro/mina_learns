@@ -23,13 +23,18 @@ import { ShapeMatch } from './components/math/ShapeMatch'
 import { AdditionGame } from './components/math/AdditionGame'
 import { NumberOrder } from './components/math/NumberOrder'
 
+import { CalendarHome } from './components/calendar/CalendarHome'
+import { DaysOfWeek } from './components/calendar/DaysOfWeek'
+import { MonthsOfYear } from './components/calendar/MonthsOfYear'
+
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 
 // Navigation stack: array of screen names
-// Screens: home | reading | math | parent-login | parent
+// Screens: home | reading | math | calendar | parent-login | parent
 //          lettersounds | sightwords | phonics | sentences | wordfamilies | rhymingmatch | phonicsrules
 //          counting | numberrecognition | moreorless | shapes | addition | numberorder
+//          daysofweek | monthsofyear
 
 export default function App() {
   const {
@@ -91,6 +96,7 @@ export default function App() {
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
+            else if (subject === 'calendar') navigate('calendar', 'calendar')
           }}
         />
       )}
@@ -189,6 +195,26 @@ export default function App() {
       {screen === 'numberorder' && (
         <NumberOrder
           onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Calendar screens */}
+      {screen === 'calendar' && (
+        <CalendarHome
+          onNavigate={(id) => navigate(id, 'calendar')}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'daysofweek' && (
+        <DaysOfWeek
+          onBack={() => navigate('calendar')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'monthsofyear' && (
+        <MonthsOfYear
+          onBack={() => navigate('calendar')}
           addStars={addStars}
         />
       )}

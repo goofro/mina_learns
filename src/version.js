@@ -1,6 +1,16 @@
-export const VERSION = '1.3.1'
+export const VERSION = '1.4.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.4.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-009: Added Calendar module — Days of the Week & Months of the Year (explore + "What comes next?" quiz for both)',
+      'FEAT-006: Added Web Audio API sound effects — correct chime, wrong buzz, star sparkle, celebration arpeggio',
+      'FEAT-007: Touch/tablet optimization — removed 300ms tap delay, min 48px touch targets, iOS PWA meta tags, -webkit-tap-highlight-color removed',
+      'FEAT-010: Confirmed TTS rate already set to 0.85 (letters 0.70, words 0.75) — marked done',
+    ],
+  },
   {
     version: '1.3.1',
     date: '2026-04-03',

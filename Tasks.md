@@ -6,7 +6,7 @@
 - Update "Last updated" when editing
 
 **Last updated:** 2026-04-03  
-**Current version:** v1.3.0
+**Current version:** v1.4.0
 
 ---
 
@@ -116,13 +116,15 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low  
 **Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.
 
-### [ ] FEAT-006: Sound effects library
+### [x] FEAT-006: Sound effects library
 **Priority:** Low  
-**Description:** Add fun sound effects (coin collect, level up, whoosh) using Web Audio API to complement TTS.
+**Description:** Add fun sound effects (coin collect, level up, whoosh) using Web Audio API to complement TTS.  
+**Fixed:** 2026-04-03 ✅ — `src/utils/sounds.js` with playCorrect, playWrong, playStar, playCelebration, playTap. Wired into Celebration and StarBurst components.
 
-### [ ] FEAT-007: Touch/swipe optimization for tablet
+### [x] FEAT-007: Touch/swipe optimization for tablet
 **Priority:** Medium  
-**Description:** Ensure all tap targets are 48px+ for tablet use. Test on touch devices. May need to deploy as PWA for home screen icon.
+**Description:** Ensure all tap targets are 48px+ for tablet use. Test on touch devices. May need to deploy as PWA for home screen icon.  
+**Fixed:** 2026-04-03 ✅ — `touch-action: manipulation` removes 300ms tap delay; min-height/width 48px on all buttons; `-webkit-tap-highlight-color: transparent`; iOS PWA meta tags added to index.html.
 
 ### [ ] FEAT-008: Subtraction module
 **Priority:** Low — after Mina masters addition  
@@ -174,13 +176,15 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 - **R-controlled vowels** — ar (car), er/ir/ur (bird), or (horn)
 Each rule should have: a child-facing explanation with TTS, 4–6 example words with emoji, and a mini practice quiz. Parent dashboard should show which rules have been visited/practiced.
 
-### [ ] FEAT-010: Slow down TTS playback rate for clarity
+### [x] FEAT-010: Slow down TTS playback rate for clarity
 **Priority:** High  
-**Description:** Reduce the speech rate in `src/utils/speech.js` so voiceover audio plays back slower and individual sounds are clearer for Mina. The Web Speech API `SpeechSynthesisUtterance` has a `rate` property (default 1.0) — lower it (e.g. 0.75–0.85) globally so all TTS throughout the app benefits.
+**Description:** Reduce the speech rate in `src/utils/speech.js` so voiceover audio plays back slower.  
+**Fixed:** Already done ✅ — default rate 0.85, speakLetter 0.70, speakWord 0.75. No further changes needed.
 
-### [ ] FEAT-009: Days of the week & months of the year module
+### [x] FEAT-009: Days of the week & months of the year module
 **Priority:** Medium  
-**Description:** Add a new learning section teaching days of the week and months of the year. Could include flashcard-style activities (hear the name, pick the card), ordering games (put the days in order), and simple songs/chants using TTS. Should live under a new "Calendar" or "Time" category alongside Reading and Math.
+**Description:** Add a new learning section teaching days of the week and months of the year.  
+**Fixed:** 2026-04-03 ✅ — New Calendar section on home screen. CalendarHome → DaysOfWeek (explore + quiz) and MonthsOfYear (explore with season filter + quiz). Both include TTS singing mode and "What comes next?" quiz game.
 
 ---
 
@@ -203,6 +207,12 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 - Fixed sight word tracking display (seen vs mastered)
 - Increased font sizes across child UI
 - Switched to Lexend font for better letter clarity
+
+### 2026-04-03 – Calendar module + sound effects + tablet polish v1.4.0
+- FEAT-009: Calendar Time section added to home screen — Days of the Week and Months of the Year each have Explore mode (tap cards, sing along) and Quiz mode ("What comes next?", 10 rounds, stars)
+- FEAT-006: `src/utils/sounds.js` — Web Audio API synth sounds (correct chime, wrong buzz, star sparkle, celebration arpeggio). Integrated into Celebration and StarBurst.
+- FEAT-007: Touch optimizations — `touch-action: manipulation`, 48px min tap targets, `-webkit-tap-highlight-color: transparent`, iOS PWA meta tags in index.html
+- FEAT-010: Confirmed already done (rate 0.85 default, 0.70 letter, 0.75 word)
 
 ### 2026-04-03 – Wired up 4 new activities v1.3.0
 - Connected Word Families, Rhyming Match, Phonics Rules (Reading World) and Number Order (Math World) — all were built last session but cut off before being wired into App.jsx
