@@ -38,6 +38,7 @@ export function AdditionGame({ onBack, addStars, recordMath }) {
 
     if (correct) {
       speak(`${question.a} plus ${question.b} equals ${question.correct}! Great job!`, { rate: 0.85 })
+      recordMath('addition', `${question.a}+${question.b}`, true)
       addStars(2)
       setShowStar(true)
       setTimeout(() => setShowStar(false), 1500)

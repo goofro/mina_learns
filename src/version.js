@@ -1,6 +1,13 @@
-export const VERSION = '1.3.0'
+export const VERSION = '1.3.1'
 
 export const CHANGELOG = [
+  {
+    version: '1.3.1',
+    date: '2026-04-03',
+    changes: [
+      'Fixed AdditionGame: correct answers now properly recorded to progress store via recordMath()',
+    ],
+  },
   {
     version: '1.3.0',
     date: '2026-04-03',
