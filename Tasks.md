@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-02  
-**Current version:** v1.2.0
+**Last updated:** 2026-04-03  
+**Current version:** v1.3.0
 
 ---
 
@@ -128,6 +128,25 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low — after Mina masters addition  
 **Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.
 
+### [ ] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
+**Priority:** High  
+**Description:** Expand the existing `PhonicsRules` component into a comprehensive, structured teaching guide covering all major English reading rules in a child-friendly way. Key rules to include:
+- **Magic E / Silent E** — the final "e" makes the vowel before it say its name (cap → cape, pin → pine, hop → hope)
+- **Vowel teams** — two vowels together, first one talks (rain, boat, feet, coat)
+- **Digraphs** — two consonants making one sound: sh, ch, th, wh, ph, ck
+- **Consonant blends** — bl, cr, str, spl etc. (blend both sounds)
+- **Short vs long vowels** — CVC = short (cat), CVCe = long (cake)
+- **R-controlled vowels** — ar (car), er/ir/ur (bird), or (horn)
+Each rule should have: a child-facing explanation with TTS, 4–6 example words with emoji, and a mini practice quiz. Parent dashboard should show which rules have been visited/practiced.
+
+### [ ] FEAT-010: Slow down TTS playback rate for clarity
+**Priority:** High  
+**Description:** Reduce the speech rate in `src/utils/speech.js` so voiceover audio plays back slower and individual sounds are clearer for Mina. The Web Speech API `SpeechSynthesisUtterance` has a `rate` property (default 1.0) — lower it (e.g. 0.75–0.85) globally so all TTS throughout the app benefits.
+
+### [ ] FEAT-009: Days of the week & months of the year module
+**Priority:** Medium  
+**Description:** Add a new learning section teaching days of the week and months of the year. Could include flashcard-style activities (hear the name, pick the card), ordering games (put the days in order), and simple songs/chants using TTS. Should live under a new "Calendar" or "Time" category alongside Reading and Math.
+
 ---
 
 ## 📝 Session Notes
@@ -149,6 +168,11 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 - Fixed sight word tracking display (seen vs mastered)
 - Increased font sizes across child UI
 - Switched to Lexend font for better letter clarity
+
+### 2026-04-03 – Wired up 4 new activities v1.3.0
+- Connected Word Families, Rhyming Match, Phonics Rules (Reading World) and Number Order (Math World) — all were built last session but cut off before being wired into App.jsx
+- Added FEAT-009 (Days/Months), FEAT-010 (Slower TTS), FEAT-011 (Phonics Rules guide) to backlog
+- Updated CLAUDE.md with best practice: build + commit + push after significant changes
 
 ### 2026-04-02 – Version tracking + Launcher v1.2.0 (UI-003, UI-004)
 - Added `src/version.js` with semantic versioning and full changelog

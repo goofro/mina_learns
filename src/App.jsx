@@ -11,6 +11,9 @@ import { LetterSounds } from './components/reading/LetterSounds'
 import { SightWords } from './components/reading/SightWords'
 import { PhonicsGame } from './components/reading/PhonicsGame'
 import { SentenceReader } from './components/reading/SentenceReader'
+import { WordFamilies } from './components/reading/WordFamilies'
+import { RhymingMatch } from './components/reading/RhymingMatch'
+import { PhonicsRules } from './components/reading/PhonicsRules'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -18,14 +21,15 @@ import { NumberRecognition } from './components/math/NumberRecognition'
 import { MoreOrLess } from './components/math/MoreOrLess'
 import { ShapeMatch } from './components/math/ShapeMatch'
 import { AdditionGame } from './components/math/AdditionGame'
+import { NumberOrder } from './components/math/NumberOrder'
 
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 
 // Navigation stack: array of screen names
 // Screens: home | reading | math | parent-login | parent
-//          lettersounds | sightwords | phonics | sentences
-//          counting | numberrecognition | moreorless | shapes | addition
+//          lettersounds | sightwords | phonics | sentences | wordfamilies | rhymingmatch | phonicsrules
+//          counting | numberrecognition | moreorless | shapes | addition | numberorder
 
 export default function App() {
   const {
@@ -122,6 +126,23 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'wordfamilies' && (
+        <WordFamilies
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'rhymingmatch' && (
+        <RhymingMatch
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'phonicsrules' && (
+        <PhonicsRules
+          onBack={() => navigate('reading')}
+        />
+      )}
 
       {/* Math screens */}
       {screen === 'math' && (
@@ -163,6 +184,12 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+        />
+      )}
+      {screen === 'numberorder' && (
+        <NumberOrder
+          onBack={() => navigate('math')}
+          addStars={addStars}
         />
       )}
 

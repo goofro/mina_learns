@@ -7,6 +7,7 @@ const ACTIVITIES = [
   { id: 'moreorless', emoji: '⚖️', title: 'More or Less', subtitle: 'Which group is bigger?', color: '#f59e0b', shadow: '#d97706' },
   { id: 'shapes', emoji: '🔷', title: 'Shapes', subtitle: 'Learn shape names', color: '#8b5cf6', shadow: '#6d28d9' },
   { id: 'addition', emoji: '➕', title: 'Addition', subtitle: 'Adding with pictures', color: '#ef4444', shadow: '#dc2626' },
+  { id: 'numberorder', emoji: '🔢', title: 'Number Order', subtitle: 'Put numbers in order', color: '#06b6d4', shadow: '#0891b2' },
 ]
 
 export function MathHome({ onNavigate, onBack }) {

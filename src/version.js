@@ -1,6 +1,16 @@
-export const VERSION = '1.2.1'
+export const VERSION = '1.3.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.3.0',
+    date: '2026-04-03',
+    changes: [
+      'Added Word Families to Reading World: explore rhyming word groups (-at, -og, etc.) then take a quiz',
+      'Added Rhyming Match to Reading World: 10-round game finding rhyming pairs',
+      'Added Phonics Rules to Reading World: structured guide to reading rules (short vowels, digraphs, etc.)',
+      'Added Number Order to Math World: drag numbers into the correct sequence',
+    ],
+  },
   {
     version: '1.2.1',
     date: '2026-04-02',

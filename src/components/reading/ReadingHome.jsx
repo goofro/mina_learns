@@ -34,6 +34,30 @@ const ACTIVITIES = [
     color: '#ef4444',
     shadow: '#dc2626',
   },
+  {
+    id: 'wordfamilies',
+    emoji: '👨‍👩‍👧',
+    title: 'Word Families',
+    subtitle: 'Words that rhyme',
+    color: '#ec4899',
+    shadow: '#be185d',
+  },
+  {
+    id: 'rhymingmatch',
+    emoji: '🎵',
+    title: 'Rhyming Match',
+    subtitle: 'Find the rhyming pair',
+    color: '#06b6d4',
+    shadow: '#0891b2',
+  },
+  {
+    id: 'phonicsrules',
+    emoji: '📜',
+    title: 'Phonics Rules',
+    subtitle: 'Learn reading rules',
+    color: '#f97316',
+    shadow: '#ea580c',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {
