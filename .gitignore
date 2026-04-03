@@ -1,0 +1,14 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Local env & editor settings
+.env
+.env.local
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
