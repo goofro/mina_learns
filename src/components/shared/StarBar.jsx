@@ -1,4 +1,4 @@
-export function StarBar({ stars, onParentClick }) {
+export function StarBar({ stars, streak, onParentClick }) {
   return (
     <div
       style={{
@@ -17,13 +17,22 @@ export function StarBar({ stars, onParentClick }) {
         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <span style={{ fontSize: '28px' }}>⭐</span>
-        <span style={{ fontSize: '24px', fontWeight: 900, color: '#d97706' }}>{stars}</span>
-        <span style={{ fontSize: '14px', color: '#9ca3af', fontWeight: 600 }}>stars</span>
+      {/* Left: stars + streak */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span style={{ fontSize: '26px' }}>⭐</span>
+          <span style={{ fontSize: '22px', fontWeight: 900, color: '#d97706' }}>{stars}</span>
+        </div>
+        {streak > 0 && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#fff7ed', border: '2px solid #fed7aa', borderRadius: '10px', padding: '3px 10px' }}>
+            <span style={{ fontSize: '18px' }}>🔥</span>
+            <span style={{ fontSize: '16px', fontWeight: 900, color: '#ea580c' }}>{streak}</span>
+            <span style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 600 }}>{streak === 1 ? 'day' : 'days'}</span>
+          </div>
+        )}
       </div>
 
-      <div style={{ fontSize: '20px', fontWeight: 900, color: '#f59e0b', letterSpacing: '-0.5px' }}>
+      <div style={{ fontSize: '18px', fontWeight: 900, color: '#f59e0b', letterSpacing: '-0.5px' }}>
         🌟 Mina Learns
       </div>
 

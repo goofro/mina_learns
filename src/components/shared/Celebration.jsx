@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { playCelebration, playStar } from '../../utils/sounds'
 
 const CONFETTI_COLORS = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6bff', '#ff9f43']
 
@@ -30,15 +31,21 @@ export function Celebration({ show, onDone }) {
       delay: Math.random() * 0.5,
     }))
   )
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     if (show) {
-      const timer = setTimeout(() => onDone?.(), 2500)
+      setVisible(true)
+      playCelebration()
+      const timer = setTimeout(() => {
+        setVisible(false)
+        onDone?.()
+      }, 2500)
       return () => clearTimeout(timer)
     }
-  }, [show, onDone])
+  }, [show])
 
-  if (!show) return null
+  if (!show || !visible) return null
 
   return (
     <>
@@ -63,7 +70,7 @@ export function Celebration({ show, onDone }) {
             padding: '32px 48px',
             textAlign: 'center',
             boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
-            animation: 'starPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            animation: 'tada 0.8s ease-in-out',
           }}
         >
           <div style={{ fontSize: '64px', marginBottom: '8px' }}>🎉</div>
@@ -76,6 +83,7 @@ export function Celebration({ show, onDone }) {
 }
 
 export function StarBurst({ show, stars = 1 }) {
+  useEffect(() => { if (show) playStar() }, [show])
   if (!show) return null
   return (
     <div

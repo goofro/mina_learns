@@ -1,5 +1,6 @@
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const ACTIVITIES = [
   { id: 'counting', emoji: '🔢', title: 'Counting', subtitle: 'Count to 20 and beyond!', color: '#3b82f6', shadow: '#1d4ed8' },
@@ -8,6 +9,11 @@ const ACTIVITIES = [
   { id: 'shapes', emoji: '🔷', title: 'Shapes', subtitle: 'Learn shape names', color: '#8b5cf6', shadow: '#6d28d9' },
   { id: 'addition', emoji: '➕', title: 'Addition', subtitle: 'Adding with pictures', color: '#ef4444', shadow: '#dc2626' },
   { id: 'numberorder', emoji: '🔢', title: 'Number Order', subtitle: 'Put numbers in order', color: '#06b6d4', shadow: '#0891b2' },
+  { id: 'subtraction',  emoji: '➖', title: 'Subtraction',   subtitle: 'Taking away with pictures',   color: '#16a34a', shadow: '#15803d' },
+  { id: 'subitizing',   emoji: '👀', title: 'Quick Count',   subtitle: 'How many dots did you see?',   color: '#2563eb', shadow: '#1d4ed8' },
+  { id: 'numberbonds',     emoji: '🔗', title: 'Number Bonds',     subtitle: 'Find the missing part',     color: '#7c3aed', shadow: '#5b21b6' },
+  { id: 'patternrecog',    emoji: '🔴', title: 'Patterns',          subtitle: 'What comes next?',          color: '#a21caf', shadow: '#86198f' },
+  { id: 'sizecomparison',  emoji: '📏', title: 'Big & Small',       subtitle: 'Compare size, weight & more', color: '#ea580c', shadow: '#c2410c' },
 ]
 
 export function MathHome({ onNavigate, onBack }) {
@@ -49,7 +55,7 @@ export function MathHome({ onNavigate, onBack }) {
                 e.currentTarget.style.boxShadow = `0 6px 0 ${act.shadow}`
               }}
             >
-              <div style={{ fontSize: '52px' }}>{act.emoji}</div>
+              <div className="card-emoji"><TwEmoji emoji={act.emoji} size={60} /></div>
               <div style={{ fontSize: '22px', fontWeight: 800, color: '#1f2937' }}>{act.title}</div>
               <div style={{ fontSize: '14px', fontWeight: 600, color: '#6b7280' }}>{act.subtitle}</div>
             </button>

@@ -52,3 +52,12 @@ export const ADDITION_PROBLEMS = [
   { a: 1, b: 4 }, { a: 4, b: 1 }, { a: 3, b: 3 }, { a: 2, b: 4 },
   { a: 4, b: 2 }, { a: 1, b: 5 }, { a: 5, b: 1 }, { a: 3, b: 4 },
 ]
+
+// Subtraction problems — result always >= 0, small enough for counting on fingers
+export const SUBTRACTION_PROBLEMS = [
+  { a: 2, b: 1 }, { a: 3, b: 1 }, { a: 3, b: 2 }, { a: 4, b: 1 },
+  { a: 4, b: 2 }, { a: 4, b: 3 }, { a: 5, b: 1 }, { a: 5, b: 2 },
+  { a: 5, b: 3 }, { a: 5, b: 4 }, { a: 6, b: 2 }, { a: 6, b: 3 },
+  { a: 6, b: 4 }, { a: 7, b: 3 }, { a: 7, b: 4 }, { a: 8, b: 3 },
+  { a: 8, b: 5 }, { a: 6, b: 1 }, { a: 7, b: 2 }, { a: 8, b: 4 },
+]

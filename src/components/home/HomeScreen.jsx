@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const GREETINGS = [
   "Hi Mina! Ready to learn? 🌟",
@@ -8,7 +9,10 @@ const GREETINGS = [
   "What will we learn today? 🤩",
 ]
 
-export function HomeScreen({ onNavigate }) {
+const ART_UNLOCK_STARS = 10
+
+export function HomeScreen({ onNavigate, stars = 0 }) {
+  const artUnlocked = stars >= ART_UNLOCK_STARS
   const [greeting] = useState(() => GREETINGS[Math.floor(Math.random() * GREETINGS.length)])
 
   useEffect(() => {
@@ -30,7 +34,9 @@ export function HomeScreen({ onNavigate }) {
     >
       {/* Mascot */}
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <div className="float" style={{ fontSize: '80px', lineHeight: 1 }}>🦄</div>
+        <div className="bounce" style={{ lineHeight: 1 }}>
+          <TwEmoji emoji="🦄" size={96} />
+        </div>
         <div
           style={{
             marginTop: '12px',
@@ -52,9 +58,9 @@ export function HomeScreen({ onNavigate }) {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '24px',
-          maxWidth: '680px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '20px',
+          maxWidth: '800px',
           width: '100%',
         }}
       >
@@ -82,6 +88,61 @@ export function HomeScreen({ onNavigate }) {
             onNavigate('math')
           }}
         />
+        <SubjectCard
+          emoji="🗓️"
+          title="Calendar"
+          subtitle="Days & Months of the Year"
+          bgColor="linear-gradient(135deg, #e0e7ff, #ede9fe)"
+          borderColor="#6366f1"
+          shadowColor="#4338ca"
+          onClick={() => {
+            speak('Calendar time! Let us learn the days and months!')
+            onNavigate('calendar')
+          }}
+        />
+        <SubjectCard
+          emoji="🎮"
+          title="Games"
+          subtitle="Fun Learning Games"
+          bgColor="linear-gradient(135deg, #dcfce7, #d1fae5)"
+          borderColor="#10b981"
+          shadowColor="#059669"
+          onClick={() => {
+            speak('Games! Let us play!')
+            onNavigate('games')
+          }}
+        />
+
+        {/* Art Studio — unlocks at 10 stars */}
+        {artUnlocked ? (
+          <SubjectCard
+            emoji="🎨"
+            title="Art Studio"
+            subtitle="Mix colors, draw & create!"
+            bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
+            borderColor="#db2777"
+            shadowColor="#9d174d"
+            onClick={() => {
+              speak('Art Studio! Let us make something beautiful!')
+              onNavigate('artstudio')
+            }}
+          />
+        ) : (
+          <div style={{
+            background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
+            border: '4px dashed #d1d5db',
+            borderRadius: '28px',
+            padding: '32px 28px',
+            textAlign: 'center',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
+          }}>
+            <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
+            <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
+              Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Stars prompt */}
@@ -94,14 +155,14 @@ export function HomeScreen({ onNavigate }) {
           textAlign: 'center',
         }}
       >
-        Complete activities to earn ⭐ stars!
+        {artUnlocked ? '🎨 Art Studio is unlocked! Well done!' : `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`}
       </div>
 
       {/* Decorative floating elements */}
-      <div style={{ position: 'fixed', top: '100px', left: '20px', fontSize: '32px', opacity: 0.3, animation: 'float 4s ease-in-out infinite' }}>🌸</div>
-      <div style={{ position: 'fixed', top: '200px', right: '30px', fontSize: '28px', opacity: 0.3, animation: 'float 3s ease-in-out infinite 1s' }}>🌟</div>
-      <div style={{ position: 'fixed', bottom: '100px', left: '40px', fontSize: '24px', opacity: 0.3, animation: 'float 5s ease-in-out infinite 0.5s' }}>🎈</div>
-      <div style={{ position: 'fixed', bottom: '120px', right: '40px', fontSize: '30px', opacity: 0.3, animation: 'float 4s ease-in-out infinite 2s' }}>🦋</div>
+      <div style={{ position: 'fixed', top: '100px', left: '20px', opacity: 0.35, animation: 'float 4s ease-in-out infinite' }}><TwEmoji emoji="🌸" size={36} /></div>
+      <div style={{ position: 'fixed', top: '200px', right: '30px', opacity: 0.35, animation: 'float 3s ease-in-out infinite 1s' }}><TwEmoji emoji="🌟" size={32} /></div>
+      <div style={{ position: 'fixed', bottom: '100px', left: '40px', opacity: 0.35, animation: 'float 5s ease-in-out infinite 0.5s' }}><TwEmoji emoji="🎈" size={28} /></div>
+      <div style={{ position: 'fixed', bottom: '120px', right: '40px', opacity: 0.35, animation: 'float 4s ease-in-out infinite 2s' }}><TwEmoji emoji="🦋" size={34} /></div>
     </div>
   )
 }
@@ -139,7 +200,7 @@ function SubjectCard({ emoji, title, subtitle, bgColor, borderColor, shadowColor
         e.currentTarget.style.boxShadow = `0 8px 0 ${shadowColor}`
       }}
     >
-      <div style={{ fontSize: '64px', lineHeight: 1 }}>{emoji}</div>
+      <TwEmoji emoji={emoji} size={72} />
       <div style={{ fontSize: '28px', fontWeight: 900, color: '#1f2937' }}>{title}</div>
       <div style={{ fontSize: '15px', fontWeight: 600, color: '#6b7280' }}>{subtitle}</div>
     </button>

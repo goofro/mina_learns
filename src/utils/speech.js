@@ -10,12 +10,20 @@ if (typeof window !== 'undefined') {
 }
 
 function getBestVoice() {
-  // Prefer a child-friendly English voice
-  const preferred = voices.find(v =>
-    v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Moira')
+  // Prefer a female English voice — names ordered by quality/friendliness
+  // Windows: Zira, Jenny, Aria, Eva, Hazel, Linda, Susan
+  // macOS/iOS: Samantha, Karen, Moira, Ava, Allison, Victoria
+  // Chrome online: Google US English, Google UK English Female
+  const femaleNames = [
+    'Zira', 'Jenny', 'Aria', 'Eva', 'Hazel', 'Linda', 'Susan',
+    'Samantha', 'Karen', 'Moira', 'Ava', 'Allison', 'Victoria', 'Fiona',
+    'Google US English', 'Google UK English Female',
+  ]
+  const female = voices.find(v =>
+    v.lang.startsWith('en') && femaleNames.some(n => v.name.includes(n))
   )
   const english = voices.find(v => v.lang.startsWith('en'))
-  return preferred || english || voices[0]
+  return female || english || voices[0]
 }
 
 export function speak(text, { rate = 0.85, pitch = 1.1, volume = 1 } = {}) {
