@@ -107,6 +107,14 @@ const ACTIVITIES = [
     color: '#db2777',
     shadow: '#9d174d',
   },
+  {
+    id: 'wordpicturematch',
+    emoji: '🖼️',
+    title: 'Word & Picture',
+    subtitle: 'Match words to pictures',
+    color: '#ea580c',
+    shadow: '#c2410c',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

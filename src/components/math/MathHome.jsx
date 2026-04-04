@@ -11,7 +11,9 @@ const ACTIVITIES = [
   { id: 'numberorder', emoji: '🔢', title: 'Number Order', subtitle: 'Put numbers in order', color: '#06b6d4', shadow: '#0891b2' },
   { id: 'subtraction',  emoji: '➖', title: 'Subtraction',   subtitle: 'Taking away with pictures',   color: '#16a34a', shadow: '#15803d' },
   { id: 'subitizing',   emoji: '👀', title: 'Quick Count',   subtitle: 'How many dots did you see?',   color: '#2563eb', shadow: '#1d4ed8' },
-  { id: 'numberbonds',  emoji: '🔗', title: 'Number Bonds',  subtitle: 'Find the missing part',        color: '#7c3aed', shadow: '#5b21b6' },
+  { id: 'numberbonds',     emoji: '🔗', title: 'Number Bonds',     subtitle: 'Find the missing part',     color: '#7c3aed', shadow: '#5b21b6' },
+  { id: 'patternrecog',    emoji: '🔴', title: 'Patterns',          subtitle: 'What comes next?',          color: '#a21caf', shadow: '#86198f' },
+  { id: 'sizecomparison',  emoji: '📏', title: 'Big & Small',       subtitle: 'Compare size, weight & more', color: '#ea580c', shadow: '#c2410c' },
 ]
 
 export function MathHome({ onNavigate, onBack }) {

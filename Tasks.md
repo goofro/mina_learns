@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-04 (v1.13.0)  
+**Last updated:** 2026-04-04 (v1.14.0)  
 **Current version:** v1.6.0
 
 ---
@@ -217,9 +217,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Show a word with a picture, speak it aloud, then Mina taps a drum/clap button once per syllable. App counts taps and confirms if correct. Words range from 1-syllable (cat) to 3-syllable (ba-na-na). Teaches phonological awareness and word structure.  
 **Fixed:** 2026-04-04 ✅ — `src/components/reading/SyllableClapping.jsx`: 20 words (7×1-syl, 8×2-syl, 5×3-syl), big bouncing drum button, tap dots counter, auto-checks after 2s or via "That's my answer!" button, reveals syllable breakdown on result.
 
-### [ ] FEAT-018: Word-picture matching
+### [x] FEAT-018: Word-picture matching
 **Priority:** Medium  
-**Description:** Show a written word and 3–4 pictures; Mina taps the picture that matches the word. Or reverse: show a picture and 3 words, tap the right word. Bridges reading decoding to real-world meaning.
+**Description:** Show a written word and 3–4 pictures; Mina taps the picture that matches the word. Or reverse: show a picture and 3 words, tap the right word. Bridges reading decoding to real-world meaning.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/WordPictureMatch.jsx`: 24-word bank (animals, food, nature, objects), alternates word→picture and picture→word modes each round, 4-choice grid, TTS on display and tap.
 
 ### [ ] FEAT-019: Story comprehension
 **Priority:** Medium  
@@ -249,9 +250,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Visual number bond activity: show a total (e.g. 5) split into two parts with a part-whole diagram. Mina fills in the missing part by tapping a number. Start with bonds to 5, progress to bonds to 10. Lays groundwork for mental addition/subtraction.  
 **Fixed:** 2026-04-04 ✅ — `src/components/math/NumberBonds.jsx`: part-whole circle diagram, level selector (Bonds to 5 / Bonds to 10), randomly hides either part A or part B, 3 number choices, 8 rounds per session.
 
-### [ ] FEAT-024: Pattern recognition
+### [x] FEAT-024: Pattern recognition
 **Priority:** Medium  
-**Description:** Show a repeating pattern (AB, ABC, AABB) using shapes or colors with the last item missing. Mina taps the correct next item to complete the pattern. Teaches logical sequencing and early algebraic thinking.
+**Description:** Show a repeating pattern (AB, ABC, AABB) using shapes or colors with the last item missing. Mina taps the correct next item to complete the pattern. Teaches logical sequencing and early algebraic thinking.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/PatternRecognition.jsx`: 5 pattern types (AB, AAB, ABB, ABC, AABB), 10 coloured emoji items, generates the 6th element and provides 4 choices, 10 rounds.
 
 ### [ ] FEAT-025: 3D shapes
 **Priority:** Low  
@@ -261,9 +263,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Teach positional/directional language: above, below, next to, inside, outside, in front of, behind. Show a character and an object, Mina taps the picture that matches the spoken description (e.g. "The ball is INSIDE the box"). Spoken via TTS throughout.
 
-### [ ] FEAT-027: Measurement & size comparison
+### [x] FEAT-027: Measurement & size comparison
 **Priority:** Medium  
-**Description:** Comparison activities: big vs small, tall vs short, heavy vs light, more vs fewer. Show two objects, Mina taps the one matching the prompt. Extend MoreOrLess concept to non-numeric attributes. Include a simple non-standard measuring game (how many blocks tall is the tree?).
+**Description:** Comparison activities: big vs small, tall vs short, heavy vs light, more vs fewer. Show two objects, Mina taps the one matching the prompt. Extend MoreOrLess concept to non-numeric attributes. Include a simple non-standard measuring game (how many blocks tall is the tree?).  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/SizeComparison.jsx`: 17 question templates across big/small (same emoji at different sizes), tall/short, heavy/light (different objects), more/fewer (count groups). Left/right side randomised each round.
 
 ### [ ] FEAT-028: Picture vocabulary builder
 **Priority:** Medium  

@@ -1,6 +1,15 @@
-export const VERSION = '1.13.0'
+export const VERSION = '1.14.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.14.0',
+    date: '2026-04-04',
+    changes: [
+      'FEAT-018: Added Word & Picture Match to Reading World — 24-word bank, alternates word→picture and picture→word modes, 10 rounds',
+      'FEAT-024: Added Patterns to Math World — AB/AAB/ABB/ABC/AABB patterns with coloured emoji shapes, 10 rounds',
+      'FEAT-027: Added Big & Small to Math World — 17 questions across big/small, tall/short, heavy/light, more/fewer',
+    ],
+  },
   {
     version: '1.13.0',
     date: '2026-04-04',

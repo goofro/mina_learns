@@ -22,6 +22,7 @@ import { VowelsConsonants } from './components/reading/VowelsConsonants'
 import { LetterConfusion } from './components/reading/LetterConfusion'
 import { EndingSounds } from './components/reading/EndingSounds'
 import { SyllableClapping } from './components/reading/SyllableClapping'
+import { WordPictureMatch } from './components/reading/WordPictureMatch'
 import { MemoryGame } from './components/games/MemoryGame'
 
 import { ArtStudioHome } from './components/art/ArtStudioHome'
@@ -39,6 +40,8 @@ import { SubtractionGame } from './components/math/SubtractionGame'
 import { NumberOrder } from './components/math/NumberOrder'
 import { Subitizing } from './components/math/Subitizing'
 import { NumberBonds } from './components/math/NumberBonds'
+import { PatternRecognition } from './components/math/PatternRecognition'
+import { SizeComparison } from './components/math/SizeComparison'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
@@ -239,6 +242,12 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'wordpicturematch' && (
+        <WordPictureMatch
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Art Studio screens */}
       {screen === 'artstudio' && (
@@ -323,6 +332,18 @@ export default function App() {
       )}
       {screen === 'numberbonds' && (
         <NumberBonds
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'patternrecog' && (
+        <PatternRecognition
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'sizecomparison' && (
+        <SizeComparison
           onBack={() => navigate('math')}
           addStars={addStars}
         />
