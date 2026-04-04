@@ -31,16 +31,21 @@ export function Celebration({ show, onDone }) {
       delay: Math.random() * 0.5,
     }))
   )
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     if (show) {
+      setVisible(true)
       playCelebration()
-      const timer = setTimeout(() => onDone?.(), 2500)
+      const timer = setTimeout(() => {
+        setVisible(false)
+        onDone?.()
+      }, 2500)
       return () => clearTimeout(timer)
     }
-  }, [show, onDone])
+  }, [show])
 
-  if (!show) return null
+  if (!show || !visible) return null
 
   return (
     <>
