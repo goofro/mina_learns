@@ -110,3 +110,9 @@ html {
 }
 
 .slide-up { animation: slideUp 0.3s ease-out; }
+
+@keyframes strokePulse {
+  0%, 100% { stroke-opacity: 1; }
+  50%       { stroke-opacity: 0.35; }
+}
+.stroke-active { animation: strokePulse 1s ease-in-out infinite; }

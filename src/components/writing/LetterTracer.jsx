@@ -3,13 +3,12 @@ import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak, speakEncouragement } from '../../utils/speech'
 import { playStar } from '../../utils/sounds'
+import { STROKE_GUIDES, pathStart } from '../../data/strokeGuides'
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const NUMBERS = '0123456789'.split('')
 const CRAYON_COLORS = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6', '#ec4899']
-const MIN_STROKES = 3
 
-// Letter names spoken clearly
 const LETTER_NAMES = {
   A:'A', B:'B', C:'C', D:'D', E:'E', F:'F', G:'G', H:'H', I:'I', J:'J', K:'K',
   L:'L', M:'M', N:'N', O:'O', P:'P', Q:'Q', R:'R', S:'S', T:'T', U:'U', V:'V',
@@ -18,30 +17,33 @@ const LETTER_NAMES = {
   '5':'five','6':'six','7':'seven','8':'eight','9':'nine',
 }
 
+const STROKE_LABELS = ['①','②','③','④']
+
 export function LetterTracer({ mode = 'letters', onBack, addStars }) {
   const chars = mode === 'letters' ? LETTERS : NUMBERS
-  const [idx, setIdx]             = useState(0)
-  const [color, setColor]         = useState('#ef4444')
-  const [strokeCount, setStrokeCount] = useState(0)
-  const [showStar, setShowStar]   = useState(false)
+  const [idx, setIdx]                     = useState(0)
+  const [color, setColor]                 = useState('#ef4444')
+  const [completedStrokes, setCompleted]  = useState(0)
+  const [showStar, setShowStar]           = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
-  const [totalTraced, setTotalTraced] = useState(0)
-  const [advancing, setAdvancing] = useState(false)
+  const [totalTraced, setTotalTraced]     = useState(0)
+  const [advancing, setAdvancing]         = useState(false)
 
-  const canvasRef  = useRef(null)
-  const isDrawing  = useRef(false)
-  const lastPos    = useRef(null)
-  const colorRef   = useRef(color)
+  const canvasRef   = useRef(null)
+  const isDrawing   = useRef(false)
+  const lastPos     = useRef(null)
+  const colorRef    = useRef(color)
 
   useEffect(() => { colorRef.current = color }, [color])
 
-  const char = chars[idx]
+  const char    = chars[idx]
+  const strokes = STROKE_GUIDES[char] || []
 
   // Announce + clear on char change
   useEffect(() => {
     speak(LETTER_NAMES[char] || char, { rate: 0.7, pitch: 1.1 })
     clearCanvas()
-    setStrokeCount(0)
+    setCompleted(0)
     setAdvancing(false)
   }, [char])
 
@@ -60,12 +62,10 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
     return { x: (src.clientX - rect.left) * sx, y: (src.clientY - rect.top) * sy }
   }
 
-  // Use pointer events — works for mouse and touch; touchAction:none prevents scroll
   function onPointerDown(e) {
     e.preventDefault()
     isDrawing.current = true
     lastPos.current   = getPos(e)
-    setStrokeCount(s => s + 1)
   }
 
   function onPointerMove(e) {
@@ -87,6 +87,9 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
 
   function onPointerUp(e) {
     e?.preventDefault()
+    if (isDrawing.current) {
+      setCompleted(s => s + 1)
+    }
     isDrawing.current = false
     lastPos.current   = null
   }
@@ -125,7 +128,7 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
               style={{ background: '#6b7280', color: 'white', border: 'none', borderRadius: '16px', padding: '16px 24px', fontSize: '18px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
               Menu
             </button>
-            <button onClick={() => { setShowCelebration(false); setIdx(0); setTotalTraced(0); setStrokeCount(0); clearCanvas() }}
+            <button onClick={() => { setShowCelebration(false); setIdx(0); setTotalTraced(0); setCompleted(0); clearCanvas() }}
               style={{ background: '#7c3aed', color: 'white', border: 'none', borderRadius: '16px', padding: '16px 24px', fontSize: '18px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
               Again!
             </button>
@@ -135,7 +138,21 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
     )
   }
 
-  const canTrace = strokeCount >= MIN_STROKES && !advancing
+  const activeStroke = Math.min(completedStrokes, strokes.length - 1)
+  const allDone      = strokes.length > 0 && completedStrokes >= strokes.length
+  const canTrace     = (strokes.length === 0 ? completedStrokes >= 3 : allDone) && !advancing
+
+  // Hint text
+  let hint = ''
+  if (advancing) {
+    hint = 'Great job! ⭐'
+  } else if (strokes.length === 0) {
+    hint = 'Trace over the letter!'
+  } else if (allDone) {
+    hint = 'All strokes done! Tap "I traced it!" ✓'
+  } else {
+    hint = `Stroke ${activeStroke + 1} of ${strokes.length} — follow the purple arrow!`
+  }
 
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #fff8f0, #fef3ff)', padding: '80px 16px 40px' }}>
@@ -166,7 +183,7 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
           {/* Canvas + guide overlay */}
           <div style={{ flex: 1, position: 'relative', aspectRatio: '1', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 8px 28px rgba(0,0,0,0.12)', border: '4px solid #e5e7eb', background: 'white' }}>
 
-            {/* Guide: filled light shape */}
+            {/* Guide: faded letter background */}
             <div style={{
               position: 'absolute', inset: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -176,13 +193,12 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
             }}>
               {char}
             </div>
-            {/* Guide: outline stroke */}
             <div style={{
               position: 'absolute', inset: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: 'clamp(120px, 38vw, 200px)', fontWeight: 900, lineHeight: 1,
               color: 'transparent',
-              WebkitTextStroke: '5px #d1d5db',
+              WebkitTextStroke: '3px #e5e7eb',
               userSelect: 'none', pointerEvents: 'none',
             }}>
               {char}
@@ -204,6 +220,60 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
               onPointerUp={onPointerUp}
               onPointerLeave={onPointerUp}
             />
+
+            {/* Stroke guide SVG overlay */}
+            {strokes.length > 0 && (
+              <svg
+                viewBox="0 0 100 100"
+                style={{
+                  position: 'absolute', inset: 0,
+                  width: '100%', height: '100%',
+                  pointerEvents: 'none', zIndex: 2,
+                  overflow: 'visible',
+                }}
+              >
+                {strokes.map((d, i) => {
+                  const isDone   = i < completedStrokes
+                  const isActive = i === activeStroke && !allDone
+                  const [sx, sy] = pathStart(d)
+
+                  return (
+                    <g key={i}>
+                      {/* Stroke path */}
+                      <path
+                        d={d}
+                        fill="none"
+                        stroke={isDone ? '#10b981' : isActive ? '#7c3aed' : '#c4b5fd'}
+                        strokeWidth={isActive ? 4.5 : 3}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeDasharray={!isDone && !isActive ? '6 4' : undefined}
+                        strokeOpacity={isDone ? 0.55 : isActive ? 1 : 0.5}
+                        className={isActive ? 'stroke-active' : undefined}
+                      />
+
+                      {/* Numbered start dot */}
+                      <circle
+                        cx={sx} cy={sy} r={isDone ? 5.5 : isActive ? 7 : 5.5}
+                        fill={isDone ? '#10b981' : isActive ? '#7c3aed' : '#a78bfa'}
+                        fillOpacity={isDone ? 0.8 : 1}
+                      />
+                      <text
+                        x={sx} y={sy}
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        fontSize={isDone ? '6' : isActive ? '7.5' : '6'}
+                        fill="white"
+                        fontWeight="900"
+                        style={{ fontFamily: 'Lexend, sans-serif', userSelect: 'none' }}
+                      >
+                        {isDone ? '✓' : i + 1}
+                      </text>
+                    </g>
+                  )
+                })}
+              </svg>
+            )}
           </div>
 
           <button
@@ -211,13 +281,35 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
             disabled={idx === chars.length - 1}
             style={{ fontSize: '26px', background: 'none', border: 'none', opacity: idx === chars.length - 1 ? 0.2 : 1, cursor: idx === chars.length - 1 ? 'default' : 'pointer', padding: '8px', minWidth: '44px', color: '#6b7280' }}
           >▶</button>
-
         </div>
 
         {/* Character name label */}
-        <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: 800, color: '#7c3aed', marginBottom: '14px' }}>
+        <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: 800, color: '#7c3aed', marginBottom: '8px' }}>
           {mode === 'letters' ? `The letter ${char}` : LETTER_NAMES[char]}
         </div>
+
+        {/* Stroke progress chips */}
+        {strokes.length > 0 && (
+          <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '14px' }}>
+            {strokes.map((_, i) => {
+              const isDone   = i < completedStrokes
+              const isActive = i === activeStroke && !allDone
+              return (
+                <div key={i} style={{
+                  width: '36px', height: '36px', borderRadius: '50%',
+                  background: isDone ? '#10b981' : isActive ? '#7c3aed' : '#e5e7eb',
+                  color: 'white',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '16px', fontWeight: 900,
+                  boxShadow: isActive ? '0 0 0 3px #c4b5fd' : 'none',
+                  transition: 'background 0.3s, box-shadow 0.3s',
+                }}>
+                  {isDone ? '✓' : <span style={{ color: isActive ? 'white' : '#9ca3af' }}>{i + 1}</span>}
+                </div>
+              )
+            })}
+          </div>
+        )}
 
         {/* Crayon color picker */}
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '16px' }}>
@@ -241,7 +333,7 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
         {/* Action buttons */}
         <div style={{ display: 'flex', gap: '12px' }}>
           <button
-            onClick={() => { clearCanvas(); setStrokeCount(0) }}
+            onClick={() => { clearCanvas(); setCompleted(0) }}
             style={{ flex: 1, background: '#f3f4f6', color: '#6b7280', border: 'none', borderRadius: '16px', padding: '16px', fontSize: '16px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
           >
             ↺ Clear
@@ -265,10 +357,8 @@ export function LetterTracer({ mode = 'letters', onBack, addStars }) {
           </button>
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '12px', fontSize: '15px', color: '#9ca3af', fontWeight: 600 }}>
-          {canTrace
-            ? 'Great job! Tap "I traced it!" ✓'
-            : 'Draw over the letter with your finger or mouse!'}
+        <p style={{ textAlign: 'center', marginTop: '12px', fontSize: '15px', color: '#6b7280', fontWeight: 600 }}>
+          {hint}
         </p>
 
       </div>

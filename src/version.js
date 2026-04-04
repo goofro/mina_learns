@@ -1,6 +1,17 @@
-export const VERSION = '1.9.0'
+export const VERSION = '1.10.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.10.0',
+    date: '2026-04-03',
+    changes: [
+      'Guided stroke order for all 26 letters and 10 numbers in Letter Tracer',
+      'SVG overlay shows numbered stroke guides: purple = current stroke (pulsing), green = done, dashed = upcoming',
+      'Stroke progress chips below canvas show which strokes are complete',
+      '"I traced it!" only unlocks after all guided strokes are completed',
+      'Hint text updates each stroke: "Stroke 1 of 3 — follow the purple arrow!"',
+    ],
+  },
   {
     version: '1.9.0',
     date: '2026-04-03',
