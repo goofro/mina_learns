@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BackButton } from '../shared/BackButton'
+import { TwEmoji } from '../shared/TwEmoji'
 import { STORIES, STORY_LEVELS } from '../../data/stories'
 
 export function StoryLibrary({ onSelectStory, onBack }) {
@@ -94,7 +95,7 @@ export function StoryLibrary({ onSelectStory, onBack }) {
                   e.currentTarget.style.boxShadow = `0 6px 0 ${story.shadow}`
                 }}
               >
-                <div style={{ fontSize: '56px' }}>{story.coverEmoji}</div>
+                <TwEmoji emoji={story.coverEmoji} size={72} />
                 <div style={{ fontSize: '18px', fontWeight: 900, color: '#1f2937', lineHeight: 1.2 }}>{story.title}</div>
                 <div style={{
                   fontSize: '12px',

@@ -3,6 +3,7 @@ import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak } from '../../utils/speech'
 import { playCorrect, playWrong } from '../../utils/sounds'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const DECKS = [
   {
@@ -114,7 +115,7 @@ function DotsDisplay({ count, color }) {
 
 function CardFace({ content, color }) {
   if (content.type === 'emoji') {
-    return <div style={{ fontSize: '44px', lineHeight: 1 }}>{content.value}</div>
+    return <TwEmoji emoji={content.value} size={52} />
   }
   if (content.type === 'text') {
     return <div style={{ fontSize: '52px', fontWeight: 900, color: '#1f2937', lineHeight: 1 }}>{content.value}</div>
@@ -228,7 +229,7 @@ export function MemoryGame({ onBack, addStars }) {
                 onMouseUp={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = `0 6px 0 ${d.shadow}` }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = `0 6px 0 ${d.shadow}` }}
               >
-                <div style={{ fontSize: '52px' }}>{d.emoji}</div>
+                <TwEmoji emoji={d.emoji} size={56} />
                 <div style={{ fontSize: '20px', fontWeight: 900, color: '#1f2937' }}>{d.name}</div>
                 <div style={{ fontSize: '14px', color: '#6b7280', fontWeight: 600 }}>{d.description}</div>
                 <div style={{ fontSize: '13px', color: '#9ca3af' }}>{d.pairs.length} pairs · 12 cards</div>

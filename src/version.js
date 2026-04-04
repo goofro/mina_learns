@@ -1,6 +1,16 @@
-export const VERSION = '1.8.0'
+export const VERSION = '1.9.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.9.0',
+    date: '2026-04-03',
+    changes: [
+      'Upgraded emoji rendering to Twemoji SVGs — crisp, colorful illustrations on all devices',
+      'Applied to: home screen mascot, activity cards (Reading/Math), Story Library covers, story sentence illustrations, Memory Game cards',
+      'Added new CSS animations: pulse, tada (celebration popup), slideUp, card-emoji hover scale+rotate',
+      'Mascot now bounces; Celebration popup uses tada animation',
+    ],
+  },
   {
     version: '1.8.0',
     date: '2026-04-03',

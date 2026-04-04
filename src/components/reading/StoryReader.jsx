@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { StarBurst } from '../shared/Celebration'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 import { STORIES } from '../../data/stories'
 
 const PHASE_READ = 'read'
@@ -75,7 +76,7 @@ export function StoryReader({ storyId, onBack, addStars }) {
       <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #fdf4ff, #eff6ff)', padding: '80px 20px 40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <StarBurst show stars={3} />
         <div style={{ textAlign: 'center', maxWidth: '480px' }}>
-          <div style={{ fontSize: '96px', marginBottom: '16px' }}>{allCorrect ? '🏆' : '⭐'}</div>
+          <div style={{ marginBottom: '16px' }}><TwEmoji emoji={allCorrect ? '🏆' : '⭐'} size={96} /></div>
           <h2 style={{ fontSize: '32px', fontWeight: 900, color: '#1f2937', marginBottom: '12px' }}>
             {allCorrect ? 'Amazing Reader!' : 'Great Job!'}
           </h2>
@@ -138,7 +139,7 @@ export function StoryReader({ storyId, onBack, addStars }) {
             marginBottom: '24px',
             border: `4px solid ${story.color}22`,
           }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🤔</div>
+            <div style={{ marginBottom: '16px' }}><TwEmoji emoji="🤔" size={56} /></div>
             <button
               onClick={() => speak(currentQuestion.prompt, { rate: 0.7 })}
               style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
@@ -242,7 +243,7 @@ export function StoryReader({ storyId, onBack, addStars }) {
           gap: '20px',
           border: `4px solid ${story.color}22`,
         }}>
-          <div style={{ fontSize: '80px' }}>{currentSentence.emoji}</div>
+          <TwEmoji emoji={currentSentence.emoji} size={88} />
 
           {/* Tappable words */}
           <div style={{ fontSize: '36px', fontWeight: 800, color: '#1f2937', lineHeight: 1.5, textAlign: 'center' }}>

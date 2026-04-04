@@ -1,5 +1,6 @@
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const ACTIVITIES = [
   { id: 'counting', emoji: '🔢', title: 'Counting', subtitle: 'Count to 20 and beyond!', color: '#3b82f6', shadow: '#1d4ed8' },
@@ -49,7 +50,7 @@ export function MathHome({ onNavigate, onBack }) {
                 e.currentTarget.style.boxShadow = `0 6px 0 ${act.shadow}`
               }}
             >
-              <div style={{ fontSize: '52px' }}>{act.emoji}</div>
+              <div className="card-emoji"><TwEmoji emoji={act.emoji} size={60} /></div>
               <div style={{ fontSize: '22px', fontWeight: 800, color: '#1f2937' }}>{act.title}</div>
               <div style={{ fontSize: '14px', fontWeight: 600, color: '#6b7280' }}>{act.subtitle}</div>
             </button>

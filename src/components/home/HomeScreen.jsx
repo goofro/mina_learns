@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const GREETINGS = [
   "Hi Mina! Ready to learn? 🌟",
@@ -30,7 +31,9 @@ export function HomeScreen({ onNavigate }) {
     >
       {/* Mascot */}
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <div className="float" style={{ fontSize: '80px', lineHeight: 1 }}>🦄</div>
+        <div className="bounce" style={{ lineHeight: 1 }}>
+          <TwEmoji emoji="🦄" size={96} />
+        </div>
         <div
           style={{
             marginTop: '12px',
@@ -122,10 +125,10 @@ export function HomeScreen({ onNavigate }) {
       </div>
 
       {/* Decorative floating elements */}
-      <div style={{ position: 'fixed', top: '100px', left: '20px', fontSize: '32px', opacity: 0.3, animation: 'float 4s ease-in-out infinite' }}>🌸</div>
-      <div style={{ position: 'fixed', top: '200px', right: '30px', fontSize: '28px', opacity: 0.3, animation: 'float 3s ease-in-out infinite 1s' }}>🌟</div>
-      <div style={{ position: 'fixed', bottom: '100px', left: '40px', fontSize: '24px', opacity: 0.3, animation: 'float 5s ease-in-out infinite 0.5s' }}>🎈</div>
-      <div style={{ position: 'fixed', bottom: '120px', right: '40px', fontSize: '30px', opacity: 0.3, animation: 'float 4s ease-in-out infinite 2s' }}>🦋</div>
+      <div style={{ position: 'fixed', top: '100px', left: '20px', opacity: 0.35, animation: 'float 4s ease-in-out infinite' }}><TwEmoji emoji="🌸" size={36} /></div>
+      <div style={{ position: 'fixed', top: '200px', right: '30px', opacity: 0.35, animation: 'float 3s ease-in-out infinite 1s' }}><TwEmoji emoji="🌟" size={32} /></div>
+      <div style={{ position: 'fixed', bottom: '100px', left: '40px', opacity: 0.35, animation: 'float 5s ease-in-out infinite 0.5s' }}><TwEmoji emoji="🎈" size={28} /></div>
+      <div style={{ position: 'fixed', bottom: '120px', right: '40px', opacity: 0.35, animation: 'float 4s ease-in-out infinite 2s' }}><TwEmoji emoji="🦋" size={34} /></div>
     </div>
   )
 }
@@ -163,7 +166,7 @@ function SubjectCard({ emoji, title, subtitle, bgColor, borderColor, shadowColor
         e.currentTarget.style.boxShadow = `0 8px 0 ${shadowColor}`
       }}
     >
-      <div style={{ fontSize: '64px', lineHeight: 1 }}>{emoji}</div>
+      <TwEmoji emoji={emoji} size={72} />
       <div style={{ fontSize: '28px', fontWeight: 900, color: '#1f2937' }}>{title}</div>
       <div style={{ fontSize: '15px', fontWeight: 600, color: '#6b7280' }}>{subtitle}</div>
     </button>

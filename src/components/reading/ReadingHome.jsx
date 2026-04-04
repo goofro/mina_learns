@@ -1,5 +1,6 @@
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const ACTIVITIES = [
   {
@@ -134,7 +135,7 @@ function ActivityCard({ emoji, title, subtitle, color, shadow, onClick }) {
         e.currentTarget.style.boxShadow = `0 6px 0 ${shadow}`
       }}
     >
-      <div style={{ fontSize: '52px' }}>{emoji}</div>
+      <div className="card-emoji"><TwEmoji emoji={emoji} size={60} /></div>
       <div style={{ fontSize: '22px', fontWeight: 800, color: '#1f2937' }}>{title}</div>
       <div style={{ fontSize: '14px', fontWeight: 600, color: '#6b7280' }}>{subtitle}</div>
     </button>

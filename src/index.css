@@ -80,7 +80,33 @@ html {
   100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
 
-.bounce { animation: bounce 1s infinite; }
+.bounce { animation: bounce 1s ease-in-out infinite; }
 .wiggle { animation: wiggle 0.5s ease-in-out; }
 .float { animation: float 3s ease-in-out infinite; }
 .star-pop { animation: starPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.pulse { animation: pulse 2s ease-in-out infinite; }
+.tada { animation: tada 0.8s ease-in-out; }
+.card-emoji { transition: transform 0.2s ease; }
+.card-emoji:hover { transform: scale(1.15) rotate(-5deg); }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes tada {
+  0%   { transform: scale(1) rotate(0deg); }
+  10%  { transform: scale(0.9) rotate(-3deg); }
+  20%  { transform: scale(1.2) rotate(3deg); }
+  40%  { transform: scale(1.2) rotate(-3deg); }
+  60%  { transform: scale(1.1) rotate(3deg); }
+  80%  { transform: scale(1.05) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.slide-up { animation: slideUp 0.3s ease-out; }

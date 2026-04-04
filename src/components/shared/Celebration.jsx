@@ -70,7 +70,7 @@ export function Celebration({ show, onDone }) {
             padding: '32px 48px',
             textAlign: 'center',
             boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
-            animation: 'starPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            animation: 'tada 0.8s ease-in-out',
           }}
         >
           <div style={{ fontSize: '64px', marginBottom: '8px' }}>🎉</div>
