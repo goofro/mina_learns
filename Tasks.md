@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-04  
+**Last updated:** 2026-04-04 (v1.11.0)  
 **Current version:** v1.6.0
 
 ---
@@ -105,9 +105,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Medium  
 **Description:** Deploy the app as a hosted Progressive Web App so it can be used on an iPad without needing a PC running. Steps: (1) run `npm run build` to produce a static `dist/` folder; (2) deploy to Netlify, Vercel, or GitHub Pages; (3) open the URL in iPad Safari and tap "Add to Home Screen" for a full-screen, icon-on-homescreen experience. The app is already touch-optimised (FEAT-007) and has iOS PWA meta tags in `index.html`. No code changes required — this is purely a deployment/hosting task.
 
-### [ ] FEAT-014: Vowels & Consonants intro lesson
+### [x] FEAT-014: Vowels & Consonants intro lesson
 **Priority:** High  
-**Description:** Add an introductory lesson in Reading World (before or at the top of Phonics Rules) that teaches the concept of vowels (A, E, I, O, U) vs. consonants (all other letters). Should include: a child-facing explanation with TTS, visual grouping of the alphabet into vowels/consonants, examples of each, and a simple tap-to-identify quiz ("Is this a vowel or consonant?").
+**Description:** Add an introductory lesson in Reading World (before or at the top of Phonics Rules) that teaches the concept of vowels (A, E, I, O, U) vs. consonants (all other letters). Should include: a child-facing explanation with TTS, visual grouping of the alphabet into vowels/consonants, examples of each, and a simple tap-to-identify quiz ("Is this a vowel or consonant?").  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/VowelsConsonants.jsx`: colour-coded full alphabet (purple = vowels, blue = consonants), tap-to-hear each letter, vowel cards with emoji examples, 15-letter quiz (5 vowels + 10 consonants).
 
 ### [ ] FEAT-002: Audio recording – Mina reads aloud
 **Priority:** Medium  
@@ -135,9 +136,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Description:** Ensure all tap targets are 48px+ for tablet use. Test on touch devices. May need to deploy as PWA for home screen icon.  
 **Fixed:** 2026-04-03 ✅ — `touch-action: manipulation` removes 300ms tap delay; min-height/width 48px on all buttons; `-webkit-tap-highlight-color: transparent`; iOS PWA meta tags added to index.html.
 
-### [ ] FEAT-008: Subtraction module
+### [x] FEAT-008: Subtraction module
 **Priority:** Low — after Mina masters addition  
-**Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.
+**Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/SubtractionGame.jsx`: shows all objects with red ✕ overlaid on the subtracted ones, 8-round quiz, 20 problems ranging from 2−1 to 8−5. Wired into Math World.
 
 ### [ ] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
 **Priority:** Medium  
@@ -199,9 +201,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** High  
 **Description:** A curated library of 10–15 short stories (5–8 sentences each) written with controlled vocabulary matching what Mina has learned in the app. Stories are grouped into 3 levels: Level 1 (sight words + CVC only), Level 2 (adds word families and blends), Level 3 (simple sentences with digraphs and Magic E words). Each story plays in SentenceReader with word-by-word TTS highlighting, an emoji scene illustration, and 2–3 comprehension tap questions after (who, what happened, why). A "Story Library" screen shows all stories as cards with a lock/unlock indicator based on level.
 
-### [ ] FEAT-015: Visual discrimination — b/d/p/q confusion
+### [x] FEAT-015: Visual discrimination — b/d/p/q confusion
 **Priority:** High  
-**Description:** Dedicated mini-lesson and game for letters that look alike: b vs d, p vs q. Show each pair side-by-side with a memory trick (e.g. "b has a belly in front, d has a belly behind"), then a tap-to-identify quiz. Critical for early readers who commonly reverse these letters.
+**Description:** Dedicated mini-lesson and game for letters that look alike: b vs d, p vs q. Show each pair side-by-side with a memory trick (e.g. "b has a belly in front, d has a belly behind"), then a tap-to-identify quiz. Critical for early readers who commonly reverse these letters.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/LetterConfusion.jsx`: two lesson slides (b/d then p/q) each with memory trick, example words, and giant tap-to-hear letter cards. Followed by a 20-round quiz showing one letter at a time with 4-choice tap grid.
 
 ### [ ] FEAT-016: Ending sounds
 **Priority:** Medium  

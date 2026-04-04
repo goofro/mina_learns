@@ -1,6 +1,15 @@
-export const VERSION = '1.10.0'
+export const VERSION = '1.11.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.11.0',
+    date: '2026-04-04',
+    changes: [
+      'FEAT-008: Added Subtraction module to Math World — visual cross-out of objects, 8-round quiz, 20 problems',
+      'FEAT-014: Added Vowels & Consonants to Reading World — colour-coded alphabet, tap-to-hear, 15-letter quiz',
+      'FEAT-015: Added b/d/p/q Lesson to Reading World — memory tricks for each pair, 20-round identification quiz',
+    ],
+  },
   {
     version: '1.10.0',
     date: '2026-04-03',

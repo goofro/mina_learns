@@ -18,6 +18,8 @@ import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
+import { VowelsConsonants } from './components/reading/VowelsConsonants'
+import { LetterConfusion } from './components/reading/LetterConfusion'
 import { MemoryGame } from './components/games/MemoryGame'
 
 import { MathHome } from './components/math/MathHome'
@@ -26,6 +28,7 @@ import { NumberRecognition } from './components/math/NumberRecognition'
 import { MoreOrLess } from './components/math/MoreOrLess'
 import { ShapeMatch } from './components/math/ShapeMatch'
 import { AdditionGame } from './components/math/AdditionGame'
+import { SubtractionGame } from './components/math/SubtractionGame'
 import { NumberOrder } from './components/math/NumberOrder'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
@@ -40,7 +43,7 @@ import { ParentDashboard } from './components/parent/ParentDashboard'
 //          lettersounds | sightwords | phonics | sentences | wordfamilies | rhymingmatch | phonicsrules
 //          lettertracing | lettertracing-letters | lettertracing-numbers
 //          storylibrary | storyreader
-//          counting | numberrecognition | moreorless | shapes | addition | numberorder
+//          counting | numberrecognition | moreorless | shapes | addition | subtraction | numberorder
 //          daysofweek | monthsofyear
 
 export default function App() {
@@ -201,6 +204,18 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'vowelsconsonants' && (
+        <VowelsConsonants
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'letterconfusion' && (
+        <LetterConfusion
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Games screens */}
       {screen === 'games' && (
@@ -247,6 +262,13 @@ export default function App() {
       )}
       {screen === 'addition' && (
         <AdditionGame
+          onBack={() => navigate('math')}
+          addStars={addStars}
+          recordMath={recordMath}
+        />
+      )}
+      {screen === 'subtraction' && (
+        <SubtractionGame
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}

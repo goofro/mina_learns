@@ -75,6 +75,22 @@ const ACTIVITIES = [
     color: '#0ea5e9',
     shadow: '#0369a1',
   },
+  {
+    id: 'vowelsconsonants',
+    emoji: '⭐',
+    title: 'Vowels & Consonants',
+    subtitle: 'A, E, I, O, U and the rest',
+    color: '#7c3aed',
+    shadow: '#5b21b6',
+  },
+  {
+    id: 'letterconfusion',
+    emoji: '🔍',
+    title: 'b, d, p, q',
+    subtitle: 'Tell tricky letters apart',
+    color: '#0369a1',
+    shadow: '#1e3a5f',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {
