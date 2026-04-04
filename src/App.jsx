@@ -22,6 +22,11 @@ import { VowelsConsonants } from './components/reading/VowelsConsonants'
 import { LetterConfusion } from './components/reading/LetterConfusion'
 import { MemoryGame } from './components/games/MemoryGame'
 
+import { ArtStudioHome } from './components/art/ArtStudioHome'
+import { ColorMixer } from './components/art/ColorMixer'
+import { ColorByNumber } from './components/art/ColorByNumber'
+import { FreeDrawStudio } from './components/art/FreeDrawStudio'
+
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
 import { NumberRecognition } from './components/math/NumberRecognition'
@@ -105,11 +110,13 @@ export default function App() {
 
       {screen === 'home' && (
         <HomeScreen
+          stars={progress.stars}
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
             else if (subject === 'calendar') navigate('calendar', 'calendar')
             else if (subject === 'games') navigate('games', 'games')
+            else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
           }}
         />
       )}
@@ -215,6 +222,23 @@ export default function App() {
           onBack={() => navigate('reading')}
           addStars={addStars}
         />
+      )}
+
+      {/* Art Studio screens */}
+      {screen === 'artstudio' && (
+        <ArtStudioHome
+          onNavigate={(id) => navigate(id, 'artstudio')}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'colormixer' && (
+        <ColorMixer onBack={() => navigate('artstudio')} addStars={addStars} />
+      )}
+      {screen === 'colorbynumber' && (
+        <ColorByNumber onBack={() => navigate('artstudio')} addStars={addStars} />
+      )}
+      {screen === 'freedrawstudio' && (
+        <FreeDrawStudio onBack={() => navigate('artstudio')} />
       )}
 
       {/* Games screens */}

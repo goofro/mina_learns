@@ -9,7 +9,10 @@ const GREETINGS = [
   "What will we learn today? 🤩",
 ]
 
-export function HomeScreen({ onNavigate }) {
+const ART_UNLOCK_STARS = 10
+
+export function HomeScreen({ onNavigate, stars = 0 }) {
+  const artUnlocked = stars >= ART_UNLOCK_STARS
   const [greeting] = useState(() => GREETINGS[Math.floor(Math.random() * GREETINGS.length)])
 
   useEffect(() => {
@@ -109,6 +112,37 @@ export function HomeScreen({ onNavigate }) {
             onNavigate('games')
           }}
         />
+
+        {/* Art Studio — unlocks at 10 stars */}
+        {artUnlocked ? (
+          <SubjectCard
+            emoji="🎨"
+            title="Art Studio"
+            subtitle="Mix colors, draw & create!"
+            bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
+            borderColor="#db2777"
+            shadowColor="#9d174d"
+            onClick={() => {
+              speak('Art Studio! Let us make something beautiful!')
+              onNavigate('artstudio')
+            }}
+          />
+        ) : (
+          <div style={{
+            background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
+            border: '4px dashed #d1d5db',
+            borderRadius: '28px',
+            padding: '32px 28px',
+            textAlign: 'center',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
+          }}>
+            <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
+            <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
+              Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Stars prompt */}
@@ -121,7 +155,7 @@ export function HomeScreen({ onNavigate }) {
           textAlign: 'center',
         }}
       >
-        Complete activities to earn ⭐ stars!
+        {artUnlocked ? '🎨 Art Studio is unlocked! Well done!' : `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`}
       </div>
 
       {/* Decorative floating elements */}

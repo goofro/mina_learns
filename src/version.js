@@ -1,6 +1,16 @@
-export const VERSION = '1.11.0'
+export const VERSION = '1.12.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.12.0',
+    date: '2026-04-04',
+    changes: [
+      'FEAT-013: Added Mina\'s Art Studio — unlocks on home screen after earning 10 stars',
+      'Color Mixer: tap two primary colors to discover orange, green, and purple; tracks all 3 discoveries',
+      'Colour by Number: 3 SVG scenes (Sun, Rainbow, Frog) with tappable numbered zones and a color key palette',
+      'Free Drawing: full canvas with 10 colors, 3 brush sizes, eraser, 12 emoji stamps, and save-to-localStorage',
+    ],
+  },
   {
     version: '1.11.0',
     date: '2026-04-04',

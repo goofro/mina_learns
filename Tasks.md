@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-04 (v1.11.0)  
+**Last updated:** 2026-04-04 (v1.12.0)  
 **Current version:** v1.6.0
 
 ---
@@ -141,9 +141,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.  
 **Fixed:** 2026-04-04 ✅ — `src/components/math/SubtractionGame.jsx`: shows all objects with red ✕ overlaid on the subtracted ones, 8-round quiz, 20 problems ranging from 2−1 to 8−5. Wired into Math World.
 
-### [ ] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
+### [x] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
 **Priority:** Medium  
-**Description:** A stars-gated reward activity that unlocks after earning enough stars in a session. Art-based, colorful, and educational — teaches color theory while being genuinely fun.
+**Description:** A stars-gated reward activity that unlocks after earning enough stars in a session. Art-based, colorful, and educational — teaches color theory while being genuinely fun.  
+**Fixed:** 2026-04-04 ✅ — Unlocks on home screen at 10 stars. `src/components/art/`: ArtStudioHome (hub), ColorMixer (red/yellow/blue → orange/green/purple with discovery tracking), ColorByNumber (Sun/Rainbow/Frog SVG scenes with numbered zones), FreeDrawStudio (canvas, 10 colors, 3 brush sizes, eraser, 12 emoji stamps, save to localStorage).
 
 **Concept: "Mina's Art Studio"**
 - Unlocks as a special reward button on the home screen when Mina has earned enough stars (e.g. 10+ in a session)
