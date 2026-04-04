@@ -215,6 +215,12 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.
 
+### [ ] FEAT-040: Expanded tracing & free drawing activities
+**Priority:** Medium  
+**Description:** Two additions to the Writing section:
+1. **More Tracing** — extend LetterTracer with pre-writing stroke practice: straight lines, zig-zags, curves, spirals, and dotted shapes. Each stroke type has a guided canvas template Mina traces over. Teaches pencil control before letter writing.
+2. **Free Drawing** — an open canvas where Mina can draw anything she likes. Crayon palette (same colors as LetterTracer), adjustable brush size, eraser, and a "Save my drawing" button that stores the image to localStorage so she can see it next time. Optional: stamp mode with fun emoji stamps (stars, hearts, animals) she can place on the canvas.
+
 ### [ ] FEAT-020: Pre-writing strokes
 **Priority:** Medium  
 **Description:** Before tracing letters, teach the building-block strokes: straight lines, zig-zags, curves, circles, spirals. Canvas-based like LetterTracer. Each stroke type has a guided practice screen. Prepares fine motor control for letter writing.
@@ -275,7 +281,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.
 
-### [ ] FEAT-035: Memory / card matching game
+### [x] FEAT-035: Memory / card matching game
 **Priority:** Medium  
 **Description:** Classic flip-card memory game with an educational twist: match letter to letter (A↔a), word to picture, or number to dots. 4×4 grid, cards flip on tap, matched pairs stay face-up. Tracks best score (fewest flips). Works as a standalone game and reinforces content from other modules.
 

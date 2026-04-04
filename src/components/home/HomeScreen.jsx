@@ -94,6 +94,18 @@ export function HomeScreen({ onNavigate }) {
             onNavigate('calendar')
           }}
         />
+        <SubjectCard
+          emoji="🎮"
+          title="Games"
+          subtitle="Fun Learning Games"
+          bgColor="linear-gradient(135deg, #dcfce7, #d1fae5)"
+          borderColor="#10b981"
+          shadowColor="#059669"
+          onClick={() => {
+            speak('Games! Let us play!')
+            onNavigate('games')
+          }}
+        />
       </div>
 
       {/* Stars prompt */}

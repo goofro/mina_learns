@@ -1,6 +1,16 @@
-export const VERSION = '1.7.0'
+export const VERSION = '1.8.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.8.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-035: Added Games section to home screen',
+      'Memory Match game with 4 decks: Animals (emoji pairs), ABC Match (uppercase ↔ lowercase), Count & Match (numeral ↔ dots), Word & Picture (word ↔ emoji)',
+      'Tap to flip cards, matched pairs stay face-up, move counter, star per match + 3 stars on completion',
+      'TTS speaks card content on flip, sound effects on match/miss',
+    ],
+  },
   {
     version: '1.7.0',
     date: '2026-04-03',

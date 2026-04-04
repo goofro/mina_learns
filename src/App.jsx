@@ -18,6 +18,7 @@ import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
+import { MemoryGame } from './components/games/MemoryGame'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -105,6 +106,7 @@ export default function App() {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
             else if (subject === 'calendar') navigate('calendar', 'calendar')
+            else if (subject === 'games') navigate('games', 'games')
           }}
         />
       )}
@@ -196,6 +198,14 @@ export default function App() {
         <StoryReader
           storyId={activeStoryId}
           onBack={() => navigate('storylibrary')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Games screens */}
+      {screen === 'games' && (
+        <MemoryGame
+          onBack={() => goBack('home')}
           addStars={addStars}
         />
       )}
