@@ -20,6 +20,8 @@ import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
 import { LetterConfusion } from './components/reading/LetterConfusion'
+import { EndingSounds } from './components/reading/EndingSounds'
+import { SyllableClapping } from './components/reading/SyllableClapping'
 import { MemoryGame } from './components/games/MemoryGame'
 
 import { ArtStudioHome } from './components/art/ArtStudioHome'
@@ -35,6 +37,8 @@ import { ShapeMatch } from './components/math/ShapeMatch'
 import { AdditionGame } from './components/math/AdditionGame'
 import { SubtractionGame } from './components/math/SubtractionGame'
 import { NumberOrder } from './components/math/NumberOrder'
+import { Subitizing } from './components/math/Subitizing'
+import { NumberBonds } from './components/math/NumberBonds'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
@@ -223,6 +227,18 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'endingsounds' && (
+        <EndingSounds
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'syllableclapping' && (
+        <SyllableClapping
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Art Studio screens */}
       {screen === 'artstudio' && (
@@ -296,6 +312,19 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+        />
+      )}
+      {screen === 'subitizing' && (
+        <Subitizing
+          onBack={() => navigate('math')}
+          addStars={addStars}
+          recordMath={recordMath}
+        />
+      )}
+      {screen === 'numberbonds' && (
+        <NumberBonds
+          onBack={() => navigate('math')}
+          addStars={addStars}
         />
       )}
       {screen === 'numberorder' && (

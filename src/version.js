@@ -1,6 +1,16 @@
-export const VERSION = '1.12.0'
+export const VERSION = '1.13.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.13.0',
+    date: '2026-04-04',
+    changes: [
+      'FEAT-016: Added Ending Sounds to Reading World — hear a CVC word, tap the last letter from 4 choices, 10 rounds',
+      'FEAT-017: Added Syllable Clapping to Reading World — tap a drum once per syllable, auto-checks after 2s pause, 20 words (1–3 syllables)',
+      'FEAT-022: Added Quick Count (Subitizing) to Math World — dice-style dots flash for 1.5s, pick the count from 3 choices, 10 rounds',
+      'FEAT-023: Added Number Bonds to Math World — part-whole diagram, find the missing part; Bonds to 5 or Bonds to 10',
+    ],
+  },
   {
     version: '1.12.0',
     date: '2026-04-04',

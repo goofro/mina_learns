@@ -91,6 +91,22 @@ const ACTIVITIES = [
     color: '#0369a1',
     shadow: '#1e3a5f',
   },
+  {
+    id: 'endingsounds',
+    emoji: '🔚',
+    title: 'Ending Sounds',
+    subtitle: 'What letter do you hear last?',
+    color: '#16a34a',
+    shadow: '#15803d',
+  },
+  {
+    id: 'syllableclapping',
+    emoji: '🥁',
+    title: 'Syllable Clapping',
+    subtitle: 'Clap out the parts of a word',
+    color: '#db2777',
+    shadow: '#9d174d',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-04 (v1.12.0)  
+**Last updated:** 2026-04-04 (v1.13.0)  
 **Current version:** v1.6.0
 
 ---
@@ -207,13 +207,15 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Dedicated mini-lesson and game for letters that look alike: b vs d, p vs q. Show each pair side-by-side with a memory trick (e.g. "b has a belly in front, d has a belly behind"), then a tap-to-identify quiz. Critical for early readers who commonly reverse these letters.  
 **Fixed:** 2026-04-04 ✅ — `src/components/reading/LetterConfusion.jsx`: two lesson slides (b/d then p/q) each with memory trick, example words, and giant tap-to-hear letter cards. Followed by a 20-round quiz showing one letter at a time with 4-choice tap grid.
 
-### [ ] FEAT-016: Ending sounds
+### [x] FEAT-016: Ending sounds
 **Priority:** Medium  
-**Description:** Complement the existing beginning-sounds work with an ending-sounds activity. Say a word aloud (TTS), Mina picks the letter she hears at the END (e.g. "cat" → tap T). Use the same CVC word set already in the app.
+**Description:** Complement the existing beginning-sounds work with an ending-sounds activity. Say a word aloud (TTS), Mina picks the letter she hears at the END (e.g. "cat" → tap T). Use the same CVC word set already in the app.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/EndingSounds.jsx`: TTS speaks the word, last letter is highlighted in the display, 4-choice grid of uppercase consonants, 10 rounds across all CVC groups.
 
-### [ ] FEAT-017: Syllable clapping
+### [x] FEAT-017: Syllable clapping
 **Priority:** Medium  
-**Description:** Show a word with a picture, speak it aloud, then Mina taps a drum/clap button once per syllable. App counts taps and confirms if correct. Words range from 1-syllable (cat) to 3-syllable (ba-na-na). Teaches phonological awareness and word structure.
+**Description:** Show a word with a picture, speak it aloud, then Mina taps a drum/clap button once per syllable. App counts taps and confirms if correct. Words range from 1-syllable (cat) to 3-syllable (ba-na-na). Teaches phonological awareness and word structure.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/SyllableClapping.jsx`: 20 words (7×1-syl, 8×2-syl, 5×3-syl), big bouncing drum button, tap dots counter, auto-checks after 2s or via "That's my answer!" button, reveals syllable breakdown on result.
 
 ### [ ] FEAT-018: Word-picture matching
 **Priority:** Medium  
@@ -237,13 +239,15 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** High  
 **Description:** A special personalized activity where Mina traces her own name. Parent enters the child's name in settings; app generates a dotted trace template letter-by-letter. Highly motivating for young learners — their name is the most meaningful word to them.
 
-### [ ] FEAT-022: Subitizing
+### [x] FEAT-022: Subitizing
 **Priority:** Medium  
-**Description:** Flash a small group of dots (1–5) briefly on screen, then ask "how many?" without counting. Builds number sense and instant quantity recognition. Use dice-style dot patterns for familiarity. Progress to random arrangements as skill grows.
+**Description:** Flash a small group of dots (1–5) briefly on screen, then ask "how many?" without counting. Builds number sense and instant quantity recognition. Use dice-style dot patterns for familiarity. Progress to random arrangements as skill grows.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/Subitizing.jsx`: white dots on navy background flash for 1.5s, standard dice layouts for rounds 1–6, random scatter after round 7, count gradually increases from 1 to 5 across 10 rounds.
 
-### [ ] FEAT-023: Number bonds
+### [x] FEAT-023: Number bonds
 **Priority:** Medium  
-**Description:** Visual number bond activity: show a total (e.g. 5) split into two parts with a part-whole diagram. Mina fills in the missing part by tapping a number. Start with bonds to 5, progress to bonds to 10. Lays groundwork for mental addition/subtraction.
+**Description:** Visual number bond activity: show a total (e.g. 5) split into two parts with a part-whole diagram. Mina fills in the missing part by tapping a number. Start with bonds to 5, progress to bonds to 10. Lays groundwork for mental addition/subtraction.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/NumberBonds.jsx`: part-whole circle diagram, level selector (Bonds to 5 / Bonds to 10), randomly hides either part A or part B, 3 number choices, 8 rounds per session.
 
 ### [ ] FEAT-024: Pattern recognition
 **Priority:** Medium  
