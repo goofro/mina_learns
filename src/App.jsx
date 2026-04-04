@@ -4,6 +4,7 @@ import { MILESTONES } from './data/milestones'
 import { VERSION } from './version'
 
 import { StarBar } from './components/shared/StarBar'
+import { BackButton } from './components/shared/BackButton'
 import { HomeScreen } from './components/home/HomeScreen'
 
 import { ReadingHome } from './components/reading/ReadingHome'
@@ -14,6 +15,7 @@ import { SentenceReader } from './components/reading/SentenceReader'
 import { WordFamilies } from './components/reading/WordFamilies'
 import { RhymingMatch } from './components/reading/RhymingMatch'
 import { PhonicsRules } from './components/reading/PhonicsRules'
+import { LetterTracer } from './components/writing/LetterTracer'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -23,13 +25,19 @@ import { ShapeMatch } from './components/math/ShapeMatch'
 import { AdditionGame } from './components/math/AdditionGame'
 import { NumberOrder } from './components/math/NumberOrder'
 
+import { CalendarHome } from './components/calendar/CalendarHome'
+import { DaysOfWeek } from './components/calendar/DaysOfWeek'
+import { MonthsOfYear } from './components/calendar/MonthsOfYear'
+
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 
 // Navigation stack: array of screen names
-// Screens: home | reading | math | parent-login | parent
+// Screens: home | reading | math | calendar | parent-login | parent
 //          lettersounds | sightwords | phonics | sentences | wordfamilies | rhymingmatch | phonicsrules
+//          lettertracing-letters | lettertracing-numbers
 //          counting | numberrecognition | moreorless | shapes | addition | numberorder
+//          daysofweek | monthsofyear
 
 export default function App() {
   const {
@@ -82,6 +90,7 @@ export default function App() {
       {showStarBar && (
         <StarBar
           stars={progress.stars}
+          streak={progress.streak || 0}
           onParentClick={() => setScreen('parent-login')}
         />
       )}
@@ -91,6 +100,7 @@ export default function App() {
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
+            else if (subject === 'calendar') navigate('calendar', 'calendar')
           }}
         />
       )}
@@ -143,6 +153,35 @@ export default function App() {
           onBack={() => navigate('reading')}
         />
       )}
+      {screen === 'lettertracing' && (
+        <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #fff8f0, #fef3ff)', padding: '80px 20px 40px' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto' }}>
+            <BackButton onClick={() => navigate('reading')} />
+            <h1 style={{ fontSize: '26px', fontWeight: 900, color: '#1f2937', marginTop: '16px', marginBottom: '24px' }}>✏️ Letter Tracing</h1>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {[
+                { mode: 'letters', emoji: '🔤', title: 'Trace Letters A–Z', sub: 'Practice all 26 letters', screen: 'lettertracing-letters' },
+                { mode: 'numbers', emoji: '🔢', title: 'Trace Numbers 0–9', sub: 'Practice all 10 digits', screen: 'lettertracing-numbers' },
+              ].map(opt => (
+                <button key={opt.mode} onClick={() => navigate(opt.screen, 'reading')}
+                  style={{ background: 'white', border: '4px solid #7c3aed', borderRadius: '24px', padding: '28px 24px', cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 6px 0 #5b21b6', display: 'flex', alignItems: 'center', gap: '20px', textAlign: 'left' }}>
+                  <span style={{ fontSize: '48px' }}>{opt.emoji}</span>
+                  <div>
+                    <div style={{ fontSize: '20px', fontWeight: 900, color: '#7c3aed' }}>{opt.title}</div>
+                    <div style={{ fontSize: '14px', color: '#6b7280', marginTop: '4px', fontWeight: 600 }}>{opt.sub}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      {screen === 'lettertracing-letters' && (
+        <LetterTracer mode="letters" onBack={() => navigate('lettertracing')} addStars={addStars} />
+      )}
+      {screen === 'lettertracing-numbers' && (
+        <LetterTracer mode="numbers" onBack={() => navigate('lettertracing')} addStars={addStars} />
+      )}
 
       {/* Math screens */}
       {screen === 'math' && (
@@ -189,6 +228,26 @@ export default function App() {
       {screen === 'numberorder' && (
         <NumberOrder
           onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Calendar screens */}
+      {screen === 'calendar' && (
+        <CalendarHome
+          onNavigate={(id) => navigate(id, 'calendar')}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'daysofweek' && (
+        <DaysOfWeek
+          onBack={() => navigate('calendar')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'monthsofyear' && (
+        <MonthsOfYear
+          onBack={() => navigate('calendar')}
           addStars={addStars}
         />
       )}

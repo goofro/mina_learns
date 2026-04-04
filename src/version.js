@@ -1,6 +1,35 @@
-export const VERSION = '1.3.1'
+export const VERSION = '1.6.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.6.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-001: Added Letter Tracing to Reading World — HTML5 Canvas tracing for A–Z and 0–9',
+      '7 crayon colors to pick from, clear button, ◀▶ letter navigation',
+      '"I traced it!" button unlocks after 3+ strokes and awards 3 stars',
+      'Pointer events (mouse + touch) with touchAction:none for smooth tablet tracing',
+    ],
+  },
+  {
+    version: '1.5.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-011: Added Bossy R Vowels rule to PhonicsRules (Stage 3) — AR/OR/ER/IR/UR with 4 examples each',
+      'FEAT-011: Added 🎯 Practice Quiz to every phonics rule — 3-4 questions per rule, tap-to-answer with correct/wrong sounds',
+      'FEAT-004: Daily streak tracking — plays consecutive days, shown as 🔥 N days in StarBar',
+    ],
+  },
+  {
+    version: '1.4.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-009: Added Calendar module — Days of the Week & Months of the Year (explore + "What comes next?" quiz for both)',
+      'FEAT-006: Added Web Audio API sound effects — correct chime, wrong buzz, star sparkle, celebration arpeggio',
+      'FEAT-007: Touch/tablet optimization — removed 300ms tap delay, min 48px touch targets, iOS PWA meta tags, -webkit-tap-highlight-color removed',
+      'FEAT-010: Confirmed TTS rate already set to 0.85 (letters 0.70, words 0.75) — marked done',
+    ],
+  },
   {
     version: '1.3.1',
     date: '2026-04-03',

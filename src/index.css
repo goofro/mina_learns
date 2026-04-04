@@ -19,11 +19,33 @@ button {
   cursor: pointer;
   border: none;
   font-family: inherit;
+  /* Remove tap flash on iOS/Android */
+  -webkit-tap-highlight-color: transparent;
+  /* Eliminate 300ms double-tap zoom delay on touch devices */
+  touch-action: manipulation;
 }
 
 button:focus-visible {
   outline: 4px solid #fbbf24;
   outline-offset: 2px;
+}
+
+/* Ensure every interactive element is at least 48×48px for comfortable tapping */
+button:not([data-no-min-size]) {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Smooth scrolling for activity lists */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text selection during fast tapping in games */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Scrollbar */

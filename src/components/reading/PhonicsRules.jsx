@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
+import { playCorrect, playWrong } from '../../utils/sounds'
 
 // Reading rules explained simply for Mina (child mode) + detailed tips for parents
 const RULES = [
@@ -21,6 +22,12 @@ const RULES = [
     rule: 'When a vowel is between two consonants, it usually says its SHORT sound.',
     parentTip: 'Mina knows all letter sounds — this consolidates that knowledge into a pattern. Say each word slowly: "c-A-t". Emphasize the short vowel in the middle. Ask her to find more -at, -ig, -og words.',
     chant: 'A says AH, E says EH, I says IH, O says OH, U says UH!',
+    quizQuestions: [
+      { prompt: 'Which word has the short A sound?', answer: 'cat', choices: [{ word: 'cat', emoji: '🐱' }, { word: 'bed', emoji: '🛏️' }, { word: 'bug', emoji: '🐛' }] },
+      { prompt: 'Which word has the short E sound?', answer: 'bed', choices: [{ word: 'bed', emoji: '🛏️' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Which word has the short I sound?', answer: 'pig', choices: [{ word: 'pig', emoji: '🐷' }, { word: 'sun', emoji: '☀️' }, { word: 'cat', emoji: '🐱' }] },
+      { prompt: 'Which word has the short O sound?', answer: 'dog', choices: [{ word: 'dog', emoji: '🐶' }, { word: 'bed', emoji: '🛏️' }, { word: 'pig', emoji: '🐷' }] },
+    ],
   },
   {
     id: 'cvc-blending',
@@ -37,6 +44,11 @@ const RULES = [
     rule: 'Say each sound slowly, then speed up: "c... a... t → cat!"',
     parentTip: 'Hold your finger under each letter as she sounds it out. Start very slowly, then blend faster and faster until it sounds like a real word. This is the core reading skill — practice for 5 minutes daily.',
     chant: 'Slow it down, then speed it up — that makes a WORD!',
+    quizQuestions: [
+      { prompt: 'Blend C-A-T. What word is it?', answer: 'cat', choices: [{ word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Blend D-O-G. What word is it?', answer: 'dog', choices: [{ word: 'dog', emoji: '🐶' }, { word: 'cat', emoji: '🐱' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Blend S-U-N. What word is it?', answer: 'sun', choices: [{ word: 'sun', emoji: '☀️' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+    ],
   },
   {
     id: 'word-families',
@@ -53,6 +65,11 @@ const RULES = [
     rule: 'Words in the same family share an ending (called a RIME).',
     parentTip: 'Once Mina knows one word in a family (like "cat"), teach all the -at words. Point out the shared ending. Ask "What if I change the C to an H?" — hat! This dramatically speeds up reading.',
     chant: 'Change the start, keep the end — you made a rhyming friend!',
+    quizQuestions: [
+      { prompt: 'Which word is in the -AT family?', answer: 'hat', choices: [{ word: 'hat', emoji: '🎩' }, { word: 'dog', emoji: '🐶' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word rhymes with LOG?', answer: 'frog', choices: [{ word: 'frog', emoji: '🐸' }, { word: 'cat', emoji: '🐱' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word is in the -UN family?', answer: 'sun', choices: [{ word: 'sun', emoji: '☀️' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+    ],
   },
   {
     id: 'sight-words-rule',
@@ -71,6 +88,11 @@ const RULES = [
     rule: 'Sight words appear so often in books that we memorize them by sight instead of sounding them out.',
     parentTip: 'Use flashcards and the Sight Words game. Seeing a word 20–30 times typically creates automaticity. Focus on 3-5 new words per week. The Dolch Pre-Primer list (our Level 1-2) is the highest priority.',
     chant: 'I see it! I know it! I read it fast!',
+    quizQuestions: [
+      { prompt: 'Which is a sight word?', answer: 'the', choices: [{ word: 'the', emoji: '📖' }, { word: 'cat', emoji: '🐱' }, { word: 'big', emoji: '🐘' }] },
+      { prompt: 'Which is a sight word?', answer: 'said', choices: [{ word: 'said', emoji: '💬' }, { word: 'sun', emoji: '☀️' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Which is a sight word?', answer: 'was', choices: [{ word: 'was', emoji: '⏰' }, { word: 'cat', emoji: '🐱' }, { word: 'pig', emoji: '🐷' }] },
+    ],
   },
   {
     id: 'two-vowels',
@@ -88,6 +110,11 @@ const RULES = [
     rule: 'When two vowels are side by side, the first vowel says its NAME (long sound) and the second is silent.',
     parentTip: 'Teach with the rhyme: "When two vowels go walking, the first one does the talking!" This is Stage 2 — introduce this after Mina has CVC words solid. Start with -ai, -ea pairs.',
     chant: 'When two vowels go walking, the FIRST one does the TALKING!',
+    quizQuestions: [
+      { prompt: 'Which word has two vowels together?', answer: 'rain', choices: [{ word: 'rain', emoji: '🌧️' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Which word makes the "ee" sound?', answer: 'bean', choices: [{ word: 'bean', emoji: '🫘' }, { word: 'cat', emoji: '🐱' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word has two vowels walking together?', answer: 'coat', choices: [{ word: 'coat', emoji: '🧥' }, { word: 'sun', emoji: '☀️' }, { word: 'pig', emoji: '🐷' }] },
+    ],
   },
   {
     id: 'silent-e',
@@ -105,6 +132,11 @@ const RULES = [
     rule: 'When a word ends in E, it is usually silent — but it makes the vowel before it say its NAME (long sound).',
     parentTip: 'Show the transformation: write "cap" then add "e" to make "cape". The vowel changed from short to long! Say both words and let Mina hear the difference. This unlocks hundreds of new words.',
     chant: 'E at the end? It\'s magic! The vowel says its NAME!',
+    quizQuestions: [
+      { prompt: 'Which word has a magic silent E?', answer: 'cape', choices: [{ word: 'cape', emoji: '🦸' }, { word: 'cat', emoji: '🐱' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word has a magic silent E?', answer: 'kite', choices: [{ word: 'kite', emoji: '🪁' }, { word: 'kit', emoji: '📦' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Cap + magic E = ?', answer: 'cape', choices: [{ word: 'cape', emoji: '🦸' }, { word: 'cap', emoji: '🧢' }, { word: 'cup', emoji: '☕' }] },
+    ],
   },
   {
     id: 'digraphs',
@@ -123,6 +155,11 @@ const RULES = [
     rule: 'Digraphs are two letters that make ONE new sound together — different from either letter alone.',
     parentTip: 'Show that "s" + "h" no longer say their individual sounds — they say "SHH" together! Cover one letter at a time, then show them together. Great for when she\'s confidently reading CVC words.',
     chant: 'Two letters, one sound — they\'re a team!',
+    quizQuestions: [
+      { prompt: 'Which word starts with the SH sound?', answer: 'ship', choices: [{ word: 'ship', emoji: '🚢' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Which word starts with the CH sound?', answer: 'chip', choices: [{ word: 'chip', emoji: '🍟' }, { word: 'ship', emoji: '🚢' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word starts with the TH sound?', answer: 'that', choices: [{ word: 'that', emoji: '👉' }, { word: 'chip', emoji: '🍟' }, { word: 'cat', emoji: '🐱' }] },
+    ],
   },
   {
     id: 'blends',
@@ -142,6 +179,35 @@ const RULES = [
     rule: 'Blends are two or three consonants where each letter keeps its own sound — they just blend smoothly together.',
     parentTip: 'Say each letter sound separately first: "b-l-ue", then merge: "bl-ue", then "blue". Blends are Stage 3 — introduce after digraphs. Beginning blends (bl, cr, st) come before ending blends (-nd, -st, -mp).',
     chant: 'Each sound stays — they just slide together!',
+    quizQuestions: [
+      { prompt: 'Which word starts with the BL blend?', answer: 'blue', choices: [{ word: 'blue', emoji: '💙' }, { word: 'cat', emoji: '🐱' }, { word: 'ship', emoji: '🚢' }] },
+      { prompt: 'Which word starts with the CR blend?', answer: 'crab', choices: [{ word: 'crab', emoji: '🦀' }, { word: 'blue', emoji: '💙' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word starts with the ST blend?', answer: 'stop', choices: [{ word: 'stop', emoji: '🛑' }, { word: 'crab', emoji: '🦀' }, { word: 'cat', emoji: '🐱' }] },
+    ],
+  },
+  {
+    id: 'r-controlled',
+    stage: 3,
+    title: 'Bossy R Vowels',
+    emoji: '🅡',
+    color: '#dc2626',
+    childExplanation: 'When R is next to a vowel, it changes the sound — R is bossy!',
+    examples: [
+      { pair: 'AR', sound: 'ar', word: 'car',  emoji: '🚗' },
+      { pair: 'OR', sound: 'or', word: 'horn', emoji: '📯' },
+      { pair: 'ER', sound: 'er', word: 'fern', emoji: '🌿' },
+      { pair: 'IR', sound: 'er', word: 'bird', emoji: '🐦' },
+      { pair: 'UR', sound: 'er', word: 'burn', emoji: '🔥' },
+    ],
+    rule: 'When R follows a vowel (ar, or, er, ir, ur), the vowel makes a special "bossy R" sound — neither short nor long.',
+    parentTip: 'AR sounds like growling (grrr!), OR like "more", and ER/IR/UR all sound the same ("her"). These appear in very common words — star, car, for, more, her, bird, purple, burn. Point them out in everyday reading.',
+    chant: 'The R is bossy — it changes the vowel sound!',
+    quizQuestions: [
+      { prompt: 'Which word has the AR sound?', answer: 'car',  choices: [{ word: 'car',  emoji: '🚗' }, { word: 'cat', emoji: '🐱' }, { word: 'dog', emoji: '🐶' }] },
+      { prompt: 'Which word has the OR sound?', answer: 'horn', choices: [{ word: 'horn', emoji: '📯' }, { word: 'car',  emoji: '🚗' }, { word: 'sun', emoji: '☀️' }] },
+      { prompt: 'Which word has the ER / IR sound?', answer: 'bird', choices: [{ word: 'bird', emoji: '🐦' }, { word: 'horn', emoji: '📯' }, { word: 'cat', emoji: '🐱' }] },
+      { prompt: 'Which word has a bossy R?', answer: 'star', choices: [{ word: 'star', emoji: '⭐' }, { word: 'cat',  emoji: '🐱' }, { word: 'sun', emoji: '☀️' }] },
+    ],
   },
 ]
 
@@ -277,7 +343,104 @@ export function PhonicsRules({ onBack }) {
   )
 }
 
+function QuizPanel({ questions, color }) {
+  const [idx, setIdx] = useState(0)
+  const [feedback, setFeedback] = useState(null) // null | 'correct' | 'wrong'
+  const [score, setScore] = useState(0)
+  const [done, setDone] = useState(false)
+
+  function handleChoice(word) {
+    if (feedback) return
+    const correct = word === questions[idx].answer
+    setFeedback(correct ? 'correct' : 'wrong')
+    if (correct) {
+      playCorrect()
+      setScore(s => s + 1)
+    } else {
+      playWrong()
+    }
+    setTimeout(() => {
+      if (idx + 1 >= questions.length) {
+        setDone(true)
+      } else {
+        setIdx(i => i + 1)
+        setFeedback(null)
+      }
+    }, 900)
+  }
+
+  function reset() {
+    setIdx(0); setFeedback(null); setScore(0); setDone(false)
+  }
+
+  if (done) {
+    return (
+      <div style={{ background: `${color}11`, border: `3px solid ${color}55`, borderRadius: '18px', padding: '24px', textAlign: 'center', marginTop: '20px' }}>
+        <div style={{ fontSize: '40px', marginBottom: '8px' }}>{score === questions.length ? '🏆' : '⭐'}</div>
+        <div style={{ fontSize: '22px', fontWeight: 900, color }}>
+          {score}/{questions.length} correct!
+        </div>
+        <div style={{ fontSize: '15px', color: '#6b7280', margin: '6px 0 16px' }}>
+          {score === questions.length ? 'Perfect! Well done!' : 'Keep practising — you\'re doing great!'}
+        </div>
+        <button
+          onClick={reset}
+          style={{ background: color, color: 'white', border: 'none', borderRadius: '12px', padding: '10px 24px', fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
+        >
+          Try Again
+        </button>
+      </div>
+    )
+  }
+
+  const q = questions[idx]
+  return (
+    <div style={{ background: `${color}11`, border: `3px solid ${color}44`, borderRadius: '18px', padding: '20px', marginTop: '20px' }}>
+      <div style={{ fontSize: '13px', fontWeight: 800, color, textTransform: 'uppercase', marginBottom: '10px' }}>
+        🎯 Mini Quiz — {idx + 1}/{questions.length}
+      </div>
+      <p style={{ fontSize: '18px', fontWeight: 700, color: '#374151', marginBottom: '14px' }}>{q.prompt}</p>
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {q.choices.map(({ word, emoji }) => {
+          const isAnswer = word === q.answer
+          const bg = feedback
+            ? isAnswer ? '#dcfce7' : '#fee2e2'
+            : 'white'
+          const border = feedback
+            ? isAnswer ? '#22c55e' : '#fca5a5'
+            : `${color}88`
+          return (
+            <button
+              key={word}
+              onClick={() => { handleChoice(word); speak(word, { rate: 0.75 }) }}
+              style={{
+                background: bg,
+                border: `3px solid ${border}`,
+                borderRadius: '14px',
+                padding: '12px 18px',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '4px',
+                minWidth: '80px',
+                boxShadow: feedback ? 'none' : `0 3px 0 ${color}44`,
+              }}
+            >
+              <span style={{ fontSize: '30px' }}>{emoji}</span>
+              <span style={{ fontSize: '16px', fontWeight: 900, color: '#1f2937' }}>{word}</span>
+              {feedback && isAnswer && <span style={{ fontSize: '16px' }}>✅</span>}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 function ChildView({ rule }) {
+  const [showQuiz, setShowQuiz] = useState(false)
   return (
     <div>
       {/* Child-friendly explanation */}
@@ -378,7 +541,7 @@ function ChildView({ rule }) {
           </div>
         )}
 
-        {(rule.id === 'digraphs' || rule.id === 'blends') && (
+        {(rule.id === 'digraphs' || rule.id === 'blends' || rule.id === 'r-controlled') && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             {rule.examples.map(ex => (
               <div key={ex.pair || ex.blend}
@@ -400,6 +563,32 @@ function ChildView({ rule }) {
         <div style={{ fontSize: '14px', fontWeight: 700, color: rule.color, marginBottom: '6px' }}>🎵 Say it together! (tap)</div>
         <div style={{ fontSize: '20px', fontWeight: 900, color: '#374151', fontStyle: 'italic' }}>"{rule.chant}"</div>
       </div>
+
+      {/* Mini quiz */}
+      {rule.quizQuestions && (
+        <>
+          <button
+            onClick={() => { setShowQuiz(q => !q); if (!showQuiz) speak('Quiz time! Can you answer?', { rate: 0.8 }) }}
+            style={{
+              width: '100%',
+              marginTop: '16px',
+              background: showQuiz ? '#f3f4f6' : rule.color,
+              color: showQuiz ? '#6b7280' : 'white',
+              border: 'none',
+              borderRadius: '14px',
+              padding: '14px',
+              fontSize: '17px',
+              fontWeight: 900,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              boxShadow: showQuiz ? 'none' : `0 4px 0 ${rule.color}bb`,
+            }}
+          >
+            {showQuiz ? '✕ Hide Quiz' : '🎯 Practice Quiz'}
+          </button>
+          {showQuiz && <QuizPanel questions={rule.quizQuestions} color={rule.color} />}
+        </>
+      )}
     </div>
   )
 }

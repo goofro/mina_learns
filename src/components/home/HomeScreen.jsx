@@ -52,9 +52,9 @@ export function HomeScreen({ onNavigate }) {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '24px',
-          maxWidth: '680px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '20px',
+          maxWidth: '800px',
           width: '100%',
         }}
       >
@@ -80,6 +80,18 @@ export function HomeScreen({ onNavigate }) {
           onClick={() => {
             speak('Math! Let us count and learn!')
             onNavigate('math')
+          }}
+        />
+        <SubjectCard
+          emoji="🗓️"
+          title="Calendar"
+          subtitle="Days & Months of the Year"
+          bgColor="linear-gradient(135deg, #e0e7ff, #ede9fe)"
+          borderColor="#6366f1"
+          shadowColor="#4338ca"
+          onClick={() => {
+            speak('Calendar time! Let us learn the days and months!')
+            onNavigate('calendar')
           }}
         />
       </div>
