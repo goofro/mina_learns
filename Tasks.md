@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-03  
+**Last updated:** 2026-04-04  
 **Current version:** v1.6.0
 
 ---
@@ -100,6 +100,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Medium  
 **Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
 **Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
+
+### [ ] FEAT-041: PWA deployment for iPad (and other tablets)
+**Priority:** Medium  
+**Description:** Deploy the app as a hosted Progressive Web App so it can be used on an iPad without needing a PC running. Steps: (1) run `npm run build` to produce a static `dist/` folder; (2) deploy to Netlify, Vercel, or GitHub Pages; (3) open the URL in iPad Safari and tap "Add to Home Screen" for a full-screen, icon-on-homescreen experience. The app is already touch-optimised (FEAT-007) and has iOS PWA meta tags in `index.html`. No code changes required — this is purely a deployment/hosting task.
 
 ### [ ] FEAT-014: Vowels & Consonants intro lesson
 **Priority:** High  
