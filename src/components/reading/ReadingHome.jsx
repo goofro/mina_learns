@@ -66,6 +66,14 @@ const ACTIVITIES = [
     color: '#7c3aed',
     shadow: '#5b21b6',
   },
+  {
+    id: 'storylibrary',
+    emoji: '📖',
+    title: 'Story Library',
+    subtitle: 'Read leveled short stories',
+    color: '#0ea5e9',
+    shadow: '#0369a1',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

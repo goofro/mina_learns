@@ -1,6 +1,18 @@
-export const VERSION = '1.6.0'
+export const VERSION = '1.7.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.7.0',
+    date: '2026-04-03',
+    changes: [
+      'FEAT-039: Added Story Library to Reading World — 12 leveled short stories across 3 levels',
+      'Level 1 (First Steps): CVC words + basic sight words — 4 stories',
+      'Level 2 (Getting Stronger): word families + simple blends — 4 stories',
+      'Level 3 (Big Reader): digraphs + Magic E words — 4 stories',
+      'Each story has tappable word-by-word TTS, emoji illustrations, and 2–3 comprehension questions',
+      'Story Library screen with level filter tabs and story cards',
+    ],
+  },
   {
     version: '1.6.0',
     date: '2026-04-03',

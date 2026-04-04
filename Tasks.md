@@ -101,6 +101,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
 **Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
 
+### [ ] FEAT-014: Vowels & Consonants intro lesson
+**Priority:** High  
+**Description:** Add an introductory lesson in Reading World (before or at the top of Phonics Rules) that teaches the concept of vowels (A, E, I, O, U) vs. consonants (all other letters). Should include: a child-facing explanation with TTS, visual grouping of the alphabet into vowels/consonants, examples of each, and a simple tap-to-identify quiz ("Is this a vowel or consonant?").
+
 ### [ ] FEAT-002: Audio recording – Mina reads aloud
 **Priority:** Medium  
 **Description:** Use Web Speech API (recognition) to let Mina say a word and check if it matches. Would be powerful for sight word pronunciation practice.
@@ -186,6 +190,106 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Add a new learning section teaching days of the week and months of the year.  
 **Fixed:** 2026-04-03 ✅ — New Calendar section on home screen. CalendarHome → DaysOfWeek (explore + quiz) and MonthsOfYear (explore with season filter + quiz). Both include TTS singing mode and "What comes next?" quiz game.
+
+### [x] FEAT-039: Story Library — leveled short stories with comprehension
+**Priority:** High  
+**Description:** A curated library of 10–15 short stories (5–8 sentences each) written with controlled vocabulary matching what Mina has learned in the app. Stories are grouped into 3 levels: Level 1 (sight words + CVC only), Level 2 (adds word families and blends), Level 3 (simple sentences with digraphs and Magic E words). Each story plays in SentenceReader with word-by-word TTS highlighting, an emoji scene illustration, and 2–3 comprehension tap questions after (who, what happened, why). A "Story Library" screen shows all stories as cards with a lock/unlock indicator based on level.
+
+### [ ] FEAT-015: Visual discrimination — b/d/p/q confusion
+**Priority:** High  
+**Description:** Dedicated mini-lesson and game for letters that look alike: b vs d, p vs q. Show each pair side-by-side with a memory trick (e.g. "b has a belly in front, d has a belly behind"), then a tap-to-identify quiz. Critical for early readers who commonly reverse these letters.
+
+### [ ] FEAT-016: Ending sounds
+**Priority:** Medium  
+**Description:** Complement the existing beginning-sounds work with an ending-sounds activity. Say a word aloud (TTS), Mina picks the letter she hears at the END (e.g. "cat" → tap T). Use the same CVC word set already in the app.
+
+### [ ] FEAT-017: Syllable clapping
+**Priority:** Medium  
+**Description:** Show a word with a picture, speak it aloud, then Mina taps a drum/clap button once per syllable. App counts taps and confirms if correct. Words range from 1-syllable (cat) to 3-syllable (ba-na-na). Teaches phonological awareness and word structure.
+
+### [ ] FEAT-018: Word-picture matching
+**Priority:** Medium  
+**Description:** Show a written word and 3–4 pictures; Mina taps the picture that matches the word. Or reverse: show a picture and 3 words, tap the right word. Bridges reading decoding to real-world meaning.
+
+### [ ] FEAT-019: Story comprehension
+**Priority:** Medium  
+**Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.
+
+### [ ] FEAT-020: Pre-writing strokes
+**Priority:** Medium  
+**Description:** Before tracing letters, teach the building-block strokes: straight lines, zig-zags, curves, circles, spirals. Canvas-based like LetterTracer. Each stroke type has a guided practice screen. Prepares fine motor control for letter writing.
+
+### [ ] FEAT-021: Write your name
+**Priority:** High  
+**Description:** A special personalized activity where Mina traces her own name. Parent enters the child's name in settings; app generates a dotted trace template letter-by-letter. Highly motivating for young learners — their name is the most meaningful word to them.
+
+### [ ] FEAT-022: Subitizing
+**Priority:** Medium  
+**Description:** Flash a small group of dots (1–5) briefly on screen, then ask "how many?" without counting. Builds number sense and instant quantity recognition. Use dice-style dot patterns for familiarity. Progress to random arrangements as skill grows.
+
+### [ ] FEAT-023: Number bonds
+**Priority:** Medium  
+**Description:** Visual number bond activity: show a total (e.g. 5) split into two parts with a part-whole diagram. Mina fills in the missing part by tapping a number. Start with bonds to 5, progress to bonds to 10. Lays groundwork for mental addition/subtraction.
+
+### [ ] FEAT-024: Pattern recognition
+**Priority:** Medium  
+**Description:** Show a repeating pattern (AB, ABC, AABB) using shapes or colors with the last item missing. Mina taps the correct next item to complete the pattern. Teaches logical sequencing and early algebraic thinking.
+
+### [ ] FEAT-025: 3D shapes
+**Priority:** Low  
+**Description:** Extend ShapeMatch to include 3D shapes: cube, sphere, cylinder, cone, pyramid. Show the shape name, a visual, and real-world examples (ball = sphere, box = cube). Include a tap-to-name quiz.
+
+### [ ] FEAT-026: Spatial concepts
+**Priority:** Medium  
+**Description:** Teach positional/directional language: above, below, next to, inside, outside, in front of, behind. Show a character and an object, Mina taps the picture that matches the spoken description (e.g. "The ball is INSIDE the box"). Spoken via TTS throughout.
+
+### [ ] FEAT-027: Measurement & size comparison
+**Priority:** Medium  
+**Description:** Comparison activities: big vs small, tall vs short, heavy vs light, more vs fewer. Show two objects, Mina taps the one matching the prompt. Extend MoreOrLess concept to non-numeric attributes. Include a simple non-standard measuring game (how many blocks tall is the tree?).
+
+### [ ] FEAT-028: Picture vocabulary builder
+**Priority:** Medium  
+**Description:** Flashcard-style vocabulary module with categories: everyday objects, action words (run, jump, eat), and descriptive words (big, soft, loud, fast). Each card shows a picture, speaks the word, and uses it in a sentence. Include a tap-to-name quiz per category.
+
+### [ ] FEAT-029: Science World — Living things, animals & habitats
+**Priority:** Medium  
+**Description:** New top-level Science section. Initial activities: (1) Living vs Non-Living — sort items into two groups by tapping; (2) Animals & Habitats — match animal to its home (fish → ocean, bear → forest); (3) Plants & Growth — tap-through sequence showing seed → sprout → plant. TTS narrates throughout.
+
+### [ ] FEAT-030: Weather & seasons
+**Priority:** Low  
+**Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
+
+### [ ] FEAT-031: Music & rhythm games
+**Priority:** Low  
+**Description:** Rhythm tapping game: play a beat pattern (short/long taps via Web Audio API), Mina repeats it by tapping the screen. Starts with simple 2-beat patterns, progresses to 4-beat. Also consider an alphabet song or counting song with highlighted lyrics synced to TTS playback.
+
+### [ ] FEAT-032: Skill tree / level progression
+**Priority:** Medium  
+**Description:** Visual skill map on the home screen showing unlocked vs locked activities. Activities unlock as Mina earns stars or completes prerequisites (e.g. Letter Sounds must be played before Word Blending unlocks). Gives a sense of progression and motivates exploration.
+
+### [ ] FEAT-033: Collectible sticker rewards
+**Priority:** Low  
+**Description:** After completing activities or reaching milestones, Mina earns a sticker for a sticker book (accessible from the home screen). Stickers are themed by subject (star, book, apple, rocket). Viewing the sticker book is purely a reward — no learning required. Stored in localStorage.
+
+### [ ] FEAT-034: Adaptive difficulty
+**Priority:** Medium  
+**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.
+
+### [ ] FEAT-035: Memory / card matching game
+**Priority:** Medium  
+**Description:** Classic flip-card memory game with an educational twist: match letter to letter (A↔a), word to picture, or number to dots. 4×4 grid, cards flip on tap, matched pairs stay face-up. Tracks best score (fewest flips). Works as a standalone game and reinforces content from other modules.
+
+### [ ] FEAT-036: Early coding logic — sequencing game
+**Priority:** Low  
+**Description:** Simple drag-to-sequence game: arrange 3–4 picture steps in the correct order to complete a task (e.g. brush teeth: wet brush → add toothpaste → brush → rinse). Introduces if/then reasoning and multi-step thinking without any code concepts. Can live in the Cognitive section (FEAT-012).
+
+### [ ] FEAT-037: Basic money concepts
+**Priority:** Low  
+**Description:** Introduce coins: penny (1¢), nickel (5¢), dime (10¢), quarter (25¢). Show each coin with its name and value. Activities: name that coin (tap the right coin), count a small collection (how many cents?). Keep it simple — recognition and basic counting only.
+
+### [ ] FEAT-038: Mazes
+**Priority:** Low  
+**Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
 
 ---
 

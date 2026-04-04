@@ -16,6 +16,8 @@ import { WordFamilies } from './components/reading/WordFamilies'
 import { RhymingMatch } from './components/reading/RhymingMatch'
 import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
+import { StoryLibrary } from './components/reading/StoryLibrary'
+import { StoryReader } from './components/reading/StoryReader'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -35,7 +37,8 @@ import { ParentDashboard } from './components/parent/ParentDashboard'
 // Navigation stack: array of screen names
 // Screens: home | reading | math | calendar | parent-login | parent
 //          lettersounds | sightwords | phonics | sentences | wordfamilies | rhymingmatch | phonicsrules
-//          lettertracing-letters | lettertracing-numbers
+//          lettertracing | lettertracing-letters | lettertracing-numbers
+//          storylibrary | storyreader
 //          counting | numberrecognition | moreorless | shapes | addition | numberorder
 //          daysofweek | monthsofyear
 
@@ -52,6 +55,7 @@ export default function App() {
   } = useProgress()
 
   const [screen, setScreen] = useState('home')
+  const [activeStoryId, setActiveStoryId] = useState(null)
   const [sessionStart, setSessionStart] = useState(null)
 
   // Check milestones on progress change
@@ -181,6 +185,19 @@ export default function App() {
       )}
       {screen === 'lettertracing-numbers' && (
         <LetterTracer mode="numbers" onBack={() => navigate('lettertracing')} addStars={addStars} />
+      )}
+      {screen === 'storylibrary' && (
+        <StoryLibrary
+          onBack={() => navigate('reading')}
+          onSelectStory={(id) => { setActiveStoryId(id); navigate('storyreader', 'reading') }}
+        />
+      )}
+      {screen === 'storyreader' && (
+        <StoryReader
+          storyId={activeStoryId}
+          onBack={() => navigate('storylibrary')}
+          addStars={addStars}
+        />
       )}
 
       {/* Math screens */}
