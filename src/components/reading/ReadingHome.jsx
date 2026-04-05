@@ -115,6 +115,14 @@ const ACTIVITIES = [
     color: '#ea580c',
     shadow: '#c2410c',
   },
+  {
+    id: 'nametracer',
+    emoji: '✍️',
+    title: 'Write Your Name',
+    subtitle: 'Trace your favourite names',
+    color: '#ec4899',
+    shadow: '#be185d',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

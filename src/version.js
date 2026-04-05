@@ -1,6 +1,16 @@
-export const VERSION = '1.15.0'
+export const VERSION = '1.16.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.16.0',
+    date: '2026-04-05',
+    changes: [
+      'FEAT-021: Added Write Your Name to Reading World — trace Aria, Albert, Melissa, mom, dad, sister, Lily',
+      'Dotted lavender guide text stays visible under strokes (two-canvas approach)',
+      'Name picker with colour-themed cards; 9 colours, 3 brush sizes, clear button, 3-star reward',
+      'FEAT-019: Confirmed done — StoryReader already has full comprehension quiz phase for all 12 stories',
+    ],
+  },
   {
     version: '1.15.0',
     date: '2026-04-05',

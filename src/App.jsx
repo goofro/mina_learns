@@ -16,6 +16,7 @@ import { WordFamilies } from './components/reading/WordFamilies'
 import { RhymingMatch } from './components/reading/RhymingMatch'
 import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
+import { NameTracer } from './components/writing/NameTracer'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -244,6 +245,12 @@ export default function App() {
       )}
       {screen === 'wordpicturematch' && (
         <WordPictureMatch
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'nametracer' && (
+        <NameTracer
           onBack={() => navigate('reading')}
           addStars={addStars}
         />

@@ -228,9 +228,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Show a written word and 3–4 pictures; Mina taps the picture that matches the word. Or reverse: show a picture and 3 words, tap the right word. Bridges reading decoding to real-world meaning.  
 **Fixed:** 2026-04-04 ✅ — `src/components/reading/WordPictureMatch.jsx`: 24-word bank (animals, food, nature, objects), alternates word→picture and picture→word modes each round, 4-choice grid, TTS on display and tap.
 
-### [ ] FEAT-019: Story comprehension
+### [x] FEAT-019: Story comprehension
 **Priority:** Medium  
-**Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.
+**Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.  
+**Fixed:** 2026-04-05 ✅ — Already implemented as part of FEAT-039. `StoryReader.jsx` has a full PHASE_QUIZ after PHASE_READ: question card with TTS, 3-choice tap answers, green/red feedback, star award per correct answer, correct count summary on done screen. All 12 stories have 2–3 questions in `data/stories.js`.
 
 ### [ ] FEAT-040: Expanded tracing & free drawing activities
 **Priority:** Medium  
@@ -242,9 +243,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Before tracing letters, teach the building-block strokes: straight lines, zig-zags, curves, circles, spirals. Canvas-based like LetterTracer. Each stroke type has a guided practice screen. Prepares fine motor control for letter writing.
 
-### [ ] FEAT-021: Write your name
+### [x] FEAT-021: Write your name
 **Priority:** High  
-**Description:** A special personalized activity where Mina traces her own name. Parent enters the child's name in settings; app generates a dotted trace template letter-by-letter. Highly motivating for young learners — their name is the most meaningful word to them.
+**Description:** A special personalized activity where Mina traces her own name. Parent enters the child's name in settings; app generates a dotted trace template letter-by-letter. Highly motivating for young learners — their name is the most meaningful word to them.  
+**Fixed:** 2026-04-05 ✅ — `src/components/writing/NameTracer.jsx`: name picker with 7 names (Aria, Albert, Melissa, mom, dad, sister, Lily) each with a colour theme and emoji. Tracing screen uses two stacked canvases — guide canvas shows the name as a dotted lavender outline that stays visible under strokes; drawing canvas is transparent so the guide always shows through. 9 colours, 3 brush sizes, Clear button, "I traced it!" awards 3 stars (unlocks after 2+ strokes). Accessible via Reading World → Write Your Name.
 
 ### [x] FEAT-022: Subitizing
 **Priority:** Medium  
