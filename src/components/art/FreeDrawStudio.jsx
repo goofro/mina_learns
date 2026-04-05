@@ -160,11 +160,12 @@ export function FreeDrawStudio({ onBack }) {
 
   return (
     <div style={{
-      position: 'fixed', inset: 0,
+      position: 'fixed', top: '64px', left: 0, right: 0, bottom: 0,
       background: '#1a1a2e',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
+      zIndex: 10,
     }}>
       {/* ── Top bar ───────────────────────────────────────────── */}
       <div style={{
@@ -286,7 +287,7 @@ export function FreeDrawStudio({ onBack }) {
         {/* Stamp picker panel (slides in over canvas) */}
         {showStamps && (
           <div style={{
-            position: 'absolute', left: '74px', top: '60px',
+            position: 'absolute', left: '74px', top: '56px',
             background: '#16213e', border: '2px solid #0f3460',
             borderRadius: '16px', padding: '12px',
             display: 'flex', flexWrap: 'wrap', gap: '8px',
