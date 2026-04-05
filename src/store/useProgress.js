@@ -5,6 +5,8 @@ const STORAGE_KEY = 'mina_learns_progress'
 const defaultProgress = {
   stars: 0,
   sessions: [],
+  streak: 0,             // consecutive days with at least one session
+  lastActiveDate: null,  // date string (toDateString) of last session day
   reading: {
     sightWords: {},      // word -> { attempts, correct, mastered }
     phonics: {},         // lessonId -> { attempts, correct, mastered }
@@ -134,10 +136,13 @@ export function useProgress() {
     const now = new Date().toISOString()
     setProgress(p => {
       const sessions = [...(p.sessions || []), { subject, duration: durationMinutes, date: now }]
+      const { streak, lastActiveDate } = computeStreak(p.streak || 0, p.lastActiveDate)
       return {
         ...p,
         sessions: sessions.slice(-100), // keep last 100
         lastSession: now,
+        streak,
+        lastActiveDate,
         totalTimeMinutes: (p.totalTimeMinutes || 0) + durationMinutes,
         weeklyGoals: updateWeeklyGoals(p.weeklyGoals, subject)
       }
@@ -186,6 +191,18 @@ function updateWeeklyGoals(weeklyGoals, subject) {
     return { ...goals, math: { ...goals.math, completed: goals.math.completed + 1 } }
   }
   return goals
+}
+
+function computeStreak(currentStreak, lastActiveDate) {
+  const today = new Date().toDateString()
+  if (!lastActiveDate) return { streak: 1, lastActiveDate: today }
+  if (lastActiveDate === today) return { streak: currentStreak, lastActiveDate: today }
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  if (lastActiveDate === yesterday.toDateString()) {
+    return { streak: currentStreak + 1, lastActiveDate: today }
+  }
+  return { streak: 1, lastActiveDate: today }
 }
 
 function getWeekStart(date) {

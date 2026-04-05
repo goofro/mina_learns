@@ -1,5 +1,6 @@
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
+import { TwEmoji } from '../shared/TwEmoji'
 
 const ACTIVITIES = [
   {
@@ -57,6 +58,62 @@ const ACTIVITIES = [
     subtitle: 'Learn reading rules',
     color: '#f97316',
     shadow: '#ea580c',
+  },
+  {
+    id: 'lettertracing',
+    emoji: '✏️',
+    title: 'Letter Tracing',
+    subtitle: 'Trace letters & numbers',
+    color: '#7c3aed',
+    shadow: '#5b21b6',
+  },
+  {
+    id: 'storylibrary',
+    emoji: '📖',
+    title: 'Story Library',
+    subtitle: 'Read leveled short stories',
+    color: '#0ea5e9',
+    shadow: '#0369a1',
+  },
+  {
+    id: 'vowelsconsonants',
+    emoji: '⭐',
+    title: 'Vowels & Consonants',
+    subtitle: 'A, E, I, O, U and the rest',
+    color: '#7c3aed',
+    shadow: '#5b21b6',
+  },
+  {
+    id: 'letterconfusion',
+    emoji: '🔍',
+    title: 'b, d, p, q',
+    subtitle: 'Tell tricky letters apart',
+    color: '#0369a1',
+    shadow: '#1e3a5f',
+  },
+  {
+    id: 'endingsounds',
+    emoji: '🔚',
+    title: 'Ending Sounds',
+    subtitle: 'What letter do you hear last?',
+    color: '#16a34a',
+    shadow: '#15803d',
+  },
+  {
+    id: 'syllableclapping',
+    emoji: '🥁',
+    title: 'Syllable Clapping',
+    subtitle: 'Clap out the parts of a word',
+    color: '#db2777',
+    shadow: '#9d174d',
+  },
+  {
+    id: 'wordpicturematch',
+    emoji: '🖼️',
+    title: 'Word & Picture',
+    subtitle: 'Match words to pictures',
+    color: '#ea580c',
+    shadow: '#c2410c',
   },
 ]
 
@@ -118,7 +175,7 @@ function ActivityCard({ emoji, title, subtitle, color, shadow, onClick }) {
         e.currentTarget.style.boxShadow = `0 6px 0 ${shadow}`
       }}
     >
-      <div style={{ fontSize: '52px' }}>{emoji}</div>
+      <div className="card-emoji"><TwEmoji emoji={emoji} size={60} /></div>
       <div style={{ fontSize: '22px', fontWeight: 800, color: '#1f2937' }}>{title}</div>
       <div style={{ fontSize: '14px', fontWeight: 600, color: '#6b7280' }}>{subtitle}</div>
     </button>

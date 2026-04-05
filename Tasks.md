@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-03  
-**Current version:** v1.3.0
+**Last updated:** 2026-04-04 (v1.14.0)  
+**Current version:** v1.6.0
 
 ---
 
@@ -96,9 +96,25 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 ## 📋 Backlog (Future Features)
 
-### [ ] FEAT-001: Writing practice module
+### [x] FEAT-001: Writing practice module
 **Priority:** Medium  
-**Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.
+**Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
+**Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
+
+### [x] FEAT-042: Drawing wallpaper collage on the home screen
+**Priority:** Medium
+**Description:** Saved drawings from Free Draw Studio appear as a collage wallpaper on the home screen. Each time Mina taps "Save" in Free Draw Studio, her artwork is added to a gallery (up to 6 drawings, newest first) stored in localStorage. The home screen background displays these saved drawings as small polaroid-framed pictures scattered at the edges of the screen, giving Mina pride in seeing her own artwork decorating the app. When no drawings are saved yet, the home screen looks as it does today.
+**Files:** `src/components/art/FreeDrawStudio.jsx`, `src/components/home/HomeScreen.jsx`
+**Fixed:** 2026-04-05 ✅ — Free Draw Studio now full-screen with left sidebar (15 color swatches + stamp picker), 5 brush sizes, dark canvas UI. "Save to Home" stores drawing to `mina_art_gallery` array (max 6) in localStorage. HomeScreen reads the gallery and displays drawings as polaroid frames pinned at the left/right viewport edges behind the main content.
+
+### [ ] FEAT-041: PWA deployment for iPad (and other tablets)
+**Priority:** Medium  
+**Description:** Deploy the app as a hosted Progressive Web App so it can be used on an iPad without needing a PC running. Steps: (1) run `npm run build` to produce a static `dist/` folder; (2) deploy to Netlify, Vercel, or GitHub Pages; (3) open the URL in iPad Safari and tap "Add to Home Screen" for a full-screen, icon-on-homescreen experience. The app is already touch-optimised (FEAT-007) and has iOS PWA meta tags in `index.html`. No code changes required — this is purely a deployment/hosting task.
+
+### [x] FEAT-014: Vowels & Consonants intro lesson
+**Priority:** High  
+**Description:** Add an introductory lesson in Reading World (before or at the top of Phonics Rules) that teaches the concept of vowels (A, E, I, O, U) vs. consonants (all other letters). Should include: a child-facing explanation with TTS, visual grouping of the alphabet into vowels/consonants, examples of each, and a simple tap-to-identify quiz ("Is this a vowel or consonant?").  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/VowelsConsonants.jsx`: colour-coded full alphabet (purple = vowels, blue = consonants), tap-to-hear each letter, vowel cards with emoji examples, 15-letter quiz (5 vowels + 10 consonants).
 
 ### [ ] FEAT-002: Audio recording – Mina reads aloud
 **Priority:** Medium  
@@ -108,7 +124,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low  
 **Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.
 
-### [ ] FEAT-004: Daily streak tracking
+### [x] FEAT-004: Daily streak tracking
 **Priority:** Medium  
 **Description:** Show a streak counter (🔥 3 days in a row!) to encourage daily sessions. Track in localStorage.
 
@@ -116,21 +132,25 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Low  
 **Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.
 
-### [ ] FEAT-006: Sound effects library
+### [x] FEAT-006: Sound effects library
 **Priority:** Low  
-**Description:** Add fun sound effects (coin collect, level up, whoosh) using Web Audio API to complement TTS.
+**Description:** Add fun sound effects (coin collect, level up, whoosh) using Web Audio API to complement TTS.  
+**Fixed:** 2026-04-03 ✅ — `src/utils/sounds.js` with playCorrect, playWrong, playStar, playCelebration, playTap. Wired into Celebration and StarBurst components.
 
-### [ ] FEAT-007: Touch/swipe optimization for tablet
+### [x] FEAT-007: Touch/swipe optimization for tablet
 **Priority:** Medium  
-**Description:** Ensure all tap targets are 48px+ for tablet use. Test on touch devices. May need to deploy as PWA for home screen icon.
+**Description:** Ensure all tap targets are 48px+ for tablet use. Test on touch devices. May need to deploy as PWA for home screen icon.  
+**Fixed:** 2026-04-03 ✅ — `touch-action: manipulation` removes 300ms tap delay; min-height/width 48px on all buttons; `-webkit-tap-highlight-color: transparent`; iOS PWA meta tags added to index.html.
 
-### [ ] FEAT-008: Subtraction module
+### [x] FEAT-008: Subtraction module
 **Priority:** Low — after Mina masters addition  
-**Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.
+**Description:** Add subtraction with visual object removal (cross out items), using the same format as AdditionGame.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/SubtractionGame.jsx`: shows all objects with red ✕ overlaid on the subtracted ones, 8-round quiz, 20 problems ranging from 2−1 to 8−5. Wired into Math World.
 
-### [ ] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
+### [x] FEAT-013: Reward Play — Art Studio (color mixing & creative drawing)
 **Priority:** Medium  
-**Description:** A stars-gated reward activity that unlocks after earning enough stars in a session. Art-based, colorful, and educational — teaches color theory while being genuinely fun.
+**Description:** A stars-gated reward activity that unlocks after earning enough stars in a session. Art-based, colorful, and educational — teaches color theory while being genuinely fun.  
+**Fixed:** 2026-04-04 ✅ — Unlocks on home screen at 10 stars. `src/components/art/`: ArtStudioHome (hub), ColorMixer (red/yellow/blue → orange/green/purple with discovery tracking), ColorByNumber (Sun/Rainbow/Frog SVG scenes with numbered zones), FreeDrawStudio (canvas, 10 colors, 3 brush sizes, eraser, 12 emoji stamps, save to localStorage).
 
 **Concept: "Mina's Art Studio"**
 - Unlocks as a special reward button on the home screen when Mina has earned enough stars (e.g. 10+ in a session)
@@ -163,7 +183,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 **Notes:** This would be a new top-level section alongside Reading World and Math World. Parent dashboard should track which activities have been explored and how many rounds completed.
 
-### [ ] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
+### [x] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
 **Priority:** High  
 **Description:** Expand the existing `PhonicsRules` component into a comprehensive, structured teaching guide covering all major English reading rules in a child-friendly way. Key rules to include:
 - **Magic E / Silent E** — the final "e" makes the vowel before it say its name (cap → cape, pin → pine, hop → hope)
@@ -174,13 +194,129 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 - **R-controlled vowels** — ar (car), er/ir/ur (bird), or (horn)
 Each rule should have: a child-facing explanation with TTS, 4–6 example words with emoji, and a mini practice quiz. Parent dashboard should show which rules have been visited/practiced.
 
-### [ ] FEAT-010: Slow down TTS playback rate for clarity
+### [x] FEAT-010: Slow down TTS playback rate for clarity
 **Priority:** High  
-**Description:** Reduce the speech rate in `src/utils/speech.js` so voiceover audio plays back slower and individual sounds are clearer for Mina. The Web Speech API `SpeechSynthesisUtterance` has a `rate` property (default 1.0) — lower it (e.g. 0.75–0.85) globally so all TTS throughout the app benefits.
+**Description:** Reduce the speech rate in `src/utils/speech.js` so voiceover audio plays back slower.  
+**Fixed:** Already done ✅ — default rate 0.85, speakLetter 0.70, speakWord 0.75. No further changes needed.
 
-### [ ] FEAT-009: Days of the week & months of the year module
+### [x] FEAT-009: Days of the week & months of the year module
 **Priority:** Medium  
-**Description:** Add a new learning section teaching days of the week and months of the year. Could include flashcard-style activities (hear the name, pick the card), ordering games (put the days in order), and simple songs/chants using TTS. Should live under a new "Calendar" or "Time" category alongside Reading and Math.
+**Description:** Add a new learning section teaching days of the week and months of the year.  
+**Fixed:** 2026-04-03 ✅ — New Calendar section on home screen. CalendarHome → DaysOfWeek (explore + quiz) and MonthsOfYear (explore with season filter + quiz). Both include TTS singing mode and "What comes next?" quiz game.
+
+### [x] FEAT-039: Story Library — leveled short stories with comprehension
+**Priority:** High  
+**Description:** A curated library of 10–15 short stories (5–8 sentences each) written with controlled vocabulary matching what Mina has learned in the app. Stories are grouped into 3 levels: Level 1 (sight words + CVC only), Level 2 (adds word families and blends), Level 3 (simple sentences with digraphs and Magic E words). Each story plays in SentenceReader with word-by-word TTS highlighting, an emoji scene illustration, and 2–3 comprehension tap questions after (who, what happened, why). A "Story Library" screen shows all stories as cards with a lock/unlock indicator based on level.
+
+### [x] FEAT-015: Visual discrimination — b/d/p/q confusion
+**Priority:** High  
+**Description:** Dedicated mini-lesson and game for letters that look alike: b vs d, p vs q. Show each pair side-by-side with a memory trick (e.g. "b has a belly in front, d has a belly behind"), then a tap-to-identify quiz. Critical for early readers who commonly reverse these letters.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/LetterConfusion.jsx`: two lesson slides (b/d then p/q) each with memory trick, example words, and giant tap-to-hear letter cards. Followed by a 20-round quiz showing one letter at a time with 4-choice tap grid.
+
+### [x] FEAT-016: Ending sounds
+**Priority:** Medium  
+**Description:** Complement the existing beginning-sounds work with an ending-sounds activity. Say a word aloud (TTS), Mina picks the letter she hears at the END (e.g. "cat" → tap T). Use the same CVC word set already in the app.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/EndingSounds.jsx`: TTS speaks the word, last letter is highlighted in the display, 4-choice grid of uppercase consonants, 10 rounds across all CVC groups.
+
+### [x] FEAT-017: Syllable clapping
+**Priority:** Medium  
+**Description:** Show a word with a picture, speak it aloud, then Mina taps a drum/clap button once per syllable. App counts taps and confirms if correct. Words range from 1-syllable (cat) to 3-syllable (ba-na-na). Teaches phonological awareness and word structure.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/SyllableClapping.jsx`: 20 words (7×1-syl, 8×2-syl, 5×3-syl), big bouncing drum button, tap dots counter, auto-checks after 2s or via "That's my answer!" button, reveals syllable breakdown on result.
+
+### [x] FEAT-018: Word-picture matching
+**Priority:** Medium  
+**Description:** Show a written word and 3–4 pictures; Mina taps the picture that matches the word. Or reverse: show a picture and 3 words, tap the right word. Bridges reading decoding to real-world meaning.  
+**Fixed:** 2026-04-04 ✅ — `src/components/reading/WordPictureMatch.jsx`: 24-word bank (animals, food, nature, objects), alternates word→picture and picture→word modes each round, 4-choice grid, TTS on display and tap.
+
+### [ ] FEAT-019: Story comprehension
+**Priority:** Medium  
+**Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.
+
+### [ ] FEAT-040: Expanded tracing & free drawing activities
+**Priority:** Medium  
+**Description:** Two additions to the Writing section:
+1. **More Tracing** — extend LetterTracer with pre-writing stroke practice: straight lines, zig-zags, curves, spirals, and dotted shapes. Each stroke type has a guided canvas template Mina traces over. Teaches pencil control before letter writing.
+2. **Free Drawing** — an open canvas where Mina can draw anything she likes. Crayon palette (same colors as LetterTracer), adjustable brush size, eraser, and a "Save my drawing" button that stores the image to localStorage so she can see it next time. Optional: stamp mode with fun emoji stamps (stars, hearts, animals) she can place on the canvas.
+
+### [ ] FEAT-020: Pre-writing strokes
+**Priority:** Medium  
+**Description:** Before tracing letters, teach the building-block strokes: straight lines, zig-zags, curves, circles, spirals. Canvas-based like LetterTracer. Each stroke type has a guided practice screen. Prepares fine motor control for letter writing.
+
+### [ ] FEAT-021: Write your name
+**Priority:** High  
+**Description:** A special personalized activity where Mina traces her own name. Parent enters the child's name in settings; app generates a dotted trace template letter-by-letter. Highly motivating for young learners — their name is the most meaningful word to them.
+
+### [x] FEAT-022: Subitizing
+**Priority:** Medium  
+**Description:** Flash a small group of dots (1–5) briefly on screen, then ask "how many?" without counting. Builds number sense and instant quantity recognition. Use dice-style dot patterns for familiarity. Progress to random arrangements as skill grows.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/Subitizing.jsx`: white dots on navy background flash for 1.5s, standard dice layouts for rounds 1–6, random scatter after round 7, count gradually increases from 1 to 5 across 10 rounds.
+
+### [x] FEAT-023: Number bonds
+**Priority:** Medium  
+**Description:** Visual number bond activity: show a total (e.g. 5) split into two parts with a part-whole diagram. Mina fills in the missing part by tapping a number. Start with bonds to 5, progress to bonds to 10. Lays groundwork for mental addition/subtraction.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/NumberBonds.jsx`: part-whole circle diagram, level selector (Bonds to 5 / Bonds to 10), randomly hides either part A or part B, 3 number choices, 8 rounds per session.
+
+### [x] FEAT-024: Pattern recognition
+**Priority:** Medium  
+**Description:** Show a repeating pattern (AB, ABC, AABB) using shapes or colors with the last item missing. Mina taps the correct next item to complete the pattern. Teaches logical sequencing and early algebraic thinking.  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/PatternRecognition.jsx`: 5 pattern types (AB, AAB, ABB, ABC, AABB), 10 coloured emoji items, generates the 6th element and provides 4 choices, 10 rounds.
+
+### [ ] FEAT-025: 3D shapes
+**Priority:** Low  
+**Description:** Extend ShapeMatch to include 3D shapes: cube, sphere, cylinder, cone, pyramid. Show the shape name, a visual, and real-world examples (ball = sphere, box = cube). Include a tap-to-name quiz.
+
+### [ ] FEAT-026: Spatial concepts
+**Priority:** Medium  
+**Description:** Teach positional/directional language: above, below, next to, inside, outside, in front of, behind. Show a character and an object, Mina taps the picture that matches the spoken description (e.g. "The ball is INSIDE the box"). Spoken via TTS throughout.
+
+### [x] FEAT-027: Measurement & size comparison
+**Priority:** Medium  
+**Description:** Comparison activities: big vs small, tall vs short, heavy vs light, more vs fewer. Show two objects, Mina taps the one matching the prompt. Extend MoreOrLess concept to non-numeric attributes. Include a simple non-standard measuring game (how many blocks tall is the tree?).  
+**Fixed:** 2026-04-04 ✅ — `src/components/math/SizeComparison.jsx`: 17 question templates across big/small (same emoji at different sizes), tall/short, heavy/light (different objects), more/fewer (count groups). Left/right side randomised each round.
+
+### [ ] FEAT-028: Picture vocabulary builder
+**Priority:** Medium  
+**Description:** Flashcard-style vocabulary module with categories: everyday objects, action words (run, jump, eat), and descriptive words (big, soft, loud, fast). Each card shows a picture, speaks the word, and uses it in a sentence. Include a tap-to-name quiz per category.
+
+### [ ] FEAT-029: Science World — Living things, animals & habitats
+**Priority:** Medium  
+**Description:** New top-level Science section. Initial activities: (1) Living vs Non-Living — sort items into two groups by tapping; (2) Animals & Habitats — match animal to its home (fish → ocean, bear → forest); (3) Plants & Growth — tap-through sequence showing seed → sprout → plant. TTS narrates throughout.
+
+### [ ] FEAT-030: Weather & seasons
+**Priority:** Low  
+**Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
+
+### [ ] FEAT-031: Music & rhythm games
+**Priority:** Low  
+**Description:** Rhythm tapping game: play a beat pattern (short/long taps via Web Audio API), Mina repeats it by tapping the screen. Starts with simple 2-beat patterns, progresses to 4-beat. Also consider an alphabet song or counting song with highlighted lyrics synced to TTS playback.
+
+### [ ] FEAT-032: Skill tree / level progression
+**Priority:** Medium  
+**Description:** Visual skill map on the home screen showing unlocked vs locked activities. Activities unlock as Mina earns stars or completes prerequisites (e.g. Letter Sounds must be played before Word Blending unlocks). Gives a sense of progression and motivates exploration.
+
+### [ ] FEAT-033: Collectible sticker rewards
+**Priority:** Low  
+**Description:** After completing activities or reaching milestones, Mina earns a sticker for a sticker book (accessible from the home screen). Stickers are themed by subject (star, book, apple, rocket). Viewing the sticker book is purely a reward — no learning required. Stored in localStorage.
+
+### [ ] FEAT-034: Adaptive difficulty
+**Priority:** Medium  
+**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.
+
+### [x] FEAT-035: Memory / card matching game
+**Priority:** Medium  
+**Description:** Classic flip-card memory game with an educational twist: match letter to letter (A↔a), word to picture, or number to dots. 4×4 grid, cards flip on tap, matched pairs stay face-up. Tracks best score (fewest flips). Works as a standalone game and reinforces content from other modules.
+
+### [ ] FEAT-036: Early coding logic — sequencing game
+**Priority:** Low  
+**Description:** Simple drag-to-sequence game: arrange 3–4 picture steps in the correct order to complete a task (e.g. brush teeth: wet brush → add toothpaste → brush → rinse). Introduces if/then reasoning and multi-step thinking without any code concepts. Can live in the Cognitive section (FEAT-012).
+
+### [ ] FEAT-037: Basic money concepts
+**Priority:** Low  
+**Description:** Introduce coins: penny (1¢), nickel (5¢), dime (10¢), quarter (25¢). Show each coin with its name and value. Activities: name that coin (tap the right coin), count a small collection (how many cents?). Keep it simple — recognition and basic counting only.
+
+### [ ] FEAT-038: Mazes
+**Priority:** Low  
+**Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
 
 ---
 
@@ -203,6 +339,24 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 - Fixed sight word tracking display (seen vs mastered)
 - Increased font sizes across child UI
 - Switched to Lexend font for better letter clarity
+
+### 2026-04-03 – Letter Tracing module v1.6.0
+- FEAT-001: Canvas letter/number tracing in Reading World
+- HTML5 Canvas with pointer events (works mouse + touch/finger/stylus)
+- Guide letter shown as large filled+outlined shape behind the canvas
+- 7 crayon colors, ◀▶ navigation, clear button, star reward on completion
+- Two modes: Trace Letters A–Z and Trace Numbers 0–9
+
+### 2026-04-03 – PhonicsRules expansion + daily streak v1.5.0
+- FEAT-011: Added Bossy R Vowels as new Stage 3 rule (AR/OR/ER/IR/UR, 4 examples, parent tips)
+- FEAT-011: Added 🎯 Practice Quiz to every rule — 3-4 tap-to-answer questions with sound feedback
+- FEAT-004: Daily streak tracked in useProgress (computeStreak on each recordSession); displayed as 🔥 N days in StarBar
+
+### 2026-04-03 – Calendar module + sound effects + tablet polish v1.4.0
+- FEAT-009: Calendar Time section added to home screen — Days of the Week and Months of the Year each have Explore mode (tap cards, sing along) and Quiz mode ("What comes next?", 10 rounds, stars)
+- FEAT-006: `src/utils/sounds.js` — Web Audio API synth sounds (correct chime, wrong buzz, star sparkle, celebration arpeggio). Integrated into Celebration and StarBurst.
+- FEAT-007: Touch optimizations — `touch-action: manipulation`, 48px min tap targets, `-webkit-tap-highlight-color: transparent`, iOS PWA meta tags in index.html
+- FEAT-010: Confirmed already done (rate 0.85 default, 0.70 letter, 0.75 word)
 
 ### 2026-04-03 – Wired up 4 new activities v1.3.0
 - Connected Word Families, Rhyming Match, Phonics Rules (Reading World) and Number Order (Math World) — all were built last session but cut off before being wired into App.jsx
