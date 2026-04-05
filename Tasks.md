@@ -101,6 +101,11 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
 **Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
 
+### [ ] FEAT-042: Drawing wallpaper collage on the home screen
+**Priority:** Medium
+**Description:** Saved drawings from Free Draw Studio appear as a collage wallpaper on the home screen. Each time Mina taps "Save" in Free Draw Studio, her artwork is added to a gallery (up to 6 drawings, newest first) stored in localStorage. The home screen background displays these saved drawings as small framed pictures scattered behind the main content, giving Mina pride in seeing her own artwork decorating the app. When no drawings are saved yet, the home screen looks as it does today.
+**Files:** `src/components/art/FreeDrawStudio.jsx`, `src/components/home/HomeScreen.jsx`
+
 ### [ ] FEAT-041: PWA deployment for iPad (and other tablets)
 **Priority:** Medium  
 **Description:** Deploy the app as a hosted Progressive Web App so it can be used on an iPad without needing a PC running. Steps: (1) run `npm run build` to produce a static `dist/` folder; (2) deploy to Netlify, Vercel, or GitHub Pages; (3) open the URL in iPad Safari and tap "Add to Home Screen" for a full-screen, icon-on-homescreen experience. The app is already touch-optimised (FEAT-007) and has iOS PWA meta tags in `index.html`. No code changes required — this is purely a deployment/hosting task.
