@@ -5,8 +5,8 @@ import { speak } from '../../utils/speech'
 const SAVE_KEY = 'mina_art_studio_drawing'
 const GALLERY_KEY = 'mina_art_gallery'
 const GALLERY_MAX = 6
+const MAX_HISTORY = 20
 
-// Canvas resolution — high-res so saved images look great
 const CANVAS_W = 1600
 const CANVAS_H = 1000
 
@@ -42,17 +42,51 @@ export function FreeDrawStudio({ onBack }) {
   const canvasRef = useRef(null)
   const isDrawing = useRef(false)
   const lastPos = useRef(null)
+  const history = useRef([])       // ImageData snapshots
+  const historyIndex = useRef(-1)  // current position in history
 
   const [color, setColor] = useState('#ef4444')
   const [colorName, setColorName] = useState('Red')
   const [brushIdx, setBrushIdx] = useState(2)
-  const [mode, setMode] = useState('draw') // 'draw' | 'erase' | 'stamp'
+  const [mode, setMode] = useState('draw')
   const [activeStamp, setActiveStamp] = useState('⭐')
   const [saved, setSaved] = useState(false)
   const [galleryCount, setGalleryCount] = useState(0)
   const [showStamps, setShowStamps] = useState(false)
+  const [canUndo, setCanUndo] = useState(false)
+  const [canRedo, setCanRedo] = useState(false)
 
-  // Load saved drawing on mount
+  function pushHistory(canvas) {
+    const ctx = canvas.getContext('2d')
+    const snap = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    // Trim any redo states ahead of current position
+    history.current = history.current.slice(0, historyIndex.current + 1)
+    history.current.push(snap)
+    if (history.current.length > MAX_HISTORY) history.current.shift()
+    historyIndex.current = history.current.length - 1
+    setCanUndo(historyIndex.current > 0)
+    setCanRedo(false)
+  }
+
+  function undo() {
+    if (historyIndex.current <= 0) return
+    historyIndex.current--
+    const canvas = canvasRef.current
+    canvas.getContext('2d').putImageData(history.current[historyIndex.current], 0, 0)
+    setCanUndo(historyIndex.current > 0)
+    setCanRedo(true)
+  }
+
+  function redo() {
+    if (historyIndex.current >= history.current.length - 1) return
+    historyIndex.current++
+    const canvas = canvasRef.current
+    canvas.getContext('2d').putImageData(history.current[historyIndex.current], 0, 0)
+    setCanUndo(true)
+    setCanRedo(historyIndex.current < history.current.length - 1)
+  }
+
+  // Load saved drawing and record initial state
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -62,11 +96,26 @@ export function FreeDrawStudio({ onBack }) {
     const dataUrl = localStorage.getItem(SAVE_KEY)
     if (dataUrl) {
       const img = new Image()
-      img.onload = () => ctx.drawImage(img, 0, 0)
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0)
+        pushHistory(canvas)
+      }
       img.src = dataUrl
+    } else {
+      pushHistory(canvas)
     }
     const gallery = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
     setGalleryCount(gallery.length)
+  }, [])
+
+  // Keyboard shortcuts: Ctrl+Z / Ctrl+Y
+  useEffect(() => {
+    function onKey(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo() }
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) { e.preventDefault(); redo() }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
   }, [])
 
   function getPos(e, canvas) {
@@ -84,7 +133,12 @@ export function FreeDrawStudio({ onBack }) {
     e.preventDefault()
     const canvas = canvasRef.current
     const pos = getPos(e, canvas)
-    if (mode === 'stamp') { placeStamp(pos, canvas); return }
+    if (mode === 'stamp') {
+      pushHistory(canvas)
+      placeStamp(pos, canvas)
+      pushHistory(canvas)
+      return
+    }
     isDrawing.current = true
     lastPos.current = pos
     const ctx = canvas.getContext('2d')
@@ -114,8 +168,11 @@ export function FreeDrawStudio({ onBack }) {
 
   function endDraw(e) {
     e.preventDefault()
-    isDrawing.current = false
-    lastPos.current = null
+    if (isDrawing.current) {
+      isDrawing.current = false
+      lastPos.current = null
+      pushHistory(canvasRef.current)
+    }
   }
 
   function placeStamp(pos, canvas) {
@@ -130,8 +187,10 @@ export function FreeDrawStudio({ onBack }) {
   function clearCanvas() {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
+    pushHistory(canvas) // save state before clearing so it's undoable
     ctx.fillStyle = 'white'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
+    pushHistory(canvas)
     localStorage.removeItem(SAVE_KEY)
     setSaved(false)
     speak('Canvas cleared!', { rate: 0.9 })
@@ -158,6 +217,11 @@ export function FreeDrawStudio({ onBack }) {
     speak(c.name, { rate: 0.85 })
   }
 
+  const btnBase = {
+    padding: '8px 14px', borderRadius: '10px', fontFamily: 'inherit',
+    color: 'white', border: 'none', fontSize: '14px', fontWeight: 800, cursor: 'pointer',
+  }
+
   return (
     <div style={{
       position: 'fixed', top: '64px', left: 0, right: 0, bottom: 0,
@@ -167,97 +231,98 @@ export function FreeDrawStudio({ onBack }) {
       overflow: 'hidden',
       zIndex: 10,
     }}>
-      {/* ── Top bar ───────────────────────────────────────────── */}
+      {/* ── Top bar ─────────────────────────────────────────── */}
       <div style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '10px',
+        gap: '8px',
         padding: '8px 14px',
         background: '#16213e',
         borderBottom: '2px solid #0f3460',
         flexShrink: 0,
+        flexWrap: 'wrap',
       }}>
         <BackButton onClick={onBack} />
-        <span style={{ fontSize: '18px', fontWeight: 900, color: 'white' }}>🎨 Free Drawing</span>
+        <span style={{ fontSize: '17px', fontWeight: 900, color: 'white' }}>🎨 Free Drawing</span>
 
         {/* Brush sizes */}
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginLeft: '12px' }}>
-          <span style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 700 }}>Size:</span>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', marginLeft: '8px' }}>
+          <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 700 }}>Size:</span>
           {BRUSHES.map((b, i) => {
-            const d = 14 + i * 9
+            const d = 12 + i * 8
             return (
               <button key={i} onClick={() => setBrushIdx(i)} title={b.title}
                 style={{
-                  width: d, height: d, borderRadius: '50%',
+                  width: d, height: d, borderRadius: '50%', padding: 0,
                   background: brushIdx === i ? color : '#4b5563',
                   border: `2px solid ${brushIdx === i ? 'white' : 'transparent'}`,
-                  cursor: 'pointer', flexShrink: 0, padding: 0,
+                  cursor: 'pointer', flexShrink: 0,
                 }}
               />
             )
           })}
         </div>
 
-        {/* Mode: draw / erase */}
-        <div style={{ display: 'flex', gap: '6px', marginLeft: '12px' }}>
+        {/* Mode buttons */}
+        <div style={{ display: 'flex', gap: '6px', marginLeft: '6px' }}>
           <button onClick={() => { setMode('draw'); setShowStamps(false) }}
-            style={{
-              padding: '8px 16px', borderRadius: '10px', fontFamily: 'inherit',
-              background: mode === 'draw' ? '#db2777' : '#374151',
-              color: 'white', border: 'none', fontSize: '14px', fontWeight: 800, cursor: 'pointer',
-            }}>✏️ Draw</button>
+            style={{ ...btnBase, background: mode === 'draw' ? '#db2777' : '#374151' }}>
+            ✏️ Draw
+          </button>
           <button onClick={() => { setMode('erase'); setShowStamps(false) }}
-            style={{
-              padding: '8px 16px', borderRadius: '10px', fontFamily: 'inherit',
-              background: mode === 'erase' ? '#db2777' : '#374151',
-              color: 'white', border: 'none', fontSize: '14px', fontWeight: 800, cursor: 'pointer',
-            }}>⬜ Erase</button>
+            style={{ ...btnBase, background: mode === 'erase' ? '#db2777' : '#374151' }}>
+            ⬜ Erase
+          </button>
         </div>
 
-        {/* Save / Clear — pushed to right */}
+        {/* Undo / Redo */}
+        <div style={{ display: 'flex', gap: '6px', marginLeft: '4px' }}>
+          <button onClick={undo} disabled={!canUndo} title="Undo (Ctrl+Z)"
+            style={{ ...btnBase, background: canUndo ? '#4b5563' : '#2d3748', opacity: canUndo ? 1 : 0.4, cursor: canUndo ? 'pointer' : 'default' }}>
+            ↩ Undo
+          </button>
+          <button onClick={redo} disabled={!canRedo} title="Redo (Ctrl+Y)"
+            style={{ ...btnBase, background: canRedo ? '#4b5563' : '#2d3748', opacity: canRedo ? 1 : 0.4, cursor: canRedo ? 'pointer' : 'default' }}>
+            ↪ Redo
+          </button>
+        </div>
+
+        {/* Save / Clear — pushed right */}
         <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center' }}>
           {galleryCount > 0 && (
             <span style={{ fontSize: '12px', color: '#6b7280' }}>{galleryCount}/{GALLERY_MAX} saved</span>
           )}
           <button onClick={saveDrawing}
-            style={{
-              padding: '10px 22px', fontFamily: 'inherit',
-              background: saved ? '#16a34a' : '#db2777', color: 'white',
-              border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 800, cursor: 'pointer',
-              transition: 'background 0.2s',
-            }}>
+            style={{ ...btnBase, padding: '9px 20px', fontSize: '14px', background: saved ? '#16a34a' : '#db2777', transition: 'background 0.2s' }}>
             {saved ? '✅ Saved!' : '💾 Save to Home'}
           </button>
           <button onClick={clearCanvas}
-            style={{
-              padding: '10px 14px', fontFamily: 'inherit',
-              background: '#374151', color: 'white',
-              border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 800, cursor: 'pointer',
-            }}>🗑️</button>
+            style={{ ...btnBase, background: '#374151' }}>
+            🗑️ Clear
+          </button>
         </div>
       </div>
 
-      {/* ── Body: left sidebar + canvas ───────────────────────── */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden', minHeight: 0 }}>
+      {/* ── Body: left sidebar + canvas ─────────────────────── */}
+      <div style={{ flex: 1, display: 'flex', overflow: 'hidden', minHeight: 0, position: 'relative' }}>
 
-        {/* Left sidebar */}
+        {/* Left sidebar — colour swatches + stamp button */}
         <div style={{
-          width: '72px',
+          width: '68px',
           background: '#16213e',
           borderRight: '2px solid #0f3460',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          padding: '12px 0',
-          gap: '6px',
+          padding: '10px 0',
+          gap: '5px',
           overflowY: 'auto',
           flexShrink: 0,
         }}>
-          {/* Color swatches */}
           {COLORS.map(c => (
             <button key={c.hex} onClick={() => pickColor(c)} title={c.name}
               style={{
-                width: '42px', height: '42px', borderRadius: '50%', background: c.hex,
+                width: '40px', height: '40px', borderRadius: '50%', background: c.hex,
                 border: `3px solid ${color === c.hex ? 'white' : c.hex === '#ffffff' ? '#4b5563' : 'transparent'}`,
                 boxShadow: color === c.hex ? '0 0 0 3px #db2777' : 'none',
                 cursor: 'pointer', flexShrink: 0, padding: 0,
@@ -265,16 +330,12 @@ export function FreeDrawStudio({ onBack }) {
               }}
             />
           ))}
-
-          {/* Divider */}
-          <div style={{ width: '48px', height: '2px', background: '#0f3460', margin: '4px 0', flexShrink: 0 }} />
-
-          {/* Stamp button */}
+          <div style={{ width: '44px', height: '2px', background: '#0f3460', margin: '3px 0', flexShrink: 0 }} />
           <button
             onClick={() => { setMode('stamp'); setShowStamps(p => !p) }}
             title="Stamps"
             style={{
-              width: '42px', height: '42px', borderRadius: '12px', fontSize: '22px',
+              width: '40px', height: '40px', borderRadius: '12px', fontSize: '20px',
               background: mode === 'stamp' ? '#db2777' : '#374151',
               border: `2px solid ${mode === 'stamp' ? 'white' : 'transparent'}`,
               cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -284,10 +345,10 @@ export function FreeDrawStudio({ onBack }) {
           </button>
         </div>
 
-        {/* Stamp picker panel (slides in over canvas) */}
+        {/* Stamp picker */}
         {showStamps && (
           <div style={{
-            position: 'absolute', left: '74px', top: '56px',
+            position: 'absolute', left: '70px', top: '4px',
             background: '#16213e', border: '2px solid #0f3460',
             borderRadius: '16px', padding: '12px',
             display: 'flex', flexWrap: 'wrap', gap: '8px',
@@ -297,7 +358,7 @@ export function FreeDrawStudio({ onBack }) {
             {STAMPS.map(s => (
               <button key={s} onClick={() => { setActiveStamp(s); setShowStamps(false) }}
                 style={{
-                  fontSize: '30px', background: activeStamp === s ? '#374151' : 'transparent',
+                  fontSize: '28px', background: activeStamp === s ? '#374151' : 'transparent',
                   border: `2px solid ${activeStamp === s ? '#db2777' : 'transparent'}`,
                   borderRadius: '10px', padding: '4px 6px', cursor: 'pointer', lineHeight: 1,
                 }}>
