@@ -40,6 +40,7 @@ const STAMPS = ['⭐', '🌸', '🦋', '🌈', '🐱', '🐶', '🍭', '🎈', '
 
 export function FreeDrawStudio({ onBack }) {
   const canvasRef = useRef(null)
+  const fileInputRef = useRef(null)
   const isDrawing = useRef(false)
   const lastPos = useRef(null)
   const history = useRef([])       // ImageData snapshots
@@ -209,6 +210,40 @@ export function FreeDrawStudio({ onBack }) {
     setTimeout(() => setSaved(false), 2500)
   }
 
+  function downloadDrawing() {
+    const canvas = canvasRef.current
+    const dataUrl = canvas.toDataURL('image/png')
+    const a = document.createElement('a')
+    const timestamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')
+    a.href = dataUrl
+    a.download = `mina-drawing-${timestamp}.png`
+    a.click()
+  }
+
+  function loadFromFile(e) {
+    const file = e.target.files[0]
+    if (!file) return
+    const url = URL.createObjectURL(file)
+    const img = new Image()
+    img.onload = () => {
+      const canvas = canvasRef.current
+      const ctx = canvas.getContext('2d')
+      // Fill white first, then draw image scaled to fit canvas
+      ctx.fillStyle = 'white'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      const scale = Math.min(canvas.width / img.width, canvas.height / img.height)
+      const x = (canvas.width  - img.width  * scale) / 2
+      const y = (canvas.height - img.height * scale) / 2
+      ctx.drawImage(img, x, y, img.width * scale, img.height * scale)
+      URL.revokeObjectURL(url)
+      pushHistory(canvas)
+      speak('Drawing loaded! Keep drawing!', { rate: 0.85 })
+    }
+    img.src = url
+    // Reset so the same file can be loaded again if needed
+    e.target.value = ''
+  }
+
   function pickColor(c) {
     setColor(c.hex)
     setColorName(c.name)
@@ -287,19 +322,35 @@ export function FreeDrawStudio({ onBack }) {
           </button>
         </div>
 
-        {/* Save / Clear — pushed right */}
+        {/* Save / Download / Load / Clear — pushed right */}
         <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center' }}>
           {galleryCount > 0 && (
             <span style={{ fontSize: '12px', color: '#6b7280' }}>{galleryCount}/{GALLERY_MAX} saved</span>
           )}
           <button onClick={saveDrawing}
-            style={{ ...btnBase, padding: '9px 20px', fontSize: '14px', background: saved ? '#16a34a' : '#db2777', transition: 'background 0.2s' }}>
+            style={{ ...btnBase, padding: '9px 16px', fontSize: '13px', background: saved ? '#16a34a' : '#db2777', transition: 'background 0.2s' }}>
             {saved ? '✅ Saved!' : '💾 Save to Home'}
+          </button>
+          <button onClick={downloadDrawing}
+            style={{ ...btnBase, padding: '9px 16px', fontSize: '13px', background: '#0f766e' }}>
+            ⬇️ Download PNG
+          </button>
+          <button onClick={() => fileInputRef.current.click()}
+            style={{ ...btnBase, padding: '9px 16px', fontSize: '13px', background: '#1d4ed8' }}>
+            📂 Load PNG
           </button>
           <button onClick={clearCanvas}
             style={{ ...btnBase, background: '#374151' }}>
             🗑️ Clear
           </button>
+          {/* Hidden file input */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/gif"
+            style={{ display: 'none' }}
+            onChange={loadFromFile}
+          />
         </div>
       </div>
 
