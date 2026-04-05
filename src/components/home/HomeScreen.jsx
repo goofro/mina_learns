@@ -10,159 +10,219 @@ const GREETINGS = [
 ]
 
 const ART_UNLOCK_STARS = 10
+const GALLERY_KEY = 'mina_art_gallery'
+
+// Positions for up to 6 framed drawings around the edges of the screen
+const COLLAGE_SLOTS = [
+  { top: '8vh',  left: '8px',   rotate: -7  },
+  { top: '8vh',  right: '8px',  rotate:  6  },
+  { top: '38vh', left: '4px',   rotate:  4  },
+  { top: '38vh', right: '4px',  rotate: -5  },
+  { top: '68vh', left: '8px',   rotate: -4  },
+  { top: '68vh', right: '8px',  rotate:  7  },
+]
 
 export function HomeScreen({ onNavigate, stars = 0 }) {
   const artUnlocked = stars >= ART_UNLOCK_STARS
   const [greeting] = useState(() => GREETINGS[Math.floor(Math.random() * GREETINGS.length)])
+  const [gallery, setGallery] = useState([])
 
   useEffect(() => {
     const timer = setTimeout(() => speak("Hi Mina! Ready to learn?", { rate: 0.8, pitch: 1.2 }), 400)
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
+    setGallery(saved)
+  }, [])
+
   return (
     <div
       style={{
         minHeight: '100vh',
-        paddingTop: '80px',
         background: 'linear-gradient(160deg, #fff8e7 0%, #fef3f8 50%, #f0f8ff 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         padding: '80px 20px 40px',
+        position: 'relative',
       }}
     >
-      {/* Mascot */}
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <div className="bounce" style={{ lineHeight: 1 }}>
-          <TwEmoji emoji="🦄" size={96} />
+      {/* Mina's saved drawings as a collage wallpaper at the screen edges */}
+      {gallery.slice(0, COLLAGE_SLOTS.length).map((dataUrl, i) => {
+        const slot = COLLAGE_SLOTS[i]
+        return (
+          <div key={i} style={{
+            position: 'fixed',
+            top: slot.top,
+            left: slot.left,
+            right: slot.right,
+            transform: `rotate(${slot.rotate}deg)`,
+            zIndex: 2,
+            pointerEvents: 'none',
+          }}>
+            {/* Polaroid-style frame */}
+            <div style={{
+              background: 'white',
+              padding: '5px 5px 22px',
+              borderRadius: '3px',
+              boxShadow: '0 6px 18px rgba(0,0,0,0.22)',
+              width: '100px',
+            }}>
+              <img
+                src={dataUrl}
+                alt="Mina's drawing"
+                style={{ width: '100%', display: 'block', borderRadius: '1px' }}
+              />
+            </div>
+          </div>
+        )
+      })}
+
+      {/* Main content sits above the collage frames */}
+      <div style={{ position: 'relative', zIndex: 3, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        {/* Mascot */}
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <div className="bounce" style={{ lineHeight: 1 }}>
+            <TwEmoji emoji="🦄" size={96} />
+          </div>
+          <div
+            style={{
+              marginTop: '12px',
+              background: 'white',
+              borderRadius: '20px',
+              padding: '12px 24px',
+              fontSize: '20px',
+              fontWeight: 700,
+              color: '#4b5563',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              display: 'inline-block',
+            }}
+          >
+            {greeting}
+          </div>
         </div>
+
+        {/* Subject buttons */}
         <div
           style={{
-            marginTop: '12px',
-            background: 'white',
-            borderRadius: '20px',
-            padding: '12px 24px',
-            fontSize: '20px',
-            fontWeight: 700,
-            color: '#4b5563',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-            display: 'inline-block',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '20px',
+            maxWidth: '800px',
+            width: '100%',
           }}
         >
-          {greeting}
-        </div>
-      </div>
-
-      {/* Subject buttons */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '20px',
-          maxWidth: '800px',
-          width: '100%',
-        }}
-      >
-        <SubjectCard
-          emoji="📚"
-          title="Reading"
-          subtitle="Letters, Words & Stories"
-          bgColor="linear-gradient(135deg, #fef3c7, #fde68a)"
-          borderColor="#f59e0b"
-          shadowColor="#d97706"
-          onClick={() => {
-            speak('Reading! Let us learn words!')
-            onNavigate('reading')
-          }}
-        />
-        <SubjectCard
-          emoji="🔢"
-          title="Math"
-          subtitle="Numbers, Shapes & More"
-          bgColor="linear-gradient(135deg, #dbeafe, #bfdbfe)"
-          borderColor="#3b82f6"
-          shadowColor="#1d4ed8"
-          onClick={() => {
-            speak('Math! Let us count and learn!')
-            onNavigate('math')
-          }}
-        />
-        <SubjectCard
-          emoji="🗓️"
-          title="Calendar"
-          subtitle="Days & Months of the Year"
-          bgColor="linear-gradient(135deg, #e0e7ff, #ede9fe)"
-          borderColor="#6366f1"
-          shadowColor="#4338ca"
-          onClick={() => {
-            speak('Calendar time! Let us learn the days and months!')
-            onNavigate('calendar')
-          }}
-        />
-        <SubjectCard
-          emoji="🎮"
-          title="Games"
-          subtitle="Fun Learning Games"
-          bgColor="linear-gradient(135deg, #dcfce7, #d1fae5)"
-          borderColor="#10b981"
-          shadowColor="#059669"
-          onClick={() => {
-            speak('Games! Let us play!')
-            onNavigate('games')
-          }}
-        />
-
-        {/* Art Studio — unlocks at 10 stars */}
-        {artUnlocked ? (
           <SubjectCard
-            emoji="🎨"
-            title="Art Studio"
-            subtitle="Mix colors, draw & create!"
-            bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
-            borderColor="#db2777"
-            shadowColor="#9d174d"
+            emoji="📚"
+            title="Reading"
+            subtitle="Letters, Words & Stories"
+            bgColor="linear-gradient(135deg, #fef3c7, #fde68a)"
+            borderColor="#f59e0b"
+            shadowColor="#d97706"
             onClick={() => {
-              speak('Art Studio! Let us make something beautiful!')
-              onNavigate('artstudio')
+              speak('Reading! Let us learn words!')
+              onNavigate('reading')
             }}
           />
-        ) : (
-          <div style={{
-            background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
-            border: '4px dashed #d1d5db',
-            borderRadius: '28px',
-            padding: '32px 28px',
-            textAlign: 'center',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
-          }}>
-            <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
-            <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
-            <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
-              Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+          <SubjectCard
+            emoji="🔢"
+            title="Math"
+            subtitle="Numbers, Shapes & More"
+            bgColor="linear-gradient(135deg, #dbeafe, #bfdbfe)"
+            borderColor="#3b82f6"
+            shadowColor="#1d4ed8"
+            onClick={() => {
+              speak('Math! Let us count and learn!')
+              onNavigate('math')
+            }}
+          />
+          <SubjectCard
+            emoji="🗓️"
+            title="Calendar"
+            subtitle="Days & Months of the Year"
+            bgColor="linear-gradient(135deg, #e0e7ff, #ede9fe)"
+            borderColor="#6366f1"
+            shadowColor="#4338ca"
+            onClick={() => {
+              speak('Calendar time! Let us learn the days and months!')
+              onNavigate('calendar')
+            }}
+          />
+          <SubjectCard
+            emoji="🎮"
+            title="Games"
+            subtitle="Fun Learning Games"
+            bgColor="linear-gradient(135deg, #dcfce7, #d1fae5)"
+            borderColor="#10b981"
+            shadowColor="#059669"
+            onClick={() => {
+              speak('Games! Let us play!')
+              onNavigate('games')
+            }}
+          />
+
+          {/* Art Studio — unlocks at 10 stars */}
+          {artUnlocked ? (
+            <SubjectCard
+              emoji="🎨"
+              title="Art Studio"
+              subtitle="Mix colors, draw & create!"
+              bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
+              borderColor="#db2777"
+              shadowColor="#9d174d"
+              onClick={() => {
+                speak('Art Studio! Let us make something beautiful!')
+                onNavigate('artstudio')
+              }}
+            />
+          ) : (
+            <div style={{
+              background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
+              border: '4px dashed #d1d5db',
+              borderRadius: '28px',
+              padding: '32px 28px',
+              textAlign: 'center',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
+            }}>
+              <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
+              <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
+                Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+              </div>
             </div>
+          )}
+        </div>
+
+        {/* Stars prompt */}
+        <div
+          style={{
+            marginTop: '40px',
+            fontSize: '16px',
+            color: '#9ca3af',
+            fontWeight: 600,
+            textAlign: 'center',
+          }}
+        >
+          {artUnlocked
+            ? '🎨 Art Studio is unlocked! Well done!'
+            : `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`}
+        </div>
+
+        {/* Gallery hint */}
+        {gallery.length > 0 && (
+          <div style={{ marginTop: '12px', fontSize: '14px', color: '#c084fc', fontWeight: 600 }}>
+            🖼️ Your drawings are decorating the screen!
           </div>
         )}
       </div>
 
-      {/* Stars prompt */}
-      <div
-        style={{
-          marginTop: '40px',
-          fontSize: '16px',
-          color: '#9ca3af',
-          fontWeight: 600,
-          textAlign: 'center',
-        }}
-      >
-        {artUnlocked ? '🎨 Art Studio is unlocked! Well done!' : `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`}
-      </div>
-
       {/* Decorative floating elements */}
-      <div style={{ position: 'fixed', top: '100px', left: '20px', opacity: 0.35, animation: 'float 4s ease-in-out infinite' }}><TwEmoji emoji="🌸" size={36} /></div>
-      <div style={{ position: 'fixed', top: '200px', right: '30px', opacity: 0.35, animation: 'float 3s ease-in-out infinite 1s' }}><TwEmoji emoji="🌟" size={32} /></div>
-      <div style={{ position: 'fixed', bottom: '100px', left: '40px', opacity: 0.35, animation: 'float 5s ease-in-out infinite 0.5s' }}><TwEmoji emoji="🎈" size={28} /></div>
-      <div style={{ position: 'fixed', bottom: '120px', right: '40px', opacity: 0.35, animation: 'float 4s ease-in-out infinite 2s' }}><TwEmoji emoji="🦋" size={34} /></div>
+      <div style={{ position: 'fixed', top: '100px', left: '20px', opacity: 0.35, animation: 'float 4s ease-in-out infinite', zIndex: 1 }}><TwEmoji emoji="🌸" size={36} /></div>
+      <div style={{ position: 'fixed', top: '200px', right: '30px', opacity: 0.35, animation: 'float 3s ease-in-out infinite 1s', zIndex: 1 }}><TwEmoji emoji="🌟" size={32} /></div>
+      <div style={{ position: 'fixed', bottom: '100px', left: '40px', opacity: 0.35, animation: 'float 5s ease-in-out infinite 0.5s', zIndex: 1 }}><TwEmoji emoji="🎈" size={28} /></div>
+      <div style={{ position: 'fixed', bottom: '120px', right: '40px', opacity: 0.35, animation: 'float 4s ease-in-out infinite 2s', zIndex: 1 }}><TwEmoji emoji="🦋" size={34} /></div>
     </div>
   )
 }

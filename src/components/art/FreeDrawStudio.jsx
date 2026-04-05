@@ -1,29 +1,42 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
 
 const SAVE_KEY = 'mina_art_studio_drawing'
+const GALLERY_KEY = 'mina_art_gallery'
+const GALLERY_MAX = 6
+
+// Canvas resolution — high-res so saved images look great
+const CANVAS_W = 1600
+const CANVAS_H = 1000
 
 const COLORS = [
   { hex: '#ef4444', name: 'Red' },
   { hex: '#f97316', name: 'Orange' },
   { hex: '#facc15', name: 'Yellow' },
+  { hex: '#84cc16', name: 'Lime' },
   { hex: '#4ade80', name: 'Green' },
+  { hex: '#2dd4bf', name: 'Teal' },
   { hex: '#60a5fa', name: 'Blue' },
+  { hex: '#818cf8', name: 'Indigo' },
   { hex: '#a78bfa', name: 'Purple' },
   { hex: '#f472b6', name: 'Pink' },
+  { hex: '#fb7185', name: 'Rose' },
   { hex: '#92400e', name: 'Brown' },
   { hex: '#1f2937', name: 'Black' },
+  { hex: '#6b7280', name: 'Grey' },
   { hex: '#ffffff', name: 'White' },
 ]
 
 const BRUSHES = [
-  { size: 8,  label: '●', title: 'Small' },
-  { size: 20, label: '●', title: 'Medium' },
-  { size: 40, label: '●', title: 'Large' },
+  { size: 4,  title: 'Thin'   },
+  { size: 14, title: 'Small'  },
+  { size: 28, title: 'Medium' },
+  { size: 50, title: 'Thick'  },
+  { size: 80, title: 'Chunky' },
 ]
 
-const STAMPS = ['⭐', '🌸', '🦋', '🌈', '🐱', '🐶', '🍭', '🎈', '❤️', '🌺', '🐸', '🌟']
+const STAMPS = ['⭐', '🌸', '🦋', '🌈', '🐱', '🐶', '🍭', '🎈', '❤️', '🌺', '🐸', '🌟', '🦄', '🍦', '🎀', '🌻', '🚀', '🎵']
 
 export function FreeDrawStudio({ onBack }) {
   const canvasRef = useRef(null)
@@ -32,27 +45,28 @@ export function FreeDrawStudio({ onBack }) {
 
   const [color, setColor] = useState('#ef4444')
   const [colorName, setColorName] = useState('Red')
-  const [brushIdx, setBrushIdx] = useState(1)
+  const [brushIdx, setBrushIdx] = useState(2)
   const [mode, setMode] = useState('draw') // 'draw' | 'erase' | 'stamp'
   const [activeStamp, setActiveStamp] = useState('⭐')
-  const [showStampPicker, setShowStampPicker] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [galleryCount, setGalleryCount] = useState(0)
+  const [showStamps, setShowStamps] = useState(false)
 
   // Load saved drawing on mount
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
-    // Fill white
     ctx.fillStyle = 'white'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
-    // Load saved
     const dataUrl = localStorage.getItem(SAVE_KEY)
     if (dataUrl) {
       const img = new Image()
       img.onload = () => ctx.drawImage(img, 0, 0)
       img.src = dataUrl
     }
+    const gallery = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
+    setGalleryCount(gallery.length)
   }, [])
 
   function getPos(e, canvas) {
@@ -70,15 +84,9 @@ export function FreeDrawStudio({ onBack }) {
     e.preventDefault()
     const canvas = canvasRef.current
     const pos = getPos(e, canvas)
-
-    if (mode === 'stamp') {
-      placeStamp(pos, canvas)
-      return
-    }
-
+    if (mode === 'stamp') { placeStamp(pos, canvas); return }
     isDrawing.current = true
     lastPos.current = pos
-    // Draw a dot at start point
     const ctx = canvas.getContext('2d')
     ctx.beginPath()
     ctx.arc(pos.x, pos.y, BRUSHES[brushIdx].size / 2, 0, Math.PI * 2)
@@ -93,7 +101,6 @@ export function FreeDrawStudio({ onBack }) {
     const ctx = canvas.getContext('2d')
     const pos = getPos(e, canvas)
     const last = lastPos.current
-
     ctx.beginPath()
     ctx.moveTo(last.x, last.y)
     ctx.lineTo(pos.x, pos.y)
@@ -113,7 +120,7 @@ export function FreeDrawStudio({ onBack }) {
 
   function placeStamp(pos, canvas) {
     const ctx = canvas.getContext('2d')
-    const size = BRUSHES[brushIdx].size * 2.5
+    const size = BRUSHES[brushIdx].size * 3.5
     ctx.font = `${size}px serif`
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
@@ -134,8 +141,12 @@ export function FreeDrawStudio({ onBack }) {
     const canvas = canvasRef.current
     const dataUrl = canvas.toDataURL('image/png')
     localStorage.setItem(SAVE_KEY, dataUrl)
+    const existing = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
+    const updated = [dataUrl, ...existing].slice(0, GALLERY_MAX)
+    localStorage.setItem(GALLERY_KEY, JSON.stringify(updated))
+    setGalleryCount(updated.length)
     setSaved(true)
-    speak('Drawing saved! You can come back and see it later!', { rate: 0.85 })
+    speak('Your drawing is saved! It will show on your home screen!', { rate: 0.85 })
     setTimeout(() => setSaved(false), 2500)
   }
 
@@ -143,104 +154,179 @@ export function FreeDrawStudio({ onBack }) {
     setColor(c.hex)
     setColorName(c.name)
     setMode('draw')
-    setShowStampPicker(false)
+    setShowStamps(false)
     speak(c.name, { rate: 0.85 })
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #fef9ee, #fce7f3)', padding: '80px 12px 20px' }}>
-      <div style={{ maxWidth: '520px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-          <BackButton onClick={onBack} />
-          <h1 style={{ fontSize: '22px', fontWeight: 900, color: '#1f2937', flex: 1 }}>🎨 Free Drawing</h1>
-          <button onClick={saveDrawing}
-            style={{ padding: '10px 16px', background: saved ? '#16a34a' : '#db2777', color: 'white', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
-            {saved ? '✅ Saved!' : '💾 Save'}
-          </button>
-          <button onClick={clearCanvas}
-            style={{ padding: '10px 16px', background: '#f3f4f6', color: '#374151', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
-            🗑️
-          </button>
-        </div>
+    <div style={{
+      position: 'fixed', inset: 0,
+      background: '#1a1a2e',
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden',
+    }}>
+      {/* ── Top bar ───────────────────────────────────────────── */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        padding: '8px 14px',
+        background: '#16213e',
+        borderBottom: '2px solid #0f3460',
+        flexShrink: 0,
+      }}>
+        <BackButton onClick={onBack} />
+        <span style={{ fontSize: '18px', fontWeight: 900, color: 'white' }}>🎨 Free Drawing</span>
 
-        {/* Canvas */}
-        <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', marginBottom: '14px', touchAction: 'none', border: '3px solid #f9a8d4' }}>
-          <canvas
-            ref={canvasRef}
-            width={500}
-            height={360}
-            style={{ display: 'block', width: '100%', cursor: mode === 'stamp' ? 'crosshair' : mode === 'erase' ? 'cell' : 'crosshair', touchAction: 'none' }}
-            onMouseDown={startDraw}
-            onMouseMove={draw}
-            onMouseUp={endDraw}
-            onMouseLeave={endDraw}
-            onTouchStart={startDraw}
-            onTouchMove={draw}
-            onTouchEnd={endDraw}
-          />
-        </div>
-
-        {/* Tool bar */}
-        <div style={{ background: 'white', borderRadius: '20px', padding: '14px 16px', boxShadow: '0 4px 12px rgba(0,0,0,0.07)', marginBottom: '12px' }}>
-          {/* Mode buttons */}
-          <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
-            {[
-              { id: 'draw', label: '✏️ Draw' },
-              { id: 'erase', label: '⬜ Erase' },
-              { id: 'stamp', label: `${activeStamp} Stamp` },
-            ].map(m => (
-              <button key={m.id}
-                onClick={() => { setMode(m.id); if (m.id === 'stamp') setShowStampPicker(p => !p); else setShowStampPicker(false) }}
-                style={{ flex: 1, padding: '10px 4px', borderRadius: '12px', border: `3px solid ${mode === m.id ? '#db2777' : '#e5e7eb'}`, background: mode === m.id ? '#fce7f3' : 'white', fontSize: '14px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', color: mode === m.id ? '#db2777' : '#374151' }}>
-                {m.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Brush size */}
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '12px' }}>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#6b7280' }}>Size:</span>
-            {BRUSHES.map((b, i) => (
-              <button key={i} onClick={() => setBrushIdx(i)}
-                style={{ width: 36 + i * 10, height: 36 + i * 10, borderRadius: '50%', background: brushIdx === i ? color : '#e5e7eb', border: `3px solid ${brushIdx === i ? color : 'transparent'}`, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              </button>
-            ))}
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#374151', marginLeft: '4px' }}>{BRUSHES[brushIdx].title}</span>
-          </div>
-
-          {/* Stamp picker */}
-          {showStampPicker && (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '10px', background: '#fef9ee', borderRadius: '14px', marginBottom: '10px' }}>
-              {STAMPS.map(s => (
-                <button key={s} onClick={() => { setActiveStamp(s); setShowStampPicker(false) }}
-                  style={{ fontSize: '28px', background: activeStamp === s ? '#fce7f3' : 'transparent', border: `2px solid ${activeStamp === s ? '#db2777' : 'transparent'}`, borderRadius: '10px', padding: '4px 6px', cursor: 'pointer', lineHeight: 1 }}>
-                  {s}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Color palette */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#6b7280' }}>Colour:</span>
-            {COLORS.map(c => (
-              <button
-                key={c.hex}
-                onClick={() => pickColor(c)}
-                title={c.name}
+        {/* Brush sizes */}
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginLeft: '12px' }}>
+          <span style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 700 }}>Size:</span>
+          {BRUSHES.map((b, i) => {
+            const d = 14 + i * 9
+            return (
+              <button key={i} onClick={() => setBrushIdx(i)} title={b.title}
                 style={{
-                  width: '34px', height: '34px', borderRadius: '50%', background: c.hex,
-                  border: `3px solid ${color === c.hex ? '#1f2937' : c.hex === '#ffffff' ? '#d1d5db' : c.hex}`,
-                  boxShadow: color === c.hex ? '0 0 0 3px white, 0 0 0 5px #1f2937' : 'none',
-                  cursor: 'pointer', transition: 'box-shadow 0.1s',
+                  width: d, height: d, borderRadius: '50%',
+                  background: brushIdx === i ? color : '#4b5563',
+                  border: `2px solid ${brushIdx === i ? 'white' : 'transparent'}`,
+                  cursor: 'pointer', flexShrink: 0, padding: 0,
                 }}
               />
-            ))}
-            {mode === 'draw' && (
-              <span style={{ fontSize: '13px', fontWeight: 700, color, marginLeft: '4px' }}>{colorName}</span>
-            )}
-          </div>
+            )
+          })}
         </div>
+
+        {/* Mode: draw / erase */}
+        <div style={{ display: 'flex', gap: '6px', marginLeft: '12px' }}>
+          <button onClick={() => { setMode('draw'); setShowStamps(false) }}
+            style={{
+              padding: '8px 16px', borderRadius: '10px', fontFamily: 'inherit',
+              background: mode === 'draw' ? '#db2777' : '#374151',
+              color: 'white', border: 'none', fontSize: '14px', fontWeight: 800, cursor: 'pointer',
+            }}>✏️ Draw</button>
+          <button onClick={() => { setMode('erase'); setShowStamps(false) }}
+            style={{
+              padding: '8px 16px', borderRadius: '10px', fontFamily: 'inherit',
+              background: mode === 'erase' ? '#db2777' : '#374151',
+              color: 'white', border: 'none', fontSize: '14px', fontWeight: 800, cursor: 'pointer',
+            }}>⬜ Erase</button>
+        </div>
+
+        {/* Save / Clear — pushed to right */}
+        <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {galleryCount > 0 && (
+            <span style={{ fontSize: '12px', color: '#6b7280' }}>{galleryCount}/{GALLERY_MAX} saved</span>
+          )}
+          <button onClick={saveDrawing}
+            style={{
+              padding: '10px 22px', fontFamily: 'inherit',
+              background: saved ? '#16a34a' : '#db2777', color: 'white',
+              border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 800, cursor: 'pointer',
+              transition: 'background 0.2s',
+            }}>
+            {saved ? '✅ Saved!' : '💾 Save to Home'}
+          </button>
+          <button onClick={clearCanvas}
+            style={{
+              padding: '10px 14px', fontFamily: 'inherit',
+              background: '#374151', color: 'white',
+              border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 800, cursor: 'pointer',
+            }}>🗑️</button>
+        </div>
+      </div>
+
+      {/* ── Body: left sidebar + canvas ───────────────────────── */}
+      <div style={{ flex: 1, display: 'flex', overflow: 'hidden', minHeight: 0 }}>
+
+        {/* Left sidebar */}
+        <div style={{
+          width: '72px',
+          background: '#16213e',
+          borderRight: '2px solid #0f3460',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '12px 0',
+          gap: '6px',
+          overflowY: 'auto',
+          flexShrink: 0,
+        }}>
+          {/* Color swatches */}
+          {COLORS.map(c => (
+            <button key={c.hex} onClick={() => pickColor(c)} title={c.name}
+              style={{
+                width: '42px', height: '42px', borderRadius: '50%', background: c.hex,
+                border: `3px solid ${color === c.hex ? 'white' : c.hex === '#ffffff' ? '#4b5563' : 'transparent'}`,
+                boxShadow: color === c.hex ? '0 0 0 3px #db2777' : 'none',
+                cursor: 'pointer', flexShrink: 0, padding: 0,
+                transition: 'box-shadow 0.1s',
+              }}
+            />
+          ))}
+
+          {/* Divider */}
+          <div style={{ width: '48px', height: '2px', background: '#0f3460', margin: '4px 0', flexShrink: 0 }} />
+
+          {/* Stamp button */}
+          <button
+            onClick={() => { setMode('stamp'); setShowStamps(p => !p) }}
+            title="Stamps"
+            style={{
+              width: '42px', height: '42px', borderRadius: '12px', fontSize: '22px',
+              background: mode === 'stamp' ? '#db2777' : '#374151',
+              border: `2px solid ${mode === 'stamp' ? 'white' : 'transparent'}`,
+              cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              flexShrink: 0, padding: 0,
+            }}>
+            {activeStamp}
+          </button>
+        </div>
+
+        {/* Stamp picker panel (slides in over canvas) */}
+        {showStamps && (
+          <div style={{
+            position: 'absolute', left: '74px', top: '60px',
+            background: '#16213e', border: '2px solid #0f3460',
+            borderRadius: '16px', padding: '12px',
+            display: 'flex', flexWrap: 'wrap', gap: '8px',
+            width: '220px', zIndex: 50,
+            boxShadow: '0 8px 24px rgba(0,0,0,0.6)',
+          }}>
+            {STAMPS.map(s => (
+              <button key={s} onClick={() => { setActiveStamp(s); setShowStamps(false) }}
+                style={{
+                  fontSize: '30px', background: activeStamp === s ? '#374151' : 'transparent',
+                  border: `2px solid ${activeStamp === s ? '#db2777' : 'transparent'}`,
+                  borderRadius: '10px', padding: '4px 6px', cursor: 'pointer', lineHeight: 1,
+                }}>
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Canvas */}
+        <canvas
+          ref={canvasRef}
+          width={CANVAS_W}
+          height={CANVAS_H}
+          style={{
+            flex: 1,
+            display: 'block',
+            width: '100%',
+            height: '100%',
+            cursor: mode === 'erase' ? 'cell' : 'crosshair',
+            touchAction: 'none',
+          }}
+          onMouseDown={startDraw}
+          onMouseMove={draw}
+          onMouseUp={endDraw}
+          onMouseLeave={endDraw}
+          onTouchStart={startDraw}
+          onTouchMove={draw}
+          onTouchEnd={endDraw}
+        />
       </div>
     </div>
   )

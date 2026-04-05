@@ -101,10 +101,11 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
 **Fixed:** 2026-04-03 ✅ — `src/components/writing/LetterTracer.jsx`: HTML5 Canvas, pointer events (mouse+touch), 7 crayon colors, ◀▶ nav, clear button, "I traced it!" awards 3 stars. Two modes: A–Z letters and 0–9 numbers. Accessible via Reading World → Letter Tracing.
 
-### [ ] FEAT-042: Drawing wallpaper collage on the home screen
+### [x] FEAT-042: Drawing wallpaper collage on the home screen
 **Priority:** Medium
-**Description:** Saved drawings from Free Draw Studio appear as a collage wallpaper on the home screen. Each time Mina taps "Save" in Free Draw Studio, her artwork is added to a gallery (up to 6 drawings, newest first) stored in localStorage. The home screen background displays these saved drawings as small framed pictures scattered behind the main content, giving Mina pride in seeing her own artwork decorating the app. When no drawings are saved yet, the home screen looks as it does today.
+**Description:** Saved drawings from Free Draw Studio appear as a collage wallpaper on the home screen. Each time Mina taps "Save" in Free Draw Studio, her artwork is added to a gallery (up to 6 drawings, newest first) stored in localStorage. The home screen background displays these saved drawings as small polaroid-framed pictures scattered at the edges of the screen, giving Mina pride in seeing her own artwork decorating the app. When no drawings are saved yet, the home screen looks as it does today.
 **Files:** `src/components/art/FreeDrawStudio.jsx`, `src/components/home/HomeScreen.jsx`
+**Fixed:** 2026-04-05 ✅ — Free Draw Studio now full-screen with left sidebar (15 color swatches + stamp picker), 5 brush sizes, dark canvas UI. "Save to Home" stores drawing to `mina_art_gallery` array (max 6) in localStorage. HomeScreen reads the gallery and displays drawings as polaroid frames pinned at the left/right viewport edges behind the main content.
 
 ### [ ] FEAT-041: PWA deployment for iPad (and other tablets)
 **Priority:** Medium  
