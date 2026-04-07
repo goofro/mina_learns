@@ -96,6 +96,15 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 ## 📋 Backlog (Future Features)
 
+### [ ] FEAT-043: Telling time — reading a clock
+**Priority:** High
+**Description:** Teach Mina to read analogue and digital clocks. Two phases:
+1. **Learn** — interactive analogue clock face where tapping the hour hand speaks the hour ("3 o'clock!"). Start with o'clock times (whole hours), then introduce half-past. Visual labels on the clock face for each number.
+2. **Quiz** — show a clock set to a random hour/half-hour, Mina taps the correct time from 3 text choices (e.g. "2 o'clock", "5 o'clock", "8 o'clock"). TTS reads the question: "What time does the clock show?"
+**Scope:** Whole hours (1–12 o'clock) for starters; half-past as a stretch goal.
+**Lives in:** Calendar section (alongside Days of the Week & Months of the Year).
+**Files to create:** `src/components/calendar/TellingTime.jsx`
+
 ### [x] FEAT-001: Writing practice module
 **Priority:** Medium  
 **Description:** Add a "trace the letter/number" drawing activity using canvas. Mina traces dotted letter outlines with mouse or touch.  
