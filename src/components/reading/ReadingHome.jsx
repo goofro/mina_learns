@@ -123,6 +123,22 @@ const ACTIVITIES = [
     color: '#ec4899',
     shadow: '#be185d',
   },
+  {
+    id: 'strokepractice',
+    emoji: '〰️',
+    title: 'Stroke Practice',
+    subtitle: 'Lines, curves, circles & more',
+    color: '#3b82f6',
+    shadow: '#1d4ed8',
+  },
+  {
+    id: 'picturevocab',
+    emoji: '🖼️',
+    title: 'Picture Vocabulary',
+    subtitle: 'Animals, food & action words',
+    color: '#f97316',
+    shadow: '#ea580c',
+  },
 ]
 
 export function ReadingHome({ onNavigate, onBack }) {

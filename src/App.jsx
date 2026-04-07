@@ -17,6 +17,13 @@ import { RhymingMatch } from './components/reading/RhymingMatch'
 import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
 import { NameTracer } from './components/writing/NameTracer'
+import { StrokePractice } from './components/writing/StrokePractice'
+
+import { PictureVocab } from './components/reading/PictureVocab'
+
+import { CognitiveHome } from './components/cognitive/CognitiveHome'
+import { SortIt } from './components/cognitive/SortIt'
+import { WhatHappensNext } from './components/cognitive/WhatHappensNext'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -125,6 +132,7 @@ export default function App() {
             else if (subject === 'calendar') navigate('calendar', 'calendar')
             else if (subject === 'games') navigate('games', 'games')
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
+            else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
           }}
         />
       )}
@@ -252,6 +260,38 @@ export default function App() {
       {screen === 'nametracer' && (
         <NameTracer
           onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'strokepractice' && (
+        <StrokePractice
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'picturevocab' && (
+        <PictureVocab
+          onBack={() => navigate('reading')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Cognitive screens */}
+      {screen === 'cognitive' && (
+        <CognitiveHome
+          onNavigate={(id) => navigate(id, 'cognitive')}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'sortit' && (
+        <SortIt
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'whathappensnext' && (
+        <WhatHappensNext
+          onBack={() => navigate('cognitive')}
           addStars={addStars}
         />
       )}

@@ -1,6 +1,17 @@
-export const VERSION = '1.16.0'
+export const VERSION = '1.17.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.17.0',
+    date: '2026-04-05',
+    changes: [
+      'FEAT-012: Added Think & Play section to home screen — Sort It! and What Happens Next?',
+      'Sort It!: 12-round sorting game across 3 category pairs (Animals/Food, Animals/Vehicles, Big/Small)',
+      'What Happens Next?: 12 cause-and-effect scenarios, 3-choice answers, shuffled each session',
+      'FEAT-020: Added Stroke Practice to Reading World — 7 guided stroke types (lines, zigzag, curves, circles, spiral)',
+      'FEAT-028: Added Picture Vocabulary to Reading World — Animals, Food, Action Words; flashcard + quiz mode',
+    ],
+  },
   {
     version: '1.16.0',
     date: '2026-04-05',

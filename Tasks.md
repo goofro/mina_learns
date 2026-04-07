@@ -172,7 +172,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Educational value:** Color recognition, color naming (vocabulary), cause & effect (mixing), number-to-color matching, fine motor via drawing.  
 **Notes:** Use HTML5 Canvas for drawing. No external libraries needed. Save last artwork to localStorage as a data URL so Mina can see her last creation when she returns.
 
-### [ ] FEAT-012: Cognitive & Problem-Solving Skills section
+### [x] FEAT-012: Cognitive & Problem-Solving Skills section
 **Priority:** Medium  
 **Objective:** Encourage reasoning, memory, and curiosity through interactive activities.  
 **Skills to target:**
@@ -191,6 +191,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 - **Pretend Play** — interactive scenario chooser (store, kitchen, doctor) with role-play prompts read aloud
 
 **Notes:** This would be a new top-level section alongside Reading World and Math World. Parent dashboard should track which activities have been explored and how many rounds completed.
+**Fixed:** 2026-04-05 ✅ — New "🧠 Think & Play" button on home screen. `CognitiveHome` hub → **Sort It!** (12 rounds, 3 category pairs: Animals/Food, Animals/Vehicles, Big/Small — tap the right bin) and **What Happens Next?** (12 cause-and-effect scenarios, 3-choice answers, shuffled each session).
 
 ### [x] FEAT-011: Robust phonics rules teaching guide (Magic E, digraphs, blends, etc.)
 **Priority:** High  
@@ -248,9 +249,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 1. **More Tracing** — extend LetterTracer with pre-writing stroke practice: straight lines, zig-zags, curves, spirals, and dotted shapes. Each stroke type has a guided canvas template Mina traces over. Teaches pencil control before letter writing.
 2. **Free Drawing** — an open canvas where Mina can draw anything she likes. Crayon palette (same colors as LetterTracer), adjustable brush size, eraser, and a "Save my drawing" button that stores the image to localStorage so she can see it next time. Optional: stamp mode with fun emoji stamps (stars, hearts, animals) she can place on the canvas.
 
-### [ ] FEAT-020: Pre-writing strokes
+### [x] FEAT-020: Pre-writing strokes
 **Priority:** Medium  
 **Description:** Before tracing letters, teach the building-block strokes: straight lines, zig-zags, curves, circles, spirals. Canvas-based like LetterTracer. Each stroke type has a guided practice screen. Prepares fine motor control for letter writing.
+**Fixed:** 2026-04-05 ✅ — `src/components/writing/StrokePractice.jsx`: 7 stroke types (Horizontal, Vertical, Diagonal, Zigzag, Curves, Circles, Spiral) each with a dotted guide drawn programmatically on a background canvas. Foreground transparent canvas for drawing (8 colours, brush size 20px). "I did it!" awards 2 stars. Accessible via Reading World → Stroke Practice.
 
 ### [x] FEAT-021: Write your name
 **Priority:** High  
@@ -285,9 +287,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Comparison activities: big vs small, tall vs short, heavy vs light, more vs fewer. Show two objects, Mina taps the one matching the prompt. Extend MoreOrLess concept to non-numeric attributes. Include a simple non-standard measuring game (how many blocks tall is the tree?).  
 **Fixed:** 2026-04-04 ✅ — `src/components/math/SizeComparison.jsx`: 17 question templates across big/small (same emoji at different sizes), tall/short, heavy/light (different objects), more/fewer (count groups). Left/right side randomised each round.
 
-### [ ] FEAT-028: Picture vocabulary builder
+### [x] FEAT-028: Picture vocabulary builder
 **Priority:** Medium  
 **Description:** Flashcard-style vocabulary module with categories: everyday objects, action words (run, jump, eat), and descriptive words (big, soft, loud, fast). Each card shows a picture, speaks the word, and uses it in a sentence. Include a tap-to-name quiz per category.
+**Fixed:** 2026-04-05 ✅ — `src/components/reading/PictureVocab.jsx`: 3 categories (Animals, Food, Action Words), 8 words each. Learn mode: emoji flashcards, tap to hear word + sentence. Quiz mode: see emoji, pick the correct word from 3 choices, 2 stars per correct answer. Accessible via Reading World → Picture Vocabulary.
 
 ### [ ] FEAT-029: Science World — Living things, animals & habitats
 **Priority:** Medium  

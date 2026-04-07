@@ -163,7 +163,20 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
             }}
           />
 
-          {/* Art Studio — unlocks at 10 stars */}
+          <SubjectCard
+          emoji="🧠"
+          title="Think & Play"
+          subtitle="Sort, reason & problem-solve"
+          bgColor="linear-gradient(135deg, #fffbeb, #fef3c7)"
+          borderColor="#f59e0b"
+          shadowColor="#d97706"
+          onClick={() => {
+            speak('Think and Play! Let us use our brains!')
+            onNavigate('cognitive')
+          }}
+        />
+
+        {/* Art Studio — unlocks at 10 stars */}
           {artUnlocked ? (
             <SubjectCard
               emoji="🎨"
