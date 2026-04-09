@@ -6,6 +6,7 @@ import { VERSION } from './version'
 import { StarBar } from './components/shared/StarBar'
 import { BackButton } from './components/shared/BackButton'
 import { HomeScreen } from './components/home/HomeScreen'
+import { SkillMap } from './components/home/SkillMap'
 
 import { ReadingHome } from './components/reading/ReadingHome'
 import { LetterSounds } from './components/reading/LetterSounds'
@@ -144,6 +145,7 @@ export default function App() {
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
+            else if (subject === 'skillmap') navigate('skillmap')
           }}
         />
       )}
@@ -151,6 +153,7 @@ export default function App() {
       {/* Reading screens */}
       {screen === 'reading' && (
         <ReadingHome
+          stars={progress.stars}
           onNavigate={(id) => navigate(id, 'reading')}
           onBack={() => goBack('home')}
         />
@@ -290,6 +293,7 @@ export default function App() {
       {/* Cognitive screens */}
       {screen === 'cognitive' && (
         <CognitiveHome
+          stars={progress.stars}
           onNavigate={(id) => navigate(id, 'cognitive')}
           onBack={() => goBack('home')}
         />
@@ -310,6 +314,7 @@ export default function App() {
       {/* Science screens */}
       {screen === 'science' && (
         <ScienceHome
+          stars={progress.stars}
           onNavigate={(id) => navigate(id, 'science')}
           onBack={() => goBack('home')}
         />
@@ -355,6 +360,7 @@ export default function App() {
       {/* Math screens */}
       {screen === 'math' && (
         <MathHome
+          stars={progress.stars}
           onNavigate={(id) => navigate(id, 'math')}
           onBack={() => goBack('home')}
         />
@@ -448,6 +454,7 @@ export default function App() {
       {/* Calendar screens */}
       {screen === 'calendar' && (
         <CalendarHome
+          stars={progress.stars}
           onNavigate={(id) => navigate(id, 'calendar')}
           onBack={() => goBack('home')}
         />
@@ -468,6 +475,15 @@ export default function App() {
         <TellingTime
           onBack={() => navigate('calendar')}
           addStars={addStars}
+        />
+      )}
+
+      {/* Skill Map */}
+      {screen === 'skillmap' && (
+        <SkillMap
+          stars={progress.stars}
+          onNavigate={(id, subject) => navigate(id, subject || 'reading')}
+          onBack={() => goBack('home')}
         />
       )}
 

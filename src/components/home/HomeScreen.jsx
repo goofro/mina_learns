@@ -187,6 +187,20 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
               onNavigate('science')
             }}
           />
+          <SubjectCard
+            emoji="🗺️"
+            title="My Journey"
+            subtitle={`${stars} ⭐ — see all activities`}
+            bgColor="linear-gradient(135deg, #0f172a, #1e1b4b)"
+            borderColor="#6366f1"
+            shadowColor="#312e81"
+            titleColor="white"
+            subtitleColor="#94a3b8"
+            onClick={() => {
+              speak('My Learning Journey! See all your activities!')
+              onNavigate('skillmap')
+            }}
+          />
 
         {/* Art Studio — unlocks at 10 stars */}
           {artUnlocked ? (
@@ -252,7 +266,7 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
   )
 }
 
-function SubjectCard({ emoji, title, subtitle, bgColor, borderColor, shadowColor, onClick }) {
+function SubjectCard({ emoji, title, subtitle, bgColor, borderColor, shadowColor, titleColor, subtitleColor, onClick }) {
   return (
     <button
       onClick={onClick}
@@ -286,8 +300,8 @@ function SubjectCard({ emoji, title, subtitle, bgColor, borderColor, shadowColor
       }}
     >
       <TwEmoji emoji={emoji} size={72} />
-      <div style={{ fontSize: '28px', fontWeight: 900, color: '#1f2937' }}>{title}</div>
-      <div style={{ fontSize: '15px', fontWeight: 600, color: '#6b7280' }}>{subtitle}</div>
+      <div style={{ fontSize: '28px', fontWeight: 900, color: titleColor || '#1f2937' }}>{title}</div>
+      <div style={{ fontSize: '15px', fontWeight: 600, color: subtitleColor || '#6b7280' }}>{subtitle}</div>
     </button>
   )
 }

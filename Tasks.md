@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-09 (v1.19.0)  
-**Current version:** v1.19.0
+**Last updated:** 2026-04-09 (v1.20.0)  
+**Current version:** v1.20.0
 
 ---
 
@@ -335,7 +335,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** Rhythm tapping game: play a beat pattern (short/long taps via Web Audio API), Mina repeats it by tapping the screen. Starts with simple 2-beat patterns, progresses to 4-beat. Also consider an alphabet song or counting song with highlighted lyrics synced to TTS playback.
 
-### [ ] FEAT-032: Skill tree / level progression
+### [x] FEAT-032: Skill tree / level progression
 **Priority:** Medium  
 **Description:** Visual skill map on the home screen showing unlocked vs locked activities. Activities unlock as Mina earns stars or completes prerequisites (e.g. Letter Sounds must be played before Word Blending unlocks). Gives a sense of progression and motivates exploration.
 

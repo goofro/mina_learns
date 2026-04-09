@@ -1,6 +1,17 @@
-export const VERSION = '1.19.0'
+export const VERSION = '1.20.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.20.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-032: Added Skill Tree / Level Progression — "My Journey" 🗺️ button on home screen',
+      'Star-based unlock system: 40 activities across 6 subjects, 7 tiers (Starter → Superstar)',
+      'SkillMap dark-theme screen: star progress bar, tier milestones, next-unlock hint, activity grid',
+      'All subject home screens (Reading, Math, Calendar, Science, Think & Play) show lock/unlock states',
+      'Locked cards are grayed with 🔒 and "X more ⭐ to unlock" badge; tap speaks the requirement',
+    ],
+  },
   {
     version: '1.19.0',
     date: '2026-04-09',
