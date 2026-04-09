@@ -1,6 +1,15 @@
-export const VERSION = '1.18.0'
+export const VERSION = '1.19.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.19.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-043: Added Telling Time to Calendar — analogue clock with Learn (12 times), Read the Clock quiz (4-choice with mini clocks), Set the Clock interactive challenge',
+      'FEAT-025: Added 3D Shapes to Math World — 6 shapes (sphere/cube/cylinder/cone/pyramid/cuboid) with facts, faces/edges/vertices, real-world examples, Match game, Quiz',
+      'FEAT-026: Added Positions to Math World — 8 spatial concepts (above/below/inside/outside/next to/behind/in front/on top), CSS scene illustrations, quiz with 4-choice picture answers',
+    ],
+  },
   {
     version: '1.18.0',
     date: '2026-04-09',

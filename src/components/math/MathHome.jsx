@@ -14,6 +14,8 @@ const ACTIVITIES = [
   { id: 'numberbonds',     emoji: '🔗', title: 'Number Bonds',     subtitle: 'Find the missing part',     color: '#7c3aed', shadow: '#5b21b6' },
   { id: 'patternrecog',    emoji: '🔴', title: 'Patterns',          subtitle: 'What comes next?',          color: '#a21caf', shadow: '#86198f' },
   { id: 'sizecomparison',  emoji: '📏', title: 'Big & Small',       subtitle: 'Compare size, weight & more', color: '#ea580c', shadow: '#c2410c' },
+  { id: 'shapes3d',        emoji: '🔷', title: '3D Shapes',         subtitle: 'Sphere, cube, cone & more!', color: '#8b5cf6', shadow: '#7c3aed' },
+  { id: 'spatialconcepts', emoji: '📍', title: 'Positions',         subtitle: 'Above, below, inside & more', color: '#7c3aed', shadow: '#6d28d9' },
 ]
 
 export function MathHome({ onNavigate, onBack }) {

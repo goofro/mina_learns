@@ -50,10 +50,14 @@ import { Subitizing } from './components/math/Subitizing'
 import { NumberBonds } from './components/math/NumberBonds'
 import { PatternRecognition } from './components/math/PatternRecognition'
 import { SizeComparison } from './components/math/SizeComparison'
+import { SpatialConcepts } from './components/math/SpatialConcepts'
+import { Shapes3D } from './components/math/Shapes3D'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
 import { MonthsOfYear } from './components/calendar/MonthsOfYear'
+
+import { TellingTime } from './components/calendar/TellingTime'
 
 import { ScienceHome } from './components/science/ScienceHome'
 import { DinosaurExplorer } from './components/science/DinosaurExplorer'
@@ -428,6 +432,18 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'spatialconcepts' && (
+        <SpatialConcepts
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'shapes3d' && (
+        <Shapes3D
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Calendar screens */}
       {screen === 'calendar' && (
@@ -444,6 +460,12 @@ export default function App() {
       )}
       {screen === 'monthsofyear' && (
         <MonthsOfYear
+          onBack={() => navigate('calendar')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'tellingtime' && (
+        <TellingTime
           onBack={() => navigate('calendar')}
           addStars={addStars}
         />

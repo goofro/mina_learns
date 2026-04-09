@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-09 (v1.18.0)  
-**Current version:** v1.18.0
+**Last updated:** 2026-04-09 (v1.19.0)  
+**Current version:** v1.19.0
 
 ---
 
@@ -96,7 +96,7 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 
 ## 📋 Backlog (Future Features)
 
-### [ ] FEAT-043: Telling time — reading a clock
+### [x] FEAT-043: Telling time — reading a clock
 **Priority:** High
 **Description:** Teach Mina to read analogue and digital clocks. Two phases:
 1. **Learn** — interactive analogue clock face where tapping the hour hand speaks the hour ("3 o'clock!"). Start with o'clock times (whole hours), then introduce half-past. Visual labels on the clock face for each number.
@@ -274,11 +274,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Show a repeating pattern (AB, ABC, AABB) using shapes or colors with the last item missing. Mina taps the correct next item to complete the pattern. Teaches logical sequencing and early algebraic thinking.  
 **Fixed:** 2026-04-04 ✅ — `src/components/math/PatternRecognition.jsx`: 5 pattern types (AB, AAB, ABB, ABC, AABB), 10 coloured emoji items, generates the 6th element and provides 4 choices, 10 rounds.
 
-### [ ] FEAT-025: 3D shapes
+### [x] FEAT-025: 3D shapes
 **Priority:** Low  
 **Description:** Extend ShapeMatch to include 3D shapes: cube, sphere, cylinder, cone, pyramid. Show the shape name, a visual, and real-world examples (ball = sphere, box = cube). Include a tap-to-name quiz.
 
-### [ ] FEAT-026: Spatial concepts
+### [x] FEAT-026: Spatial concepts
 **Priority:** Medium  
 **Description:** Teach positional/directional language: above, below, next to, inside, outside, in front of, behind. Show a character and an object, Mina taps the picture that matches the spoken description (e.g. "The ball is INSIDE the box"). Spoken via TTS throughout.
 

@@ -21,6 +21,15 @@ const ACTIVITIES = [
     borderColor: '#ec4899',
     shadowColor: '#be185d',
   },
+  {
+    id: 'tellingtime',
+    emoji: '⏰',
+    title: 'Telling Time',
+    subtitle: 'Read clocks — o\'clock & half past',
+    bgColor: 'linear-gradient(135deg, #fffbeb, #fef3c7)',
+    borderColor: '#f59e0b',
+    shadowColor: '#d97706',
+  },
 ]
 
 export function CalendarHome({ onNavigate, onBack }) {
