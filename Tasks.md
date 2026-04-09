@@ -296,6 +296,37 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** New top-level Science section. Initial activities: (1) Living vs Non-Living — sort items into two groups by tapping; (2) Animals & Habitats — match animal to its home (fish → ocean, bear → forest); (3) Plants & Growth — tap-through sequence showing seed → sprout → plant. TTS narrates throughout.
 
+### [ ] FEAT-044: Nature & Biology Explorer — Dinosaurs, Animals & Science for Pre-K/K
+**Priority:** High
+**Description:** A dedicated explorer section (can live under Science World or as its own "Explorer" tab) covering engaging biology and nature topics pitched perfectly at ages 3–6. Topics to include:
+
+**Dinosaurs 🦕**
+- Meet the Dinosaurs — flashcard tour of 10–12 popular dinos (T-Rex, Triceratops, Stegosaurus, Brachiosaurus, Velociraptor, Pterodactyl, Ankylosaurus, Spinosaurus, Diplodocus, Parasaurolophus). Each card: name, emoji/illustration, 1 fun fact, TTS pronunciation.
+- Herbivore vs Carnivore sort — drag dinos into the right group.
+- Big vs Small — compare sizes with simple visuals.
+- Quiz: tap the dino that matches the name/fact.
+
+**Animals of the World 🌍**
+- Habitats: Ocean, Jungle, Desert, Arctic, Farm, Sky — tap animals and match to their home.
+- What does it eat? — herbivore / carnivore / omnivore sorting.
+- Baby animals — match adult to baby (cow → calf, dog → puppy, cat → kitten, duck → duckling, frog → tadpole).
+- Animal sounds — tap animal, hear the sound (TTS or phonetic).
+
+**My Body 🫀**
+- Body parts — tap a body part on a simple cartoon figure, hear the name.
+- Senses — five senses explorer: eyes (see), ears (hear), nose (smell), mouth (taste), hands (touch). Mini activity for each.
+
+**Plants & Nature 🌱**
+- Life cycles — Butterfly (egg → caterpillar → chrysalis → butterfly), Frog (egg → tadpole → froglet → frog), Plant (seed → sprout → plant → flower). Tap-through animated sequence.
+- Parts of a plant — roots, stem, leaves, flower. Tap to label.
+
+**Sky & Space 🌙** *(stretch goal)*
+- Day vs Night — what do we see in the day sky vs night sky?
+- Sun, Moon, Stars — simple intro cards with fun facts.
+
+**File to create:** `src/components/science/` directory with `ScienceHome.jsx` and sub-activity components.
+**Lives on:** Home screen as a new "🔬 Science" top-level button (always visible, no star unlock needed).
+
 ### [ ] FEAT-030: Weather & seasons
 **Priority:** Low  
 **Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
