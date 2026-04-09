@@ -55,6 +55,12 @@ import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
 import { MonthsOfYear } from './components/calendar/MonthsOfYear'
 
+import { ScienceHome } from './components/science/ScienceHome'
+import { DinosaurExplorer } from './components/science/DinosaurExplorer'
+import { AnimalWorld } from './components/science/AnimalWorld'
+import { MyBody } from './components/science/MyBody'
+import { LifeCycles } from './components/science/LifeCycles'
+
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 
@@ -133,6 +139,7 @@ export default function App() {
             else if (subject === 'games') navigate('games', 'games')
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
+            else if (subject === 'science') navigate('science', 'science')
           }}
         />
       )}
@@ -294,6 +301,26 @@ export default function App() {
           onBack={() => navigate('cognitive')}
           addStars={addStars}
         />
+      )}
+
+      {/* Science screens */}
+      {screen === 'science' && (
+        <ScienceHome
+          onNavigate={(id) => navigate(id, 'science')}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'dinosaurs' && (
+        <DinosaurExplorer onBack={() => navigate('science')} addStars={addStars} />
+      )}
+      {screen === 'animalworld' && (
+        <AnimalWorld onBack={() => navigate('science')} addStars={addStars} />
+      )}
+      {screen === 'mybody' && (
+        <MyBody onBack={() => navigate('science')} addStars={addStars} />
+      )}
+      {screen === 'lifecycles' && (
+        <LifeCycles onBack={() => navigate('science')} addStars={addStars} />
       )}
 
       {/* Art Studio screens */}

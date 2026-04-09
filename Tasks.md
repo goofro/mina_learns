@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-04 (v1.14.0)  
-**Current version:** v1.6.0
+**Last updated:** 2026-04-09 (v1.18.0)  
+**Current version:** v1.18.0
 
 ---
 
@@ -292,11 +292,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Flashcard-style vocabulary module with categories: everyday objects, action words (run, jump, eat), and descriptive words (big, soft, loud, fast). Each card shows a picture, speaks the word, and uses it in a sentence. Include a tap-to-name quiz per category.
 **Fixed:** 2026-04-05 ✅ — `src/components/reading/PictureVocab.jsx`: 3 categories (Animals, Food, Action Words), 8 words each. Learn mode: emoji flashcards, tap to hear word + sentence. Quiz mode: see emoji, pick the correct word from 3 choices, 2 stars per correct answer. Accessible via Reading World → Picture Vocabulary.
 
-### [ ] FEAT-029: Science World — Living things, animals & habitats
+### [x] FEAT-029: Science World — Living things, animals & habitats
 **Priority:** Medium  
-**Description:** New top-level Science section. Initial activities: (1) Living vs Non-Living — sort items into two groups by tapping; (2) Animals & Habitats — match animal to its home (fish → ocean, bear → forest); (3) Plants & Growth — tap-through sequence showing seed → sprout → plant. TTS narrates throughout.
+**Description:** Covered by FEAT-044 — Science World section added with Animal World habitats and Life Cycles.
 
-### [ ] FEAT-044: Nature & Biology Explorer — Dinosaurs, Animals & Science for Pre-K/K
+### [x] FEAT-044: Nature & Biology Explorer — Dinosaurs, Animals & Science for Pre-K/K
 **Priority:** High
 **Description:** A dedicated explorer section (can live under Science World or as its own "Explorer" tab) covering engaging biology and nature topics pitched perfectly at ages 3–6. Topics to include:
 

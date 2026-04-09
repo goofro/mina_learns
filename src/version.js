@@ -1,6 +1,17 @@
-export const VERSION = '1.17.0'
+export const VERSION = '1.18.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.18.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-044: Added Science World section to home screen',
+      'Dinosaur Explorer: 11 dinos, 3 tabs — Meet the Dinos (flip cards + facts), Sort It (herbivore/carnivore), Quiz',
+      'Animal World: 4 habitats (Jungle/Ocean/Savanna/Arctic), Baby Animals matching, Quiz',
+      'My Body: 10 body parts with facts, Five Senses explorer, Quiz',
+      'Life Cycles: Butterfly/Frog/Sunflower/Chicken cycles, Put-in-Order game, Quiz',
+    ],
+  },
   {
     version: '1.17.0',
     date: '2026-04-05',

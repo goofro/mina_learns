@@ -164,17 +164,29 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
           />
 
           <SubjectCard
-          emoji="🧠"
-          title="Think & Play"
-          subtitle="Sort, reason & problem-solve"
-          bgColor="linear-gradient(135deg, #fffbeb, #fef3c7)"
-          borderColor="#f59e0b"
-          shadowColor="#d97706"
-          onClick={() => {
-            speak('Think and Play! Let us use our brains!')
-            onNavigate('cognitive')
-          }}
-        />
+            emoji="🧠"
+            title="Think & Play"
+            subtitle="Sort, reason & problem-solve"
+            bgColor="linear-gradient(135deg, #fffbeb, #fef3c7)"
+            borderColor="#f59e0b"
+            shadowColor="#d97706"
+            onClick={() => {
+              speak('Think and Play! Let us use our brains!')
+              onNavigate('cognitive')
+            }}
+          />
+          <SubjectCard
+            emoji="🔬"
+            title="Science"
+            subtitle="Dinos, Animals, Body & Life"
+            bgColor="linear-gradient(135deg, #dcfce7, #bbf7d0)"
+            borderColor="#16a34a"
+            shadowColor="#15803d"
+            onClick={() => {
+              speak('Science! Let us explore the world!')
+              onNavigate('science')
+            }}
+          />
 
         {/* Art Studio — unlocks at 10 stars */}
           {artUnlocked ? (
