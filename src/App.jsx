@@ -28,6 +28,7 @@ import { SortIt } from './components/cognitive/SortIt'
 import { WhatHappensNext } from './components/cognitive/WhatHappensNext'
 import { SequencingGame } from './components/cognitive/SequencingGame'
 import { MazeGame } from './components/cognitive/MazeGame'
+import { RhythmGame } from './components/cognitive/RhythmGame'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -57,6 +58,7 @@ import { PatternRecognition } from './components/math/PatternRecognition'
 import { SizeComparison } from './components/math/SizeComparison'
 import { SpatialConcepts } from './components/math/SpatialConcepts'
 import { Shapes3D } from './components/math/Shapes3D'
+import { MoneyConcepts } from './components/math/MoneyConcepts'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
@@ -328,6 +330,12 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'rhythmgame' && (
+        <RhythmGame
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Science screens */}
       {screen === 'science' && (
@@ -467,6 +475,12 @@ export default function App() {
       )}
       {screen === 'shapes3d' && (
         <Shapes3D
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'moneyconcepts' && (
+        <MoneyConcepts
           onBack={() => navigate('math')}
           addStars={addStars}
         />

@@ -332,9 +332,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
 
-### [ ] FEAT-031: Music & rhythm games
+### [x] FEAT-031: Music & rhythm games
 **Priority:** Low  
 **Description:** Rhythm tapping game: play a beat pattern (short/long taps via Web Audio API), Mina repeats it by tapping the screen. Starts with simple 2-beat patterns, progresses to 4-beat. Also consider an alphabet song or counting song with highlighted lyrics synced to TTS playback.
+**Fixed:** 2026-04-10 ✅ — `src/components/cognitive/RhythmGame.jsx`: 3 tabs — Instrument Explorer (6 synthesized sounds: drum/bell/guitar/piano/trumpet/whistle via Web Audio API oscillators, 1 star per new instrument), Copy the Beat (10 rounds of 1–4 beat patterns, large drum tap button, auto-checks after 1.5s pause, 2 stars each), Make a Beat (4 colour-coded note pads C4/E4/G4/A4, up to 8-step sequence, play back button, 3 stars to save). Think & Play → Music & Rhythm, always unlocked.
 
 ### [x] FEAT-032: Skill tree / level progression
 **Priority:** Medium  
@@ -356,9 +357,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** Simple drag-to-sequence game: arrange 3–4 picture steps in the correct order to complete a task (e.g. brush teeth: wet brush → add toothpaste → brush → rinse). Introduces if/then reasoning and multi-step thinking without any code concepts. Can live in the Cognitive section (FEAT-012).
 
-### [ ] FEAT-037: Basic money concepts
+### [x] FEAT-037: Basic money concepts
 **Priority:** Low  
 **Description:** Introduce coins: penny (1¢), nickel (5¢), dime (10¢), quarter (25¢). Show each coin with its name and value. Activities: name that coin (tap the right coin), count a small collection (how many cents?). Keep it simple — recognition and basic counting only.
+**Fixed:** 2026-04-10 ✅ — `src/components/math/MoneyConcepts.jsx`: CSS-rendered coins (copper radial gradient penny, silver gradient nickel/dime/quarter, realistic sizes). 3 tabs — Learn (tap each coin to hear name/value/fact, 1 star each), Name It (show coin, pick name from 4 choices, 10 rounds, 2 stars each), Count It (show 2–5 coin collection, pick total from 4 choices, 12 preset collections, 2 stars each). Math World → Money, unlocks at 10 stars.
 
 ### [x] FEAT-038: Mazes
 **Priority:** Low  

@@ -1,6 +1,14 @@
-export const VERSION = '1.22.0'
+export const VERSION = '1.23.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.23.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-037: Money — penny/nickel/dime/quarter with Learn, Name It (10-round quiz) and Count Coins (10-round quiz); added to Math World, unlocks at 10 stars',
+      'FEAT-031: Music & Rhythm — Instrument Explorer (6 synthesized sounds via Web Audio API), Copy the Beat (10 rounds of rhythm repetition), Make a Beat (4-note pad sequencer, up to 8 steps); added to Think & Play',
+    ],
+  },
   {
     version: '1.22.0',
     date: '2026-04-10',

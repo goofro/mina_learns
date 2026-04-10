@@ -50,6 +50,7 @@ export const SKILL_TREE = [
       { id: 'subitizing',      name: 'Quick Count',       emoji: '👀', unlockStars: 10 },
       { id: 'subtraction',     name: 'Subtraction',       emoji: '➖', unlockStars: 20 },
       { id: 'numberbonds',     name: 'Number Bonds',      emoji: '🔗', unlockStars: 20 },
+      { id: 'moneyconcepts',   name: 'Money',             emoji: '🪙', unlockStars: 10 },
     ],
   },
   {
@@ -92,6 +93,7 @@ export const SKILL_TREE = [
       { id: 'whathappensnext',  name: 'What Happens Next?',  emoji: '🔮', unlockStars: 5  },
       { id: 'sequencinggame',   name: 'What Comes First?',   emoji: '🔢', unlockStars: 10 },
       { id: 'mazegame',         name: 'Mazes',               emoji: '🌀', unlockStars: 5  },
+      { id: 'rhythmgame',       name: 'Music & Rhythm',      emoji: '🎵', unlockStars: 0  },
     ],
   },
   {

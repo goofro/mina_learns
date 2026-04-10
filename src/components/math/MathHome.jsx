@@ -17,6 +17,7 @@ const ACTIVITIES = [
   { id: 'subitizing',        emoji: '👀', title: 'Quick Count',    subtitle: 'How many dots did you see?',       color: '#2563eb', shadow: '#1d4ed8' },
   { id: 'subtraction',       emoji: '➖', title: 'Subtraction',    subtitle: 'Taking away with pictures',        color: '#16a34a', shadow: '#15803d' },
   { id: 'numberbonds',       emoji: '🔗', title: 'Number Bonds',   subtitle: 'Find the missing part',            color: '#7c3aed', shadow: '#5b21b6' },
+  { id: 'moneyconcepts',     emoji: '🪙', title: 'Money',          subtitle: 'Coins — penny, nickel, dime, quarter', color: '#d97706', shadow: '#b45309' },
 ]
 
 export function MathHome({ onNavigate, onBack, stars = 0 }) {
