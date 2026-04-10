@@ -20,6 +20,14 @@ const ACTIVITIES = [
     color: '#8b5cf6',
     shadow: '#6d28d9',
   },
+  {
+    id: 'sequencinggame',
+    emoji: '🔢',
+    title: 'What Comes First?',
+    subtitle: 'Put the steps in order!',
+    color: '#7c3aed',
+    shadow: '#6d28d9',
+  },
 ]
 
 export function CognitiveHome({ onNavigate, onBack, stars = 0 }) {

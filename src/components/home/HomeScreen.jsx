@@ -188,6 +188,18 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
             }}
           />
           <SubjectCard
+            emoji="📒"
+            title="Sticker Book"
+            subtitle="Collect stickers as you learn!"
+            bgColor="linear-gradient(135deg, #fdf4ff, #fce7f3)"
+            borderColor="#a855f7"
+            shadowColor="#7c3aed"
+            onClick={() => {
+              speak('My Sticker Book!')
+              onNavigate('stickerbook')
+            }}
+          />
+          <SubjectCard
             emoji="🗺️"
             title="My Journey"
             subtitle={`${stars} ⭐ — see all activities`}

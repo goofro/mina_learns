@@ -7,6 +7,7 @@ import { StarBar } from './components/shared/StarBar'
 import { BackButton } from './components/shared/BackButton'
 import { HomeScreen } from './components/home/HomeScreen'
 import { SkillMap } from './components/home/SkillMap'
+import { StickerBook } from './components/home/StickerBook'
 
 import { ReadingHome } from './components/reading/ReadingHome'
 import { LetterSounds } from './components/reading/LetterSounds'
@@ -25,6 +26,7 @@ import { PictureVocab } from './components/reading/PictureVocab'
 import { CognitiveHome } from './components/cognitive/CognitiveHome'
 import { SortIt } from './components/cognitive/SortIt'
 import { WhatHappensNext } from './components/cognitive/WhatHappensNext'
+import { SequencingGame } from './components/cognitive/SequencingGame'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -59,6 +61,7 @@ import { DaysOfWeek } from './components/calendar/DaysOfWeek'
 import { MonthsOfYear } from './components/calendar/MonthsOfYear'
 
 import { TellingTime } from './components/calendar/TellingTime'
+import { WeatherSeasons } from './components/calendar/WeatherSeasons'
 
 import { ScienceHome } from './components/science/ScienceHome'
 import { DinosaurExplorer } from './components/science/DinosaurExplorer'
@@ -146,6 +149,7 @@ export default function App() {
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
             else if (subject === 'skillmap') navigate('skillmap')
+            else if (subject === 'stickerbook') navigate('stickerbook')
           }}
         />
       )}
@@ -306,6 +310,12 @@ export default function App() {
       )}
       {screen === 'whathappensnext' && (
         <WhatHappensNext
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'sequencinggame' && (
+        <SequencingGame
           onBack={() => navigate('cognitive')}
           addStars={addStars}
         />
@@ -475,6 +485,20 @@ export default function App() {
         <TellingTime
           onBack={() => navigate('calendar')}
           addStars={addStars}
+        />
+      )}
+      {screen === 'weatherseasons' && (
+        <WeatherSeasons
+          onBack={() => navigate('calendar')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Sticker Book */}
+      {screen === 'stickerbook' && (
+        <StickerBook
+          stars={progress.stars}
+          onBack={() => goBack('home')}
         />
       )}
 

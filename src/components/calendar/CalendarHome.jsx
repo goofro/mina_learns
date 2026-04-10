@@ -31,6 +31,15 @@ const ACTIVITIES = [
     borderColor: '#f59e0b',
     shadowColor: '#d97706',
   },
+  {
+    id: 'weatherseasons',
+    emoji: '🌤️',
+    title: 'Weather & Seasons',
+    subtitle: 'Sun, rain, snow & the 4 seasons',
+    bgColor: 'linear-gradient(135deg, #fff7ed, #fed7aa)',
+    borderColor: '#ea580c',
+    shadowColor: '#c2410c',
+  },
 ]
 
 export function CalendarHome({ onNavigate, onBack, stars = 0 }) {

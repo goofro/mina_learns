@@ -60,9 +60,10 @@ export const SKILL_TREE = [
     shadow: '#4338ca',
     bg: 'linear-gradient(135deg, #e0e7ff, #c7d2fe)',
     activities: [
-      { id: 'daysofweek',   name: 'Days of the Week', emoji: '📅', unlockStars: 0  },
-      { id: 'monthsofyear', name: 'Months of Year',   emoji: '🗓️', unlockStars: 5  },
-      { id: 'tellingtime',  name: 'Telling Time',     emoji: '⏰', unlockStars: 15 },
+      { id: 'daysofweek',      name: 'Days of the Week',    emoji: '📅', unlockStars: 0  },
+      { id: 'monthsofyear',    name: 'Months of Year',      emoji: '🗓️', unlockStars: 5  },
+      { id: 'tellingtime',     name: 'Telling Time',        emoji: '⏰', unlockStars: 15 },
+      { id: 'weatherseasons',  name: 'Weather & Seasons',   emoji: '🌤️', unlockStars: 10 },
     ],
   },
   {
@@ -87,8 +88,9 @@ export const SKILL_TREE = [
     shadow: '#b45309',
     bg: 'linear-gradient(135deg, #fffbeb, #fef3c7)',
     activities: [
-      { id: 'sortit',          name: 'Sort It!',            emoji: '🗂️', unlockStars: 0  },
-      { id: 'whathappensnext', name: 'What Happens Next?',  emoji: '🔮', unlockStars: 5  },
+      { id: 'sortit',           name: 'Sort It!',            emoji: '🗂️', unlockStars: 0  },
+      { id: 'whathappensnext',  name: 'What Happens Next?',  emoji: '🔮', unlockStars: 5  },
+      { id: 'sequencinggame',   name: 'What Comes First?',   emoji: '🔢', unlockStars: 10 },
     ],
   },
   {

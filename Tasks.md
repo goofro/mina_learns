@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-09 (v1.20.0)  
-**Current version:** v1.20.0
+**Last updated:** 2026-04-09 (v1.21.0)  
+**Current version:** v1.21.0
 
 ---
 
@@ -327,7 +327,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File to create:** `src/components/science/` directory with `ScienceHome.jsx` and sub-activity components.
 **Lives on:** Home screen as a new "🔬 Science" top-level button (always visible, no star unlock needed).
 
-### [ ] FEAT-030: Weather & seasons
+### [x] FEAT-030: Weather & seasons
 **Priority:** Low  
 **Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
 
@@ -339,7 +339,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Visual skill map on the home screen showing unlocked vs locked activities. Activities unlock as Mina earns stars or completes prerequisites (e.g. Letter Sounds must be played before Word Blending unlocks). Gives a sense of progression and motivates exploration.
 
-### [ ] FEAT-033: Collectible sticker rewards
+### [x] FEAT-033: Collectible sticker rewards
 **Priority:** Low  
 **Description:** After completing activities or reaching milestones, Mina earns a sticker for a sticker book (accessible from the home screen). Stickers are themed by subject (star, book, apple, rocket). Viewing the sticker book is purely a reward — no learning required. Stored in localStorage.
 
@@ -351,7 +351,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium  
 **Description:** Classic flip-card memory game with an educational twist: match letter to letter (A↔a), word to picture, or number to dots. 4×4 grid, cards flip on tap, matched pairs stay face-up. Tracks best score (fewest flips). Works as a standalone game and reinforces content from other modules.
 
-### [ ] FEAT-036: Early coding logic — sequencing game
+### [x] FEAT-036: Early coding logic — sequencing game
 **Priority:** Low  
 **Description:** Simple drag-to-sequence game: arrange 3–4 picture steps in the correct order to complete a task (e.g. brush teeth: wet brush → add toothpaste → brush → rinse). Introduces if/then reasoning and multi-step thinking without any code concepts. Can live in the Cognitive section (FEAT-012).
 

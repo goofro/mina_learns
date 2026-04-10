@@ -1,6 +1,15 @@
-export const VERSION = '1.20.0'
+export const VERSION = '1.21.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.21.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-033: Sticker Book — 48 collectible stickers across 5 categories (Animals, Sky & Space, Nature, Yummy Treats, Badges), star-based unlocking, NEW! badge for recently earned, pop-up viewer, progress bar',
+      'FEAT-036: What Comes First? sequencing game — 14 everyday scenarios (brush teeth, bake cookies, grow sunflower…), tap 4 steps in correct order, 3 stars each, added to Think & Play section',
+      'FEAT-030: Weather & Seasons — 8 weather types with what-to-wear & activities, 4 seasons with months & highlights, mixed quiz; added to Calendar section',
+    ],
+  },
   {
     version: '1.20.0',
     date: '2026-04-09',
