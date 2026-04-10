@@ -27,6 +27,7 @@ import { CognitiveHome } from './components/cognitive/CognitiveHome'
 import { SortIt } from './components/cognitive/SortIt'
 import { WhatHappensNext } from './components/cognitive/WhatHappensNext'
 import { SequencingGame } from './components/cognitive/SequencingGame'
+import { MazeGame } from './components/cognitive/MazeGame'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -40,6 +41,7 @@ import { ArtStudioHome } from './components/art/ArtStudioHome'
 import { ColorMixer } from './components/art/ColorMixer'
 import { ColorByNumber } from './components/art/ColorByNumber'
 import { FreeDrawStudio } from './components/art/FreeDrawStudio'
+import { TraceShapes } from './components/art/TraceShapes'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -320,6 +322,12 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'mazegame' && (
+        <MazeGame
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Science screens */}
       {screen === 'science' && (
@@ -357,6 +365,9 @@ export default function App() {
       )}
       {screen === 'freedrawstudio' && (
         <FreeDrawStudio onBack={() => navigate('artstudio')} />
+      )}
+      {screen === 'traceshapes' && (
+        <TraceShapes onBack={() => navigate('artstudio')} addStars={addStars} />
       )}
 
       {/* Games screens */}

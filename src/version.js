@@ -1,6 +1,14 @@
-export const VERSION = '1.21.0'
+export const VERSION = '1.22.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.22.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-038: Mazes — 5 drag-to-navigate mazes in Think & Play (Bunny\'s Garden → Space Explorer), unlocks at 5 stars, 2–3 stars per maze',
+      'FEAT-040: Trace Shapes — 8 dotted-guide shapes in Art Studio (Star, Heart, Circle, Triangle, House, Sun, Rainbow, Flower), 2 stars per traced shape',
+    ],
+  },
   {
     version: '1.21.0',
     date: '2026-04-09',

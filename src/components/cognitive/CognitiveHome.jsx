@@ -28,6 +28,14 @@ const ACTIVITIES = [
     color: '#7c3aed',
     shadow: '#6d28d9',
   },
+  {
+    id: 'mazegame',
+    emoji: '🌀',
+    title: 'Mazes',
+    subtitle: 'Guide the character to the goal!',
+    color: '#0891b2',
+    shadow: '#0e7490',
+  },
 ]
 
 export function CognitiveHome({ onNavigate, onBack, stars = 0 }) {

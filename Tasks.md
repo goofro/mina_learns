@@ -243,11 +243,12 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.  
 **Fixed:** 2026-04-05 ✅ — Already implemented as part of FEAT-039. `StoryReader.jsx` has a full PHASE_QUIZ after PHASE_READ: question card with TTS, 3-choice tap answers, green/red feedback, star award per correct answer, correct count summary on done screen. All 12 stories have 2–3 questions in `data/stories.js`.
 
-### [ ] FEAT-040: Expanded tracing & free drawing activities
+### [x] FEAT-040: Expanded tracing & free drawing activities
 **Priority:** Medium  
 **Description:** Two additions to the Writing section:
 1. **More Tracing** — extend LetterTracer with pre-writing stroke practice: straight lines, zig-zags, curves, spirals, and dotted shapes. Each stroke type has a guided canvas template Mina traces over. Teaches pencil control before letter writing.
 2. **Free Drawing** — an open canvas where Mina can draw anything she likes. Crayon palette (same colors as LetterTracer), adjustable brush size, eraser, and a "Save my drawing" button that stores the image to localStorage so she can see it next time. Optional: stamp mode with fun emoji stamps (stars, hearts, animals) she can place on the canvas.
+**Fixed:** 2026-04-10 ✅ — `src/components/art/TraceShapes.jsx`: 8 fun shapes (Star, Heart, Circle, Triangle, House, Sun, Rainbow, Flower) each with a dashed purple guide drawn on a background canvas. Foreground transparent drawing canvas overlaid; 8 colours to pick from, "I Traced It!" awards 2 stars after 3+ strokes. Shape navigation arrows + grid picker. Accessible via Art Studio → Trace Shapes. Pre-writing strokes already done (FEAT-020); free drawing already done (FEAT-042).
 
 ### [x] FEAT-020: Pre-writing strokes
 **Priority:** Medium  
@@ -359,9 +360,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** Introduce coins: penny (1¢), nickel (5¢), dime (10¢), quarter (25¢). Show each coin with its name and value. Activities: name that coin (tap the right coin), count a small collection (how many cents?). Keep it simple — recognition and basic counting only.
 
-### [ ] FEAT-038: Mazes
+### [x] FEAT-038: Mazes
 **Priority:** Low  
 **Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
+**Fixed:** 2026-04-10 ✅ — `src/components/cognitive/MazeGame.jsx`: 5 drag-to-navigate corridor mazes on a 560×380 canvas. Mazes defined as horizontal/vertical segments (% coordinates); character follows mouse/touch within valid corridors, wall hits flash red border. Mazes: Bunny's Garden (1 turn), Rocket Race (U-shape), Star Trail (S-shape 4 turns), Ocean Dive (3 turns), Space Explorer (6 turns). 2 stars for easy mazes, 3 for harder. Progress dots + maze picker. Accessible via Think & Play → Mazes, unlocks at 5 stars.
 
 ---
 

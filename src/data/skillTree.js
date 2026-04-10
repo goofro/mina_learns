@@ -91,6 +91,7 @@ export const SKILL_TREE = [
       { id: 'sortit',           name: 'Sort It!',            emoji: '🗂️', unlockStars: 0  },
       { id: 'whathappensnext',  name: 'What Happens Next?',  emoji: '🔮', unlockStars: 5  },
       { id: 'sequencinggame',   name: 'What Comes First?',   emoji: '🔢', unlockStars: 10 },
+      { id: 'mazegame',         name: 'Mazes',               emoji: '🌀', unlockStars: 5  },
     ],
   },
   {
