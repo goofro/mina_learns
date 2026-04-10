@@ -1,10 +1,11 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { speak } from '../../utils/speech'
 
 const SAVE_KEY = 'mina_art_studio_drawing'
 const GALLERY_KEY = 'mina_art_gallery'
 const GALLERY_MAX = 6
+const HISTORY_MAX = 20
 
 // Canvas resolution — high-res so saved images look great
 const CANVAS_W = 1600
@@ -43,6 +44,10 @@ export function FreeDrawStudio({ onBack }) {
   const isDrawing = useRef(false)
   const lastPos = useRef(null)
 
+  // Undo / Redo history — stored as ImageData snapshots
+  const historyRef = useRef([])   // past states
+  const redoRef = useRef([])      // redo stack
+
   const [color, setColor] = useState('#ef4444')
   const [colorName, setColorName] = useState('Red')
   const [brushIdx, setBrushIdx] = useState(2)
@@ -51,6 +56,60 @@ export function FreeDrawStudio({ onBack }) {
   const [saved, setSaved] = useState(false)
   const [galleryCount, setGalleryCount] = useState(0)
   const [showStamps, setShowStamps] = useState(false)
+  const [canUndo, setCanUndo] = useState(false)
+  const [canRedo, setCanRedo] = useState(false)
+
+  // Capture current canvas state to undo stack
+  function pushHistory() {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    const snap = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    historyRef.current = [...historyRef.current.slice(-HISTORY_MAX + 1), snap]
+    redoRef.current = []
+    setCanUndo(true)
+    setCanRedo(false)
+  }
+
+  const undo = useCallback(() => {
+    const canvas = canvasRef.current
+    if (!canvas || historyRef.current.length === 0) return
+    const ctx = canvas.getContext('2d')
+    // Save current state to redo
+    const current = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    redoRef.current = [...redoRef.current, current]
+    // Restore last history entry
+    const prev = historyRef.current[historyRef.current.length - 1]
+    historyRef.current = historyRef.current.slice(0, -1)
+    ctx.putImageData(prev, 0, 0)
+    setCanUndo(historyRef.current.length > 0)
+    setCanRedo(true)
+  }, [])
+
+  const redo = useCallback(() => {
+    const canvas = canvasRef.current
+    if (!canvas || redoRef.current.length === 0) return
+    const ctx = canvas.getContext('2d')
+    // Save current to undo
+    const current = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    historyRef.current = [...historyRef.current, current]
+    // Restore redo entry
+    const next = redoRef.current[redoRef.current.length - 1]
+    redoRef.current = redoRef.current.slice(0, -1)
+    ctx.putImageData(next, 0, 0)
+    setCanUndo(true)
+    setCanRedo(redoRef.current.length > 0)
+  }, [])
+
+  // Keyboard shortcuts: Ctrl+Z / Ctrl+Y
+  useEffect(() => {
+    function onKey(e) {
+      if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo() }
+      if (e.ctrlKey && e.key === 'y') { e.preventDefault(); redo() }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [undo, redo])
 
   // Load saved drawing on mount
   useEffect(() => {
@@ -84,7 +143,12 @@ export function FreeDrawStudio({ onBack }) {
     e.preventDefault()
     const canvas = canvasRef.current
     const pos = getPos(e, canvas)
-    if (mode === 'stamp') { placeStamp(pos, canvas); return }
+    if (mode === 'stamp') {
+      pushHistory()
+      placeStamp(pos, canvas)
+      return
+    }
+    pushHistory()
     isDrawing.current = true
     lastPos.current = pos
     const ctx = canvas.getContext('2d')
@@ -128,6 +192,7 @@ export function FreeDrawStudio({ onBack }) {
   }
 
   function clearCanvas() {
+    pushHistory()
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     ctx.fillStyle = 'white'
@@ -160,7 +225,9 @@ export function FreeDrawStudio({ onBack }) {
 
   return (
     <div style={{
-      position: 'fixed', inset: 0,
+      position: 'fixed',
+      top: '64px',   // sit below the StarBar
+      left: 0, right: 0, bottom: 0,
       background: '#1a1a2e',
       display: 'flex',
       flexDirection: 'column',
@@ -175,6 +242,7 @@ export function FreeDrawStudio({ onBack }) {
         background: '#16213e',
         borderBottom: '2px solid #0f3460',
         flexShrink: 0,
+        flexWrap: 'wrap',
       }}>
         <BackButton onClick={onBack} />
         <span style={{ fontSize: '18px', fontWeight: 900, color: 'white' }}>🎨 Free Drawing</span>
@@ -213,6 +281,24 @@ export function FreeDrawStudio({ onBack }) {
             }}>⬜ Erase</button>
         </div>
 
+        {/* Undo / Redo */}
+        <div style={{ display: 'flex', gap: '6px', marginLeft: '8px' }}>
+          <button onClick={undo} disabled={!canUndo} title="Undo (Ctrl+Z)"
+            style={{
+              padding: '8px 14px', borderRadius: '10px', fontFamily: 'inherit',
+              background: canUndo ? '#374151' : '#1f2937',
+              color: canUndo ? 'white' : '#4b5563',
+              border: 'none', fontSize: '18px', cursor: canUndo ? 'pointer' : 'default',
+            }}>↩</button>
+          <button onClick={redo} disabled={!canRedo} title="Redo (Ctrl+Y)"
+            style={{
+              padding: '8px 14px', borderRadius: '10px', fontFamily: 'inherit',
+              background: canRedo ? '#374151' : '#1f2937',
+              color: canRedo ? 'white' : '#4b5563',
+              border: 'none', fontSize: '18px', cursor: canRedo ? 'pointer' : 'default',
+            }}>↪</button>
+        </div>
+
         {/* Save / Clear — pushed to right */}
         <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px', alignItems: 'center' }}>
           {galleryCount > 0 && (
@@ -237,7 +323,7 @@ export function FreeDrawStudio({ onBack }) {
       </div>
 
       {/* ── Body: left sidebar + canvas ───────────────────────── */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden', minHeight: 0 }}>
+      <div style={{ flex: 1, display: 'flex', overflow: 'hidden', minHeight: 0, position: 'relative' }}>
 
         {/* Left sidebar */}
         <div style={{
@@ -286,7 +372,7 @@ export function FreeDrawStudio({ onBack }) {
         {/* Stamp picker panel (slides in over canvas) */}
         {showStamps && (
           <div style={{
-            position: 'absolute', left: '74px', top: '60px',
+            position: 'absolute', left: '74px', top: '8px',
             background: '#16213e', border: '2px solid #0f3460',
             borderRadius: '16px', padding: '12px',
             display: 'flex', flexWrap: 'wrap', gap: '8px',

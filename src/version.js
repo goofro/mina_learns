@@ -1,6 +1,19 @@
-export const VERSION = '1.14.0'
+export const VERSION = '1.15.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.15.0',
+    date: '2026-04-05',
+    changes: [
+      'FEAT-042: Free Drawing is now full-screen — fills the whole window below the StarBar',
+      'Left sidebar with 15 colour swatches and a stamp picker (18 stamps)',
+      'Five brush sizes (Thin → Chunky) in the top bar',
+      'Undo (↩) and Redo (↪) buttons — up to 20 steps; also works with Ctrl+Z / Ctrl+Y',
+      'Clear is now undoable (Undo after clearing restores the drawing)',
+      '"Save to Home" stores drawings to a gallery (up to 6) displayed as polaroid frames on the home screen',
+      'Fixed: toolbar was hidden behind the StarBar — FreeDrawStudio now starts at top:64px',
+    ],
+  },
   {
     version: '1.14.0',
     date: '2026-04-04',
