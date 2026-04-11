@@ -2,11 +2,19 @@ import { useState } from 'react'
 import { PIN_KEY } from './ParentLogin'
 import { VERSION, CHANGELOG } from '../../version'
 
+export const CUSTOM_WORDS_KEY = 'mina_custom_words'
+
+function loadCustomWords() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_WORDS_KEY) || '[]') } catch { return [] }
+}
+
 export function ParentSettings({ progress, resetProgress }) {
   const [newPin, setNewPin] = useState('')
   const [confirmPin, setConfirmPin] = useState('')
   const [pinMsg, setPinMsg] = useState(null)
   const [showReset, setShowReset] = useState(false)
+  const [customWords, setCustomWords] = useState(loadCustomWords)
+  const [wordInput, setWordInput] = useState('')
 
   function handlePinChange() {
     if (newPin.length !== 4 || !/^\d{4}$/.test(newPin)) {
@@ -22,6 +30,21 @@ export function ParentSettings({ progress, resetProgress }) {
     setNewPin('')
     setConfirmPin('')
     setTimeout(() => setPinMsg(null), 3000)
+  }
+
+  function addCustomWord() {
+    const word = wordInput.trim().toLowerCase()
+    if (!word || customWords.includes(word)) { setWordInput(''); return }
+    const updated = [...customWords, word]
+    setCustomWords(updated)
+    localStorage.setItem(CUSTOM_WORDS_KEY, JSON.stringify(updated))
+    setWordInput('')
+  }
+
+  function removeCustomWord(word) {
+    const updated = customWords.filter(w => w !== word)
+    setCustomWords(updated)
+    localStorage.setItem(CUSTOM_WORDS_KEY, JSON.stringify(updated))
   }
 
   function handleExport() {
@@ -102,6 +125,51 @@ export function ParentSettings({ progress, resetProgress }) {
             Math starts where Mina is (counting to 16) and progresses toward 30+ and simple addition.
           </p>
         </div>
+      </SettingsCard>
+
+      {/* Custom Word Lists */}
+      <SettingsCard title="📝 Custom Word Lists">
+        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '12px' }}>
+          Add your own words for Mina to practise in Sight Words. They appear as a "My Words" level.
+        </p>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+          <input
+            type="text"
+            placeholder="Type a word…"
+            value={wordInput}
+            onChange={e => setWordInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && addCustomWord()}
+            style={{ flex: 1, padding: '10px 14px', borderRadius: '10px', border: '2px solid #d1d5db', fontSize: '16px', fontFamily: 'inherit' }}
+          />
+          <button
+            onClick={addCustomWord}
+            style={{ background: '#8b5cf6', color: 'white', border: 'none', borderRadius: '10px', padding: '10px 18px', fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
+          >
+            Add
+          </button>
+        </div>
+        {customWords.length === 0 ? (
+          <p style={{ fontSize: '14px', color: '#9ca3af', fontStyle: 'italic' }}>No custom words yet.</p>
+        ) : (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {customWords.map(word => (
+              <div key={word} style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#ede9fe', borderRadius: '8px', padding: '6px 10px' }}>
+                <span style={{ fontSize: '14px', fontWeight: 700, color: '#5b21b6' }}>{word}</span>
+                <button
+                  onClick={() => removeCustomWord(word)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', color: '#7c3aed', padding: '0 2px', lineHeight: 1 }}
+                >
+                  ×
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+        {customWords.length > 0 && (
+          <p style={{ fontSize: '12px', color: '#10b981', fontWeight: 700, marginTop: '10px' }}>
+            ✓ {customWords.length} word{customWords.length !== 1 ? 's' : ''} added — visible as "My Words" in Sight Words
+          </p>
+        )}
       </SettingsCard>
 
       {/* Reset */}

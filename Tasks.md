@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-09 (v1.21.0)  
-**Current version:** v1.21.0
+**Last updated:** 2026-04-11 (v1.24.0)  
+**Current version:** v1.24.0
 
 ---
 
@@ -129,17 +129,19 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Medium  
 **Description:** Use Web Speech API (recognition) to let Mina say a word and check if it matches. Would be powerful for sight word pronunciation practice.
 
-### [ ] FEAT-003: Customizable word lists
+### [x] FEAT-003: Customizable word lists
 **Priority:** Low  
-**Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.
+**Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.  
+**Done:** 2026-04-11 ✅ — `ParentSettings.jsx` has "📝 Custom Word Lists" card (add/remove words, stored as `mina_custom_words` in localStorage). `SightWords.jsx` shows a "✨ My Words" level when custom words exist; quiz pads choices from the standard word pool if fewer than 4 custom words.
 
 ### [x] FEAT-004: Daily streak tracking
 **Priority:** Medium  
 **Description:** Show a streak counter (🔥 3 days in a row!) to encourage daily sessions. Track in localStorage.
 
-### [ ] FEAT-005: Print progress report
+### [x] FEAT-005: Print progress report
 **Priority:** Low  
-**Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.
+**Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.  
+**Done:** 2026-04-11 ✅ — "🖨️ Print Report" button added to `ProgressReport.jsx` header; `@media print` CSS (visibility trick) isolates `#progress-report` div so only the report prints; button hides itself via `#print-report-btn { display: none }` in print styles.
 
 ### [x] FEAT-006: Sound effects library
 **Priority:** Low  

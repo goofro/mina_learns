@@ -3,14 +3,26 @@ import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak, speakWord, speakEncouragement, speakTryAgain } from '../../utils/speech'
 import { SIGHT_WORD_LEVELS } from '../../data/sightWords'
+import { CUSTOM_WORDS_KEY } from '../parent/ParentSettings'
+
+const FALLBACK_WORDS = SIGHT_WORD_LEVELS.flatMap(l => l.words)
 
 function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5)
 }
 
 function buildChoices(correct, allWords) {
-  const others = shuffle(allWords.filter(w => w !== correct)).slice(0, 3)
+  // If pool is too small, pad with fallback words so we always have 4 choices
+  let pool = allWords.filter(w => w !== correct)
+  if (pool.length < 3) {
+    pool = [...pool, ...FALLBACK_WORDS.filter(w => w !== correct && !pool.includes(w))]
+  }
+  const others = shuffle(pool).slice(0, 3)
   return shuffle([correct, ...others])
+}
+
+function loadCustomWords() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_WORDS_KEY) || '[]') } catch { return [] }
 }
 
 export function SightWords({ progress, onBack, addStars, recordSightWord }) {
@@ -24,13 +36,20 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
   const [score, setScore] = useState({ correct: 0, total: 0 })
   // phase: 'flashcard' = show the word | 'quiz' = hide the word, pick it from choices
   const [phase, setPhase] = useState('flashcard')
+  const [customWords, setCustomWords] = useState(loadCustomWords)
 
-  const levelData = selectedLevel ? SIGHT_WORD_LEVELS.find(l => l.level === selectedLevel) : null
-  const allWords = levelData?.words || []
+  const isCustom = selectedLevel === 'custom'
+  const levelData = (!isCustom && selectedLevel) ? SIGHT_WORD_LEVELS.find(l => l.level === selectedLevel) : null
+  const allWords = isCustom ? customWords : (levelData?.words || [])
+
+  function getWordsForLevel(level) {
+    if (level === 'custom') return customWords
+    return SIGHT_WORD_LEVELS.find(l => l.level === level)?.words || []
+  }
 
   function startLevel(level) {
     setSelectedLevel(level)
-    const words = SIGHT_WORD_LEVELS.find(l => l.level === level)?.words || []
+    const words = getWordsForLevel(level)
     setQueue(shuffle(words))
     setScore({ correct: 0, total: 0 })
     setPhase('flashcard')
@@ -38,12 +57,17 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
     setCurrent(null)
   }
 
+  // Reload custom words when returning to level select (in case parent added words)
+  useEffect(() => {
+    if (!selectedLevel) setCustomWords(loadCustomWords())
+  }, [selectedLevel])
+
   // Advance to next word whenever queue changes and current is empty
   useEffect(() => {
     if (queue.length > 0 && !current) {
       const next = queue[0]
       setCurrent(next)
-      const levelWords = SIGHT_WORD_LEVELS.find(l => l.level === selectedLevel)?.words || []
+      const levelWords = getWordsForLevel(selectedLevel)
       setChoices(buildChoices(next, levelWords))
       setPhase('flashcard')
       setFeedback(null)
@@ -165,6 +189,36 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
                 </button>
               )
             })}
+
+            {/* My Words — custom level added by parent */}
+            {customWords.length > 0 && (
+              <button
+                onClick={() => startLevel('custom')}
+                style={{
+                  background: 'white',
+                  border: '4px solid #8b5cf6',
+                  borderRadius: '20px',
+                  padding: '24px 16px',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  boxShadow: '0 5px 0 #8b5cf6aa',
+                }}
+              >
+                <div style={{ fontSize: '22px', fontWeight: 900, color: '#8b5cf6', marginBottom: '6px' }}>
+                  ✨ My Words
+                </div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#374151', marginBottom: '10px' }}>
+                  Parent's Custom List
+                </div>
+                <div style={{ fontSize: '13px', color: '#6b7280', marginBottom: '10px' }}>
+                  {customWords.join('  ·  ')}
+                </div>
+                <span style={{ background: '#ede9fe', borderRadius: '8px', padding: '3px 10px', fontSize: '13px', fontWeight: 700, color: '#5b21b6' }}>
+                  {customWords.length} word{customWords.length !== 1 ? 's' : ''}
+                </span>
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -205,7 +259,7 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
 
   if (!current) return null
 
-  const levelColor = levelData?.color || '#10b981'
+  const levelColor = isCustom ? '#8b5cf6' : (levelData?.color || '#10b981')
 
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #f0fdf4, #ecfdf5)', padding: '80px 20px 40px' }}>

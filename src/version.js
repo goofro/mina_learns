@@ -1,6 +1,14 @@
-export const VERSION = '1.23.0'
+export const VERSION = '1.24.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.24.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-005: Print Progress Report — "🖨️ Print Report" button in parent dashboard; @media print CSS isolates report so browser Print/Save as PDF shows only the report',
+      'FEAT-003: Customizable Word Lists — parent can add/remove custom words in Settings; appears as "✨ My Words" level in Sight Words with full flashcard + quiz flow',
+    ],
+  },
   {
     version: '1.23.0',
     date: '2026-04-10',
