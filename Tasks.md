@@ -373,10 +373,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** High  
 **Description:** A dedicated "Reading Time" mode where a short story or sentence set is read aloud by TTS while each word is highlighted in sync, encouraging Mina to follow along. Designed for shared reading between parent and child or independent listening. Features: word-by-word highlight as TTS plays, tap any word to hear it spoken individually, adjustable read speed (slow / normal), and a "Read it again!" button. Stories drawn from the existing Story Library (FEAT-039). Tracks time spent reading and awards stars on completion. Accessible from Reading World as a prominent entry point.
 
-### [ ] FEAT-046: Larger drawing canvas in Free Drawing Studio
+### [x] FEAT-046: Larger drawing canvas in Free Drawing Studio
 **Priority:** Medium  
 **Description:** The drawing pad in Art Studio → Free Drawing is too small. Expand the canvas to fill as much of the screen as possible — ideally edge-to-edge on tablets. Move the toolbar (colors, brush sizes, eraser, stamps) to a compact sidebar or collapsible strip so it doesn't eat into canvas space. Ensure the canvas resolution scales up with its display size so drawings don't look pixelated.  
-**File:** `src/components/art/FreeDrawStudio.jsx`
+**File:** `src/components/art/FreeDrawStudio.jsx`  
+**Fixed:** Already done as part of FEAT-042 ✅ — Canvas is `position: fixed` filling the full viewport (minus StarBar), colors live in a 68px left sidebar, tools in a slim top bar. Internal resolution is 1600×1000 with CSS scaling so there's no pixelation.
 
 ---
 
