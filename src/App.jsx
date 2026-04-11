@@ -150,6 +150,7 @@ export default function App() {
       {screen === 'home' && (
         <HomeScreen
           stars={progress.stars}
+          sessions={progress.sessions || []}
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')

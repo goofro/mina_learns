@@ -3,9 +3,16 @@ import { PIN_KEY } from './ParentLogin'
 import { VERSION, CHANGELOG } from '../../version'
 
 export const CUSTOM_WORDS_KEY = 'mina_custom_words'
+export const ART_SETTINGS_KEY = 'mina_art_settings'
+
+const DEFAULT_ART_SETTINGS = { hidden: false, dailyQuizTarget: 0 }
 
 function loadCustomWords() {
   try { return JSON.parse(localStorage.getItem(CUSTOM_WORDS_KEY) || '[]') } catch { return [] }
+}
+
+function loadArtSettings() {
+  try { return { ...DEFAULT_ART_SETTINGS, ...JSON.parse(localStorage.getItem(ART_SETTINGS_KEY) || '{}') } } catch { return DEFAULT_ART_SETTINGS }
 }
 
 export function ParentSettings({ progress, resetProgress }) {
@@ -15,6 +22,12 @@ export function ParentSettings({ progress, resetProgress }) {
   const [showReset, setShowReset] = useState(false)
   const [customWords, setCustomWords] = useState(loadCustomWords)
   const [wordInput, setWordInput] = useState('')
+  const [artSettings, setArtSettings] = useState(loadArtSettings)
+
+  function saveArtSettings(updated) {
+    setArtSettings(updated)
+    localStorage.setItem(ART_SETTINGS_KEY, JSON.stringify(updated))
+  }
 
   function handlePinChange() {
     if (newPin.length !== 4 || !/^\d{4}$/.test(newPin)) {
@@ -124,6 +137,67 @@ export function ParentSettings({ progress, resetProgress }) {
             Sight words follow the Dolch Pre-Primer and Primer lists. CVC words progress through all five short vowel sounds.
             Math starts where Mina is (counting to 16) and progresses toward 30+ and simple addition.
           </p>
+        </div>
+      </SettingsCard>
+
+      {/* Art Studio Access */}
+      <SettingsCard title="🎨 Art Studio Access">
+        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
+          Control when Mina can access the Art Studio on the home screen.
+        </p>
+
+        {/* Visible / Hidden toggle */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+          <div>
+            <div style={{ fontSize: '15px', fontWeight: 800, color: '#374151' }}>Show Art Studio button</div>
+            <div style={{ fontSize: '13px', color: '#6b7280' }}>Hide it completely if you want a break from drawing</div>
+          </div>
+          <button
+            onClick={() => saveArtSettings({ ...artSettings, hidden: !artSettings.hidden })}
+            style={{
+              background: artSettings.hidden ? '#fee2e2' : '#dcfce7',
+              color: artSettings.hidden ? '#dc2626' : '#16a34a',
+              border: `2px solid ${artSettings.hidden ? '#fca5a5' : '#86efac'}`,
+              borderRadius: '10px', padding: '10px 20px',
+              fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit',
+              minWidth: '120px',
+            }}
+          >
+            {artSettings.hidden ? '🚫 Hidden' : '✅ Visible'}
+          </button>
+        </div>
+
+        {/* Daily quiz requirement */}
+        <div style={{ background: '#f9fafb', borderRadius: '12px', padding: '16px' }}>
+          <div style={{ fontSize: '15px', fontWeight: 800, color: '#374151', marginBottom: '4px' }}>
+            Daily activity requirement
+          </div>
+          <div style={{ fontSize: '13px', color: '#6b7280', marginBottom: '14px' }}>
+            Mina must complete this many activities today before Art Studio unlocks. Set to 0 for no daily requirement.
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button
+              onClick={() => saveArtSettings({ ...artSettings, dailyQuizTarget: Math.max(0, artSettings.dailyQuizTarget - 1) })}
+              style={{ width: '44px', height: '44px', borderRadius: '10px', border: '2px solid #d1d5db', background: 'white', fontSize: '24px', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 900, color: '#374151' }}
+            >−</button>
+            <div style={{ textAlign: 'center', minWidth: '64px' }}>
+              <div style={{ fontSize: '36px', fontWeight: 900, color: '#db2777', lineHeight: 1 }}>
+                {artSettings.dailyQuizTarget}
+              </div>
+              <div style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 600 }}>
+                {artSettings.dailyQuizTarget === 0 ? 'no limit' : `activit${artSettings.dailyQuizTarget === 1 ? 'y' : 'ies'}`}
+              </div>
+            </div>
+            <button
+              onClick={() => saveArtSettings({ ...artSettings, dailyQuizTarget: Math.min(10, artSettings.dailyQuizTarget + 1) })}
+              style={{ width: '44px', height: '44px', borderRadius: '10px', border: '2px solid #d1d5db', background: 'white', fontSize: '24px', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 900, color: '#374151' }}
+            >+</button>
+            {artSettings.dailyQuizTarget > 0 && (
+              <div style={{ fontSize: '13px', color: '#6b7280', fontWeight: 600 }}>
+                Art Studio unlocks after {artSettings.dailyQuizTarget} {artSettings.dailyQuizTarget === 1 ? 'activity' : 'activities'} each day
+              </div>
+            )}
+          </div>
         </div>
       </SettingsCard>
 

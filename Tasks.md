@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-11 (v1.25.0)  
-**Current version:** v1.25.0
+**Last updated:** 2026-04-11 (v1.26.0)  
+**Current version:** v1.26.0
 
 ---
 
@@ -369,6 +369,16 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
 **Fixed:** 2026-04-10 ✅ — `src/components/cognitive/MazeGame.jsx`: 5 drag-to-navigate corridor mazes on a 560×380 canvas. Mazes defined as horizontal/vertical segments (% coordinates); character follows mouse/touch within valid corridors, wall hits flash red border. Mazes: Bunny's Garden (1 turn), Rocket Race (U-shape), Star Trail (S-shape 4 turns), Ocean Dive (3 turns), Space Explorer (6 turns). 2 stars for easy mazes, 3 for harder. Progress dots + maze picker. Accessible via Think & Play → Mazes, unlocks at 5 stars.
+
+### [x] FEAT-047: Art Studio parental lock / daily reward gate
+**Priority:** High
+**Description:** Parent settings option to hide the Art Studio button entirely, and/or require Mina to complete a configurable number of activities each day before Art Studio unlocks.
+**Done:** 2026-04-11 ✅ — `ParentSettings.jsx` "🎨 Art Studio Access" card with visible/hidden toggle and +/− daily activity counter (0–10). Settings saved to `mina_art_settings` in localStorage. `HomeScreen.jsx` reads settings on mount, counts today's sessions from progress.sessions, shows progress dots when daily gate is active, hides card entirely when hidden. Both the star-gate (10⭐) and daily gate stack — both must be met.
+
+### [ ] FEAT-048: Story Time — classic bedtime stories with illustrated scenes
+**Priority:** High
+**Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. 4–6 pages per story, TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
+**Components:** `src/data/storyBook.js` (all story content), `src/components/storybook/StoryBookHome.jsx`, `src/components/storybook/StoryReader.jsx`
 
 ### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
 **Priority:** High  

@@ -1,6 +1,15 @@
-export const VERSION = '1.25.0'
+export const VERSION = '1.26.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.26.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-047: Art Studio parental lock — parent settings "🎨 Art Studio Access" card with visible/hidden toggle and daily activity counter (0–10)',
+      'When daily gate is active: Art Studio shows progress dots (e.g. 2/3 done today) and unlocks once Mina hits the target',
+      'Both the star gate (10⭐) and daily gate must be met; card hidden entirely when parent sets it to Hidden',
+    ],
+  },
   {
     version: '1.25.0',
     date: '2026-04-11',
