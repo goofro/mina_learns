@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak, speakEncouragement } from '../../utils/speech'
+import { DifficultyBadge } from '../shared/DifficultyBadge'
 
-// Standard dice-style dot positions (as [cx%, cy%] within the dot grid box)
+// Standard dice-style dot positions (as [cx%, cy%])
 const DOT_PATTERNS = {
   1: [[50, 50]],
   2: [[25, 25], [75, 75]],
@@ -12,36 +13,40 @@ const DOT_PATTERNS = {
   5: [[25, 25], [75, 25], [50, 50], [25, 75], [75, 75]],
 }
 
-// Random scattered positions (for harder mode variety)
+// Random scattered positions (for higher counts)
 function randomPattern(n) {
-  const positions = []
   const cells = []
-  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) cells.push([c, r])
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) cells.push([c, r])
   const shuffled = [...cells].sort(() => Math.random() - 0.5).slice(0, n)
-  return shuffled.map(([c, r]) => [17 + c * 33, 17 + r * 33])
+  return shuffled.map(([c, r]) => [13 + c * 25, 13 + r * 25])
 }
 
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5) }
 
-function generateQ(round) {
-  const count = Math.min(1 + Math.floor(round / 3), 5) // gradually increases 1→5
-  const useRandom = round > 6 // random scatter in later rounds
-  const dots = useRandom ? randomPattern(count) : DOT_PATTERNS[count]
-  // Wrong choices: two nearby numbers
+// Difficulty params:
+//   level 1: max 4 dots, dice patterns, 1500ms
+//   level 2: max 6 dots, dice→random mix, 1500ms
+//   level 3: max 9 dots, random always, 1000ms
+function generateQ(round, level = 2) {
+  const maxDots = level === 1 ? 4 : level === 2 ? 6 : 9
+  const flashMs = level === 3 ? 1000 : 1500
+  const count = Math.min(1 + Math.floor(round / 2), maxDots)
+  const useDice = count <= 5 && level < 3
+  const dots = useDice ? DOT_PATTERNS[count] : randomPattern(count)
+  const poolMax = maxDots
   const candidates = []
-  for (let i = 1; i <= 5; i++) { if (i !== count) candidates.push(i) }
+  for (let i = 1; i <= poolMax; i++) { if (i !== count) candidates.push(i) }
   shuffle(candidates)
   const choices = shuffle([count, candidates[0], candidates[1]])
-  return { count, dots, choices }
+  return { count, dots, choices, flashMs }
 }
 
-const FLASH_MS = 1500 // how long dots are visible
 const ROUNDS = 10
 
-export function Subitizing({ onBack, addStars, recordMath }) {
+export function Subitizing({ onBack, addStars, recordMath, difficultyLevel = 2, recordActivityResult }) {
   const [round, setRound] = useState(0)
-  const [question, setQuestion] = useState(() => generateQ(0))
-  const [phase, setPhase] = useState('ready') // 'ready' | 'flash' | 'answer'
+  const [question, setQuestion] = useState(() => generateQ(0, difficultyLevel))
+  const [phase, setPhase] = useState('ready')
   const [feedback, setFeedback] = useState(null)
   const [showStar, setShowStar] = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
@@ -50,18 +55,18 @@ export function Subitizing({ onBack, addStars, recordMath }) {
 
   function startFlash() {
     setPhase('flash')
-    flashTimer.current = setTimeout(() => setPhase('answer'), FLASH_MS)
+    flashTimer.current = setTimeout(() => setPhase('answer'), question.flashMs)
   }
 
   useEffect(() => () => clearTimeout(flashTimer.current), [])
 
   function handleChoice(num) {
     if (feedback) return
-    const correct = num === question.count
-    setFeedback(correct ? 'correct' : 'wrong')
-    setScore(s => ({ correct: s.correct + (correct ? 1 : 0), total: s.total + 1 }))
+    const isCorrect = num === question.count
+    setFeedback(isCorrect ? 'correct' : 'wrong')
+    setScore(s => ({ correct: s.correct + (isCorrect ? 1 : 0), total: s.total + 1 }))
 
-    if (correct) {
+    if (isCorrect) {
       speak(`Yes! There ${question.count === 1 ? 'was' : 'were'} ${question.count}!`, { rate: 0.85 })
       addStars(2)
       setShowStar(true)
@@ -69,16 +74,23 @@ export function Subitizing({ onBack, addStars, recordMath }) {
       speakEncouragement()
       setTimeout(() => {
         const nr = round + 1
-        if (nr >= ROUNDS) { setShowCelebration(true) }
-        else { setRound(nr); setQuestion(generateQ(nr)); setPhase('ready'); setFeedback(null) }
+        if (nr >= ROUNDS) {
+          const finalCorrect = score.correct + 1
+          recordActivityResult?.('subitizing', finalCorrect, ROUNDS)
+          setShowCelebration(true)
+        } else {
+          setRound(nr); setQuestion(generateQ(nr, difficultyLevel)); setPhase('ready'); setFeedback(null)
+        }
       }, 1500)
     } else {
       speak(`Not quite! There ${question.count === 1 ? 'was' : 'were'} ${question.count}. Let's try again!`, { rate: 0.82 })
-      setTimeout(() => {
-        setPhase('ready')
-        setFeedback(null)
-      }, 2000)
+      setTimeout(() => { setPhase('ready'); setFeedback(null) }, 2000)
     }
+  }
+
+  function restart() {
+    setShowCelebration(false); setRound(0)
+    setQuestion(generateQ(0, difficultyLevel)); setPhase('ready'); setScore({ correct: 0, total: 0 }); setFeedback(null)
   }
 
   if (showCelebration) {
@@ -89,7 +101,7 @@ export function Subitizing({ onBack, addStars, recordMath }) {
           <div style={{ fontSize: '72px' }}>👀</div>
           <h2 style={{ fontSize: '36px', fontWeight: 900, color: '#2563eb', margin: '12px 0' }}>Quick Eyes!</h2>
           <p style={{ fontSize: '20px', color: '#6b7280', marginBottom: '28px' }}>{score.correct}/{score.total} correct!</p>
-          <button onClick={() => { setShowCelebration(false); setRound(0); setQuestion(generateQ(0)); setPhase('ready'); setScore({ correct: 0, total: 0 }); setFeedback(null) }}
+          <button onClick={restart}
             style={{ background: '#2563eb', color: 'white', border: 'none', borderRadius: '16px', padding: '16px 36px', fontSize: '18px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
             Play Again!
           </button>
@@ -104,32 +116,24 @@ export function Subitizing({ onBack, addStars, recordMath }) {
       <div style={{ maxWidth: '480px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
           <BackButton onClick={onBack} />
-          <div style={{ fontSize: '16px', fontWeight: 700, color: '#6b7280' }}>{round + 1}/{ROUNDS} · {score.correct} ✓</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <DifficultyBadge level={difficultyLevel} />
+            <div style={{ fontSize: '16px', fontWeight: 700, color: '#6b7280' }}>{round + 1}/{ROUNDS} · {score.correct} ✓</div>
+          </div>
         </div>
 
-        {/* Flash card */}
-        <div style={{
-          background: 'white', borderRadius: '28px',
-          padding: '12px', marginBottom: '28px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.09)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center',
-        }}>
+        <div style={{ background: 'white', borderRadius: '28px', padding: '12px', marginBottom: '28px', boxShadow: '0 8px 24px rgba(0,0,0,0.09)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{
             width: '240px', height: '240px', borderRadius: '20px',
             background: phase === 'flash' ? '#1e3a8a' : phase === 'answer' ? '#f1f5f9' : '#dbeafe',
-            position: 'relative', overflow: 'hidden',
-            transition: 'background 0.2s',
+            position: 'relative', overflow: 'hidden', transition: 'background 0.2s',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
             {phase === 'flash' && question.dots.map(([cx, cy], i) => (
               <div key={i} style={{
-                position: 'absolute',
-                left: `${cx}%`, top: `${cy}%`,
-                width: '44px', height: '44px',
-                borderRadius: '50%',
-                background: 'white',
-                transform: 'translate(-50%, -50%)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                position: 'absolute', left: `${cx}%`, top: `${cy}%`,
+                width: '36px', height: '36px', borderRadius: '50%', background: 'white',
+                transform: 'translate(-50%, -50%)', boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
               }} />
             ))}
             {phase === 'ready' && (
@@ -147,13 +151,12 @@ export function Subitizing({ onBack, addStars, recordMath }) {
           </div>
 
           <div style={{ marginTop: '16px', fontSize: '16px', fontWeight: 700, color: '#6b7280', textAlign: 'center' }}>
-            {phase === 'ready' && 'Watch carefully — the dots will flash!'}
+            {phase === 'ready' && `Watch carefully — dots flash for ${question.flashMs / 1000}s!`}
             {phase === 'flash' && 'How many dots do you see?'}
             {phase === 'answer' && 'How many dots did you see?'}
           </div>
         </div>
 
-        {/* Ready button or choices */}
         {phase === 'ready' && (
           <button onClick={startFlash}
             style={{ width: '100%', padding: '22px', background: '#2563eb', color: 'white', border: 'none', borderRadius: '20px', fontSize: '22px', fontWeight: 900, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 6px 0 #1d4ed8' }}>

@@ -91,10 +91,16 @@ export default function App() {
     recordSightWord,
     recordPhonics,
     recordMath,
+    recordActivityResult,
     recordSession,
     achieveMilestone,
     resetProgress,
   } = useProgress()
+
+  // Helper: get difficulty level (1=Easy 2=Normal 3=Hard) for an activity
+  function diffLevel(activityId) {
+    return progress.difficulty?.[activityId]?.level ?? 2
+  }
 
   const [screen, setScreen] = useState('home')
   const [activeStoryId, setActiveStoryId] = useState(null)
@@ -413,6 +419,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('moreorless')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'shapes' && (
@@ -427,6 +435,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('addition')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'subtraction' && (
@@ -434,6 +444,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('subtraction')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'subitizing' && (
@@ -441,6 +453,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('subitizing')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'numberbonds' && (

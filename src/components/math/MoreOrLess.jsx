@@ -3,17 +3,43 @@ import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak, speakEncouragement } from '../../utils/speech'
 import { COUNT_OBJECTS } from '../../data/mathLessons'
+import { DifficultyBadge } from '../shared/DifficultyBadge'
 
-function generateQ() {
-  const a = Math.floor(Math.random() * 9) + 1
-  let b = Math.floor(Math.random() * 9) + 1
-  while (b === a) b = Math.floor(Math.random() * 9) + 1
+function GroupButton({ val, side, correct, feedback, emoji, onClick }) {
+  const highlight = feedback && correct === side
+  return (
+    <button onClick={onClick} disabled={!!feedback}
+      style={{
+        background: highlight ? '#dcfce7' : 'white',
+        border: `5px solid ${highlight ? '#10b981' : '#fde68a'}`,
+        borderRadius: '24px', padding: '24px 16px',
+        cursor: feedback ? 'default' : 'pointer', fontFamily: 'inherit',
+        boxShadow: '0 6px 0 #fde68a', transition: 'all 0.1s',
+      }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center', minHeight: '90px', alignContent: 'center' }}>
+        {Array.from({ length: Math.min(val, 20) }).map((_, i) => (
+          <span key={i} style={{ fontSize: val > 12 ? '28px' : '40px', lineHeight: 1 }}>{emoji}</span>
+        ))}
+      </div>
+      <div style={{ fontSize: '40px', fontWeight: 900, color: '#374151', marginTop: '12px' }}>{val}</div>
+    </button>
+  )
+}
+
+function generateQ(level = 2) {
+  const max = level === 3 ? 20 : 9
+  const minGap = level === 1 ? 4 : 1
+  let a, b
+  do {
+    a = Math.floor(Math.random() * max) + 1
+    b = Math.floor(Math.random() * max) + 1
+  } while (a === b || Math.abs(a - b) < minGap)
   const obj = COUNT_OBJECTS[Math.floor(Math.random() * COUNT_OBJECTS.length)]
   return { a, b, obj, correct: a > b ? 'left' : 'right' }
 }
 
-export function MoreOrLess({ onBack, addStars, recordMath }) {
-  const [question, setQuestion] = useState(generateQ)
+export function MoreOrLess({ onBack, addStars, recordMath, difficultyLevel = 2, recordActivityResult }) {
+  const [question, setQuestion] = useState(() => generateQ(difficultyLevel))
   const [feedback, setFeedback] = useState(null)
   const [showStar, setShowStar] = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
@@ -27,13 +53,13 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
 
   function handleChoice(side) {
     if (feedback) return
-    const correct = side === question.correct
-    setFeedback(correct ? 'correct' : 'wrong')
-    setScore(s => ({ correct: s.correct + (correct ? 1 : 0), total: s.total + 1 }))
-    recordMath('moreOrLess', { correct })
+    const isCorrect = side === question.correct
+    setFeedback(isCorrect ? 'correct' : 'wrong')
+    setScore(s => ({ correct: s.correct + (isCorrect ? 1 : 0), total: s.total + 1 }))
+    recordMath('moreOrLess', { correct: isCorrect })
 
     const bigGroup = question.correct === 'left' ? question.a : question.b
-    if (correct) {
+    if (isCorrect) {
       speak(`That's right! ${bigGroup} is more!`, { rate: 0.85 })
       addStars(1)
       setShowStar(true)
@@ -43,10 +69,12 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
       setTimeout(() => {
         const nr = round + 1
         if (nr >= ROUNDS) {
+          const finalCorrect = score.correct + 1
+          recordActivityResult?.('moreorless', finalCorrect, ROUNDS)
           setShowCelebration(true)
         } else {
           setRound(nr)
-          setQuestion(generateQ())
+          setQuestion(generateQ(difficultyLevel))
           setFeedback(null)
         }
       }, 1400)
@@ -54,6 +82,11 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
       speak(`Try again! Count each group carefully.`, { rate: 0.8 })
       setTimeout(() => setFeedback(null), 1500)
     }
+  }
+
+  function restart() {
+    setShowCelebration(false); setRound(0)
+    setQuestion(generateQ(difficultyLevel)); setScore({ correct: 0, total: 0 }); setFeedback(null)
   }
 
   if (showCelebration) {
@@ -64,7 +97,7 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
           <div style={{ fontSize: '72px' }}>⚖️</div>
           <h2 style={{ fontSize: '36px', fontWeight: 900, color: '#f59e0b', margin: '12px 0' }}>Balance Master!</h2>
           <p style={{ fontSize: '20px', color: '#6b7280', marginBottom: '28px' }}>{score.correct}/{score.total} correct!</p>
-          <button onClick={() => { setShowCelebration(false); setRound(0); setQuestion(generateQ()); setScore({ correct: 0, total: 0 }); setFeedback(null) }}
+          <button onClick={restart}
             style={{ background: '#f59e0b', color: 'white', border: 'none', borderRadius: '16px', padding: '16px 36px', fontSize: '18px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
             Play Again!
           </button>
@@ -79,8 +112,11 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
           <BackButton onClick={onBack} />
-          <div style={{ fontSize: '16px', fontWeight: 700, color: '#6b7280' }}>
-            {round + 1}/{ROUNDS} · {score.correct} ✓
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <DifficultyBadge level={difficultyLevel} />
+            <div style={{ fontSize: '16px', fontWeight: 700, color: '#6b7280' }}>
+              {round + 1}/{ROUNDS} · {score.correct} ✓
+            </div>
           </div>
         </div>
 
@@ -92,55 +128,12 @@ export function MoreOrLess({ onBack, addStars, recordMath }) {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '16px', alignItems: 'center' }}>
           {/* Left group */}
-          <button
-            onClick={() => handleChoice('left')}
-            disabled={!!feedback}
-            style={{
-              background: feedback === 'correct' && question.correct === 'left' ? '#dcfce7' :
-                feedback === 'wrong' && question.correct === 'left' ? '#dcfce7' : 'white',
-              border: `5px solid ${feedback && question.correct === 'left' ? '#10b981' : '#fde68a'}`,
-              borderRadius: '24px',
-              padding: '24px 16px',
-              cursor: feedback ? 'default' : 'pointer',
-              fontFamily: 'inherit',
-              boxShadow: '0 6px 0 #fde68a',
-              transition: 'all 0.1s',
-            }}
-          >
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center', minHeight: '90px', alignContent: 'center' }}>
-              {Array.from({ length: question.a }).map((_, i) => (
-                <span key={i} style={{ fontSize: '40px', lineHeight: 1 }}>{question.obj.emoji}</span>
-              ))}
-            </div>
-            <div style={{ fontSize: '40px', fontWeight: 900, color: '#374151', marginTop: '12px' }}>{question.a}</div>
-          </button>
-
-          {/* VS */}
-          <div style={{ fontSize: '28px', fontWeight: 900, color: '#9ca3af' }}>VS</div>
-
+          <GroupButton val={question.a} side="left" correct={question.correct} feedback={feedback}
+            emoji={question.obj.emoji} onClick={() => handleChoice('left')} />
+          <div style={{ fontSize: '28px', fontWeight: 900, color: '#9ca3af', textAlign: 'center' }}>VS</div>
           {/* Right group */}
-          <button
-            onClick={() => handleChoice('right')}
-            disabled={!!feedback}
-            style={{
-              background: feedback === 'correct' && question.correct === 'right' ? '#dcfce7' :
-                feedback === 'wrong' && question.correct === 'right' ? '#dcfce7' : 'white',
-              border: `5px solid ${feedback && question.correct === 'right' ? '#10b981' : '#fde68a'}`,
-              borderRadius: '24px',
-              padding: '24px 16px',
-              cursor: feedback ? 'default' : 'pointer',
-              fontFamily: 'inherit',
-              boxShadow: '0 6px 0 #fde68a',
-              transition: 'all 0.1s',
-            }}
-          >
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center', minHeight: '90px', alignContent: 'center' }}>
-              {Array.from({ length: question.b }).map((_, i) => (
-                <span key={i} style={{ fontSize: '40px', lineHeight: 1 }}>{question.obj.emoji}</span>
-              ))}
-            </div>
-            <div style={{ fontSize: '40px', fontWeight: 900, color: '#374151', marginTop: '12px' }}>{question.b}</div>
-          </button>
+          <GroupButton val={question.b} side="right" correct={question.correct} feedback={feedback}
+            emoji={question.obj.emoji} onClick={() => handleChoice('right')} />
         </div>
 
         {feedback === 'correct' && (

@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-11 (v1.24.0)  
-**Current version:** v1.24.0
+**Last updated:** 2026-04-11 (v1.25.0)  
+**Current version:** v1.25.0
 
 ---
 
@@ -347,9 +347,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Low  
 **Description:** After completing activities or reaching milestones, Mina earns a sticker for a sticker book (accessible from the home screen). Stickers are themed by subject (star, book, apple, rocket). Viewing the sticker book is purely a reward — no learning required. Stored in localStorage.
 
-### [ ] FEAT-034: Adaptive difficulty
+### [x] FEAT-034: Adaptive difficulty
 **Priority:** Medium  
-**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.
+**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.  
+**Done:** 2026-04-11 ✅ — `useProgress` stores `difficulty[activityId]{ level, sessions[] }`. `recordActivityResult(id, correct, total)` evaluates avg accuracy every 3 sessions and auto-adjusts level (1=Easy, 2=Normal, 3=Hard). Adapted activities: Addition (number ranges 1-5/1-9/1-18), Subtraction (a≤5/a≤8/a≤15), More or Less (gap≥4/gap≥1/range 1-20), Quick Count (max 4/6/9 dots, 1500ms/1500ms/1000ms flash). Shared `DifficultyBadge` component in header. Parent ProgressReport shows difficulty grid for all 4 activities.
 
 ### [x] FEAT-035: Memory / card matching game
 **Priority:** Medium  

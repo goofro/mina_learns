@@ -1,6 +1,15 @@
-export const VERSION = '1.24.0'
+export const VERSION = '1.25.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.25.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-034: Adaptive difficulty — Addition, Subtraction, More or Less, Quick Count auto-adjust after every 3 sessions (>85% → harder, <50% → easier); 3 levels: Easy/Normal/Hard',
+      'Each adapted activity shows a colour-coded difficulty badge (🌱 Easy / ⭐ Normal / 🔥 Hard) in its header',
+      'Parent dashboard Progress Report shows current level + sessions-until-next-review for all 4 activities',
+    ],
+  },
   {
     version: '1.24.0',
     date: '2026-04-11',
