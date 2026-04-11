@@ -369,6 +369,15 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
 **Fixed:** 2026-04-10 ✅ — `src/components/cognitive/MazeGame.jsx`: 5 drag-to-navigate corridor mazes on a 560×380 canvas. Mazes defined as horizontal/vertical segments (% coordinates); character follows mouse/touch within valid corridors, wall hits flash red border. Mazes: Bunny's Garden (1 turn), Rocket Race (U-shape), Star Trail (S-shape 4 turns), Ocean Dive (3 turns), Space Explorer (6 turns). 2 stars for easy mazes, 3 for harder. Progress dots + maze picker. Accessible via Think & Play → Mazes, unlocks at 5 stars.
 
+### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
+**Priority:** High  
+**Description:** A dedicated "Reading Time" mode where a short story or sentence set is read aloud by TTS while each word is highlighted in sync, encouraging Mina to follow along. Designed for shared reading between parent and child or independent listening. Features: word-by-word highlight as TTS plays, tap any word to hear it spoken individually, adjustable read speed (slow / normal), and a "Read it again!" button. Stories drawn from the existing Story Library (FEAT-039). Tracks time spent reading and awards stars on completion. Accessible from Reading World as a prominent entry point.
+
+### [ ] FEAT-046: Larger drawing canvas in Free Drawing Studio
+**Priority:** Medium  
+**Description:** The drawing pad in Art Studio → Free Drawing is too small. Expand the canvas to fill as much of the screen as possible — ideally edge-to-edge on tablets. Move the toolbar (colors, brush sizes, eraser, stamps) to a compact sidebar or collapsible strip so it doesn't eat into canvas space. Ensure the canvas resolution scales up with its display size so drawings don't look pixelated.  
+**File:** `src/components/art/FreeDrawStudio.jsx`
+
 ---
 
 ## 📝 Session Notes
