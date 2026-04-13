@@ -207,6 +207,18 @@ export function HomeScreen({ onNavigate, stars = 0, sessions = [] }) {
             }}
           />
           <SubjectCard
+            emoji="📖"
+            title="Story Time"
+            subtitle="Classic bedtime stories"
+            bgColor="linear-gradient(135deg, #fefce8, #fef9c3)"
+            borderColor="#ca8a04"
+            shadowColor="#a16207"
+            onClick={() => {
+              speak('Story Time! Let us read a story together!')
+              onNavigate('storytime')
+            }}
+          />
+          <SubjectCard
             emoji="📒"
             title="Sticker Book"
             subtitle="Collect stickers as you learn!"

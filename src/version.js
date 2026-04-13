@@ -1,6 +1,18 @@
-export const VERSION = '1.26.0'
+export const VERSION = '1.27.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.27.0',
+    date: '2026-04-12',
+    changes: [
+      'FEAT-048: Story Time — 10 classic bedtime stories (5 Western, 5 Chinese) added as a new home-screen section',
+      'Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang\'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King\'s First Quest',
+      'Book-style reader: emoji illustration panel + large story text, page-by-page with ◀▶ navigation and dot indicators',
+      '"🔊 Read to me" TTS button on every page; night mode toggle (🌙/☀️) for bedtime reading',
+      '3 stars awarded on first completion per story; read/unread tracked in localStorage',
+      'Completion screen with "📖 Read Again" and "← More Stories" options',
+    ],
+  },
   {
     version: '1.26.0',
     date: '2026-04-11',

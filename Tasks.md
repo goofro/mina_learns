@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-11 (v1.26.0)  
-**Current version:** v1.26.0
+**Last updated:** 2026-04-12 (v1.27.0)  
+**Current version:** v1.27.0
 
 ---
 
@@ -375,10 +375,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Parent settings option to hide the Art Studio button entirely, and/or require Mina to complete a configurable number of activities each day before Art Studio unlocks.
 **Done:** 2026-04-11 ✅ — `ParentSettings.jsx` "🎨 Art Studio Access" card with visible/hidden toggle and +/− daily activity counter (0–10). Settings saved to `mina_art_settings` in localStorage. `HomeScreen.jsx` reads settings on mount, counts today's sessions from progress.sessions, shows progress dots when daily gate is active, hides card entirely when hidden. Both the star-gate (10⭐) and daily gate stack — both must be met.
 
-### [ ] FEAT-048: Story Time — classic bedtime stories with illustrated scenes
+### [x] FEAT-048: Story Time — classic bedtime stories with illustrated scenes
 **Priority:** High
 **Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. 4–6 pages per story, TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
 **Components:** `src/data/storyBook.js` (all story content), `src/components/storybook/StoryBookHome.jsx`, `src/components/storybook/StoryReader.jsx`
+**Done:** 2026-04-12 ✅ — `StoryBookHome` shows 10 stories in a grid with Western/Chinese filter tabs and read/unread indicators. `StoryBookReader` has a split-panel book layout (emoji scene left, story text right), page-dot navigation, 🌙 night mode, "🔊 Read to me" TTS per page, and a completion screen that awards 3 stars on first read. All 10 stories written with child-friendly prose (4–6 pages each) and emoji illustration arrays.
 
 ### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
 **Priority:** High  
@@ -393,6 +394,15 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 ---
 
 ## 📝 Session Notes
+
+### 2026-04-12 – Story Time v1.27.0
+- FEAT-048: "📖 Story Time" button added to home screen
+- 10 classic stories fully written (4–6 pages each): 5 Western + 5 Chinese
+- `src/data/storyBook.js` — all story data (scenes + prose)
+- `StoryBookHome.jsx` — grid with Western/Chinese tabs, read/unread ✅ badges, page count
+- `StoryBookReader.jsx` — split-panel book layout, night mode 🌙, "🔊 Read to me" TTS, ◀▶ dot navigation, 3-star completion reward, "Read Again" / "More Stories" on finish screen
+- Build confirmed, committed, pushed
+
 
 ### 2026-04-02 – Initial Build
 - Full app scaffolded: React + Vite + Recharts + Framer Motion

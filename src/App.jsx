@@ -73,6 +73,9 @@ import { AnimalWorld } from './components/science/AnimalWorld'
 import { MyBody } from './components/science/MyBody'
 import { LifeCycles } from './components/science/LifeCycles'
 
+import { StoryBookHome } from './components/storybook/StoryBookHome'
+import { StoryBookReader } from './components/storybook/StoryReader'
+
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 
@@ -104,6 +107,7 @@ export default function App() {
 
   const [screen, setScreen] = useState('home')
   const [activeStoryId, setActiveStoryId] = useState(null)
+  const [activeStoryBookId, setActiveStoryBookId] = useState(null)
   const [sessionStart, setSessionStart] = useState(null)
 
   // Check milestones on progress change
@@ -159,6 +163,7 @@ export default function App() {
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
+            else if (subject === 'storytime') navigate('storybookhome', 'storytime')
             else if (subject === 'skillmap') navigate('skillmap')
             else if (subject === 'stickerbook') navigate('stickerbook')
           }}
@@ -548,6 +553,21 @@ export default function App() {
           stars={progress.stars}
           onNavigate={(id, subject) => navigate(id, subject || 'reading')}
           onBack={() => goBack('home')}
+        />
+      )}
+
+      {/* Story Time screens */}
+      {screen === 'storybookhome' && (
+        <StoryBookHome
+          onBack={() => goBack('home')}
+          onSelectStory={(id) => { setActiveStoryBookId(id); navigate('storybookreader', 'storytime') }}
+        />
+      )}
+      {screen === 'storybookreader' && (
+        <StoryBookReader
+          storyId={activeStoryBookId}
+          onBack={() => navigate('storybookhome')}
+          addStars={addStars}
         />
       )}
 
