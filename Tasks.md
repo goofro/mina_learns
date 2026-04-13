@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-12 (v1.27.0)  
+**Last updated:** 2026-04-12 (v1.27.0 — added BUG-004–008, FEAT-049–051)  
 **Current version:** v1.27.0
 
 ---
@@ -380,6 +380,78 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. 4–6 pages per story, TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
 **Components:** `src/data/storyBook.js` (all story content), `src/components/storybook/StoryBookHome.jsx`, `src/components/storybook/StoryReader.jsx`
 **Done:** 2026-04-12 ✅ — `StoryBookHome` shows 10 stories in a grid with Western/Chinese filter tabs and read/unread indicators. `StoryBookReader` has a split-panel book layout (emoji scene left, story text right), page-dot navigation, 🌙 night mode, "🔊 Read to me" TTS per page, and a completion screen that awards 3 stars on first read. All 10 stories written with child-friendly prose (4–6 pages each) and emoji illustration arrays.
+
+---
+
+## 🐛 New Bugs
+
+### [ ] BUG-004: Free Draw — bottom of canvas triggers Windows taskbar
+**Screen:** Art Studio → Free Drawing  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** When Mina tries to draw near the bottom edge of the canvas, the pointer leaves the app window and activates the Windows taskbar instead of continuing to draw. The canvas `position: fixed` layout extends to the very bottom of the viewport with no buffer, so the OS taskbar intercepts pointer events in that region.  
+**Fix:** Add bottom padding/margin to the canvas area equal to the taskbar height (~48px), or clamp the canvas height to `calc(100vh - 48px)` so drawing never reaches the OS taskbar zone.  
+**File:** `src/components/art/FreeDrawStudio.jsx`
+
+---
+
+### [ ] BUG-005: Art Studio daily activity counter not counting correctly
+**Screen:** Home → Art Studio lock / daily gate  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** The daily activity counter that gates Art Studio access is not counting completed activities correctly. Mina completes activities but the counter doesn't reflect this, keeping Art Studio locked when it should be unlocked.  
+**Fix:** Investigate `getTodayCount()` in `HomeScreen.jsx` and how `recordSession` writes to `progress.sessions`. Check whether the session date format / comparison is off, and whether the counter re-reads sessions on activity return.  
+**Files:** `src/components/home/HomeScreen.jsx`, `src/store/useProgress.js`
+
+---
+
+### [ ] BUG-006: My Body — stomach emoji renders as a heart
+**Screen:** Science → My Body  
+**Reported:** 2026-04-12  
+**Priority:** Medium  
+**Description:** The stomach body part is using an emoji that renders as a heart (🫀 is the anatomical heart, not the stomach). Need to find the correct emoji for stomach or use a workaround (e.g. label with a different visual).  
+**Note:** 🫀 = anatomical heart. There is no dedicated stomach emoji — consider using 🟡 or a descriptive label, or swap to a belly/tummy illustration approach.  
+**File:** `src/components/science/MyBody.jsx`
+
+---
+
+### [ ] BUG-007: Dinosaur section — wrong emojis for several dinos
+**Screen:** Science → Dinosaur Explorer  
+**Reported:** 2026-04-12  
+**Priority:** Medium  
+**Description:** Several dinosaur emoji are inaccurate — e.g. Triceratops is showing a long-neck dinosaur emoji instead. The standard dinosaur emojis (🦕 sauropod, 🦖 T-Rex) are very limited and don't cover all species accurately. Overall the section needs more visually accurate and engaging dinosaur representations.  
+**Fix:** Audit every dinosaur entry. Where the standard emoji is wrong, replace with the closest accurate one or use a text-based illustration / styled card instead. Consider using descriptive silhouette cards with key features called out (horns, plates, long neck etc.) rather than relying on emoji accuracy.  
+**File:** `src/components/science/DinosaurExplorer.jsx`
+
+---
+
+### [ ] BUG-008: Life Cycles — clicking one stage highlights the wrong stage
+**Screen:** Science → Life Cycles  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** The active/selected highlight in the life cycle sequence is off by one (or similar). Example: clicking the egg stage causes the chicken to be highlighted instead. The index used for the highlight state does not match the index of the tapped item.  
+**Fix:** Check the `onClick` handler and the condition used to apply the highlight style in `LifeCycles.jsx`. The selected index being set and the index being compared for active styling likely have an off-by-one or are referencing different arrays.  
+**File:** `src/components/science/LifeCycles.jsx`
+
+---
+
+## 📋 New Features
+
+### [ ] FEAT-049: Add "Mina" to Write Your Name activity
+**Priority:** High  
+**Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
+**File:** `src/components/writing/NameTracer.jsx`
+
+### [ ] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
+**Priority:** Medium  
+**Description:** Extend the home screen art collage (currently only fed by Free Drawing Studio) to also accept saves from Write Your Name and Stroke Practice. Add a "Save to Home 🏠" button to both activities after the "I traced it!" / "I did it!" completion step. Saves a snapshot of the canvas to the same `mina_art_gallery` localStorage array (max 6, newest first) that Free Drawing uses.  
+**Files:** `src/components/writing/NameTracer.jsx`, `src/components/writing/StrokePractice.jsx`, `src/components/home/HomeScreen.jsx`
+
+### [ ] FEAT-051: Multiple child profiles (Mina + Aria)
+**Priority:** High  
+**Description:** Support more than one child profile so Aria can have her own separate progress, stars, and settings alongside Mina. Each profile stores its own data in localStorage under a profile-keyed namespace (e.g. `mina_learns_progress_mina`, `mina_learns_progress_aria`). A profile picker screen appears on first launch or can be accessed from the home screen. Parent dashboard shows a profile switcher. The active profile name is displayed in the StarBar or home screen greeting.  
+**Scope:** Profile creation (name + avatar emoji picker), profile switcher on home screen, all progress/localStorage keys namespaced per profile, parent dashboard scoped to active profile.  
+**Files:** `src/store/useProgress.js`, `src/App.jsx`, `src/components/home/HomeScreen.jsx`, `src/components/shared/StarBar.jsx`, new `src/components/profiles/ProfilePicker.jsx`
 
 ### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
 **Priority:** High  
