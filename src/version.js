@@ -1,6 +1,121 @@
-export const VERSION = '1.15.0'
+export const VERSION = '1.27.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.27.0',
+    date: '2026-04-12',
+    changes: [
+      'FEAT-048: Story Time — 10 classic bedtime stories (5 Western, 5 Chinese) added as a new home-screen section',
+      'Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang\'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King\'s First Quest',
+      'Book-style reader: emoji illustration panel + large story text, page-by-page with ◀▶ navigation and dot indicators',
+      '"🔊 Read to me" TTS button on every page; night mode toggle (🌙/☀️) for bedtime reading',
+      '3 stars awarded on first completion per story; read/unread tracked in localStorage',
+      'Completion screen with "📖 Read Again" and "← More Stories" options',
+    ],
+  },
+  {
+    version: '1.26.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-047: Art Studio parental lock — parent settings "🎨 Art Studio Access" card with visible/hidden toggle and daily activity counter (0–10)',
+      'When daily gate is active: Art Studio shows progress dots (e.g. 2/3 done today) and unlocks once Mina hits the target',
+      'Both the star gate (10⭐) and daily gate must be met; card hidden entirely when parent sets it to Hidden',
+    ],
+  },
+  {
+    version: '1.25.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-034: Adaptive difficulty — Addition, Subtraction, More or Less, Quick Count auto-adjust after every 3 sessions (>85% → harder, <50% → easier); 3 levels: Easy/Normal/Hard',
+      'Each adapted activity shows a colour-coded difficulty badge (🌱 Easy / ⭐ Normal / 🔥 Hard) in its header',
+      'Parent dashboard Progress Report shows current level + sessions-until-next-review for all 4 activities',
+    ],
+  },
+  {
+    version: '1.24.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-005: Print Progress Report — "🖨️ Print Report" button in parent dashboard; @media print CSS isolates report so browser Print/Save as PDF shows only the report',
+      'FEAT-003: Customizable Word Lists — parent can add/remove custom words in Settings; appears as "✨ My Words" level in Sight Words with full flashcard + quiz flow',
+    ],
+  },
+  {
+    version: '1.23.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-037: Money — penny/nickel/dime/quarter with Learn, Name It (10-round quiz) and Count Coins (10-round quiz); added to Math World, unlocks at 10 stars',
+      'FEAT-031: Music & Rhythm — Instrument Explorer (6 synthesized sounds via Web Audio API), Copy the Beat (10 rounds of rhythm repetition), Make a Beat (4-note pad sequencer, up to 8 steps); added to Think & Play',
+    ],
+  },
+  {
+    version: '1.22.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-038: Mazes — 5 drag-to-navigate mazes in Think & Play (Bunny\'s Garden → Space Explorer), unlocks at 5 stars, 2–3 stars per maze',
+      'FEAT-040: Trace Shapes — 8 dotted-guide shapes in Art Studio (Star, Heart, Circle, Triangle, House, Sun, Rainbow, Flower), 2 stars per traced shape',
+    ],
+  },
+  {
+    version: '1.21.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-033: Sticker Book — 48 collectible stickers across 5 categories (Animals, Sky & Space, Nature, Yummy Treats, Badges), star-based unlocking, NEW! badge for recently earned, pop-up viewer, progress bar',
+      'FEAT-036: What Comes First? sequencing game — 14 everyday scenarios (brush teeth, bake cookies, grow sunflower…), tap 4 steps in correct order, 3 stars each, added to Think & Play section',
+      'FEAT-030: Weather & Seasons — 8 weather types with what-to-wear & activities, 4 seasons with months & highlights, mixed quiz; added to Calendar section',
+    ],
+  },
+  {
+    version: '1.20.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-032: Added Skill Tree / Level Progression — "My Journey" 🗺️ button on home screen',
+      'Star-based unlock system: 40 activities across 6 subjects, 7 tiers (Starter → Superstar)',
+      'SkillMap dark-theme screen: star progress bar, tier milestones, next-unlock hint, activity grid',
+      'All subject home screens (Reading, Math, Calendar, Science, Think & Play) show lock/unlock states',
+      'Locked cards are grayed with 🔒 and "X more ⭐ to unlock" badge; tap speaks the requirement',
+    ],
+  },
+  {
+    version: '1.19.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-043: Added Telling Time to Calendar — analogue clock with Learn (12 times), Read the Clock quiz (4-choice with mini clocks), Set the Clock interactive challenge',
+      'FEAT-025: Added 3D Shapes to Math World — 6 shapes (sphere/cube/cylinder/cone/pyramid/cuboid) with facts, faces/edges/vertices, real-world examples, Match game, Quiz',
+      'FEAT-026: Added Positions to Math World — 8 spatial concepts (above/below/inside/outside/next to/behind/in front/on top), CSS scene illustrations, quiz with 4-choice picture answers',
+    ],
+  },
+  {
+    version: '1.18.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-044: Added Science World section to home screen',
+      'Dinosaur Explorer: 11 dinos, 3 tabs — Meet the Dinos (flip cards + facts), Sort It (herbivore/carnivore), Quiz',
+      'Animal World: 4 habitats (Jungle/Ocean/Savanna/Arctic), Baby Animals matching, Quiz',
+      'My Body: 10 body parts with facts, Five Senses explorer, Quiz',
+      'Life Cycles: Butterfly/Frog/Sunflower/Chicken cycles, Put-in-Order game, Quiz',
+    ],
+  },
+  {
+    version: '1.17.0',
+    date: '2026-04-05',
+    changes: [
+      'FEAT-012: Added Think & Play section to home screen — Sort It! and What Happens Next?',
+      'Sort It!: 12-round sorting game across 3 category pairs (Animals/Food, Animals/Vehicles, Big/Small)',
+      'What Happens Next?: 12 cause-and-effect scenarios, 3-choice answers, shuffled each session',
+      'FEAT-020: Added Stroke Practice to Reading World — 7 guided stroke types (lines, zigzag, curves, circles, spiral)',
+      'FEAT-028: Added Picture Vocabulary to Reading World — Animals, Food, Action Words; flashcard + quiz mode',
+    ],
+  },
+  {
+    version: '1.16.0',
+    date: '2026-04-05',
+    changes: [
+      'FEAT-021: Added Write Your Name to Reading World — trace Aria, Albert, Melissa, mom, dad, sister, Lily',
+      'Dotted lavender guide text stays visible under strokes (two-canvas approach)',
+      'Name picker with colour-themed cards; 9 colours, 3 brush sizes, clear button, 3-star reward',
+      'FEAT-019: Confirmed done — StoryReader already has full comprehension quiz phase for all 12 stories',
+    ],
+  },
   {
     version: '1.15.0',
     date: '2026-04-05',
