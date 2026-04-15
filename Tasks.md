@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-09 (v1.20.0)  
-**Current version:** v1.20.0
+**Last updated:** 2026-04-15 (v1.29.0 — FEAT-053 dino AI image infra; added BUG-009–012, FEAT-052)  
+**Current version:** v1.29.0
 
 ---
 
@@ -129,17 +129,19 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Priority:** Medium  
 **Description:** Use Web Speech API (recognition) to let Mina say a word and check if it matches. Would be powerful for sight word pronunciation practice.
 
-### [ ] FEAT-003: Customizable word lists
+### [x] FEAT-003: Customizable word lists
 **Priority:** Low  
-**Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.
+**Description:** Allow parents to add custom sight words or vocabulary from parent dashboard settings.  
+**Done:** 2026-04-11 ✅ — `ParentSettings.jsx` has "📝 Custom Word Lists" card (add/remove words, stored as `mina_custom_words` in localStorage). `SightWords.jsx` shows a "✨ My Words" level when custom words exist; quiz pads choices from the standard word pool if fewer than 4 custom words.
 
 ### [x] FEAT-004: Daily streak tracking
 **Priority:** Medium  
 **Description:** Show a streak counter (🔥 3 days in a row!) to encourage daily sessions. Track in localStorage.
 
-### [ ] FEAT-005: Print progress report
+### [x] FEAT-005: Print progress report
 **Priority:** Low  
-**Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.
+**Description:** Add a "Print Report" button in parent dashboard that formats progress as a printable PDF summary.  
+**Done:** 2026-04-11 ✅ — "🖨️ Print Report" button added to `ProgressReport.jsx` header; `@media print` CSS (visibility trick) isolates `#progress-report` div so only the report prints; button hides itself via `#print-report-btn { display: none }` in print styles.
 
 ### [x] FEAT-006: Sound effects library
 **Priority:** Low  
@@ -243,11 +245,12 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** After Sentence Reader plays a short story, ask 2–3 simple comprehension questions: "Who is in the story?", "What happened first?", "Why did [character] do that?" Tap-to-answer with picture choices. Teaches characters, sequence (beginning/middle/end), and basic inference.  
 **Fixed:** 2026-04-05 ✅ — Already implemented as part of FEAT-039. `StoryReader.jsx` has a full PHASE_QUIZ after PHASE_READ: question card with TTS, 3-choice tap answers, green/red feedback, star award per correct answer, correct count summary on done screen. All 12 stories have 2–3 questions in `data/stories.js`.
 
-### [ ] FEAT-040: Expanded tracing & free drawing activities
+### [x] FEAT-040: Expanded tracing & free drawing activities
 **Priority:** Medium  
 **Description:** Two additions to the Writing section:
 1. **More Tracing** — extend LetterTracer with pre-writing stroke practice: straight lines, zig-zags, curves, spirals, and dotted shapes. Each stroke type has a guided canvas template Mina traces over. Teaches pencil control before letter writing.
 2. **Free Drawing** — an open canvas where Mina can draw anything she likes. Crayon palette (same colors as LetterTracer), adjustable brush size, eraser, and a "Save my drawing" button that stores the image to localStorage so she can see it next time. Optional: stamp mode with fun emoji stamps (stars, hearts, animals) she can place on the canvas.
+**Fixed:** 2026-04-10 ✅ — `src/components/art/TraceShapes.jsx`: 8 fun shapes (Star, Heart, Circle, Triangle, House, Sun, Rainbow, Flower) each with a dashed purple guide drawn on a background canvas. Foreground transparent drawing canvas overlaid; 8 colours to pick from, "I Traced It!" awards 2 stars after 3+ strokes. Shape navigation arrows + grid picker. Accessible via Art Studio → Trace Shapes. Pre-writing strokes already done (FEAT-020); free drawing already done (FEAT-042).
 
 ### [x] FEAT-020: Pre-writing strokes
 **Priority:** Medium  
@@ -327,45 +330,229 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File to create:** `src/components/science/` directory with `ScienceHome.jsx` and sub-activity components.
 **Lives on:** Home screen as a new "🔬 Science" top-level button (always visible, no star unlock needed).
 
-### [ ] FEAT-030: Weather & seasons
+### [x] FEAT-030: Weather & seasons
 **Priority:** Low  
 **Description:** Teach weather types (sunny, rainy, cloudy, snowy, windy) and seasons (spring, summer, autumn, winter). Includes: tap-the-weather card, dress-the-character-for-the-season activity, and "what season comes next?" quiz. Can live in the Calendar section or Science section.
 
-### [ ] FEAT-031: Music & rhythm games
+### [x] FEAT-031: Music & rhythm games
 **Priority:** Low  
 **Description:** Rhythm tapping game: play a beat pattern (short/long taps via Web Audio API), Mina repeats it by tapping the screen. Starts with simple 2-beat patterns, progresses to 4-beat. Also consider an alphabet song or counting song with highlighted lyrics synced to TTS playback.
+**Fixed:** 2026-04-10 ✅ — `src/components/cognitive/RhythmGame.jsx`: 3 tabs — Instrument Explorer (6 synthesized sounds: drum/bell/guitar/piano/trumpet/whistle via Web Audio API oscillators, 1 star per new instrument), Copy the Beat (10 rounds of 1–4 beat patterns, large drum tap button, auto-checks after 1.5s pause, 2 stars each), Make a Beat (4 colour-coded note pads C4/E4/G4/A4, up to 8-step sequence, play back button, 3 stars to save). Think & Play → Music & Rhythm, always unlocked.
 
 ### [x] FEAT-032: Skill tree / level progression
 **Priority:** Medium  
 **Description:** Visual skill map on the home screen showing unlocked vs locked activities. Activities unlock as Mina earns stars or completes prerequisites (e.g. Letter Sounds must be played before Word Blending unlocks). Gives a sense of progression and motivates exploration.
 
-### [ ] FEAT-033: Collectible sticker rewards
+### [x] FEAT-033: Collectible sticker rewards
 **Priority:** Low  
 **Description:** After completing activities or reaching milestones, Mina earns a sticker for a sticker book (accessible from the home screen). Stickers are themed by subject (star, book, apple, rocket). Viewing the sticker book is purely a reward — no learning required. Stored in localStorage.
 
-### [ ] FEAT-034: Adaptive difficulty
+### [x] FEAT-034: Adaptive difficulty
 **Priority:** Medium  
-**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.
+**Description:** Track per-activity accuracy in useProgress. If Mina scores >85% consistently, offer a harder variant or increase word complexity. If she scores <50%, repeat easier content before advancing. Parent dashboard shows current difficulty level per activity.  
+**Done:** 2026-04-11 ✅ — `useProgress` stores `difficulty[activityId]{ level, sessions[] }`. `recordActivityResult(id, correct, total)` evaluates avg accuracy every 3 sessions and auto-adjusts level (1=Easy, 2=Normal, 3=Hard). Adapted activities: Addition (number ranges 1-5/1-9/1-18), Subtraction (a≤5/a≤8/a≤15), More or Less (gap≥4/gap≥1/range 1-20), Quick Count (max 4/6/9 dots, 1500ms/1500ms/1000ms flash). Shared `DifficultyBadge` component in header. Parent ProgressReport shows difficulty grid for all 4 activities.
 
 ### [x] FEAT-035: Memory / card matching game
 **Priority:** Medium  
 **Description:** Classic flip-card memory game with an educational twist: match letter to letter (A↔a), word to picture, or number to dots. 4×4 grid, cards flip on tap, matched pairs stay face-up. Tracks best score (fewest flips). Works as a standalone game and reinforces content from other modules.
 
-### [ ] FEAT-036: Early coding logic — sequencing game
+### [x] FEAT-036: Early coding logic — sequencing game
 **Priority:** Low  
 **Description:** Simple drag-to-sequence game: arrange 3–4 picture steps in the correct order to complete a task (e.g. brush teeth: wet brush → add toothpaste → brush → rinse). Introduces if/then reasoning and multi-step thinking without any code concepts. Can live in the Cognitive section (FEAT-012).
 
-### [ ] FEAT-037: Basic money concepts
+### [x] FEAT-037: Basic money concepts
 **Priority:** Low  
 **Description:** Introduce coins: penny (1¢), nickel (5¢), dime (10¢), quarter (25¢). Show each coin with its name and value. Activities: name that coin (tap the right coin), count a small collection (how many cents?). Keep it simple — recognition and basic counting only.
+**Fixed:** 2026-04-10 ✅ — `src/components/math/MoneyConcepts.jsx`: CSS-rendered coins (copper radial gradient penny, silver gradient nickel/dime/quarter, realistic sizes). 3 tabs — Learn (tap each coin to hear name/value/fact, 1 star each), Name It (show coin, pick name from 4 choices, 10 rounds, 2 stars each), Count It (show 2–5 coin collection, pick total from 4 choices, 12 preset collections, 2 stars each). Math World → Money, unlocks at 10 stars.
 
-### [ ] FEAT-038: Mazes
+### [x] FEAT-038: Mazes
 **Priority:** Low  
 **Description:** Simple tap/drag-to-navigate mazes where Mina guides a character (bunny, rocket) through a path to reach a goal. Starts very simple (2–3 turns), progresses to more complex layouts. Builds spatial reasoning, planning, and fine motor control. Can live in Cognitive section (FEAT-012).
+**Fixed:** 2026-04-10 ✅ — `src/components/cognitive/MazeGame.jsx`: 5 drag-to-navigate corridor mazes on a 560×380 canvas. Mazes defined as horizontal/vertical segments (% coordinates); character follows mouse/touch within valid corridors, wall hits flash red border. Mazes: Bunny's Garden (1 turn), Rocket Race (U-shape), Star Trail (S-shape 4 turns), Ocean Dive (3 turns), Space Explorer (6 turns). 2 stars for easy mazes, 3 for harder. Progress dots + maze picker. Accessible via Think & Play → Mazes, unlocks at 5 stars.
+
+### [x] FEAT-047: Art Studio parental lock / daily reward gate
+**Priority:** High
+**Description:** Parent settings option to hide the Art Studio button entirely, and/or require Mina to complete a configurable number of activities each day before Art Studio unlocks.
+**Done:** 2026-04-11 ✅ — `ParentSettings.jsx` "🎨 Art Studio Access" card with visible/hidden toggle and +/− daily activity counter (0–10). Settings saved to `mina_art_settings` in localStorage. `HomeScreen.jsx` reads settings on mount, counts today's sessions from progress.sessions, shows progress dots when daily gate is active, hides card entirely when hidden. Both the star-gate (10⭐) and daily gate stack — both must be met.
+
+### [x] FEAT-048: Story Time — classic bedtime stories with illustrated scenes
+**Priority:** High
+**Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. 4–6 pages per story, TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
+**Components:** `src/data/storyBook.js` (all story content), `src/components/storybook/StoryBookHome.jsx`, `src/components/storybook/StoryReader.jsx`
+**Done:** 2026-04-12 ✅ — `StoryBookHome` shows 10 stories in a grid with Western/Chinese filter tabs and read/unread indicators. `StoryBookReader` has a split-panel book layout (emoji scene left, story text right), page-dot navigation, 🌙 night mode, "🔊 Read to me" TTS per page, and a completion screen that awards 3 stars on first read. All 10 stories written with child-friendly prose (4–6 pages each) and emoji illustration arrays.
+
+---
+
+## 🐛 New Bugs
+
+### [x] BUG-004: Free Draw — bottom of canvas triggers Windows taskbar
+**Screen:** Art Studio → Free Drawing  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** When Mina tries to draw near the bottom edge of the canvas, the pointer leaves the app window and activates the Windows taskbar instead of continuing to draw. The canvas `position: fixed` layout extends to the very bottom of the viewport with no buffer, so the OS taskbar intercepts pointer events in that region.  
+**Fix:** Add bottom padding/margin to the canvas area equal to the taskbar height (~48px), or clamp the canvas height to `calc(100vh - 48px)` so drawing never reaches the OS taskbar zone.  
+**File:** `src/components/art/FreeDrawStudio.jsx`
+
+---
+
+### [x] BUG-005: Art Studio daily activity counter not counting correctly
+**Screen:** Home → Art Studio lock / daily gate  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** The daily activity counter that gates Art Studio access is not counting completed activities correctly. Mina completes activities but the counter doesn't reflect this, keeping Art Studio locked when it should be unlocked.  
+**Fix:** Investigate `getTodayCount()` in `HomeScreen.jsx` and how `recordSession` writes to `progress.sessions`. Check whether the session date format / comparison is off, and whether the counter re-reads sessions on activity return.  
+**Files:** `src/components/home/HomeScreen.jsx`, `src/store/useProgress.js`
+
+---
+
+### [x] BUG-006: My Body — stomach emoji renders as a heart
+**Screen:** Science → My Body  
+**Reported:** 2026-04-12  
+**Priority:** Medium  
+**Description:** The stomach body part is using an emoji that renders as a heart (🫀 is the anatomical heart, not the stomach). Need to find the correct emoji for stomach or use a workaround (e.g. label with a different visual).  
+**Note:** 🫀 = anatomical heart. There is no dedicated stomach emoji — consider using 🟡 or a descriptive label, or swap to a belly/tummy illustration approach.  
+**File:** `src/components/science/MyBody.jsx`
+
+---
+
+### [x] BUG-007: Dinosaur section — wrong emojis for several dinos
+**Screen:** Science → Dinosaur Explorer  
+**Reported:** 2026-04-12  
+**Priority:** Medium  
+**Description:** Several dinosaur emoji are inaccurate — e.g. Triceratops is showing a long-neck dinosaur emoji instead. The standard dinosaur emojis (🦕 sauropod, 🦖 T-Rex) are very limited and don't cover all species accurately. Overall the section needs more visually accurate and engaging dinosaur representations.  
+**Fix:** Audit every dinosaur entry. Where the standard emoji is wrong, replace with the closest accurate one or use a text-based illustration / styled card instead. Consider using descriptive silhouette cards with key features called out (horns, plates, long neck etc.) rather than relying on emoji accuracy.  
+**File:** `src/components/science/DinosaurExplorer.jsx`
+
+---
+
+### [x] BUG-008: Life Cycles — clicking one stage highlights the wrong stage
+**Screen:** Science → Life Cycles  
+**Reported:** 2026-04-12  
+**Priority:** High  
+**Description:** The active/selected highlight in the life cycle sequence is off by one (or similar). Example: clicking the egg stage causes the chicken to be highlighted instead. The index used for the highlight state does not match the index of the tapped item.  
+**Fix:** Check the `onClick` handler and the condition used to apply the highlight style in `LifeCycles.jsx`. The selected index being set and the index being compared for active styling likely have an off-by-one or are referencing different arrays.  
+**File:** `src/components/science/LifeCycles.jsx`
+
+---
+
+### [ ] BUG-009: Sight Words quiz — target word is still visible during the quiz question
+**Screen:** Reading → Sight Words → Quiz phase  
+**Reported:** 2026-04-15  
+**Priority:** High  
+**Description:** During the quiz phase, the word being tested (e.g. "cat") is still displayed on screen while the question asks "which word is this?". The word should be hidden so Mina has to recognise it from TTS alone, otherwise the quiz is just matching visible text — not a real sight-word test.  
+**Fix:** In the quiz render path, hide the target word card entirely. Only play the TTS prompt ("Find the word: cat") and show the 4 multiple-choice answer buttons. Reveal the word in the feedback/result step after Mina has answered.  
+**File:** `src/components/reading/SightWords.jsx`
+
+---
+
+### [ ] BUG-010: Sight Words quiz — answer choices start with different letters, making it too easy
+**Screen:** Reading → Sight Words → Quiz phase  
+**Reported:** 2026-04-15  
+**Priority:** High  
+**Description:** The four answer choices almost never share a starting letter with the target word, so Mina can "pass" simply by spotting the first letter rather than reading the whole word. Example: target = "the", choices = "the / cat / dog / run" — she just taps the one starting with T.  
+**Fix:** When building the 4-choice array, ensure at least 2 of the 3 distractors start with the same letter as the target word (or are visually similar: same length, overlapping letters). Pull these close-foil words from the same level's word list first, then fall back to other levels if needed.  
+**File:** `src/components/reading/SightWords.jsx`
+
+---
+
+### [ ] BUG-011: Counting — count-to-15 activity stops at 10
+**Screen:** Math → Counting  
+**Reported:** 2026-04-15  
+**Priority:** High  
+**Description:** The counting activity is supposed to go up to 15 (or 30 at higher levels) but the sequence stops at 10. Numbers 11–15 are never shown.  
+**Fix:** Audit the counting range/array in `CountingGame.jsx`. The upper bound is likely hard-coded to 10. Extend the range to match the intended maximum (15 for the base level; progress.counting.highestCount for adaptive range).  
+**File:** `src/components/math/CountingGame.jsx`
+
+---
+
+### [ ] BUG-012: Shape Match — shape name shown beneath each answer choice, giving away the answer
+**Screen:** Math → Shape Match  
+**Reported:** 2026-04-15  
+**Priority:** Medium  
+**Description:** In the multiple-choice phase of Shape Match, each answer option shows the shape graphic AND its name label underneath (e.g. "Circle", "Triangle"). Since the question asks Mina to identify the shape, printing the name makes it trivial — she can just read the label without looking at the shape at all.  
+**Fix:** Remove the text label from the answer-choice buttons in the quiz view. The shape graphic alone should be the choice. The correct shape name can still be spoken via TTS on selection/confirmation.  
+**File:** `src/components/math/ShapeMatch.jsx`
+
+---
+
+## 📋 New Features
+
+### [x] FEAT-049: Add "Mina" to Write Your Name activity
+**Priority:** High  
+**Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
+**File:** `src/components/writing/NameTracer.jsx`  
+**Done:** 2026-04-15 ✅ — "Mina" added as first option with 🦄 unicorn theme (purple/violet color scheme).
+
+### [ ] FEAT-054: Move tracing activities out of Reading World into Writing section
+**Priority:** Medium
+**Description:** Stroke Practice, Letter Tracing, and Write Your Name are currently listed as activities inside Reading World, but they are writing/motor-skill activities — not reading activities. Move them into their own **Writing** hub (or integrate into Art Studio if a dedicated Writing section doesn't exist yet). Steps:
+1. Create a `WritingHome.jsx` hub component (similar to `ReadingHome.jsx`) that lists Stroke Practice, Letter Tracing (A–Z + 0–9), and Write Your Name.
+2. Add a "✏️ Writing" button to the home screen (`HomeScreen.jsx`).
+3. Remove the three tracing entries from `ReadingHome.jsx`'s `ACTIVITIES` array.
+4. Update `App.jsx` navigation: add a `writing` screen that renders `WritingHome`; update `onBack` props on `StrokePractice`, `LetterTracer`, and `NameTracer` to return to `writing` instead of `reading`; update the `lettertracing` hub to navigate back to `writing`.
+5. Update parent dashboard / progress tracking if tracing sessions are reported under a section label.
+**Files:** `src/App.jsx`, `src/components/reading/ReadingHome.jsx`, `src/components/home/HomeScreen.jsx`, new `src/components/writing/WritingHome.jsx`
+
+---
+
+### [ ] FEAT-052: My Body — replace emojis with proper SVG body-part icons
+**Priority:** Medium  
+**Description:** The My Body section (Science → My Body) uses emojis for body parts, which are often inaccurate or misleading (e.g. stomach was 🫀 = heart). Replace each body-part entry with a clean flat-style SVG icon sourced from **healthicons.org** (MIT licensed, designed specifically for health/anatomy contexts). Icons needed: brain, heart, lungs, teeth, eye, ear, nose, bones/skeleton, muscle/arm, stomach. Embed the SVGs inline as React components or drop the files in `/public/images/body/` and reference as `<img>` tags with fixed dimensions.  
+**Recommended source:** https://healthicons.org — search each body part, download SVG, use the "outline" style for consistency.  
+**File:** `src/components/science/MyBody.jsx`
+
+---
+
+### [x] FEAT-053: Dinosaur Explorer — replace emoji with proper illustrations
+**Priority:** Medium  
+**Description:** The Dinosaur Explorer currently uses only two emoji (🦕 sauropod, 🦖 T-Rex) for 11 different species, making most cards look identical and inaccurate. Replace with one of these approaches (pick based on asset availability):  
+**Option A (recommended): AI-generated images** — generate one illustration per dinosaur (child-friendly, colourful, scientifically shaped) and drop as `/public/images/dinosaurs/{name}.jpg` (e.g. `triceratops.jpg`). Component loads `<img>` with emoji fallback identical to the Story Time pattern. Prompt guide per dino:  
+- triceratops: "cute cartoon Triceratops dinosaur, three horns, large frill, quadruped herbivore, white background, children's illustration style"  
+- stegosaurus: "cute cartoon Stegosaurus, distinctive back plates, small head, quadruped, children's illustration"  
+- ankylosaurus: "cute cartoon Ankylosaurus, heavily armoured body, club tail, low to ground, children's illustration"  
+- pterodactyl: "cute cartoon Pterodactyl, flying reptile, wing membrane, crest, children's illustration"  
+- parasaurolophus: "cute cartoon Parasaurolophus, duck-billed, long hollow head crest, bipedal, children's illustration"  
+- brachiosaurus / diplodocus: "cute cartoon long-neck sauropod dinosaur, children's illustration"  
+- t-rex / velociraptor / spinosaurus / allosaurus: "cute cartoon [name] dinosaur, children's illustration"  
+**Option B: Phylopic silhouettes** — download free public-domain SVG silhouettes from phylopic.org for each species. Tint them with the card's accent colour via CSS `filter` or inline fill. Accurate body shapes, zero cost.  
+**File:** `src/components/science/DinosaurExplorer.jsx`  
+**Image directory to create:** `public/images/dinosaurs/`
+
+---
+
+### [ ] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
+**Priority:** Medium  
+**Description:** Extend the home screen art collage (currently only fed by Free Drawing Studio) to also accept saves from Write Your Name and Stroke Practice. Add a "Save to Home 🏠" button to both activities after the "I traced it!" / "I did it!" completion step. Saves a snapshot of the canvas to the same `mina_art_gallery` localStorage array (max 6, newest first) that Free Drawing uses.  
+**Files:** `src/components/writing/NameTracer.jsx`, `src/components/writing/StrokePractice.jsx`, `src/components/home/HomeScreen.jsx`
+
+### [ ] FEAT-051: Multiple child profiles (Mina + Aria)
+**Priority:** High  
+**Description:** Support more than one child profile so Aria can have her own separate progress, stars, and settings alongside Mina. Each profile stores its own data in localStorage under a profile-keyed namespace (e.g. `mina_learns_progress_mina`, `mina_learns_progress_aria`). A profile picker screen appears on first launch or can be accessed from the home screen. Parent dashboard shows a profile switcher. The active profile name is displayed in the StarBar or home screen greeting.  
+**Scope:** Profile creation (name + avatar emoji picker), profile switcher on home screen, all progress/localStorage keys namespaced per profile, parent dashboard scoped to active profile.  
+**Files:** `src/store/useProgress.js`, `src/App.jsx`, `src/components/home/HomeScreen.jsx`, `src/components/shared/StarBar.jsx`, new `src/components/profiles/ProfilePicker.jsx`
+
+### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
+**Priority:** High  
+**Description:** A dedicated "Reading Time" mode where a short story or sentence set is read aloud by TTS while each word is highlighted in sync, encouraging Mina to follow along. Designed for shared reading between parent and child or independent listening. Features: word-by-word highlight as TTS plays, tap any word to hear it spoken individually, adjustable read speed (slow / normal), and a "Read it again!" button. Stories drawn from the existing Story Library (FEAT-039). Tracks time spent reading and awards stars on completion. Accessible from Reading World as a prominent entry point.
+
+### [x] FEAT-046: Larger drawing canvas in Free Drawing Studio
+**Priority:** Medium  
+**Description:** The drawing pad in Art Studio → Free Drawing is too small. Expand the canvas to fill as much of the screen as possible — ideally edge-to-edge on tablets. Move the toolbar (colors, brush sizes, eraser, stamps) to a compact sidebar or collapsible strip so it doesn't eat into canvas space. Ensure the canvas resolution scales up with its display size so drawings don't look pixelated.  
+**File:** `src/components/art/FreeDrawStudio.jsx`  
+**Fixed:** Already done as part of FEAT-042 ✅ — Canvas is `position: fixed` filling the full viewport (minus StarBar), colors live in a 68px left sidebar, tools in a slim top bar. Internal resolution is 1600×1000 with CSS scaling so there's no pixelation.
 
 ---
 
 ## 📝 Session Notes
+
+### 2026-04-12 – Story Time v1.27.0
+- FEAT-048: "📖 Story Time" button added to home screen
+- 10 classic stories fully written (4–6 pages each): 5 Western + 5 Chinese
+- `src/data/storyBook.js` — all story data (scenes + prose)
+- `StoryBookHome.jsx` — grid with Western/Chinese tabs, read/unread ✅ badges, page count
+- `StoryBookReader.jsx` — split-panel book layout, night mode 🌙, "🔊 Read to me" TTS, ◀▶ dot navigation, 3-star completion reward, "Read Again" / "More Stories" on finish screen
+- Build confirmed, committed, pushed
+
 
 ### 2026-04-02 – Initial Build
 - Full app scaffolded: React + Vite + Recharts + Framer Motion

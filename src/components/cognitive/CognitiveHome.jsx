@@ -20,6 +20,30 @@ const ACTIVITIES = [
     color: '#8b5cf6',
     shadow: '#6d28d9',
   },
+  {
+    id: 'sequencinggame',
+    emoji: '🔢',
+    title: 'What Comes First?',
+    subtitle: 'Put the steps in order!',
+    color: '#7c3aed',
+    shadow: '#6d28d9',
+  },
+  {
+    id: 'mazegame',
+    emoji: '🌀',
+    title: 'Mazes',
+    subtitle: 'Guide the character to the goal!',
+    color: '#0891b2',
+    shadow: '#0e7490',
+  },
+  {
+    id: 'rhythmgame',
+    emoji: '🎵',
+    title: 'Music & Rhythm',
+    subtitle: 'Play instruments & copy the beat!',
+    color: '#7c3aed',
+    shadow: '#5b21b6',
+  },
 ]
 
 export function CognitiveHome({ onNavigate, onBack, stars = 0 }) {

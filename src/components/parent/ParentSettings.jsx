@@ -2,11 +2,32 @@ import { useState } from 'react'
 import { PIN_KEY } from './ParentLogin'
 import { VERSION, CHANGELOG } from '../../version'
 
+export const CUSTOM_WORDS_KEY = 'mina_custom_words'
+export const ART_SETTINGS_KEY = 'mina_art_settings'
+
+const DEFAULT_ART_SETTINGS = { hidden: false, dailyQuizTarget: 0 }
+
+function loadCustomWords() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_WORDS_KEY) || '[]') } catch { return [] }
+}
+
+function loadArtSettings() {
+  try { return { ...DEFAULT_ART_SETTINGS, ...JSON.parse(localStorage.getItem(ART_SETTINGS_KEY) || '{}') } } catch { return DEFAULT_ART_SETTINGS }
+}
+
 export function ParentSettings({ progress, resetProgress }) {
   const [newPin, setNewPin] = useState('')
   const [confirmPin, setConfirmPin] = useState('')
   const [pinMsg, setPinMsg] = useState(null)
   const [showReset, setShowReset] = useState(false)
+  const [customWords, setCustomWords] = useState(loadCustomWords)
+  const [wordInput, setWordInput] = useState('')
+  const [artSettings, setArtSettings] = useState(loadArtSettings)
+
+  function saveArtSettings(updated) {
+    setArtSettings(updated)
+    localStorage.setItem(ART_SETTINGS_KEY, JSON.stringify(updated))
+  }
 
   function handlePinChange() {
     if (newPin.length !== 4 || !/^\d{4}$/.test(newPin)) {
@@ -22,6 +43,21 @@ export function ParentSettings({ progress, resetProgress }) {
     setNewPin('')
     setConfirmPin('')
     setTimeout(() => setPinMsg(null), 3000)
+  }
+
+  function addCustomWord() {
+    const word = wordInput.trim().toLowerCase()
+    if (!word || customWords.includes(word)) { setWordInput(''); return }
+    const updated = [...customWords, word]
+    setCustomWords(updated)
+    localStorage.setItem(CUSTOM_WORDS_KEY, JSON.stringify(updated))
+    setWordInput('')
+  }
+
+  function removeCustomWord(word) {
+    const updated = customWords.filter(w => w !== word)
+    setCustomWords(updated)
+    localStorage.setItem(CUSTOM_WORDS_KEY, JSON.stringify(updated))
   }
 
   function handleExport() {
@@ -102,6 +138,112 @@ export function ParentSettings({ progress, resetProgress }) {
             Math starts where Mina is (counting to 16) and progresses toward 30+ and simple addition.
           </p>
         </div>
+      </SettingsCard>
+
+      {/* Art Studio Access */}
+      <SettingsCard title="🎨 Art Studio Access">
+        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
+          Control when Mina can access the Art Studio on the home screen.
+        </p>
+
+        {/* Visible / Hidden toggle */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+          <div>
+            <div style={{ fontSize: '15px', fontWeight: 800, color: '#374151' }}>Show Art Studio button</div>
+            <div style={{ fontSize: '13px', color: '#6b7280' }}>Hide it completely if you want a break from drawing</div>
+          </div>
+          <button
+            onClick={() => saveArtSettings({ ...artSettings, hidden: !artSettings.hidden })}
+            style={{
+              background: artSettings.hidden ? '#fee2e2' : '#dcfce7',
+              color: artSettings.hidden ? '#dc2626' : '#16a34a',
+              border: `2px solid ${artSettings.hidden ? '#fca5a5' : '#86efac'}`,
+              borderRadius: '10px', padding: '10px 20px',
+              fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit',
+              minWidth: '120px',
+            }}
+          >
+            {artSettings.hidden ? '🚫 Hidden' : '✅ Visible'}
+          </button>
+        </div>
+
+        {/* Daily quiz requirement */}
+        <div style={{ background: '#f9fafb', borderRadius: '12px', padding: '16px' }}>
+          <div style={{ fontSize: '15px', fontWeight: 800, color: '#374151', marginBottom: '4px' }}>
+            Daily activity requirement
+          </div>
+          <div style={{ fontSize: '13px', color: '#6b7280', marginBottom: '14px' }}>
+            Mina must complete this many activities today before Art Studio unlocks. Set to 0 for no daily requirement.
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button
+              onClick={() => saveArtSettings({ ...artSettings, dailyQuizTarget: Math.max(0, artSettings.dailyQuizTarget - 1) })}
+              style={{ width: '44px', height: '44px', borderRadius: '10px', border: '2px solid #d1d5db', background: 'white', fontSize: '24px', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 900, color: '#374151' }}
+            >−</button>
+            <div style={{ textAlign: 'center', minWidth: '64px' }}>
+              <div style={{ fontSize: '36px', fontWeight: 900, color: '#db2777', lineHeight: 1 }}>
+                {artSettings.dailyQuizTarget}
+              </div>
+              <div style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 600 }}>
+                {artSettings.dailyQuizTarget === 0 ? 'no limit' : `activit${artSettings.dailyQuizTarget === 1 ? 'y' : 'ies'}`}
+              </div>
+            </div>
+            <button
+              onClick={() => saveArtSettings({ ...artSettings, dailyQuizTarget: Math.min(10, artSettings.dailyQuizTarget + 1) })}
+              style={{ width: '44px', height: '44px', borderRadius: '10px', border: '2px solid #d1d5db', background: 'white', fontSize: '24px', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 900, color: '#374151' }}
+            >+</button>
+            {artSettings.dailyQuizTarget > 0 && (
+              <div style={{ fontSize: '13px', color: '#6b7280', fontWeight: 600 }}>
+                Art Studio unlocks after {artSettings.dailyQuizTarget} {artSettings.dailyQuizTarget === 1 ? 'activity' : 'activities'} each day
+              </div>
+            )}
+          </div>
+        </div>
+      </SettingsCard>
+
+      {/* Custom Word Lists */}
+      <SettingsCard title="📝 Custom Word Lists">
+        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '12px' }}>
+          Add your own words for Mina to practise in Sight Words. They appear as a "My Words" level.
+        </p>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+          <input
+            type="text"
+            placeholder="Type a word…"
+            value={wordInput}
+            onChange={e => setWordInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && addCustomWord()}
+            style={{ flex: 1, padding: '10px 14px', borderRadius: '10px', border: '2px solid #d1d5db', fontSize: '16px', fontFamily: 'inherit' }}
+          />
+          <button
+            onClick={addCustomWord}
+            style={{ background: '#8b5cf6', color: 'white', border: 'none', borderRadius: '10px', padding: '10px 18px', fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
+          >
+            Add
+          </button>
+        </div>
+        {customWords.length === 0 ? (
+          <p style={{ fontSize: '14px', color: '#9ca3af', fontStyle: 'italic' }}>No custom words yet.</p>
+        ) : (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {customWords.map(word => (
+              <div key={word} style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#ede9fe', borderRadius: '8px', padding: '6px 10px' }}>
+                <span style={{ fontSize: '14px', fontWeight: 700, color: '#5b21b6' }}>{word}</span>
+                <button
+                  onClick={() => removeCustomWord(word)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', color: '#7c3aed', padding: '0 2px', lineHeight: 1 }}
+                >
+                  ×
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+        {customWords.length > 0 && (
+          <p style={{ fontSize: '12px', color: '#10b981', fontWeight: 700, marginTop: '10px' }}>
+            ✓ {customWords.length} word{customWords.length !== 1 ? 's' : ''} added — visible as "My Words" in Sight Words
+          </p>
+        )}
       </SettingsCard>
 
       {/* Reset */}

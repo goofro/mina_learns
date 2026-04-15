@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { speak } from '../../utils/speech'
 import { TwEmoji } from '../shared/TwEmoji'
+import { ART_SETTINGS_KEY } from '../parent/ParentSettings'
 
 const GREETINGS = [
   "Hi Mina! Ready to learn? 🌟",
@@ -12,6 +13,15 @@ const GREETINGS = [
 const ART_UNLOCK_STARS = 10
 const GALLERY_KEY = 'mina_art_gallery'
 
+function loadArtSettings() {
+  try { return { hidden: false, dailyQuizTarget: 0, ...JSON.parse(localStorage.getItem(ART_SETTINGS_KEY) || '{}') } } catch { return { hidden: false, dailyQuizTarget: 0 } }
+}
+
+function getTodayCount(sessions = []) {
+  const today = new Date().toDateString()
+  return sessions.filter(s => new Date(s.date).toDateString() === today).length
+}
+
 // Positions for up to 6 framed drawings around the edges of the screen
 const COLLAGE_SLOTS = [
   { top: '8vh',  left: '8px',   rotate: -7  },
@@ -22,10 +32,14 @@ const COLLAGE_SLOTS = [
   { top: '68vh', right: '8px',  rotate:  7  },
 ]
 
-export function HomeScreen({ onNavigate, stars = 0 }) {
-  const artUnlocked = stars >= ART_UNLOCK_STARS
+export function HomeScreen({ onNavigate, stars = 0, sessions = [] }) {
+  const starUnlocked = stars >= ART_UNLOCK_STARS
   const [greeting] = useState(() => GREETINGS[Math.floor(Math.random() * GREETINGS.length)])
   const [gallery, setGallery] = useState([])
+  const [artSettings, setArtSettings] = useState(loadArtSettings)
+
+  // Re-read art settings each time HomeScreen mounts (parent may have changed them)
+  useEffect(() => { setArtSettings(loadArtSettings()) }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => speak("Hi Mina! Ready to learn?", { rate: 0.8, pitch: 1.2 }), 400)
@@ -36,6 +50,11 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
     const saved = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
     setGallery(saved)
   }, [])
+
+  const todayCount = getTodayCount(sessions)
+  const dailyTarget = artSettings.dailyQuizTarget || 0
+  const dailyMet = dailyTarget === 0 || todayCount >= dailyTarget
+  const artUnlocked = starUnlocked && dailyMet
 
   return (
     <div
@@ -188,6 +207,30 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
             }}
           />
           <SubjectCard
+            emoji="📖"
+            title="Story Time"
+            subtitle="Classic bedtime stories"
+            bgColor="linear-gradient(135deg, #fefce8, #fef9c3)"
+            borderColor="#ca8a04"
+            shadowColor="#a16207"
+            onClick={() => {
+              speak('Story Time! Let us read a story together!')
+              onNavigate('storytime')
+            }}
+          />
+          <SubjectCard
+            emoji="📒"
+            title="Sticker Book"
+            subtitle="Collect stickers as you learn!"
+            bgColor="linear-gradient(135deg, #fdf4ff, #fce7f3)"
+            borderColor="#a855f7"
+            shadowColor="#7c3aed"
+            onClick={() => {
+              speak('My Sticker Book!')
+              onNavigate('stickerbook')
+            }}
+          />
+          <SubjectCard
             emoji="🗺️"
             title="My Journey"
             subtitle={`${stars} ⭐ — see all activities`}
@@ -202,52 +245,71 @@ export function HomeScreen({ onNavigate, stars = 0 }) {
             }}
           />
 
-        {/* Art Studio — unlocks at 10 stars */}
-          {artUnlocked ? (
-            <SubjectCard
-              emoji="🎨"
-              title="Art Studio"
-              subtitle="Mix colors, draw & create!"
-              bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
-              borderColor="#db2777"
-              shadowColor="#9d174d"
-              onClick={() => {
-                speak('Art Studio! Let us make something beautiful!')
-                onNavigate('artstudio')
-              }}
-            />
-          ) : (
-            <div style={{
-              background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
-              border: '4px dashed #d1d5db',
-              borderRadius: '28px',
-              padding: '32px 28px',
-              textAlign: 'center',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
-            }}>
-              <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
-              <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
-                Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+        {/* Art Studio — hidden, locked by stars, locked by daily quota, or open */}
+          {!artSettings.hidden && (
+            artUnlocked ? (
+              <SubjectCard
+                emoji="🎨"
+                title="Art Studio"
+                subtitle="Mix colors, draw & create!"
+                bgColor="linear-gradient(135deg, #fce7f3, #fbcfe8)"
+                borderColor="#db2777"
+                shadowColor="#9d174d"
+                onClick={() => {
+                  speak('Art Studio! Let us make something beautiful!')
+                  onNavigate('artstudio')
+                }}
+              />
+            ) : (
+              <div style={{
+                background: 'linear-gradient(135deg, #f9fafb, #f3f4f6)',
+                border: '4px dashed #d1d5db',
+                borderRadius: '28px',
+                padding: '32px 28px',
+                textAlign: 'center',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px',
+              }}>
+                <div style={{ fontSize: '52px', opacity: 0.4 }}>🎨</div>
+                <div style={{ fontSize: '22px', fontWeight: 900, color: '#9ca3af' }}>Art Studio</div>
+                {!starUnlocked ? (
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#9ca3af' }}>
+                    Earn {ART_UNLOCK_STARS - stars} more ⭐ to unlock!
+                  </div>
+                ) : (
+                  <>
+                    <div style={{ fontSize: '14px', fontWeight: 700, color: '#db2777' }}>
+                      Complete {dailyTarget - todayCount} more {dailyTarget - todayCount === 1 ? 'activity' : 'activities'} today! 🎯
+                    </div>
+                    {/* Progress dots */}
+                    <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '4px' }}>
+                      {Array.from({ length: dailyTarget }).map((_, i) => (
+                        <div key={i} style={{
+                          width: '14px', height: '14px', borderRadius: '50%',
+                          background: i < todayCount ? '#db2777' : '#e5e7eb',
+                        }} />
+                      ))}
+                    </div>
+                    <div style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 600 }}>
+                      {todayCount}/{dailyTarget} done today
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
+            )
           )}
         </div>
 
-        {/* Stars prompt */}
-        <div
-          style={{
-            marginTop: '40px',
-            fontSize: '16px',
-            color: '#9ca3af',
-            fontWeight: 600,
-            textAlign: 'center',
-          }}
-        >
-          {artUnlocked
-            ? '🎨 Art Studio is unlocked! Well done!'
-            : `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`}
-        </div>
+        {/* Status hint */}
+        {!artSettings.hidden && (
+          <div style={{ marginTop: '40px', fontSize: '16px', color: '#9ca3af', fontWeight: 600, textAlign: 'center' }}>
+            {artUnlocked
+              ? '🎨 Art Studio is unlocked! Well done!'
+              : !starUnlocked
+                ? `Complete activities to earn ⭐ stars! (${stars}/${ART_UNLOCK_STARS} to unlock Art Studio)`
+                : `Do ${dailyTarget - todayCount} more ${dailyTarget - todayCount === 1 ? 'activity' : 'activities'} today to unlock Art Studio! 🎯`
+            }
+          </div>
+        )}
 
         {/* Gallery hint */}
         {gallery.length > 0 && (

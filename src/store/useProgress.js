@@ -18,6 +18,7 @@ const defaultProgress = {
     moreOrLess: { attempts: 0, correct: 0 },
     shapes: {},             // shape -> { attempts, correct }
   },
+  difficulty: {},          // { [activityId]: { level: 1|2|3, sessions: [{score,total}] } }
   milestones: [],          // array of achieved milestone ids
   lastSession: null,
   totalTimeMinutes: 0,
@@ -156,6 +157,27 @@ export function useProgress() {
     })
   }, [])
 
+  // Called at the end of a quiz session for adaptive-difficulty activities.
+  // After every 3 sessions: avg > 85% → level up, avg < 50% → level down.
+  const recordActivityResult = useCallback((activityId, correct, total) => {
+    setProgress(p => {
+      const existing = (p.difficulty || {})[activityId] || { level: 2, sessions: [] }
+      const sessions = [...existing.sessions, { score: correct, total }]
+      let { level } = existing
+      let nextSessions = sessions
+      if (sessions.length >= 3) {
+        const avg = sessions.reduce((sum, s) => sum + (s.total > 0 ? s.score / s.total : 0), 0) / sessions.length
+        if (avg >= 0.85 && level < 3) level++
+        else if (avg < 0.50 && level > 1) level--
+        nextSessions = [] // reset window after each evaluation
+      }
+      return {
+        ...p,
+        difficulty: { ...(p.difficulty || {}), [activityId]: { level, sessions: nextSessions } }
+      }
+    })
+  }, [])
+
   const resetProgress = useCallback(() => {
     setProgress(defaultProgress)
   }, [])
@@ -166,6 +188,7 @@ export function useProgress() {
     recordSightWord,
     recordPhonics,
     recordMath,
+    recordActivityResult,
     recordSession,
     achieveMilestone,
     resetProgress,

@@ -1,6 +1,90 @@
-export const VERSION = '1.20.0'
+export const VERSION = '1.29.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.29.0',
+    date: '2026-04-15',
+    changes: [
+      'FEAT-053: Dinosaur Explorer — all 3 tabs (Meet/Sort/Quiz) now load AI illustration images from /public/images/dinosaurs/{name}.jpg with emoji fallback until images are added',
+      'Prompt guide for all 11 dinosaurs included as comments in DinosaurExplorer.jsx for easy AI image generation',
+      'Image directory /public/images/dinosaurs/ created with placeholder slots for each species',
+    ],
+  },
+  {
+    version: '1.28.0',
+    date: '2026-04-15',
+    changes: [
+      'BUG-004: Free Drawing canvas bottom raised 48 px so Windows taskbar no longer intercepts pointer events',
+      'BUG-005: Art Studio daily activity counter now counts every session (removed 1-minute minimum guard)',
+      'BUG-006: My Body — Stomach now uses 🌀 instead of 🫀 (anatomical heart emoji)',
+      'BUG-007: Dinosaur Explorer — updated inaccurate emojis: Triceratops 🦏, Stegosaurus 🦎, Ankylosaurus 🐢, Parasaurolophus 🦆',
+      'BUG-008: Life Cycles — tapping the highlighted (👆) next stage now correctly reveals it; completion banner now shows after all stages are tapped',
+      'FEAT-049: "Mina" added as the first option in Write Your Name (with 🦄 theme)',
+    ],
+  },
+  {
+    version: '1.27.0',
+    date: '2026-04-12',
+    changes: [
+      'FEAT-048: Story Time — 10 classic bedtime stories (5 Western, 5 Chinese) added as a new home-screen section',
+      'Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang\'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King\'s First Quest',
+      'Book-style reader: emoji illustration panel + large story text, page-by-page with ◀▶ navigation and dot indicators',
+      '"🔊 Read to me" TTS button on every page; night mode toggle (🌙/☀️) for bedtime reading',
+      '3 stars awarded on first completion per story; read/unread tracked in localStorage',
+      'Completion screen with "📖 Read Again" and "← More Stories" options',
+    ],
+  },
+  {
+    version: '1.26.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-047: Art Studio parental lock — parent settings "🎨 Art Studio Access" card with visible/hidden toggle and daily activity counter (0–10)',
+      'When daily gate is active: Art Studio shows progress dots (e.g. 2/3 done today) and unlocks once Mina hits the target',
+      'Both the star gate (10⭐) and daily gate must be met; card hidden entirely when parent sets it to Hidden',
+    ],
+  },
+  {
+    version: '1.25.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-034: Adaptive difficulty — Addition, Subtraction, More or Less, Quick Count auto-adjust after every 3 sessions (>85% → harder, <50% → easier); 3 levels: Easy/Normal/Hard',
+      'Each adapted activity shows a colour-coded difficulty badge (🌱 Easy / ⭐ Normal / 🔥 Hard) in its header',
+      'Parent dashboard Progress Report shows current level + sessions-until-next-review for all 4 activities',
+    ],
+  },
+  {
+    version: '1.24.0',
+    date: '2026-04-11',
+    changes: [
+      'FEAT-005: Print Progress Report — "🖨️ Print Report" button in parent dashboard; @media print CSS isolates report so browser Print/Save as PDF shows only the report',
+      'FEAT-003: Customizable Word Lists — parent can add/remove custom words in Settings; appears as "✨ My Words" level in Sight Words with full flashcard + quiz flow',
+    ],
+  },
+  {
+    version: '1.23.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-037: Money — penny/nickel/dime/quarter with Learn, Name It (10-round quiz) and Count Coins (10-round quiz); added to Math World, unlocks at 10 stars',
+      'FEAT-031: Music & Rhythm — Instrument Explorer (6 synthesized sounds via Web Audio API), Copy the Beat (10 rounds of rhythm repetition), Make a Beat (4-note pad sequencer, up to 8 steps); added to Think & Play',
+    ],
+  },
+  {
+    version: '1.22.0',
+    date: '2026-04-10',
+    changes: [
+      'FEAT-038: Mazes — 5 drag-to-navigate mazes in Think & Play (Bunny\'s Garden → Space Explorer), unlocks at 5 stars, 2–3 stars per maze',
+      'FEAT-040: Trace Shapes — 8 dotted-guide shapes in Art Studio (Star, Heart, Circle, Triangle, House, Sun, Rainbow, Flower), 2 stars per traced shape',
+    ],
+  },
+  {
+    version: '1.21.0',
+    date: '2026-04-09',
+    changes: [
+      'FEAT-033: Sticker Book — 48 collectible stickers across 5 categories (Animals, Sky & Space, Nature, Yummy Treats, Badges), star-based unlocking, NEW! badge for recently earned, pop-up viewer, progress bar',
+      'FEAT-036: What Comes First? sequencing game — 14 everyday scenarios (brush teeth, bake cookies, grow sunflower…), tap 4 steps in correct order, 3 stars each, added to Think & Play section',
+      'FEAT-030: Weather & Seasons — 8 weather types with what-to-wear & activities, 4 seasons with months & highlights, mixed quiz; added to Calendar section',
+    ],
+  },
   {
     version: '1.20.0',
     date: '2026-04-09',

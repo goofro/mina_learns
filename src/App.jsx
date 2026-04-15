@@ -7,6 +7,7 @@ import { StarBar } from './components/shared/StarBar'
 import { BackButton } from './components/shared/BackButton'
 import { HomeScreen } from './components/home/HomeScreen'
 import { SkillMap } from './components/home/SkillMap'
+import { StickerBook } from './components/home/StickerBook'
 
 import { ReadingHome } from './components/reading/ReadingHome'
 import { LetterSounds } from './components/reading/LetterSounds'
@@ -25,6 +26,9 @@ import { PictureVocab } from './components/reading/PictureVocab'
 import { CognitiveHome } from './components/cognitive/CognitiveHome'
 import { SortIt } from './components/cognitive/SortIt'
 import { WhatHappensNext } from './components/cognitive/WhatHappensNext'
+import { SequencingGame } from './components/cognitive/SequencingGame'
+import { MazeGame } from './components/cognitive/MazeGame'
+import { RhythmGame } from './components/cognitive/RhythmGame'
 import { StoryLibrary } from './components/reading/StoryLibrary'
 import { StoryReader } from './components/reading/StoryReader'
 import { VowelsConsonants } from './components/reading/VowelsConsonants'
@@ -38,6 +42,7 @@ import { ArtStudioHome } from './components/art/ArtStudioHome'
 import { ColorMixer } from './components/art/ColorMixer'
 import { ColorByNumber } from './components/art/ColorByNumber'
 import { FreeDrawStudio } from './components/art/FreeDrawStudio'
+import { TraceShapes } from './components/art/TraceShapes'
 
 import { MathHome } from './components/math/MathHome'
 import { CountingGame } from './components/math/CountingGame'
@@ -53,18 +58,23 @@ import { PatternRecognition } from './components/math/PatternRecognition'
 import { SizeComparison } from './components/math/SizeComparison'
 import { SpatialConcepts } from './components/math/SpatialConcepts'
 import { Shapes3D } from './components/math/Shapes3D'
+import { MoneyConcepts } from './components/math/MoneyConcepts'
 
 import { CalendarHome } from './components/calendar/CalendarHome'
 import { DaysOfWeek } from './components/calendar/DaysOfWeek'
 import { MonthsOfYear } from './components/calendar/MonthsOfYear'
 
 import { TellingTime } from './components/calendar/TellingTime'
+import { WeatherSeasons } from './components/calendar/WeatherSeasons'
 
 import { ScienceHome } from './components/science/ScienceHome'
 import { DinosaurExplorer } from './components/science/DinosaurExplorer'
 import { AnimalWorld } from './components/science/AnimalWorld'
 import { MyBody } from './components/science/MyBody'
 import { LifeCycles } from './components/science/LifeCycles'
+
+import { StoryBookHome } from './components/storybook/StoryBookHome'
+import { StoryBookReader } from './components/storybook/StoryReader'
 
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
@@ -84,13 +94,20 @@ export default function App() {
     recordSightWord,
     recordPhonics,
     recordMath,
+    recordActivityResult,
     recordSession,
     achieveMilestone,
     resetProgress,
   } = useProgress()
 
+  // Helper: get difficulty level (1=Easy 2=Normal 3=Hard) for an activity
+  function diffLevel(activityId) {
+    return progress.difficulty?.[activityId]?.level ?? 2
+  }
+
   const [screen, setScreen] = useState('home')
   const [activeStoryId, setActiveStoryId] = useState(null)
+  const [activeStoryBookId, setActiveStoryBookId] = useState(null)
   const [sessionStart, setSessionStart] = useState(null)
 
   // Check milestones on progress change
@@ -114,8 +131,8 @@ export default function App() {
 
   function goBack(to = 'home') {
     if (sessionStart) {
-      const duration = Math.round((Date.now() - sessionStart.time) / 60000)
-      if (duration >= 1) recordSession(sessionStart.subject, duration)
+      const duration = Math.max(1, Math.round((Date.now() - sessionStart.time) / 60000))
+      recordSession(sessionStart.subject, duration)
       setSessionStart(null)
     }
     setScreen(to)
@@ -137,6 +154,7 @@ export default function App() {
       {screen === 'home' && (
         <HomeScreen
           stars={progress.stars}
+          sessions={progress.sessions || []}
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
@@ -145,7 +163,9 @@ export default function App() {
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
+            else if (subject === 'storytime') navigate('storybookhome', 'storytime')
             else if (subject === 'skillmap') navigate('skillmap')
+            else if (subject === 'stickerbook') navigate('stickerbook')
           }}
         />
       )}
@@ -310,6 +330,24 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'sequencinggame' && (
+        <SequencingGame
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'mazegame' && (
+        <MazeGame
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'rhythmgame' && (
+        <RhythmGame
+          onBack={() => navigate('cognitive')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Science screens */}
       {screen === 'science' && (
@@ -348,6 +386,9 @@ export default function App() {
       {screen === 'freedrawstudio' && (
         <FreeDrawStudio onBack={() => navigate('artstudio')} />
       )}
+      {screen === 'traceshapes' && (
+        <TraceShapes onBack={() => navigate('artstudio')} addStars={addStars} />
+      )}
 
       {/* Games screens */}
       {screen === 'games' && (
@@ -384,6 +425,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('moreorless')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'shapes' && (
@@ -398,6 +441,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('addition')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'subtraction' && (
@@ -405,6 +450,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('subtraction')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'subitizing' && (
@@ -412,6 +459,8 @@ export default function App() {
           onBack={() => navigate('math')}
           addStars={addStars}
           recordMath={recordMath}
+          difficultyLevel={diffLevel('subitizing')}
+          recordActivityResult={recordActivityResult}
         />
       )}
       {screen === 'numberbonds' && (
@@ -450,6 +499,12 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'moneyconcepts' && (
+        <MoneyConcepts
+          onBack={() => navigate('math')}
+          addStars={addStars}
+        />
+      )}
 
       {/* Calendar screens */}
       {screen === 'calendar' && (
@@ -477,6 +532,20 @@ export default function App() {
           addStars={addStars}
         />
       )}
+      {screen === 'weatherseasons' && (
+        <WeatherSeasons
+          onBack={() => navigate('calendar')}
+          addStars={addStars}
+        />
+      )}
+
+      {/* Sticker Book */}
+      {screen === 'stickerbook' && (
+        <StickerBook
+          stars={progress.stars}
+          onBack={() => goBack('home')}
+        />
+      )}
 
       {/* Skill Map */}
       {screen === 'skillmap' && (
@@ -484,6 +553,21 @@ export default function App() {
           stars={progress.stars}
           onNavigate={(id, subject) => navigate(id, subject || 'reading')}
           onBack={() => goBack('home')}
+        />
+      )}
+
+      {/* Story Time screens */}
+      {screen === 'storybookhome' && (
+        <StoryBookHome
+          onBack={() => goBack('home')}
+          onSelectStory={(id) => { setActiveStoryBookId(id); navigate('storybookreader', 'storytime') }}
+        />
+      )}
+      {screen === 'storybookreader' && (
+        <StoryBookReader
+          storyId={activeStoryBookId}
+          onBack={() => navigate('storybookhome')}
+          addStars={addStars}
         />
       )}
 

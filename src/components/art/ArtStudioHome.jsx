@@ -29,6 +29,15 @@ const MODES = [
     shadow: '#c2410c',
     bg: 'linear-gradient(135deg, #ffedd5, #fed7aa)',
   },
+  {
+    id: 'traceshapes',
+    emoji: '⭐',
+    title: 'Trace Shapes',
+    subtitle: 'Trace stars, hearts, houses & more!',
+    color: '#a855f7',
+    shadow: '#7c3aed',
+    bg: 'linear-gradient(135deg, #fdf4ff, #e9d5ff)',
+  },
 ]
 
 export function ArtStudioHome({ onNavigate, onBack }) {

@@ -2,6 +2,28 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { SIGHT_WORD_LEVELS } from '../../data/sightWords'
 import { CVC_GROUPS } from '../../data/phonicsLessons'
 
+const ADAPTIVE_ACTIVITIES = [
+  { id: 'addition',    label: 'Addition',    emoji: '➕' },
+  { id: 'subtraction', label: 'Subtraction', emoji: '➖' },
+  { id: 'moreorless',  label: 'More or Less', emoji: '⚖️' },
+  { id: 'subitizing',  label: 'Quick Count',  emoji: '👀' },
+]
+
+const DIFF_CFG = {
+  1: { label: 'Easy',   emoji: '🌱', bg: '#dcfce7', color: '#15803d' },
+  2: { label: 'Normal', emoji: '⭐', bg: '#dbeafe', color: '#1d4ed8' },
+  3: { label: 'Hard',   emoji: '🔥', bg: '#fee2e2', color: '#dc2626' },
+}
+
+const PRINT_STYLES = `
+  @media print {
+    body * { visibility: hidden; }
+    #progress-report, #progress-report * { visibility: visible; }
+    #progress-report { position: fixed; left: 0; top: 0; width: 100%; padding: 20px; background: white; }
+    #print-report-btn { display: none !important; }
+  }
+`
+
 export function ProgressReport({ progress }) {
   // Sight word mastery by level
   const sightWordData = SIGHT_WORD_LEVELS.map(level => {
@@ -39,8 +61,26 @@ export function ProgressReport({ progress }) {
   const sessionData = getSessionsByDay(progress.sessions || [])
 
   return (
-    <div>
-      <h2 style={{ fontSize: '22px', fontWeight: 900, color: '#1f2937', marginBottom: '20px' }}>Progress Report</h2>
+    <div id="progress-report">
+      <style>{PRINT_STYLES}</style>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
+        <h2 style={{ fontSize: '22px', fontWeight: 900, color: '#1f2937', margin: 0 }}>Progress Report</h2>
+        <button
+          id="print-report-btn"
+          onClick={() => window.print()}
+          style={{
+            background: '#3b82f6', color: 'white', border: 'none', borderRadius: '10px',
+            padding: '10px 20px', fontSize: '15px', fontWeight: 800, cursor: 'pointer',
+            fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: '6px',
+          }}
+        >
+          🖨️ Print Report
+        </button>
+      </div>
+
+      <p style={{ fontSize: '13px', color: '#9ca3af', marginBottom: '20px' }}>
+        Generated: {new Date().toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
 
       {/* Sight Words Chart */}
       <ReportCard title="📖 Sight Words by Level">
@@ -90,6 +130,34 @@ export function ProgressReport({ progress }) {
       {/* Accuracy */}
       <ReportCard title="🎯 Overall Accuracy">
         <AccuracyTable progress={progress} />
+      </ReportCard>
+
+      {/* Adaptive Difficulty */}
+      <ReportCard title="📊 Adaptive Difficulty">
+        <p style={{ fontSize: '13px', color: '#6b7280', marginBottom: '16px' }}>
+          Difficulty adjusts automatically after every 3 sessions. &gt;85% accuracy → harder; &lt;50% → easier.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
+          {ADAPTIVE_ACTIVITIES.map(({ id, label, emoji }) => {
+            const level = progress.difficulty?.[id]?.level ?? 2
+            const sessions = progress.difficulty?.[id]?.sessions ?? []
+            const cfg = DIFF_CFG[level]
+            return (
+              <div key={id} style={{ background: '#f9fafb', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
+                <div style={{ fontSize: '24px', marginBottom: '6px' }}>{emoji}</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#374151', marginBottom: '8px' }}>{label}</div>
+                <span style={{ background: cfg.bg, color: cfg.color, fontSize: '13px', fontWeight: 800, padding: '4px 12px', borderRadius: '50px' }}>
+                  {cfg.emoji} {cfg.label}
+                </span>
+                {sessions.length > 0 && (
+                  <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '6px' }}>
+                    {sessions.length}/3 sessions until next review
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </ReportCard>
     </div>
   )

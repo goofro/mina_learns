@@ -83,15 +83,14 @@ function LearnTab({ onAddStars }) {
   }
 
   function revealStep(stage) {
-    if (!revealedSteps.has(stage.step)) return
-    const isNew = revealedSteps.size < stage.step + 1
+    const isNextStep = stage.step === revealedSteps.size + 1
+    if (!revealedSteps.has(stage.step) && !isNextStep) return
     speak('Stage ' + stage.step + '. ' + stage.name + '. ' + stage.desc)
-    if (isNew && stage.step < selected.stages.length) {
-      setTimeout(() => {
-        setRevealedSteps(prev => new Set([...prev, stage.step + 1]))
-      }, 400)
+    if (!revealedSteps.has(stage.step)) {
+      // First tap on the next-in-sequence step: reveal it and award stars
+      setRevealedSteps(prev => new Set([...prev, stage.step]))
+      onAddStars(1)
     }
-    if (isNew) onAddStars(1)
   }
 
   if (!selected) {
@@ -117,7 +116,7 @@ function LearnTab({ onAddStars }) {
     )
   }
 
-  const allRevealed = revealedSteps.size > selected.stages.length
+  const allRevealed = revealedSteps.size >= selected.stages.length
 
   return (
     <div>

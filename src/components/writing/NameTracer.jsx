@@ -5,6 +5,7 @@ import { speak } from '../../utils/speech'
 import { TwEmoji } from '../shared/TwEmoji'
 
 const NAMES = [
+  { name: 'Mina',    emoji: '🦄', color: '#8b5cf6', shadow: '#6d28d9' },
   { name: 'Aria',    emoji: '🌸', color: '#ec4899', shadow: '#be185d' },
   { name: 'Albert',  emoji: '🦁', color: '#f59e0b', shadow: '#d97706' },
   { name: 'Melissa', emoji: '🌻', color: '#f97316', shadow: '#ea580c' },

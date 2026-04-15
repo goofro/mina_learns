@@ -13,7 +13,7 @@ const BODY_PARTS = [
   { emoji: '👃', name: 'Nose', fact: 'Your nose smells things and also warms the air before it goes to your lungs.' },
   { emoji: '🦴', name: 'Bones', fact: 'You have 206 bones! They hold your body up like a strong frame.' },
   { emoji: '💪', name: 'Muscles', fact: 'Muscles pull on your bones to help you move, run, and jump!' },
-  { emoji: '🫀', name: 'Stomach', fact: 'Your stomach squishes and mixes food with juices to break it down into tiny bits.' },
+  { emoji: '🌀', name: 'Stomach', fact: 'Your stomach squishes and mixes food with juices to break it down into tiny bits.' },
 ]
 
 const SENSES = [
