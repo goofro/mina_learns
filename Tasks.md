@@ -435,43 +435,47 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-009: Sight Words quiz — target word is still visible during the quiz question
+### [x] BUG-009: Sight Words quiz — target word is still visible during the quiz question
 **Screen:** Reading → Sight Words → Quiz phase  
 **Reported:** 2026-04-15  
 **Priority:** High  
 **Description:** During the quiz phase, the word being tested (e.g. "cat") is still displayed on screen while the question asks "which word is this?". The word should be hidden so Mina has to recognise it from TTS alone, otherwise the quiz is just matching visible text — not a real sight-word test.  
 **Fix:** In the quiz render path, hide the target word card entirely. Only play the TTS prompt ("Find the word: cat") and show the 4 multiple-choice answer buttons. Reveal the word in the feedback/result step after Mina has answered.  
-**File:** `src/components/reading/SightWords.jsx`
+**File:** `src/components/reading/SightWords.jsx`  
+**Fixed:** 2026-04-15 ✅ — Already implemented: quiz phase shows 🔊 icon + "Find the word you just saw!" with no word text; word is only revealed in the correct-answer feedback.
 
 ---
 
-### [ ] BUG-010: Sight Words quiz — answer choices start with different letters, making it too easy
+### [x] BUG-010: Sight Words quiz — answer choices start with different letters, making it too easy
 **Screen:** Reading → Sight Words → Quiz phase  
 **Reported:** 2026-04-15  
 **Priority:** High  
 **Description:** The four answer choices almost never share a starting letter with the target word, so Mina can "pass" simply by spotting the first letter rather than reading the whole word. Example: target = "the", choices = "the / cat / dog / run" — she just taps the one starting with T.  
 **Fix:** When building the 4-choice array, ensure at least 2 of the 3 distractors start with the same letter as the target word (or are visually similar: same length, overlapping letters). Pull these close-foil words from the same level's word list first, then fall back to other levels if needed.  
-**File:** `src/components/reading/SightWords.jsx`
+**File:** `src/components/reading/SightWords.jsx`  
+**Fixed:** 2026-04-15 ✅ — `buildChoices()` now prioritises up to 2 same-first-letter distractors from the level pool before filling remaining slots with other words.
 
 ---
 
-### [ ] BUG-011: Counting — count-to-15 activity stops at 10
+### [x] BUG-011: Counting — count-to-15 activity stops at 10
 **Screen:** Math → Counting  
 **Reported:** 2026-04-15  
 **Priority:** High  
 **Description:** The counting activity is supposed to go up to 15 (or 30 at higher levels) but the sequence stops at 10. Numbers 11–15 are never shown.  
 **Fix:** Audit the counting range/array in `CountingGame.jsx`. The upper bound is likely hard-coded to 10. Extend the range to match the intended maximum (15 for the base level; progress.counting.highestCount for adaptive range).  
-**File:** `src/components/math/CountingGame.jsx`
+**File:** `src/components/math/CountingGame.jsx`  
+**Fixed:** 2026-04-15 ✅ — Removed `Math.min(maxCount, 10)` cap in `generateQuestion()`; count now uses the full level max (10 / 15 / 20 / 30).
 
 ---
 
-### [ ] BUG-012: Shape Match — shape name shown beneath each answer choice, giving away the answer
+### [x] BUG-012: Shape Match — shape name shown beneath each answer choice, giving away the answer
 **Screen:** Math → Shape Match  
 **Reported:** 2026-04-15  
 **Priority:** Medium  
 **Description:** In the multiple-choice phase of Shape Match, each answer option shows the shape graphic AND its name label underneath (e.g. "Circle", "Triangle"). Since the question asks Mina to identify the shape, printing the name makes it trivial — she can just read the label without looking at the shape at all.  
 **Fix:** Remove the text label from the answer-choice buttons in the quiz view. The shape graphic alone should be the choice. The correct shape name can still be spoken via TTS on selection/confirmation.  
-**File:** `src/components/math/ShapeMatch.jsx`
+**File:** `src/components/math/ShapeMatch.jsx`  
+**Fixed:** 2026-04-15 ✅ — Removed the `<div>{shape.name}</div>` label from answer choice buttons; shape graphic only.
 
 ---
 

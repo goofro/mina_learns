@@ -141,9 +141,6 @@ export function ShapeMatch({ onBack, addStars, recordMath }) {
                   {SHAPE_SVG[shape.name]}
                 </g>
               </svg>
-              <div style={{ fontSize: '20px', fontWeight: 700, color: '#6b7280', marginTop: '8px', textTransform: 'capitalize' }}>
-                {shape.name}
-              </div>
             </button>
           ))}
         </div>

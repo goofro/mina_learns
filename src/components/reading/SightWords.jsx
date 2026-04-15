@@ -17,8 +17,16 @@ function buildChoices(correct, allWords) {
   if (pool.length < 3) {
     pool = [...pool, ...FALLBACK_WORDS.filter(w => w !== correct && !pool.includes(w))]
   }
-  const others = shuffle(pool).slice(0, 3)
-  return shuffle([correct, ...others])
+
+  // Prefer distractors that start with the same letter — makes the quiz genuinely harder
+  const firstLetter = correct[0].toLowerCase()
+  const sameLetter = shuffle(pool.filter(w => w[0].toLowerCase() === firstLetter))
+  const different = shuffle(pool.filter(w => w[0].toLowerCase() !== firstLetter))
+
+  // Use up to 2 same-first-letter foils, fill the rest with other words
+  const distractors = [...sameLetter.slice(0, 2), ...different].slice(0, 3)
+
+  return shuffle([correct, ...distractors])
 }
 
 function loadCustomWords() {

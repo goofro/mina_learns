@@ -7,7 +7,7 @@ import { COUNT_OBJECTS, COUNTING_LEVELS } from '../../data/mathLessons'
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5) }
 
 function generateQuestion(maxCount) {
-  const count = Math.floor(Math.random() * Math.min(maxCount, 10)) + 1
+  const count = Math.floor(Math.random() * maxCount) + 1
   const obj = COUNT_OBJECTS[Math.floor(Math.random() * COUNT_OBJECTS.length)]
   const correct = count
   const wrong1 = correct === 1 ? 2 : correct - 1
