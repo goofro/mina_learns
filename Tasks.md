@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-12 (v1.27.0 — added BUG-004–008, FEAT-049–051)  
-**Current version:** v1.27.0
+**Last updated:** 2026-04-15 (v1.28.0 — fixed BUG-004–008, FEAT-049)  
+**Current version:** v1.28.0
 
 ---
 
@@ -385,7 +385,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 🐛 New Bugs
 
-### [ ] BUG-004: Free Draw — bottom of canvas triggers Windows taskbar
+### [x] BUG-004: Free Draw — bottom of canvas triggers Windows taskbar
 **Screen:** Art Studio → Free Drawing  
 **Reported:** 2026-04-12  
 **Priority:** High  
@@ -395,7 +395,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-005: Art Studio daily activity counter not counting correctly
+### [x] BUG-005: Art Studio daily activity counter not counting correctly
 **Screen:** Home → Art Studio lock / daily gate  
 **Reported:** 2026-04-12  
 **Priority:** High  
@@ -405,7 +405,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-006: My Body — stomach emoji renders as a heart
+### [x] BUG-006: My Body — stomach emoji renders as a heart
 **Screen:** Science → My Body  
 **Reported:** 2026-04-12  
 **Priority:** Medium  
@@ -415,7 +415,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-007: Dinosaur section — wrong emojis for several dinos
+### [x] BUG-007: Dinosaur section — wrong emojis for several dinos
 **Screen:** Science → Dinosaur Explorer  
 **Reported:** 2026-04-12  
 **Priority:** Medium  
@@ -425,7 +425,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-008: Life Cycles — clicking one stage highlights the wrong stage
+### [x] BUG-008: Life Cycles — clicking one stage highlights the wrong stage
 **Screen:** Science → Life Cycles  
 **Reported:** 2026-04-12  
 **Priority:** High  
@@ -437,10 +437,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 📋 New Features
 
-### [ ] FEAT-049: Add "Mina" to Write Your Name activity
+### [x] FEAT-049: Add "Mina" to Write Your Name activity
 **Priority:** High  
 **Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
-**File:** `src/components/writing/NameTracer.jsx`
+**File:** `src/components/writing/NameTracer.jsx`  
+**Done:** 2026-04-15 ✅ — "Mina" added as first option with 🦄 unicorn theme (purple/violet color scheme).
 
 ### [ ] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
 **Priority:** Medium  

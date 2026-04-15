@@ -131,8 +131,8 @@ export default function App() {
 
   function goBack(to = 'home') {
     if (sessionStart) {
-      const duration = Math.round((Date.now() - sessionStart.time) / 60000)
-      if (duration >= 1) recordSession(sessionStart.subject, duration)
+      const duration = Math.max(1, Math.round((Date.now() - sessionStart.time) / 60000))
+      recordSession(sessionStart.subject, duration)
       setSessionStart(null)
     }
     setScreen(to)

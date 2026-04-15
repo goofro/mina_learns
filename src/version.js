@@ -1,6 +1,18 @@
-export const VERSION = '1.27.0'
+export const VERSION = '1.28.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.28.0',
+    date: '2026-04-15',
+    changes: [
+      'BUG-004: Free Drawing canvas bottom raised 48 px so Windows taskbar no longer intercepts pointer events',
+      'BUG-005: Art Studio daily activity counter now counts every session (removed 1-minute minimum guard)',
+      'BUG-006: My Body — Stomach now uses 🌀 instead of 🫀 (anatomical heart emoji)',
+      'BUG-007: Dinosaur Explorer — updated inaccurate emojis: Triceratops 🦏, Stegosaurus 🦎, Ankylosaurus 🐢, Parasaurolophus 🦆',
+      'BUG-008: Life Cycles — tapping the highlighted (👆) next stage now correctly reveals it; completion banner now shows after all stages are tapped',
+      'FEAT-049: "Mina" added as the first option in Write Your Name (with 🦄 theme)',
+    ],
+  },
   {
     version: '1.27.0',
     date: '2026-04-12',

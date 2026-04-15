@@ -6,16 +6,15 @@ import { TwEmoji } from '../shared/TwEmoji'
 
 const DINOS = [
   { name: 'T-Rex',            emoji: '🦖', diet: 'Carnivore', fact: 'The T-Rex had the strongest bite of any land animal ever!' },
-  { name: 'Triceratops',      emoji: '🦕', diet: 'Herbivore', fact: 'Triceratops had three horns and a big bony frill on its head!' },
-  { name: 'Stegosaurus',      emoji: '🦕', diet: 'Herbivore', fact: 'Stegosaurus had huge bony plates running down its back!' },
+  { name: 'Triceratops',      emoji: '🦏', diet: 'Herbivore', fact: 'Triceratops had three horns and a big bony frill on its head!' },
+  { name: 'Stegosaurus',      emoji: '🦎', diet: 'Herbivore', fact: 'Stegosaurus had huge bony plates running down its back!' },
   { name: 'Brachiosaurus',    emoji: '🦕', diet: 'Herbivore', fact: 'Brachiosaurus had a super long neck to eat leaves from tall trees!' },
   { name: 'Velociraptor',     emoji: '🦖', diet: 'Carnivore', fact: 'Velociraptors were very fast and had sharp curved claws!' },
   { name: 'Pterodactyl',      emoji: '🦅', diet: 'Carnivore', fact: 'Pterodactyls could fly through the sky — they were flying reptiles!' },
-  { name: 'Ankylosaurus',     emoji: '🦕', diet: 'Herbivore', fact: 'Ankylosaurus had a heavy club on its tail to defend itself!' },
+  { name: 'Ankylosaurus',     emoji: '🐢', diet: 'Herbivore', fact: 'Ankylosaurus was covered in thick armour like a tank, with a club tail!' },
   { name: 'Spinosaurus',      emoji: '🦖', diet: 'Carnivore', fact: 'Spinosaurus had a giant sail on its back and loved to eat fish!' },
   { name: 'Diplodocus',       emoji: '🦕', diet: 'Herbivore', fact: 'Diplodocus was one of the longest dinosaurs — as long as 3 buses!' },
-  { name: 'Parasaurolophus',  emoji: '🦕', diet: 'Herbivore', fact: 'Parasaurolophus had a long hollow crest to make loud sounds!' },
-  { name: 'Ankylosaurus',     emoji: '🦕', diet: 'Herbivore', fact: 'Ankylosaurus was covered in thick armour like a tank!' },
+  { name: 'Parasaurolophus',  emoji: '🦆', diet: 'Herbivore', fact: 'Parasaurolophus had a long hollow crest to make loud sounds!' },
   { name: 'Allosaurus',       emoji: '🦖', diet: 'Carnivore', fact: 'Allosaurus was a fierce hunter that lived before the T-Rex!' },
 ]
 
