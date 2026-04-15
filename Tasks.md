@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-15 (v1.28.0 — fixed BUG-004–008, FEAT-049; added BUG-009–012)  
+**Last updated:** 2026-04-15 (v1.28.0 — fixed BUG-004–008, FEAT-049; added BUG-009–012, FEAT-052–053)  
 **Current version:** v1.28.0
 
 ---
@@ -482,6 +482,31 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
 **File:** `src/components/writing/NameTracer.jsx`  
 **Done:** 2026-04-15 ✅ — "Mina" added as first option with 🦄 unicorn theme (purple/violet color scheme).
+
+### [ ] FEAT-052: My Body — replace emojis with proper SVG body-part icons
+**Priority:** Medium  
+**Description:** The My Body section (Science → My Body) uses emojis for body parts, which are often inaccurate or misleading (e.g. stomach was 🫀 = heart). Replace each body-part entry with a clean flat-style SVG icon sourced from **healthicons.org** (MIT licensed, designed specifically for health/anatomy contexts). Icons needed: brain, heart, lungs, teeth, eye, ear, nose, bones/skeleton, muscle/arm, stomach. Embed the SVGs inline as React components or drop the files in `/public/images/body/` and reference as `<img>` tags with fixed dimensions.  
+**Recommended source:** https://healthicons.org — search each body part, download SVG, use the "outline" style for consistency.  
+**File:** `src/components/science/MyBody.jsx`
+
+---
+
+### [ ] FEAT-053: Dinosaur Explorer — replace emoji with proper illustrations
+**Priority:** Medium  
+**Description:** The Dinosaur Explorer currently uses only two emoji (🦕 sauropod, 🦖 T-Rex) for 11 different species, making most cards look identical and inaccurate. Replace with one of these approaches (pick based on asset availability):  
+**Option A (recommended): AI-generated images** — generate one illustration per dinosaur (child-friendly, colourful, scientifically shaped) and drop as `/public/images/dinosaurs/{name}.jpg` (e.g. `triceratops.jpg`). Component loads `<img>` with emoji fallback identical to the Story Time pattern. Prompt guide per dino:  
+- triceratops: "cute cartoon Triceratops dinosaur, three horns, large frill, quadruped herbivore, white background, children's illustration style"  
+- stegosaurus: "cute cartoon Stegosaurus, distinctive back plates, small head, quadruped, children's illustration"  
+- ankylosaurus: "cute cartoon Ankylosaurus, heavily armoured body, club tail, low to ground, children's illustration"  
+- pterodactyl: "cute cartoon Pterodactyl, flying reptile, wing membrane, crest, children's illustration"  
+- parasaurolophus: "cute cartoon Parasaurolophus, duck-billed, long hollow head crest, bipedal, children's illustration"  
+- brachiosaurus / diplodocus: "cute cartoon long-neck sauropod dinosaur, children's illustration"  
+- t-rex / velociraptor / spinosaurus / allosaurus: "cute cartoon [name] dinosaur, children's illustration"  
+**Option B: Phylopic silhouettes** — download free public-domain SVG silhouettes from phylopic.org for each species. Tint them with the card's accent colour via CSS `filter` or inline fill. Accurate body shapes, zero cost.  
+**File:** `src/components/science/DinosaurExplorer.jsx`  
+**Image directory to create:** `public/images/dinosaurs/`
+
+---
 
 ### [ ] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
 **Priority:** Medium  
