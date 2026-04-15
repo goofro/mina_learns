@@ -483,6 +483,18 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File:** `src/components/writing/NameTracer.jsx`  
 **Done:** 2026-04-15 ✅ — "Mina" added as first option with 🦄 unicorn theme (purple/violet color scheme).
 
+### [ ] FEAT-054: Move tracing activities out of Reading World into Writing section
+**Priority:** Medium
+**Description:** Stroke Practice, Letter Tracing, and Write Your Name are currently listed as activities inside Reading World, but they are writing/motor-skill activities — not reading activities. Move them into their own **Writing** hub (or integrate into Art Studio if a dedicated Writing section doesn't exist yet). Steps:
+1. Create a `WritingHome.jsx` hub component (similar to `ReadingHome.jsx`) that lists Stroke Practice, Letter Tracing (A–Z + 0–9), and Write Your Name.
+2. Add a "✏️ Writing" button to the home screen (`HomeScreen.jsx`).
+3. Remove the three tracing entries from `ReadingHome.jsx`'s `ACTIVITIES` array.
+4. Update `App.jsx` navigation: add a `writing` screen that renders `WritingHome`; update `onBack` props on `StrokePractice`, `LetterTracer`, and `NameTracer` to return to `writing` instead of `reading`; update the `lettertracing` hub to navigate back to `writing`.
+5. Update parent dashboard / progress tracking if tracing sessions are reported under a section label.
+**Files:** `src/App.jsx`, `src/components/reading/ReadingHome.jsx`, `src/components/home/HomeScreen.jsx`, new `src/components/writing/WritingHome.jsx`
+
+---
+
 ### [ ] FEAT-052: My Body — replace emojis with proper SVG body-part icons
 **Priority:** Medium  
 **Description:** The My Body section (Science → My Body) uses emojis for body parts, which are often inaccurate or misleading (e.g. stomach was 🫀 = heart). Replace each body-part entry with a clean flat-style SVG icon sourced from **healthicons.org** (MIT licensed, designed specifically for health/anatomy contexts). Icons needed: brain, heart, lungs, teeth, eye, ear, nose, bones/skeleton, muscle/arm, stomach. Embed the SVGs inline as React components or drop the files in `/public/images/body/` and reference as `<img>` tags with fixed dimensions.  
