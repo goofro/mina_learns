@@ -4,6 +4,19 @@ import { StarBurst } from '../shared/Celebration'
 import { speak } from '../../utils/speech'
 import { TwEmoji } from '../shared/TwEmoji'
 
+// AI image prompt guide (generate with any image AI, drop into /public/images/dinosaurs/):
+// t-rex.jpg          → "cute friendly cartoon T-Rex dinosaur, bipedal, tiny arms, large jaw, children's book illustration style, white background, vibrant colors"
+// triceratops.jpg    → "cute friendly cartoon Triceratops dinosaur, three horns, large bony frill, four legs, children's book illustration style, white background"
+// stegosaurus.jpg    → "cute friendly cartoon Stegosaurus dinosaur, large bony plates along the spine, spiked tail, four legs, children's book illustration style, white background"
+// brachiosaurus.jpg  → "cute friendly cartoon Brachiosaurus dinosaur, extremely long neck, small head, four legs, children's book illustration style, white background"
+// velociraptor.jpg   → "cute friendly cartoon Velociraptor dinosaur, bipedal, curved claws, feathered, children's book illustration style, white background"
+// pterodactyl.jpg    → "cute friendly cartoon Pterodactyl flying reptile, wide wingspan, pointed head crest, children's book illustration style, white background"
+// ankylosaurus.jpg   → "cute friendly cartoon Ankylosaurus dinosaur, heavily armoured body with bony plates, large club tail, four legs, children's book illustration style, white background"
+// spinosaurus.jpg    → "cute friendly cartoon Spinosaurus dinosaur, large sail on back, bipedal, long snout, children's book illustration style, white background"
+// diplodocus.jpg     → "cute friendly cartoon Diplodocus dinosaur, very long neck and long tail, four legs, children's book illustration style, white background"
+// parasaurolophus.jpg→ "cute friendly cartoon Parasaurolophus dinosaur, duck-billed mouth, long hollow head crest, bipedal, children's book illustration style, white background"
+// allosaurus.jpg     → "cute friendly cartoon Allosaurus dinosaur, large bipedal carnivore, strong legs, small arms, children's book illustration style, white background"
+
 const DINOS = [
   { name: 'T-Rex',            emoji: '🦖', diet: 'Carnivore', fact: 'The T-Rex had the strongest bite of any land animal ever!' },
   { name: 'Triceratops',      emoji: '🦏', diet: 'Herbivore', fact: 'Triceratops had three horns and a big bony frill on its head!' },
@@ -18,8 +31,28 @@ const DINOS = [
   { name: 'Allosaurus',       emoji: '🦖', diet: 'Carnivore', fact: 'Allosaurus was a fierce hunter that lived before the T-Rex!' },
 ]
 
-// Deduplicate by name
 const UNIQUE_DINOS = DINOS.filter((d, i, a) => a.findIndex(x => x.name === d.name) === i)
+
+function dinoImg(name) {
+  return `/images/dinosaurs/${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.jpg`
+}
+
+// Loads the AI image; falls back to TwEmoji if the file isn't present yet
+function DinoImage({ name, emoji, size }) {
+  const [failed, setFailed] = useState(false)
+  if (!failed) {
+    return (
+      <img
+        key={name}
+        src={dinoImg(name)}
+        alt={name}
+        onError={() => setFailed(true)}
+        style={{ width: size, height: size, objectFit: 'contain' }}
+      />
+    )
+  }
+  return <TwEmoji emoji={emoji} size={size} />
+}
 
 function shuffle(arr) {
   const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a
@@ -128,12 +161,15 @@ export function DinosaurExplorer({ onBack, addStars }) {
             </div>
             <div onClick={() => { setFlipped(true); speakCard(card) }}
               style={{
-                background: 'white', borderRadius: '28px', padding: '44px 28px', textAlign: 'center',
+                background: 'white', borderRadius: '28px', padding: '32px 28px', textAlign: 'center',
                 boxShadow: '0 12px 40px rgba(0,0,0,0.08)', border: '4px solid #bbf7d0',
                 cursor: 'pointer', marginBottom: '20px', minHeight: '300px',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px',
               }}>
-              <TwEmoji emoji={card.emoji} size={96} />
+              {/* Illustration — AI image with emoji fallback */}
+              <div style={{ width: 180, height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <DinoImage key={card.name} name={card.name} emoji={card.emoji} size={160} />
+              </div>
               <div style={{ fontSize: '36px', fontWeight: 900, color: '#15803d' }}>{card.name}</div>
               <div style={{
                 display: 'inline-block', padding: '6px 18px', borderRadius: '20px',
@@ -183,12 +219,14 @@ export function DinosaurExplorer({ onBack, addStars }) {
               </div>
               <div onClick={() => speak(`${sortItem.name}. ${sortItem.fact}`, { rate: 0.78 })}
                 style={{
-                  background: 'white', borderRadius: '28px', padding: '44px 28px', textAlign: 'center',
+                  background: 'white', borderRadius: '28px', padding: '32px 28px', textAlign: 'center',
                   boxShadow: '0 12px 40px rgba(0,0,0,0.08)', border: `4px solid ${sortResult === 'correct' ? '#16a34a' : sortResult === 'wrong' ? '#ef4444' : '#e5e7eb'}`,
                   marginBottom: '24px', cursor: 'pointer', transition: 'border-color 0.2s',
                 }}>
-                <TwEmoji emoji={sortItem.emoji} size={96} />
-                <div style={{ fontSize: '32px', fontWeight: 900, color: '#1f2937', marginTop: '16px' }}>{sortItem.name}</div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '12px' }}>
+                  <DinoImage key={sortItem.name} name={sortItem.name} emoji={sortItem.emoji} size={120} />
+                </div>
+                <div style={{ fontSize: '32px', fontWeight: 900, color: '#1f2937' }}>{sortItem.name}</div>
                 <p style={{ fontSize: '14px', color: '#9ca3af', fontWeight: 600, marginTop: '8px' }}>Tap to hear a fact</p>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -244,8 +282,8 @@ export function DinosaurExplorer({ onBack, addStars }) {
                   else if (quizSelected && isAns) { bg = '#d1fae5'; border = '3px solid #16a34a'; color = '#065f46' }
                   return (
                     <button key={choice.name} onClick={() => handleQuiz(choice)}
-                      style={{ background: bg, border, borderRadius: '18px', padding: '16px 22px', display: 'flex', alignItems: 'center', gap: '16px', fontSize: '22px', fontWeight: 800, color, cursor: quizSelected ? 'default' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}>
-                      <TwEmoji emoji={choice.emoji} size={44} />
+                      style={{ background: bg, border, borderRadius: '18px', padding: '14px 22px', display: 'flex', alignItems: 'center', gap: '16px', fontSize: '22px', fontWeight: 800, color, cursor: quizSelected ? 'default' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}>
+                      <DinoImage key={choice.name} name={choice.name} emoji={choice.emoji} size={56} />
                       {choice.name}
                     </button>
                   )

@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-15 (v1.28.0 — fixed BUG-004–008, FEAT-049; added BUG-009–012, FEAT-052–053)  
-**Current version:** v1.28.0
+**Last updated:** 2026-04-15 (v1.29.0 — FEAT-053 dino AI image infra; added BUG-009–012, FEAT-052)  
+**Current version:** v1.29.0
 
 ---
 
@@ -491,7 +491,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] FEAT-053: Dinosaur Explorer — replace emoji with proper illustrations
+### [x] FEAT-053: Dinosaur Explorer — replace emoji with proper illustrations
 **Priority:** Medium  
 **Description:** The Dinosaur Explorer currently uses only two emoji (🦕 sauropod, 🦖 T-Rex) for 11 different species, making most cards look identical and inaccurate. Replace with one of these approaches (pick based on asset availability):  
 **Option A (recommended): AI-generated images** — generate one illustration per dinosaur (child-friendly, colourful, scientifically shaped) and drop as `/public/images/dinosaurs/{name}.jpg` (e.g. `triceratops.jpg`). Component loads `<img>` with emoji fallback identical to the Story Time pattern. Prompt guide per dino:  

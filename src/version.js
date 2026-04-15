@@ -1,6 +1,15 @@
-export const VERSION = '1.28.0'
+export const VERSION = '1.29.0'
 
 export const CHANGELOG = [
+  {
+    version: '1.29.0',
+    date: '2026-04-15',
+    changes: [
+      'FEAT-053: Dinosaur Explorer — all 3 tabs (Meet/Sort/Quiz) now load AI illustration images from /public/images/dinosaurs/{name}.jpg with emoji fallback until images are added',
+      'Prompt guide for all 11 dinosaurs included as comments in DinosaurExplorer.jsx for easy AI image generation',
+      'Image directory /public/images/dinosaurs/ created with placeholder slots for each species',
+    ],
+  },
   {
     version: '1.28.0',
     date: '2026-04-15',
