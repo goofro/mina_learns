@@ -529,6 +529,42 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Extend the home screen art collage (currently only fed by Free Drawing Studio) to also accept saves from Write Your Name and Stroke Practice. Add a "Save to Home 🏠" button to both activities after the "I traced it!" / "I did it!" completion step. Saves a snapshot of the canvas to the same `mina_art_gallery` localStorage array (max 6, newest first) that Free Drawing uses.  
 **Files:** `src/components/writing/NameTracer.jsx`, `src/components/writing/StrokePractice.jsx`, `src/components/home/HomeScreen.jsx`
 
+---
+
+### [ ] FEAT-055: Expand Story Library — 17 additional stories
+**Priority:** Medium  
+**Description:** Add 17 more stories to `src/data/storyBook.js`. The current library has 10 stories; the target is a rich multi-cultural library covering Aesop fables, classic European fairy tales, and stories from Asia and Africa. Each story should follow the existing format: 4–6 pages, each with a `scene` (emoji array) and `text` (child-friendly prose). Use a non-scary, age-appropriate retelling for any darker stories (Hansel & Gretel, etc.).
+
+**Stories to add:**
+
+*Aesop Fables:*
+- The Lion and the Mouse — kindness matters
+- The Fox and the Grapes — handling disappointment
+- The Ant and the Grasshopper — planning ahead
+- The Dog and the Shadow — greed
+- The Crow and the Pitcher — problem solving
+- The Gingerbread Man
+
+*Classic European Fairy Tales:*
+- Hansel and Gretel *(very softened — focus on bravery, no scary witch details)*
+- Jack and the Beanstalk
+- The Ugly Duckling
+- The Princess and the Pea
+
+*World Stories:*
+- The Empty Pot *(Chinese/Korean — honesty)*
+- Momotaro *(Japanese — kindness and teamwork)*
+- Anansi and the Pot of Wisdom *(African — cleverness)*
+
+*Beloved Picture Book Classics (condensed/inspired retellings):*
+- The Velveteen Rabbit *(shortened — love makes things real)*
+- Peter Rabbit *(Beatrix Potter style)*
+- Frog and Toad Are Friends *(one short episode)*
+- Guess How Much I Love You
+
+**File:** `src/data/storyBook.js`  
+**Note:** After adding stories, also generate illustration prompts for the image folders under `public/images/stories/`.
+
 ### [x] FEAT-051: Multiple child profiles (Mina + Aria)
 **Priority:** High  
 **Description:** Support more than one child profile so Aria can have her own separate progress, stars, and settings alongside Mina. Each profile stores its own data in localStorage under a profile-keyed namespace (e.g. `mina_learns_progress_mina`, `mina_learns_progress_aria`). A profile picker screen appears on first launch or can be accessed from the home screen. Parent dashboard shows a profile switcher. The active profile name is displayed in the StarBar or home screen greeting.  
