@@ -1,6 +1,10 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
-const STORAGE_KEY = 'mina_learns_progress'
+const BASE_KEY = 'mina_learns_progress'
+
+function getKey(profileId) {
+  return profileId ? `${BASE_KEY}_${profileId}` : BASE_KEY
+}
 
 const defaultProgress = {
   stars: 0,
@@ -29,9 +33,9 @@ const defaultProgress = {
   }
 }
 
-function loadProgress() {
+function loadProgress(profileId) {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY)
+    const saved = localStorage.getItem(getKey(profileId))
     if (!saved) return defaultProgress
     return { ...defaultProgress, ...JSON.parse(saved) }
   } catch {
@@ -39,20 +43,30 @@ function loadProgress() {
   }
 }
 
-function saveProgress(progress) {
+function saveProgress(profileId, progress) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress))
+    localStorage.setItem(getKey(profileId), JSON.stringify(progress))
   } catch (e) {
     console.error('Failed to save progress', e)
   }
 }
 
-export function useProgress() {
-  const [progress, setProgress] = useState(loadProgress)
+export function useProgress(profileId) {
+  const [progress, setProgress] = useState(() => loadProgress(profileId))
+  // Prevent saving stale data when switching profiles
+  const skipSaveRef = useRef(false)
 
+  // Reload progress when profile switches
   useEffect(() => {
-    saveProgress(progress)
-  }, [progress])
+    skipSaveRef.current = true
+    setProgress(loadProgress(profileId))
+  }, [profileId])
+
+  // Save on every change; skip once after a profile reload to avoid cross-profile writes
+  useEffect(() => {
+    if (skipSaveRef.current) { skipSaveRef.current = false; return }
+    saveProgress(profileId, progress)
+  }, [progress, profileId])
 
   const addStars = useCallback((count) => {
     setProgress(p => ({ ...p, stars: p.stars + count }))

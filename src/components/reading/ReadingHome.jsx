@@ -21,6 +21,7 @@ const ACTIVITIES = [
   { id: 'sentences',        emoji: '📖', title: 'Read Sentences',      subtitle: 'Simple stories',                   color: '#ef4444', shadow: '#dc2626' },
   { id: 'phonicsrules',     emoji: '📜', title: 'Phonics Rules',       subtitle: 'Learn reading rules',              color: '#f97316', shadow: '#ea580c' },
   { id: 'storylibrary',     emoji: '📚', title: 'Story Library',       subtitle: 'Read leveled short stories',       color: '#0ea5e9', shadow: '#0369a1' },
+  { id: 'readingtime',      emoji: '📖', title: 'Reading Time',        subtitle: 'Follow along word by word',        color: '#f59e0b', shadow: '#d97706' },
 ]
 
 export function ReadingHome({ onNavigate, onBack, stars = 0 }) {

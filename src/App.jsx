@@ -75,9 +75,19 @@ import { LifeCycles } from './components/science/LifeCycles'
 
 import { StoryBookHome } from './components/storybook/StoryBookHome'
 import { StoryBookReader } from './components/storybook/StoryReader'
+import { ReadingTime } from './components/reading/ReadingTime'
 
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
+import { ProfilePicker, loadProfiles, ACTIVE_PROFILE_KEY } from './components/profiles/ProfilePicker'
+
+function loadActiveProfile() {
+  try {
+    const profiles = loadProfiles()
+    const activeId = localStorage.getItem(ACTIVE_PROFILE_KEY)
+    return profiles.find(p => p.id === activeId) || null
+  } catch { return null }
+}
 
 // Navigation stack: array of screen names
 // Screens: home | reading | math | calendar | parent-login | parent
@@ -88,6 +98,8 @@ import { ParentDashboard } from './components/parent/ParentDashboard'
 //          daysofweek | monthsofyear
 
 export default function App() {
+  const [activeProfile, setActiveProfile] = useState(loadActiveProfile)
+
   const {
     progress,
     addStars,
@@ -98,7 +110,7 @@ export default function App() {
     recordSession,
     achieveMilestone,
     resetProgress,
-  } = useProgress()
+  } = useProgress(activeProfile?.id)
 
   // Helper: get difficulty level (1=Easy 2=Normal 3=Hard) for an activity
   function diffLevel(activityId) {
@@ -138,6 +150,11 @@ export default function App() {
     setScreen(to)
   }
 
+  // Show profile picker if no profile is active (after all hooks)
+  if (!activeProfile) {
+    return <ProfilePicker onSelect={(profile) => setActiveProfile(profile)} />
+  }
+
   // Hide star bar on parent screens
   const showStarBar = !['parent-login', 'parent'].includes(screen)
 
@@ -147,7 +164,9 @@ export default function App() {
         <StarBar
           stars={progress.stars}
           streak={progress.streak || 0}
+          profile={activeProfile}
           onParentClick={() => setScreen('parent-login')}
+          onSwitchProfile={() => setActiveProfile(null)}
         />
       )}
 
@@ -155,6 +174,7 @@ export default function App() {
         <HomeScreen
           stars={progress.stars}
           sessions={progress.sessions || []}
+          profileName={activeProfile.name}
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
@@ -258,6 +278,12 @@ export default function App() {
         <StoryReader
           storyId={activeStoryId}
           onBack={() => navigate('storylibrary')}
+          addStars={addStars}
+        />
+      )}
+      {screen === 'readingtime' && (
+        <ReadingTime
+          onBack={() => navigate('reading')}
           addStars={addStars}
         />
       )}

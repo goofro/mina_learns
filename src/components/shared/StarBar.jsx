@@ -1,4 +1,4 @@
-export function StarBar({ stars, streak, onParentClick }) {
+export function StarBar({ stars, streak, profile, onParentClick, onSwitchProfile }) {
   return (
     <div
       style={{
@@ -32,9 +32,35 @@ export function StarBar({ stars, streak, onParentClick }) {
         )}
       </div>
 
-      <div style={{ fontSize: '18px', fontWeight: 900, color: '#f59e0b', letterSpacing: '-0.5px' }}>
-        🌟 Mina Learns
-      </div>
+      {/* Centre: profile name (tappable to switch) */}
+      {profile ? (
+        <button
+          onClick={onSwitchProfile}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            fontSize: '18px',
+            fontWeight: 900,
+            color: '#f59e0b',
+            letterSpacing: '-0.5px',
+            padding: '4px 10px',
+            borderRadius: '10px',
+          }}
+          title="Switch profile"
+        >
+          <span style={{ fontSize: '22px' }}>{profile.avatar}</span>
+          {profile.name}
+        </button>
+      ) : (
+        <div style={{ fontSize: '18px', fontWeight: 900, color: '#f59e0b', letterSpacing: '-0.5px' }}>
+          🌟 Mina Learns
+        </div>
+      )}
 
       <button
         onClick={onParentClick}

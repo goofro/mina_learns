@@ -3,12 +3,14 @@ import { speak } from '../../utils/speech'
 import { TwEmoji } from '../shared/TwEmoji'
 import { ART_SETTINGS_KEY } from '../parent/ParentSettings'
 
-const GREETINGS = [
-  "Hi Mina! Ready to learn? 🌟",
-  "Welcome back, Mina! 🎉",
-  "Let's have fun learning today! ⭐",
-  "What will we learn today? 🤩",
-]
+function getGreetings(name) {
+  return [
+    `Hi ${name}! Ready to learn? 🌟`,
+    `Welcome back, ${name}! 🎉`,
+    "Let's have fun learning today! ⭐",
+    "What will we learn today? 🤩",
+  ]
+}
 
 const ART_UNLOCK_STARS = 10
 const GALLERY_KEY = 'mina_art_gallery'
@@ -32,9 +34,10 @@ const COLLAGE_SLOTS = [
   { top: '68vh', right: '8px',  rotate:  7  },
 ]
 
-export function HomeScreen({ onNavigate, stars = 0, sessions = [] }) {
+export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName = 'Mina' }) {
   const starUnlocked = stars >= ART_UNLOCK_STARS
-  const [greeting] = useState(() => GREETINGS[Math.floor(Math.random() * GREETINGS.length)])
+  const greetings = getGreetings(profileName)
+  const [greeting] = useState(() => greetings[Math.floor(Math.random() * greetings.length)])
   const [gallery, setGallery] = useState([])
   const [artSettings, setArtSettings] = useState(loadArtSettings)
 
@@ -42,9 +45,9 @@ export function HomeScreen({ onNavigate, stars = 0, sessions = [] }) {
   useEffect(() => { setArtSettings(loadArtSettings()) }, [])
 
   useEffect(() => {
-    const timer = setTimeout(() => speak("Hi Mina! Ready to learn?", { rate: 0.8, pitch: 1.2 }), 400)
+    const timer = setTimeout(() => speak(`Hi ${profileName}! Ready to learn?`, { rate: 0.8, pitch: 1.2 }), 400)
     return () => clearTimeout(timer)
-  }, [])
+  }, [profileName])
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')

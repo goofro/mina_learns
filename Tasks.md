@@ -529,15 +529,17 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** Extend the home screen art collage (currently only fed by Free Drawing Studio) to also accept saves from Write Your Name and Stroke Practice. Add a "Save to Home 🏠" button to both activities after the "I traced it!" / "I did it!" completion step. Saves a snapshot of the canvas to the same `mina_art_gallery` localStorage array (max 6, newest first) that Free Drawing uses.  
 **Files:** `src/components/writing/NameTracer.jsx`, `src/components/writing/StrokePractice.jsx`, `src/components/home/HomeScreen.jsx`
 
-### [ ] FEAT-051: Multiple child profiles (Mina + Aria)
+### [x] FEAT-051: Multiple child profiles (Mina + Aria)
 **Priority:** High  
 **Description:** Support more than one child profile so Aria can have her own separate progress, stars, and settings alongside Mina. Each profile stores its own data in localStorage under a profile-keyed namespace (e.g. `mina_learns_progress_mina`, `mina_learns_progress_aria`). A profile picker screen appears on first launch or can be accessed from the home screen. Parent dashboard shows a profile switcher. The active profile name is displayed in the StarBar or home screen greeting.  
 **Scope:** Profile creation (name + avatar emoji picker), profile switcher on home screen, all progress/localStorage keys namespaced per profile, parent dashboard scoped to active profile.  
-**Files:** `src/store/useProgress.js`, `src/App.jsx`, `src/components/home/HomeScreen.jsx`, `src/components/shared/StarBar.jsx`, new `src/components/profiles/ProfilePicker.jsx`
+**Files:** `src/store/useProgress.js`, `src/App.jsx`, `src/components/home/HomeScreen.jsx`, `src/components/shared/StarBar.jsx`, new `src/components/profiles/ProfilePicker.jsx`  
+**Fixed:** 2026-04-16 ✅ — `ProfilePicker.jsx`: full-screen picker with avatar emoji grid and name input; profiles stored in `mina_learns_profiles`, active id in `mina_learns_active_profile`. `useProgress(profileId)` uses `mina_learns_progress_${id}` per profile with safe cross-profile save guard. StarBar centre shows profile avatar + name (tap to switch). HomeScreen greeting personalised to profile name. Switch button in StarBar returns to picker.
 
-### [ ] FEAT-045: Reading Time — guided read-aloud with word highlighting
+### [x] FEAT-045: Reading Time — guided read-aloud with word highlighting
 **Priority:** High  
-**Description:** A dedicated "Reading Time" mode where a short story or sentence set is read aloud by TTS while each word is highlighted in sync, encouraging Mina to follow along. Designed for shared reading between parent and child or independent listening. Features: word-by-word highlight as TTS plays, tap any word to hear it spoken individually, adjustable read speed (slow / normal), and a "Read it again!" button. Stories drawn from the existing Story Library (FEAT-039). Tracks time spent reading and awards stars on completion. Accessible from Reading World as a prominent entry point.
+**Description:** A dedicated "Reading Time" mode where a short story or sentence set is read aloud by TTS while each word is highlighted in sync, encouraging Mina to follow along. Designed for shared reading between parent and child or independent listening. Features: word-by-word highlight as TTS plays, tap any word to hear it spoken individually, adjustable read speed (slow / normal), and a "Read it again!" button. Stories drawn from the existing Story Library (FEAT-039). Tracks time spent reading and awards stars on completion. Accessible from Reading World as a prominent entry point.  
+**Fixed:** 2026-04-16 ✅ — `ReadingTime.jsx`: story picker grid using all 10 STORY_BOOKS; page-by-page reader with word-by-word yellow highlight driven by SpeechSynthesis `boundary` events; tap any word to hear it alone; 🐢 Slow / 🐇 Normal speed toggle; fixed bottom control bar (◀ play/pause ▶); 3 stars awarded on completion. Accessible from Reading World → Reading Time.
 
 ### [x] FEAT-046: Larger drawing canvas in Free Drawing Studio
 **Priority:** Medium  
