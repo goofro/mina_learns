@@ -27,11 +27,17 @@
 // page-12.jpg → "Three little pigs dancing and celebrating joyfully inside their cozy brick house, the wolf running far away into the distance through the window, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── boy-who-cried-wolf ───────────────────────────────────────────────────────
-// page-1.jpg → "A young shepherd boy sitting alone on a green hillside looking bored, a flock of fluffy white sheep grazing around him, a peaceful village visible far below, bright blue sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A mischievous grinning boy shouting from a hilltop while confused villagers run up toward him carrying farm tools, looking around for a wolf that is not there, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A boy giggling and laughing while frustrated villagers march back down the hill shaking their fists and looking very cross, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "A large scary cartoon wolf prowling toward a flock of frightened sheep while a terrified boy screams and waves his arms desperately, dark and tense scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A sad lonely boy sitting on a dark hillside at dusk with scattered sheep, the village below with all windows dark and no one coming to help, the boy looking very sorry and regretful, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A young shepherd boy sitting alone on a sunny green hillside looking bored, fluffy white sheep grazing peacefully around him, a village visible far below, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A shepherd boy lying on his back in the grass staring at the clouds, looking bored and restless, sheep around him, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A mischievous grinning boy standing on a hilltop with his hands cupped around his mouth shouting, a naughty gleam in his eye, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Confused villagers running up a hill carrying farm tools and pitchforks, looking around for a wolf that is nowhere to be seen, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A boy laughing and rolling on the grass while angry villagers march back down the hill shaking their fists, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "The same boy shouting wolf again the next day, looking even more gleeful and mischievous, villagers running up the hill again looking frustrated, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Villagers pointing their fingers and scolding the boy sternly, the boy looking slightly sheepish, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A large scary wolf creeping out from a dark forest toward a flock of frightened sheep, yellow eyes glowing, children's book illustration style, vibrant colors, tense scene, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A terrified boy screaming with his arms waving desperately, the wolf prowling closer to the sheep behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "The quiet village below the hill with all doors and windows shut, nobody coming out, the hill visible in the background, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A sad lonely boy sitting alone on a dark hill at dusk, a few scattered sheep around him, looking very sorry and regretful, stars beginning to appear in the sky, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── goldilocks ───────────────────────────────────────────────────────────────
 // page-1.jpg → "A curious girl with big golden curly hair discovering a charming little cottage deep in a lush green forest, three bears visible walking away in the background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -169,23 +175,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['👦', '🐑', '🐑', '🐑', '⛰️'],
-        text: 'A young shepherd boy watched over a flock of sheep on a big hill. It was a very quiet and lonely job.',
+        text: 'Every morning, a young shepherd boy named Pip walked up the big green hill to watch over his flock of fluffy white sheep. The village where everyone lived sat far below. It was Pip\'s job to keep the sheep safe — and it was a very, very quiet job.',
       },
       {
-        scene: ['👦', '😄', '🏃', '🏃', '❓'],
-        text: 'One day, just for fun, he shouted: "Wolf! Wolf! Help!" All the villagers came running up the hill — but there was no wolf at all!',
+        scene: ['👦', '☁️', '🐑', '💭'],
+        text: 'The sheep munched grass all day. The clouds drifted slowly by. Pip lay back and stared at the sky. "Nothing ever happens up here," he grumbled to himself. "I am SO bored! I wish something exciting would happen!"',
       },
       {
-        scene: ['👦', '😂', '🏘️', '😤'],
-        text: 'The boy laughed and laughed. He did it again the next day too. The villagers ran up, found no wolf, and went home very cross.',
+        scene: ['👦', '😈', '💡', '📣'],
+        text: 'Suddenly Pip had an idea — a very naughty idea. A mischievous grin spread across his face. He jumped to his feet, cupped his hands around his mouth, and shouted down the hill as loudly as he possibly could: "WOLF! WOLF! There\'s a wolf! Help! Help!"',
       },
       {
-        scene: ['🐺', '😱', '🐑', '🐑'],
-        text: 'Then one day, a REAL wolf came prowling! The boy screamed "Wolf! Wolf! Help!" as loud as he could.',
+        scene: ['🏃', '🏃', '🏃', '⛰️', '❓'],
+        text: 'Down in the village, everyone heard the shout. The farmers dropped their tools. The baker put down his bread. They all came puffing and panting up the steep hill as fast as they could, ready to help the boy.',
       },
       {
-        scene: ['🏘️', '🐑', '😢', '💭'],
-        text: "But this time nobody came. Nobody believed him anymore. The boy learned that if you tell lies, no one will believe you when you tell the truth.",
+        scene: ['👦', '😂', '😂', '🏘️', '😤'],
+        text: 'But when the villagers reached the top — there was no wolf anywhere! Just Pip, rolling in the grass and laughing until his sides hurt. The villagers shook their heads and trudged back down the hill, hot, tired, and very cross.',
+      },
+      {
+        scene: ['👦', '😄', '📣', '🏃', '🏃'],
+        text: 'The very next day, Pip did it all over again. "WOLF! WOLF! Please help!" Once more the villagers came running — and once more there was no wolf at all. Pip giggled and pointed, thinking it was the funniest thing in the world.',
+      },
+      {
+        scene: ['🏘️', '😠', '👦', '⚠️'],
+        text: 'This time the villagers were furious. They gathered around Pip and wagged their fingers. "Do NOT cry wolf unless it is true!" they warned sternly. "One day nobody will come!" Pip just shrugged. He didn\'t think it mattered very much at all.',
+      },
+      {
+        scene: ['🌲', '🐺', '👀', '😬'],
+        text: 'Then one grey afternoon, a real wolf came slinking out of the dark forest. His yellow eyes gleamed hungrily as he crept toward the flock. The sheep began to bleat and scatter in every direction.',
+      },
+      {
+        scene: ['👦', '😱', '📣', '📣', '📣'],
+        text: 'Pip\'s heart leapt into his throat. "WOLF! WOLF! A REAL WOLF! PLEASE COME AND HELP ME!" he screamed at the very top of his lungs, waving his arms wildly. He shouted and shouted until his voice was hoarse.',
+      },
+      {
+        scene: ['🏘️', '🚪', '🪟', '😒'],
+        text: 'In the village, the people heard his cries. But they all shook their heads. "It\'s only that naughty boy playing tricks again," they said, and they carried on with what they were doing. Not a single person came up the hill.',
+      },
+      {
+        scene: ['👦', '😢', '🐑', '🌙', '💭'],
+        text: 'As evening fell, Pip sat alone on the cold, quiet hill. Some of the sheep had run away and were gone. His eyes filled with tears. He had learned a very hard and important lesson that day: if you tell lies, nobody will believe you when you finally tell the truth.',
       },
     ],
   },
