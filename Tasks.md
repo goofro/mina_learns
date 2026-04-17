@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-15 (v1.29.0 — FEAT-053 dino AI image infra; added BUG-009–012, FEAT-052)  
-**Current version:** v1.29.0
+**Last updated:** 2026-04-17 (v1.32.0 — FEAT-054 Writing section, FEAT-050 save-to-home from tracing, FEAT-052 SVG body icons)  
+**Current version:** v1.32.0
 
 ---
 
@@ -487,7 +487,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File:** `src/components/writing/NameTracer.jsx`  
 **Done:** 2026-04-15 ✅ — "Mina" added as first option with 🦄 unicorn theme (purple/violet color scheme).
 
-### [ ] FEAT-054: Move tracing activities out of Reading World into Writing section
+### [x] FEAT-054: Move tracing activities out of Reading World into Writing section
 **Priority:** Medium
 **Description:** Stroke Practice, Letter Tracing, and Write Your Name are currently listed as activities inside Reading World, but they are writing/motor-skill activities — not reading activities. Move them into their own **Writing** hub (or integrate into Art Studio if a dedicated Writing section doesn't exist yet). Steps:
 1. Create a `WritingHome.jsx` hub component (similar to `ReadingHome.jsx`) that lists Stroke Practice, Letter Tracing (A–Z + 0–9), and Write Your Name.
@@ -496,14 +496,16 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 4. Update `App.jsx` navigation: add a `writing` screen that renders `WritingHome`; update `onBack` props on `StrokePractice`, `LetterTracer`, and `NameTracer` to return to `writing` instead of `reading`; update the `lettertracing` hub to navigate back to `writing`.
 5. Update parent dashboard / progress tracking if tracing sessions are reported under a section label.
 **Files:** `src/App.jsx`, `src/components/reading/ReadingHome.jsx`, `src/components/home/HomeScreen.jsx`, new `src/components/writing/WritingHome.jsx`
+**Done:** 2026-04-17 ✅ — `WritingHome.jsx` created; "✏️ Writing" card added to HomeScreen; strokepractice/lettertracing/nametracer removed from ReadingHome; App.jsx routes writing screen and updates onBack for all three tracing activities.
 
 ---
 
-### [ ] FEAT-052: My Body — replace emojis with proper SVG body-part icons
+### [x] FEAT-052: My Body — replace emojis with proper SVG body-part icons
 **Priority:** Medium  
 **Description:** The My Body section (Science → My Body) uses emojis for body parts, which are often inaccurate or misleading (e.g. stomach was 🫀 = heart). Replace each body-part entry with a clean flat-style SVG icon sourced from **healthicons.org** (MIT licensed, designed specifically for health/anatomy contexts). Icons needed: brain, heart, lungs, teeth, eye, ear, nose, bones/skeleton, muscle/arm, stomach. Embed the SVGs inline as React components or drop the files in `/public/images/body/` and reference as `<img>` tags with fixed dimensions.  
 **Recommended source:** https://healthicons.org — search each body part, download SVG, use the "outline" style for consistency.  
 **File:** `src/components/science/MyBody.jsx`
+**Done:** 2026-04-17 ✅ — `BodyIcon` React component added to `MyBody.jsx` with hand-crafted inline SVGs for all 10 body parts (Brain, Heart, Lungs, Teeth, Eyes, Ears, Nose, Bones, Muscles, Stomach). `BodyPartsTab` now renders `<BodyIcon name={part.name} size={44} />` instead of `<TwEmoji>`.
 
 ---
 
@@ -524,10 +526,11 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
+### [x] FEAT-050: Save name tracing & stroke practice drawings to home wallpaper
 **Priority:** Medium  
 **Description:** Extend the home screen art collage (currently only fed by Free Drawing Studio) to also accept saves from Write Your Name and Stroke Practice. Add a "Save to Home 🏠" button to both activities after the "I traced it!" / "I did it!" completion step. Saves a snapshot of the canvas to the same `mina_art_gallery` localStorage array (max 6, newest first) that Free Drawing uses.  
 **Files:** `src/components/writing/NameTracer.jsx`, `src/components/writing/StrokePractice.jsx`, `src/components/home/HomeScreen.jsx`
+**Done:** 2026-04-17 ✅ — `saveToGallery()` added to both `NameTracer.jsx` and `StrokePractice.jsx`. After celebrating, a "🏠 Save to Home" button appears; tapping it merges guide + draw canvases and saves a JPEG to `mina_art_gallery` (max 6, newest first). HomeScreen collage already reads this key.
 
 ---
 
