@@ -149,6 +149,18 @@ export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName =
             }}
           />
           <SubjectCard
+            emoji="✏️"
+            title="Writing"
+            subtitle="Tracing, Strokes & Names"
+            bgColor="linear-gradient(135deg, #fdf4ff, #ede9fe)"
+            borderColor="#7c3aed"
+            shadowColor="#5b21b6"
+            onClick={() => {
+              speak('Writing! Let us practise our strokes!')
+              onNavigate('writing')
+            }}
+          />
+          <SubjectCard
             emoji="🔢"
             title="Math"
             subtitle="Numbers, Shapes & More"

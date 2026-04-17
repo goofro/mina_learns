@@ -20,6 +20,7 @@ import { PhonicsRules } from './components/reading/PhonicsRules'
 import { LetterTracer } from './components/writing/LetterTracer'
 import { NameTracer } from './components/writing/NameTracer'
 import { StrokePractice } from './components/writing/StrokePractice'
+import { WritingHome } from './components/writing/WritingHome'
 
 import { PictureVocab } from './components/reading/PictureVocab'
 
@@ -183,10 +184,19 @@ export default function App() {
             else if (subject === 'artstudio') navigate('artstudio', 'artstudio')
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
+            else if (subject === 'writing') navigate('writing', 'writing')
             else if (subject === 'storytime') navigate('storybookhome', 'storytime')
             else if (subject === 'skillmap') navigate('skillmap')
             else if (subject === 'stickerbook') navigate('stickerbook')
           }}
+        />
+      )}
+
+      {/* Writing screens */}
+      {screen === 'writing' && (
+        <WritingHome
+          onNavigate={(id) => navigate(id, 'writing')}
+          onBack={() => goBack('home')}
         />
       )}
 
@@ -242,7 +252,7 @@ export default function App() {
       {screen === 'lettertracing' && (
         <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg, #fff8f0, #fef3ff)', padding: '80px 20px 40px' }}>
           <div style={{ maxWidth: '480px', margin: '0 auto' }}>
-            <BackButton onClick={() => navigate('reading')} />
+            <BackButton onClick={() => navigate('writing')} />
             <h1 style={{ fontSize: '26px', fontWeight: 900, color: '#1f2937', marginTop: '16px', marginBottom: '24px' }}>✏️ Letter Tracing</h1>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
@@ -319,13 +329,13 @@ export default function App() {
       )}
       {screen === 'nametracer' && (
         <NameTracer
-          onBack={() => navigate('reading')}
+          onBack={() => navigate('writing')}
           addStars={addStars}
         />
       )}
       {screen === 'strokepractice' && (
         <StrokePractice
-          onBack={() => navigate('reading')}
+          onBack={() => navigate('writing')}
           addStars={addStars}
         />
       )}

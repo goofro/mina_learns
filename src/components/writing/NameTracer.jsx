@@ -28,6 +28,22 @@ const BRUSHES = [
 
 const CANVAS_W = 900
 const CANVAS_H = 220
+const GALLERY_KEY = 'mina_art_gallery'
+
+function saveToGallery(guideCanvas, drawCanvas) {
+  const merged = document.createElement('canvas')
+  merged.width = CANVAS_W
+  merged.height = CANVAS_H
+  const ctx = merged.getContext('2d')
+  ctx.drawImage(guideCanvas, 0, 0)
+  ctx.drawImage(drawCanvas, 0, 0)
+  const dataUrl = merged.toDataURL('image/jpeg', 0.85)
+  try {
+    const gallery = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
+    const updated = [dataUrl, ...gallery].slice(0, 6)
+    localStorage.setItem(GALLERY_KEY, JSON.stringify(updated))
+  } catch { /* ignore */ }
+}
 
 function drawGuide(canvas, name) {
   const ctx = canvas.getContext('2d')
@@ -62,6 +78,7 @@ export function NameTracer({ onBack, addStars }) {
   const [strokeCount, setStrokeCount] = useState(0)
   const [showStar, setShowStar] = useState(false)
   const [celebrated, setCelebrated] = useState(false)
+  const [saved, setSaved] = useState(false)
 
   const guideRef  = useRef(null)   // background: guide text
   const drawRef   = useRef(null)   // foreground: user strokes
@@ -79,6 +96,7 @@ export function NameTracer({ onBack, addStars }) {
     ctx.clearRect(0, 0, CANVAS_W, CANVAS_H)
     setStrokeCount(0)
     setCelebrated(false)
+    setSaved(false)
     speak(`Let's trace ${NAMES[selected].name}!`, { rate: 0.8 })
   }, [selected])
 
@@ -272,6 +290,17 @@ export function NameTracer({ onBack, addStars }) {
               }}>
               {celebrated ? '⭐ Done!' : '✍️ I traced it!'}
             </button>
+            {celebrated && (
+              <button
+                onClick={() => { saveToGallery(guideRef.current, drawRef.current); setSaved(true); speak('Saved to your home screen!', { rate: 0.85 }) }}
+                disabled={saved}
+                style={{
+                  padding: '10px 18px', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 800, cursor: saved ? 'default' : 'pointer', fontFamily: 'inherit',
+                  background: saved ? '#6b7280' : '#f59e0b', color: 'white', boxShadow: saved ? 'none' : '0 4px 0 #d97706',
+                }}>
+                {saved ? '✅ Saved!' : '🏠 Save to Home'}
+              </button>
+            )}
           </div>
         </div>
 

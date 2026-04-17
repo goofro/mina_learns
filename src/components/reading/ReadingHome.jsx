@@ -5,9 +5,6 @@ import { isUnlocked, getUnlockStars } from '../../data/skillTree'
 
 const ACTIVITIES = [
   { id: 'lettersounds',     emoji: '🔊', title: 'Letter Sounds',       subtitle: 'Review the alphabet',              color: '#f59e0b', shadow: '#d97706' },
-  { id: 'strokepractice',   emoji: '〰️', title: 'Stroke Practice',     subtitle: 'Lines, curves, circles & more',    color: '#3b82f6', shadow: '#1d4ed8' },
-  { id: 'lettertracing',    emoji: '✏️', title: 'Letter Tracing',      subtitle: 'Trace letters & numbers',          color: '#7c3aed', shadow: '#5b21b6' },
-  { id: 'nametracer',       emoji: '✍️', title: 'Write Your Name',     subtitle: 'Trace your favourite names',       color: '#ec4899', shadow: '#be185d' },
   { id: 'picturevocab',     emoji: '🖼️', title: 'Picture Vocabulary',  subtitle: 'Animals, food & action words',     color: '#f97316', shadow: '#ea580c' },
   { id: 'sightwords',       emoji: '👁️', title: 'Sight Words',        subtitle: 'Flash cards & matching',           color: '#10b981', shadow: '#059669' },
   { id: 'vowelsconsonants', emoji: '🔤', title: 'Vowels & Consonants', subtitle: 'A, E, I, O, U and the rest',       color: '#7c3aed', shadow: '#5b21b6' },

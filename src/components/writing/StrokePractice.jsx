@@ -6,6 +6,22 @@ import { TwEmoji } from '../shared/TwEmoji'
 
 const CANVAS_W = 700
 const CANVAS_H = 180
+const GALLERY_KEY = 'mina_art_gallery'
+
+function saveToGallery(guideCanvas, drawCanvas) {
+  const merged = document.createElement('canvas')
+  merged.width = CANVAS_W
+  merged.height = CANVAS_H
+  const ctx = merged.getContext('2d')
+  ctx.drawImage(guideCanvas, 0, 0)
+  ctx.drawImage(drawCanvas, 0, 0)
+  const dataUrl = merged.toDataURL('image/jpeg', 0.85)
+  try {
+    const gallery = JSON.parse(localStorage.getItem(GALLERY_KEY) || '[]')
+    const updated = [dataUrl, ...gallery].slice(0, 6)
+    localStorage.setItem(GALLERY_KEY, JSON.stringify(updated))
+  } catch { /* ignore */ }
+}
 
 const STROKES = [
   {
@@ -165,6 +181,7 @@ export function StrokePractice({ onBack, addStars }) {
   const [strokeCount, setStrokeCount] = useState(0)
   const [celebrated, setCelebrated] = useState(false)
   const [showStar, setShowStar] = useState(false)
+  const [saved, setSaved] = useState(false)
   const [color, setColor] = useState('#3b82f6')
 
   const guideRef = useRef(null)
@@ -178,7 +195,7 @@ export function StrokePractice({ onBack, addStars }) {
     if (selected === null || !guideRef.current) return
     drawGuide(guideRef.current, STROKES[selected])
     drawRef.current.getContext('2d').clearRect(0, 0, CANVAS_W, CANVAS_H)
-    setStrokeCount(0); setCelebrated(false)
+    setStrokeCount(0); setCelebrated(false); setSaved(false)
     speak(STROKES[selected].tip, { rate: 0.8 })
   }, [selected])
 
@@ -324,6 +341,18 @@ export function StrokePractice({ onBack, addStars }) {
               }}>
               {celebrated ? '⭐ Great job!' : '✅ I did it!'}
             </button>
+            {celebrated && (
+              <button
+                onClick={() => { saveToGallery(guideRef.current, drawRef.current); setSaved(true); speak('Saved to your home screen!', { rate: 0.85 }) }}
+                disabled={saved}
+                style={{
+                  padding: '10px 16px', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 800,
+                  fontFamily: 'inherit', cursor: saved ? 'default' : 'pointer',
+                  background: saved ? '#6b7280' : '#f59e0b', color: 'white', boxShadow: saved ? 'none' : '0 4px 0 #d97706',
+                }}>
+                {saved ? '✅ Saved!' : '🏠 Save to Home'}
+              </button>
+            )}
           </div>
         </div>
         <p style={{ textAlign: 'center', marginTop: '10px', fontSize: '13px', color: '#9ca3af', fontWeight: 600 }}>
