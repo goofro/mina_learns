@@ -54,11 +54,17 @@
 // page-12.jpg → "Three bears discovering Goldilocks asleep in the tiny bear's bed, all gasping in surprise, Goldilocks waking with a start and leaping out the window to run home through the forest, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── tortoise-and-hare ────────────────────────────────────────────────────────
-// page-1.jpg → "A small determined tortoise and a tall confident hare standing at a starting line in a sunny countryside, cheerful woodland animals watching from the sidelines, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A cartoon hare sprinting incredibly fast down a winding country road in a blur of speed, leaving the tiny tortoise far behind in the distance, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A smug hare lounging under a big shady tree with eyes closed, napping in warm golden sunshine, looking very satisfied with himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "A small determined tortoise walking slowly and steadily down a sunny path, one careful step at a time, calm focused expression, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A tortoise crossing a finish line triumphantly with colorful confetti falling and woodland animals cheering wildly, the hare running desperately in the background but too late, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A boastful hare showing off his speed to woodland animals in a sunny meadow, zooming past a slow tortoise, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A calm tortoise looking up at a boastful hare and challenging him to a race, woodland animals looking surprised, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Lots of woodland animals gathered at a starting line in a sunny meadow, Fox holding up a starting flag, tortoise and hare ready to race, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A hare shooting off like a rocket from the starting line in a blur of speed, the tortoise taking his first slow steady step, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A hare far ahead on a winding road looking back, the tortoise just a tiny speck in the far distance, hare looking very smug, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A smug hare yawning and stretching under a big shady oak tree beside the road, eyes drooping, looking very relaxed and overconfident, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A hare fast asleep under a tree snoring with his feet twitching, the sun high in the sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A determined tortoise walking slowly and steadily down a sunny path, one careful step at a time, peaceful and focused, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Tortoise quietly walking past the sleeping hare under the tree without waking him, looking straight ahead, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A hare waking up with a start, looking at the lower sun in the sky in a panic, jumping to his feet to run, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Tortoise crossing a finish line first as woodland animals cheer and celebrate, colorful confetti falling, the hare sprinting desperately in the background arriving too late, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
 //
 // ─── little-red-riding-hood ───────────────────────────────────────────────────
 // page-1.jpg → "A sweet little girl in a bright red hooded cape carrying a wicker basket, stepping onto a sunlit forest path lined with colorful wildflowers and tall green trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -297,24 +303,48 @@ export const STORY_BOOKS = [
     shadow: '#0d9488',
     pages: [
       {
-        scene: ['🐢', '🐇', '🏁', '👏'],
-        text: 'Tortoise challenged Hare to a race. Everyone laughed — how could slow Tortoise ever beat speedy Hare?',
+        scene: ['🐇', '💨', '🌳', '👏', '👏'],
+        text: 'Hare loved to boast about how fast he was. Every single day he dashed through the meadow showing off, leaving everyone in a cloud of dust. "Nobody is faster than me!" he bragged. "Not a single soul in the whole wide world!"',
       },
       {
-        scene: ['🐇', '💨', '🌳', '🌳', '🌳'],
-        text: 'Hare zoomed ahead so fast that he was far down the road in no time at all. He had left Tortoise far, far behind.',
+        scene: ['🐢', '🐇', '👀', '💬'],
+        text: 'One quiet afternoon, old Tortoise looked up from his slow, steady walk and said in a calm voice: "I challenge you to a race, Hare." Everyone stopped and stared. Hare burst out laughing until his long ears flopped.',
       },
       {
-        scene: ['🐇', '🌳', '😴', '💤', '☀️'],
-        text: '"I am SO far ahead," thought Hare. "I\'ll just take a little nap under this shady tree." He fell sound asleep in the warm sunshine.',
+        scene: ['🦊', '🦔', '🐿️', '🏁', '🐢', '🐇'],
+        text: 'Word spread quickly through the meadow and the woodland. All the animals came to watch — Fox, Hedgehog, Squirrel, and many more. They lined up along the road, buzzing with excitement. Fox raised the starting flag high.',
       },
       {
-        scene: ['🐢', '🐢', '🐢', '🐢'],
-        text: 'Tortoise kept walking. One slow step. Then another. And another. He never stopped — not even for a single moment.',
+        scene: ['🏁', '🐇', '💨', '💨', '🌳'],
+        text: '"On your marks… get set… GO!" Hare shot off like a rocket. Within seconds he was just a tiny speck in the distance, his powerful legs pumping. Tortoise took one slow step forward. Then another. Then another.',
       },
       {
-        scene: ['🐢', '🏆', '🎉', '🐇', '😱'],
-        text: 'Tortoise crossed the finish line first! Hare woke up and ran as fast as he could, but it was too late. Slow and steady wins the race!',
+        scene: ['🐇', '🗺️', '🌄', '😏'],
+        text: 'Hare reached the top of the hill and looked back. He couldn\'t even see Tortoise anymore! He laughed and laughed. "This is no race at all! Poor slow old Tortoise — he\'ll be walking all day!"',
+      },
+      {
+        scene: ['🐇', '🌳', '☀️', '😪'],
+        text: '"I\'m so far ahead it would take Tortoise until tomorrow to catch me," Hare chuckled. He spotted a big shady oak tree beside the path and flopped down beneath it. "I\'ll just rest my eyes for a teensy little moment," he yawned.',
+      },
+      {
+        scene: ['🐇', '😴', '💤', '💤', '🌙'],
+        text: 'Hare\'s eyes drooped shut. The warm sunshine felt so lovely. His breathing slowed. His big feet twitched. And soon he was snoring loudly, dreaming of how magnificent and fast he was.',
+      },
+      {
+        scene: ['🐢', '🐢', '🐢', '🌿', '☀️'],
+        text: 'Back down the road, Tortoise kept on walking. He didn\'t run. He didn\'t skip. He didn\'t stop to rest or look around. He just kept placing one steady foot in front of the other — step by quiet step by quiet step.',
+      },
+      {
+        scene: ['🐢', '🌳', '🐇', '😴', '🤫'],
+        text: 'Tortoise came to the shady oak tree and saw Hare fast asleep, snoring away without a care. Tortoise didn\'t wake him. He didn\'t say a word. He just smiled to himself and kept on walking — slowly and steadily onward.',
+      },
+      {
+        scene: ['🐇', '😱', '⏰', '💨'],
+        text: 'Hare suddenly jolted awake. The sun had moved across the sky! He leapt up and looked down the road — no Tortoise in sight! "He must still be miles behind me!" Hare laughed, and he began to run.',
+      },
+      {
+        scene: ['🐢', '🏆', '🎉', '🌈', '🐇', '😱'],
+        text: 'But when Hare came sprinting round the last bend, he skidded to a stop. Tortoise was crossing the finish line — right at that very moment! All the animals erupted in the loudest cheer. Slow and steady really had won the race!',
       },
     ],
   },
