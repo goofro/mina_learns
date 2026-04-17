@@ -107,12 +107,18 @@
 // page-11.jpg → "People and animals celebrating joyfully under a rainbow sky in ancient China, the archer lifted on shoulders as a hero, everyone cheering and dancing, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hua-mulan ────────────────────────────────────────────────────────────────
-// page-1.jpg → "An imperial decree scroll unrolled before a grand ancient Chinese palace with red walls and golden roofs, swords and shields on display conveying a call to war, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A frail elderly Chinese man sitting sadly beside military armor, his loving daughter kneeling beside him with a worried expression, a cozy traditional Chinese family home interior, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A determined young Chinese woman cutting her long black hair by the light of a single candle at night, her father's armor and helmet laid out before her, resolute expression, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "Mulan in full Chinese military armor fighting bravely alongside fellow soldiers in rain and wind, a military camp with tents and banners in the background, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A young soldier kneeling respectfully before a kind dignified Emperor in a magnificent ancient Chinese throne room, the Emperor gesturing generously, warm golden light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-6.jpg → "A beautiful young Chinese woman in a colorful floral dress embracing her elderly white-haired father outside a traditional Chinese family home, tears of joy, cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A young Chinese woman weaving at a loom in a cozy family home, peaceful and content, traditional Chinese interior, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "An imperial conscription scroll arriving at a traditional Chinese family home, a family looking worried, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A frail elderly Chinese man reaching for his old military armor with trembling hands, his daughter watching with deep concern, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A young Chinese woman sitting alone by candlelight at night, deep in thought with a determined expression, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A determined young Chinese woman cutting her long black hair by candlelight, her father's armor and helmet laid out before her, resolute expression, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Mulan riding away on horseback at dawn in military armor, looking back at her family home one last time, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Mulan at a military training camp doing exercises alongside other soldiers, working hard and keeping up with everyone, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Mulan in full Chinese military armor fighting bravely alongside soldiers in wind and snow, a snowy mountain battlefield, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Soldiers cheering and celebrating victory after a great battle in ancient China, banners waving, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A young soldier kneeling before a kind dignified Emperor in a magnificent golden throne room, the Emperor gesturing generously with admiration, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Mulan back in her beautiful floral dress riding home past cherry blossom trees, looking happy and relieved, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "A beautiful young Chinese woman in a colorful dress embracing her elderly father outside their family home with tears of joy, whole family reunited, cherry blossoms falling, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── magic-paintbrush ─────────────────────────────────────────────────────────
 // page-1.jpg → "A small cheerful poor Chinese boy drawing in the dirt with a stick on a mountainside, surrounded by beautiful misty Chinese mountain scenery, looking at nature with artistic wonder, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
@@ -551,28 +557,52 @@ export const STORY_BOOKS = [
     shadow: '#db2777',
     pages: [
       {
-        scene: ['📜', '⚔️', '🏰', '🌏'],
-        text: 'Long ago, the Emperor sent out a message. Every family must send one man to fight in the great army and protect the land.',
+        scene: ['👧', '🪡', '🏠', '🌸'],
+        text: 'Long ago in ancient China, there lived a young woman named Hua Mulan. She was kind and clever, and she loved her family more than anything in the world. Every day she sat at her loom, weaving cloth, while her old father rested nearby.',
+      },
+      {
+        scene: ['📜', '⚔️', '🏰', '😟'],
+        text: 'One day, a message arrived from the Emperor. Enemies were attacking the land! Every family must send one man to join the great army and fight. Mulan\'s family read the notice with worried hearts.',
       },
       {
         scene: ['👨', '🦳', '😔', '🛡️', '😢'],
-        text: "Mulan's father was very old and very sick. She could not let him go off to war. She had to do something brave.",
+        text: 'Mulan\'s father was old and sick. His hands trembled as he reached for his old sword. "I must go," he said quietly. "It is my duty." But Mulan could see how frail he was. She knew he would not survive the long march to war.',
+      },
+      {
+        scene: ['👧', '🕯️', '💭', '❤️'],
+        text: 'That night, Mulan sat alone by the light of a single candle, thinking deeply. She loved her father so much. She could not let him go. The flame flickered and her mind was made up. She would do something very, very brave.',
       },
       {
         scene: ['✂️', '🪖', '👧', '⚔️'],
-        text: "One night, Mulan cut her long hair and put on her father's armour and helmet. She would go to fight in his place — brave and strong!",
+        text: "In the quiet darkness before dawn, Mulan took her father's old armour and helmet down from the wall. She cut her long black hair short. She dressed herself in armour from head to toe. When she looked in the mirror, no one would know she was a girl.",
       },
       {
-        scene: ['⚔️', '🌧️', '⛺', '👥', '💪'],
-        text: 'For twelve long years, Mulan fought bravely beside her fellow soldiers. She never gave up, even in the hardest and coldest of times.',
+        scene: ['🐎', '👧', '🏠', '🌅'],
+        text: "Mulan rode away on horseback as the sun rose over the hills. She looked back one last time at her family home, her heart full of love. Then she turned forward and rode bravely toward the army's camp.",
       },
       {
-        scene: ['🏆', '👑', '🎁', '🌟'],
-        text: 'The war was won! The Emperor called Mulan forward. "Name your reward," he said. "Anything in the kingdom is yours!"',
+        scene: ['⚔️', '⛺', '👥', '💪'],
+        text: 'Life in the army was hard. The training was tough, the food was plain, and the nights were cold. But Mulan worked harder than anyone. She was quick, she was clever, and she never gave up — not even for a single day.',
+      },
+      {
+        scene: ['⚔️', '🌨️', '🏔️', '🌧️'],
+        text: 'For twelve long years, Mulan fought bravely beside her fellow soldiers through rain and snow, through cold mountains and roaring rivers. She became one of the most respected fighters in the whole army — and still nobody knew she was a girl.',
+      },
+      {
+        scene: ['🏆', '🎊', '🎉', '🌟'],
+        text: 'At last, the great war was won! The enemies were defeated and peace returned to the land. The soldiers cheered and threw their helmets in the air. Mulan smiled quietly to herself, thinking of home.',
+      },
+      {
+        scene: ['🏆', '👑', '🎁', '😊'],
+        text: 'The Emperor himself summoned Mulan before the court. "You have fought with great bravery and skill," he said with admiration. "Name your reward — anything in all the kingdom is yours!" The whole court waited to hear her answer.',
+      },
+      {
+        scene: ['🐎', '🌸', '🏡', '🌸'],
+        text: '"I ask only one thing," said Mulan. "Please let me go home to my family." The Emperor nodded, deeply moved. Mulan changed back into her beautiful dress, braided flowers into her hair, and rode home through the blossoming countryside.',
       },
       {
         scene: ['👧', '🌸', '🏠', '👨', '🦳', '❤️'],
-        text: 'Mulan asked for only one thing — to go home to her family. She put on her beautiful dress again and gave her father the biggest hug.',
+        text: 'When Mulan walked through the gate of her family home, her father ran to meet her with tears streaming down his cheeks. He held her tight and would not let go. Her whole family wept with joy. Brave Mulan was finally home.',
       },
     ],
   },
