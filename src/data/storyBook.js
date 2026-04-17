@@ -121,12 +121,18 @@
 // page-12.jpg → "A beautiful young Chinese woman in a colorful dress embracing her elderly father outside their family home with tears of joy, whole family reunited, cherry blossoms falling, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── magic-paintbrush ─────────────────────────────────────────────────────────
-// page-1.jpg → "A small cheerful poor Chinese boy drawing in the dirt with a stick on a mountainside, surrounded by beautiful misty Chinese mountain scenery, looking at nature with artistic wonder, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A glowing fairy with soft golden wings appearing in a dream, gently handing a magical golden paintbrush that radiates warm light to a small sleeping boy below, ethereal and magical, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "An amazed Chinese boy watching as a painted bird lifts off the paper and flies away, and a painted fish leaps from the paper into a pond and swims, the magic golden paintbrush glowing in his hand, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "A greedy king in elaborate robes sitting on a golden throne and snatching a glowing paintbrush, pointing and demanding treasure, royal guards standing nearby, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A small wooden sailing ship being overwhelmed by a massive stormy wave in a dark swirling sea, a greedy king clinging to the mast looking terrified, children's book illustration style, vibrant colors, dramatic, East Asian art style, no text, suitable for children ages 4 to 7"
-// page-6.jpg → "A kind boy using a glowing magic paintbrush to paint colorful houses, fields of food, and rainbow skies for happy smiling families in a Chinese village, warm and joyful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A small cheerful poor Chinese boy drawing on a rock with a stick on a mountainside, looking at nature around him with wonder and artistic joy, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A Chinese boy drawing pictures on walls, rocks and dirt, completely absorbed in his art with no paintbrush or paper, people watching him, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A glowing fairy with golden wings appearing in a dream above a sleeping boy, gently offering a magic golden paintbrush that glows with warm light, ethereal and magical, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A boy waking up and finding a real glowing golden paintbrush in his hands, looking amazed and overjoyed, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "An amazed Chinese boy watching as his painted bird lifts off the paper and flies away into the sky, magic golden paintbrush glowing in his hand, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A painted fish leaping from paper into a real pond and swimming away, the boy watching in delighted amazement, magic paintbrush glowing, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A kind Chinese boy using his magic paintbrush to paint food and water for happy poor families in a village, people smiling gratefully, children's book illustration style, vibrant colors, East Asian art style, warm and joyful, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A greedy king hearing about the magic paintbrush from his servants, looking excited and scheming on his golden throne, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A greedy king snatching a glowing paintbrush and demanding a boy paint mountains of gold, royal guards surrounding them, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A boy painting a ship at sea for a greedy king, the king stepping eagerly onto the painted ship, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A small sailing ship on a huge stormy sea being swamped by enormous waves, a greedy king clinging to the mast in terror, children's book illustration style, vibrant colors, dramatic, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "A kind boy using a glowing magic paintbrush to paint colorful houses, food, and rainbows for happy families in a Chinese village, warm and joyful, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── monkey-king ──────────────────────────────────────────────────────────────
 // page-1.jpg → "A magical glowing stone cracking open on a misty mountain peak in ancient China with a brilliant flash of light, a tiny cute baby monkey emerging and looking around with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
@@ -618,27 +624,51 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['👦', '✏️', '🏔️', '🌿'],
-        text: 'A poor boy named Ma Liang loved to draw more than anything in the world. But he was so poor he did not even have a paintbrush.',
+        text: 'Long ago in a small village in China, there lived a poor boy named Ma Liang. He had no money and no family — but he had one great love: drawing. He drew everywhere he went, on rocks, on walls, in the dirt with sticks.',
+      },
+      {
+        scene: ['👦', '🖼️', '🌊', '🐦', '🌳'],
+        text: 'Ma Liang\'s drawings were so beautiful that people would stop and stare. He drew birds so lifelike you expected them to fly, and fish so real you thought you could hear them splash. But no matter how hard he wished, he did not own a single paintbrush.',
       },
       {
         scene: ['🧚', '🖌️', '✨', '💛'],
-        text: 'One night, a kind fairy came to him in a dream and gave him a golden paintbrush that glimmered and glowed with magic.',
+        text: 'One night, Ma Liang had the most wonderful dream. A gentle fairy appeared before him, glowing with soft golden light. She held out a gleaming golden paintbrush. "This is for you," she said with a warm smile. "Use it with a kind heart."',
       },
       {
-        scene: ['🖌️', '🐦', '🐦', '🐟', '💦'],
-        text: 'It was a MAGIC paintbrush! When Ma Liang painted a bird, it flew away! When he painted a fish, it splashed into the water and swam!',
+        scene: ['👦', '🖌️', '✨', '😲'],
+        text: 'Ma Liang woke up — and there in his hands was the golden paintbrush, shining and real! He sat up, his heart hammering with excitement. Could it truly be magic? He picked up the brush and painted a small bird on the wall.',
       },
       {
-        scene: ['👑', '😤', '🖌️', '💰'],
-        text: 'A greedy king heard about the magic brush. He grabbed it and ordered Ma Liang to paint piles of gold and treasure for him.',
+        scene: ['🖌️', '🐦', '🐦', '💫'],
+        text: 'The bird blinked its tiny eyes — and flew right off the wall! It flapped its wings and soared out the window into the bright morning sky! Ma Liang laughed with pure joy. It was real! The paintbrush was truly, wonderfully magic!',
+      },
+      {
+        scene: ['🖌️', '🐟', '💦', '🌊'],
+        text: 'He painted a fish — and it wriggled and splashed into a puddle and swam away. He painted a tree — and it grew tall and rustled its leaves. Everything Ma Liang painted came alive the moment the brush touched the page.',
+      },
+      {
+        scene: ['🖌️', '🌾', '🏡', '💧', '😊'],
+        text: 'Ma Liang used his magic brush to help all the poor people in his village. He painted fields full of golden wheat, barrels of fresh water, warm cosy houses, and tools for the farmers. Everyone was grateful and happy.',
+      },
+      {
+        scene: ['👑', '😤', '🏰', '💰'],
+        text: 'But word of the magic paintbrush spread far and wide — all the way to the palace of a greedy king. The king\'s eyes gleamed with hunger. "Bring that boy to me!" he commanded. "I want everything painted in gold!"',
+      },
+      {
+        scene: ['👑', '🖌️', '😤', '💰', '💰'],
+        text: 'The king\'s soldiers dragged Ma Liang to the palace. "Paint me a mountain of gold! Paint me rivers of silver! Paint me treasure beyond imagination!" shouted the king, snatching the brush greedily. But Ma Liang had a clever plan.',
+      },
+      {
+        scene: ['🖌️', '⛵', '🌊', '😊'],
+        text: '"I will paint you something even better," said Ma Liang calmly. He took back the brush and painted a wide blue sea. Then he painted a magnificent sailing ship on the water. "Your gold island is just over the horizon!" he said. The greedy king clambered eagerly onto the painted ship.',
       },
       {
         scene: ['🖌️', '⛵', '🌊', '🌪️', '👑'],
-        text: 'Ma Liang painted the king a ship far out at sea, then a great wind, then a terrible storm! The greedy king was swept far, far away and never seen again.',
+        text: 'Then Ma Liang painted a great wind — and a wild storm — and towering waves that crashed over the ship! The greedy king clung to the mast and screamed, but the sea swallowed him up. He was swept far, far away and was never, ever seen again.',
       },
       {
         scene: ['🖌️', '🌾', '🏡', '😊', '🌈'],
-        text: 'Ma Liang used his magic paintbrush to help poor families everywhere — painting them food, houses, and bright rainbow skies. He was always kind and good.',
+        text: 'Ma Liang went back to his village and painted and painted for the rest of his long, happy life. He painted food for the hungry, homes for the homeless, and rainbow skies for everyone to enjoy. And because his heart was always kind, his magic paintbrush never ran dry.',
       },
     ],
   },
