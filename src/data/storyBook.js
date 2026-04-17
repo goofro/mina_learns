@@ -81,11 +81,17 @@
 // page-12.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats on the table, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── change-moon ──────────────────────────────────────────────────────────────
-// page-1.jpg → "A beautiful woman in elegant traditional Chinese hanfu dress with ornate hair decorations, standing in a serene moonlit Chinese courtyard with red paper lanterns and cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "Ten blazing giant cartoon suns all rising together in a fiery sky over ancient China, the landscape below scorched and parched, people and animals suffering from the intense heat, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A heroic archer in traditional Chinese armor drawing back a gleaming golden bow and shooting a glowing arrow at blazing suns in the sky, suns exploding dramatically one by one, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "A graceful Chinese woman in flowing traditional dress holding a small glowing golden bottle of magic potion that radiates beautiful golden light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A beautiful woman in flowing white and silver Chinese robes floating gracefully upward toward a large luminous full moon in a star-filled night sky, looking peaceful and serene, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A beautiful woman in elegant traditional Chinese hanfu dress with ornate hair decorations, standing in a serene moonlit Chinese courtyard with red paper lanterns and cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A handsome archer in traditional Chinese robes and a graceful woman in hanfu dress together in a beautiful garden, looking happy, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Ten blazing giant cartoon suns all rising together in a fiery sky over ancient China, the landscape below scorched and brown, people and animals suffering from the heat, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "People and animals in ancient China hiding from unbearable heat, crops dying, rivers drying up, everyone looking distressed, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A heroic archer in traditional Chinese armor drawing back a gleaming golden bow, aiming at the blazing suns in the sky with fierce determination, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Suns exploding and falling from the sky one by one as golden arrows strike them, the archer shooting rapidly, children's book illustration style, vibrant colors, dramatic, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "People celebrating as the earth cools, one gentle sun in the sky, rain falling softly, green plants growing again, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A regal Queen of Heaven in the clouds presenting a glowing golden potion bottle to a kneeling archer, heavenly scene with clouds and light, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A graceful Chinese woman in flowing traditional dress discovering a small glowing golden bottle of magic potion, light radiating from it, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A Chinese woman drinking from a glowing bottle, beginning to float off the ground, looking surprised and peaceful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A beautiful woman in flowing white and silver Chinese robes floating gracefully upward toward a large luminous full moon in a star-filled night sky, looking peaceful and serene, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hou-yi-ten-suns ──────────────────────────────────────────────────────────
 // page-1.jpg → "Ten giant blazing suns rising together in a dramatic fiery sky over ancient Chinese mountains and temples, the land below shimmering with overwhelming heat and light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
@@ -429,23 +435,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🌙', '✨', '🏮', '🌸'],
-        text: "Long, long ago, a beautiful woman named Chang'e lived happily with her husband, the great archer Hou Yi.",
+        text: "Long, long ago in ancient China, there lived a beautiful and kind woman named Chang'e. She wore flowing silk robes and had flowers woven into her hair. Everyone in the village loved her gentle smile.",
+      },
+      {
+        scene: ['👩', '🏹', '👨', '🌸', '🏡'],
+        text: "Chang'e was married to the greatest archer in all the land — brave and strong Hou Yi. They lived happily together in a beautiful home with a courtyard full of blossoming trees. Every evening they sat beneath the stars.",
       },
       {
         scene: ['☀️', '☀️', '☀️', '☀️', '☀️'],
-        text: 'In those days, ten blazing suns rose together every day! The earth was scorching hot and the crops were dying.',
+        text: 'But one terrible day, ten giant suns all rose into the sky together! The earth burned like an oven. The rivers boiled away. The trees turned to dust. Nobody could go outside without being scorched.',
+      },
+      {
+        scene: ['🌾', '🔥', '😢', '🐦', '🌊'],
+        text: 'The crops shrivelled and died. Animals hid in caves. The people cried out for someone — anyone — to save them from the burning heat. They prayed morning and night for help.',
+      },
+      {
+        scene: ['🏹', '💪', '👨', '⭐'],
+        text: "Hou Yi could not bear to see the people suffer. He took up his mighty golden bow, climbed to the top of the highest mountain, and pulled back the string with every bit of strength he had.",
       },
       {
         scene: ['🏹', '☀️', '💥', '☀️', '💥'],
-        text: 'Brave Hou Yi picked up his magical golden bow and shot down nine of the ten suns! He left just one sun to keep the world warm.',
+        text: 'TWANG! He shot one blazing sun right out of the sky! Then another! And another! One by one the suns fell, until only one gentle golden sun remained — just enough to keep the world warm and bright.',
+      },
+      {
+        scene: ['🌧️', '🌿', '💧', '👏', '🎊'],
+        text: 'Cool rain began to fall. The rivers flowed again. Green shoots pushed up through the earth. The people danced and cheered for Hou Yi, the great hero who had saved the whole world.',
+      },
+      {
+        scene: ['🧚', '👑', '🧪', '✨', '💛'],
+        text: 'As a reward for his bravery, the Queen of Heaven sent Hou Yi a precious gift — a tiny bottle of magic potion. "Whoever drinks this will float up to heaven and live forever," said the Queen.',
       },
       {
         scene: ['🧪', '✨', '💛', '🌟'],
-        text: "The Queen of Heaven gave Hou Yi a magic potion. Whoever drank it would float up to heaven. Chang'e found the potion and drank it to keep it safe.",
+        text: "Hou Yi kept the precious potion safely at home. But one day while he was away, a greedy man crept into their house to steal it. Chang'e found him reaching for the bottle — and she made a very brave decision.",
+      },
+      {
+        scene: ['👩', '🧪', '💫', '🌟'],
+        text: "Before the thief could take it, Chang'e grabbed the bottle and drank the potion herself to keep it safe. She felt her feet lift off the ground. She felt herself becoming lighter and lighter, floating up like a feather in the breeze.",
       },
       {
         scene: ['👩', '🌕', '⭐', '⭐', '⭐'],
-        text: "Chang'e floated up, up, up... all the way to the moon! She became the Moon Goddess. On Mid-Autumn Festival, we look at the full moon and remember her.",
+        text: "Chang'e floated up, up, up — past the rooftops, past the clouds, past the stars — all the way to the moon! She became the Moon Goddess, and she watches over us still. Every Mid-Autumn Festival, we look at the full moon and remember her kindness and her bravery.",
       },
     ],
   },
