@@ -13,11 +13,18 @@
 //   "East Asian art style, traditional Chinese setting"
 //
 // ─── three-little-pigs ────────────────────────────────────────────────────────
-// page-1.jpg → "Three cute cartoon little pigs waving goodbye, setting off down a sunny country path with smiles on their faces, rolling green hills and bright blue sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "Big bad cartoon wolf huffing and puffing at a small wobbly house made of yellow straw while a scared little pig peeks from the doorway, straw flying everywhere, dramatic wind, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "Big bad cartoon wolf blowing hard at a small house made of brown sticks that is wobbling and creaking, a frightened little pig visible through the window, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "Big bad cartoon wolf blowing with all his might at a solid red brick house that stands completely firm, two little pigs safely watching through the window looking smug, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "Three little pigs celebrating joyfully inside a cozy brick house while the big bad wolf tumbles down the chimney into a steaming pot of soup below, party atmosphere, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "Three cute cartoon little pigs and their mother pig saying goodbye outside a cozy farmhouse, mother hugging them warmly, sunny countryside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A happy lazy little pig sitting next to a big pile of golden straw in a sunny field, smiling and relaxing, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A little pig finishing building a wonky lopsided house made of yellow straw, looking very pleased with himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Big bad cartoon wolf huffing and puffing at a small wobbly straw house, straw flying everywhere in the wind, a terrified little pig peeking from the doorway, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A scared little pig running as fast as he can down a country path toward his brother's stick house, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Big bad wolf blowing down a house made of sticks, sticks flying everywhere, two little pigs running away in fright, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Two out-of-breath little pigs arriving at a strong red brick house, a third pig welcoming them inside with open arms, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Big bad wolf blowing as hard as he can at a solid red brick house that does not move at all, two little pigs watching smugly through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Big bad wolf with puffed-out red cheeks blowing furiously but looking exhausted, the brick house completely unmoved, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Sneaky wolf creeping around to the back of the brick house and climbing up onto the roof toward the chimney, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Wolf falling down a chimney headfirst into a big bubbling pot of hot soup on a fireplace, yelping in shock, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "Three little pigs dancing and celebrating joyfully inside their cozy brick house, the wolf running far away into the distance through the window, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── boy-who-cried-wolf ───────────────────────────────────────────────────────
 // page-1.jpg → "A young shepherd boy sitting alone on a green hillside looking bored, a flock of fluffy white sheep grazing around him, a peaceful village visible far below, bright blue sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -101,24 +108,52 @@ export const STORY_BOOKS = [
     shadow: '#d97706',
     pages: [
       {
-        scene: ['🌅', '🐷', '🐷', '🐷', '🏡'],
-        text: 'Once upon a time, three little pigs set off to build their very own houses.',
+        scene: ['🐷', '🐷', '🐷', '👩', '🏡'],
+        text: 'Once upon a time, three little pigs grew up and set off to build their very own houses. Their mother hugged them all tightly. "Build your homes well, my darlings," she said, "and watch out for the big bad wolf!"',
       },
       {
-        scene: ['🌾', '🏚️', '🐺', '💨'],
-        text: 'The first pig built a house of straw. The big bad wolf huffed and puffed — and blew it right down!',
+        scene: ['🐷', '🌾', '☀️', '😄'],
+        text: 'The first little pig was the laziest of all. He spotted a big pile of golden straw by the road and grinned. "This will do just fine!" he said. He built his whole house in one single afternoon and then sat back and snored.',
       },
       {
-        scene: ['🪵', '🏡', '🐺', '😤'],
-        text: 'The second pig built a house of sticks. The wolf huffed and puffed — and blew that one down too!',
+        scene: ['🌾', '🏚️', '😴'],
+        text: 'The straw house was wonky and wobbly, with gaps where the wind whistled through. But the first pig didn\'t mind one bit. He moved right in, sang a little song, and fell fast asleep.',
+      },
+      {
+        scene: ['🐺', '🌾', '💨', '😱'],
+        text: 'Then one day, the big bad wolf came prowling. He knocked on the straw house door and growled, "Little pig, little pig, let me come in!" "Not by the hair on my chinny-chin-chin!" The wolf took a deep breath and HUFFED and PUFFED — and blew the straw house right down!',
+      },
+      {
+        scene: ['🐷', '🏃', '🪵', '🐷'],
+        text: 'The first pig ran as fast as his little trotters could carry him — all the way to his brother\'s house, which was made of sticks. "Let me in! Let me in!" he cried, and his brother opened the door straight away.',
+      },
+      {
+        scene: ['🐺', '🪵', '💨', '😤'],
+        text: 'But the wolf followed right behind. He huffed and puffed even harder this time — and the stick house came tumbling down too! Both little pigs squealed and ran away as fast as they could!',
+      },
+      {
+        scene: ['🐷', '🐷', '🏃', '🧱', '🐷'],
+        text: 'They ran and ran until they reached their sister\'s house — a fine, strong house built of solid red bricks. She had worked on it for weeks and weeks. "Quick, come inside!" she called, and she pulled them both through the door.',
       },
       {
         scene: ['🧱', '🏠', '🐺', '😮'],
-        text: 'The third pig built a strong house of bricks. The wolf huffed and puffed with all his might — but the brick house stood firm!',
+        text: 'The wolf came stomping up to the brick house. "Little pigs, little pigs, let me come in!" "Not by the hair on our chinny-chin-chins!" The wolf took the biggest, deepest breath he had ever taken — and HUFFED and PUFFED with everything he had. But the brick house didn\'t move even one tiny bit.',
       },
       {
-        scene: ['🐺', '🏠', '🔥', '🐷', '🎉'],
-        text: 'The wolf tried to sneak down the chimney, but fell into a hot pot of soup and ran far away. The three little pigs were safe and lived happily ever after!',
+        scene: ['🐺', '😤', '💨', '💨', '💨'],
+        text: 'The wolf huffed and puffed until his cheeks turned bright red and his knees went wobbly. He tried again and again. But no matter how hard he blew, the strong brick house stood perfectly still. The three pigs watched through the window, safe and snug.',
+      },
+      {
+        scene: ['🐺', '🏠', '🔝', '🧗'],
+        text: 'Then the wolf had a sneaky idea. He crept around to the back of the house, where no one could see him. Up, up, up he climbed — all the way to the rooftop. "I\'ll squeeze down the chimney!" he growled with a wicked grin.',
+      },
+      {
+        scene: ['🍲', '🔥', '🐺', '😱'],
+        text: 'But the clever pigs had a big pot of bubbling hot soup on the fire! The wolf slid down the chimney — and SPLASH! He landed right in it! He howled and yelped and shot straight back up the chimney and out into the sky.',
+      },
+      {
+        scene: ['🐺', '💨', '🐷', '🐷', '🐷', '🎉'],
+        text: 'The wolf ran far, far away and was never seen again. The three little pigs hugged each other and danced with joy. From that day on, they all lived together in the strong brick house — warm, safe, and very, very happy ever after.',
       },
     ],
   },
