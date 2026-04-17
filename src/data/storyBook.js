@@ -135,12 +135,19 @@
 // page-12.jpg → "A kind boy using a glowing magic paintbrush to paint colorful houses, food, and rainbows for happy families in a Chinese village, warm and joyful, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── monkey-king ──────────────────────────────────────────────────────────────
-// page-1.jpg → "A magical glowing stone cracking open on a misty mountain peak in ancient China with a brilliant flash of light, a tiny cute baby monkey emerging and looking around with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A clever young monkey leaping joyfully through a sparkling magical waterfall to discover a beautiful lush hidden kingdom behind it, animals bowing and placing a golden crown on the monkey's head, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A young monkey sitting attentively before a wise old teacher in a cozy mountain cave, open books and scrolls spread around them, a single warm candle glowing, a feeling of deep study, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "The Monkey King standing majestically on a golden cloud with lightning and wind swirling around him, eyes glowing with magical power, dramatic and impressive pose, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, creating hundreds of tiny identical monkeys in a spectacular whoosh of golden magical light, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
-// page-6.jpg → "The Monkey King standing on a dramatic mountaintop looking out at a vast beautiful world below, holding a scroll map, excitement and adventure in his eyes, ready to explore, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A magical glowing stone sitting on a misty mountain peak surrounded by clouds in ancient China, pulsing with light, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A magical stone cracking open with a brilliant flash of golden light, a tiny cute baby monkey emerging and blinking with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A young playful monkey exploring a beautiful misty mountain, swinging through trees, discovering flowers and waterfalls, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A young monkey discovering a magnificent thundering waterfall on a mountain, looking at it with curiosity and excitement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A brave young monkey leaping through a magical sparkling waterfall, eyes closed, taking a big leap of faith, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A beautiful lush paradise hidden behind the waterfall, full of fruit trees and happy animals, the monkey arriving and looking around in amazement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Animals crowning the monkey as their king with a golden crown, all bowing happily, a lush paradise setting, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "The Monkey King setting off on a long journey over mountains and seas to find a wise teacher, looking determined and adventurous, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A young monkey sitting attentively before a wise old teacher in a mountain cave, scrolls and books all around, a single candle glowing, studying hard, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "The Monkey King transforming magically into different animals one after another, surrounded by golden magical sparkles, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "The Monkey King standing on a golden cloud with lightning and wind swirling around him, eyes glowing with magical power, dramatic and impressive, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -683,28 +690,56 @@ export const STORY_BOOKS = [
     shadow: '#b45309',
     pages: [
       {
-        scene: ['🪨', '✨', '🌊', '💥', '🐒'],
-        text: 'High on a magic mountain, there was a mysterious stone. One glorious day, the stone cracked open — and out leapt a little monkey!',
+        scene: ['🪨', '✨', '🌊', '☁️'],
+        text: 'High on a magic mountain where the clouds kissed the peaks, there sat a very unusual stone. It had been there since the beginning of time, glowing faintly and humming with a secret energy. Nobody knew what was inside it — until one glorious day.',
       },
       {
-        scene: ['🐒', '🌊', '💧', '👑', '🐵', '🐵'],
-        text: 'The clever monkey jumped right into a rushing waterfall — and discovered a secret kingdom hidden behind it! All the animals crowned him their king.',
+        scene: ['🪨', '💥', '✨', '🐒'],
+        text: 'CRACK! The stone split open in a blaze of golden light! And out leapt a tiny monkey, bright-eyed and bushy-tailed, blinking at the world for the very first time. He stretched his little arms, took a deep breath of mountain air, and grinned the biggest grin.',
       },
       {
-        scene: ['🐒', '🧙', '📚', '⭐'],
-        text: 'Monkey King travelled far over the mountains to find a wise teacher. He studied magic for many, many years, working very hard.',
+        scene: ['🐒', '🌳', '🍑', '🌸', '🏔️'],
+        text: 'The little monkey explored every corner of the magic mountain. He swung through the trees, splashed in the streams, ate the sweetest peaches, and made friends with every bird and beast he met. The mountain was his playground, and he loved every inch of it.',
+      },
+      {
+        scene: ['🐒', '🌊', '💧', '🌈'],
+        text: 'One day, the monkey came to a place where a great waterfall thundered down the mountainside, crashing and roaring. The other animals dared not go near it. But the curious monkey walked right up to the edge and peered in. What was behind all that rushing water?',
+      },
+      {
+        scene: ['🐒', '🌊', '💫', '💥'],
+        text: '"I\'ll jump through!" he decided. And without another thought, he leapt straight into the waterfall — WHOOSH! He tumbled and spun and came out the other side, shaking the water from his ears. And what he found made his jaw drop wide open.',
+      },
+      {
+        scene: ['🌳', '🏡', '🐵', '🐵', '🌺'],
+        text: 'Behind the waterfall was a beautiful hidden paradise — a lush green kingdom full of fruit trees, sparkling pools, and cosy caves. And there were monkeys everywhere! Hundreds of them! They all turned to stare at the brave little monkey who had dared to jump through.',
+      },
+      {
+        scene: ['🐒', '👑', '🐵', '🐵', '🎉'],
+        text: '"You are the bravest monkey we have ever seen!" the animals cheered. "You shall be our king!" They placed a golden crown upon his head and bowed before him. The little monkey stood up tall and proud. He was the Monkey King!',
+      },
+      {
+        scene: ['🐒', '🧙', '🌏', '🗺️', '⭐'],
+        text: 'The Monkey King was happy in his kingdom, but he had a restless heart. He wanted to learn the secrets of the universe. He wanted to be truly powerful. And so one day, he set off on a great journey across mountains and oceans to find the wisest teacher in all the world.',
+      },
+      {
+        scene: ['🐒', '🧙', '📚', '🕯️'],
+        text: 'After a long and difficult journey, the Monkey King found a wise old master living in a cave in the mountains. "Please teach me everything you know!" he begged. The master looked at him for a long time, then smiled and nodded. And so the Monkey King began to study.',
+      },
+      {
+        scene: ['🐒', '🔮', '✨', '🌟', '🐯'],
+        text: 'He studied for years and years, practising magic from dawn until dark. Slowly, he learned the 72 magical transformations. He could change himself into a pine tree, a tiny beetle, a mighty tiger, a puff of smoke — anything he wished!',
       },
       {
         scene: ['🐒', '☁️', '⚡', '🌪️', '🌟'],
-        text: 'He learned 72 magical transformations! He could fly on clouds, change into any animal, and call up wind and lightning.',
+        text: 'He also learned to ride the clouds like a surfboard, zooming across the sky in the blink of an eye. He could call up storms with a wave of his hand, and make lightning crack across the heavens with a single shout. He was becoming truly extraordinary.',
       },
       {
         scene: ['🐒', '💛', '🧡', '✨', '🐒', '🐒'],
-        text: 'He pulled a single hair from his head, blew on it — WHOOSH! It became a thousand tiny monkeys all ready to help him!',
+        text: 'And he had one more spectacular trick. He plucked a single golden hair from his head, blew on it with all his might — and WHOOSH! The hair became a thousand tiny monkeys, all jumping and chattering and ready to help him! He blew and they vanished just as quickly.',
       },
       {
         scene: ['🐒', '🌏', '⭐', '🗺️', '🎉'],
-        text: 'The Monkey King was brave, clever, and full of mischief. He set out to explore the whole wide world — and his greatest adventures were just beginning!',
+        text: 'The Monkey King laughed with delight, twirling his golden staff and leaping high into the sky. He was brave, clever, powerful, and full of wonderful mischief. The whole wide world stretched out before him, full of mysteries and adventures waiting to be discovered. And off he went!',
       },
     ],
   },
