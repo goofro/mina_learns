@@ -2,6 +2,92 @@
 // Each story has a coverEmoji, origin ('western' | 'chinese'), and 4–6 pages.
 // Each page has a scene (array of emoji) and text (story prose).
 
+// ─── AI Image Generation Prompts ──────────────────────────────────────────────
+// Generate with ChatGPT (DALL·E) or any image AI. Save as JPG files in
+// /public/images/stories/<story-id>/ named page-1.jpg, page-2.jpg, etc.
+//
+// Base style to append to ALL prompts:
+//   "children's book illustration style, vibrant colors, warm and friendly, full illustrated scene, no text, suitable for children ages 4 to 7"
+//
+// For Chinese stories, also append:
+//   "East Asian art style, traditional Chinese setting"
+//
+// ─── three-little-pigs ────────────────────────────────────────────────────────
+// page-1.jpg → "Three cute cartoon little pigs waving goodbye, setting off down a sunny country path with smiles on their faces, rolling green hills and bright blue sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "Big bad cartoon wolf huffing and puffing at a small wobbly house made of yellow straw while a scared little pig peeks from the doorway, straw flying everywhere, dramatic wind, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "Big bad cartoon wolf blowing hard at a small house made of brown sticks that is wobbling and creaking, a frightened little pig visible through the window, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "Big bad cartoon wolf blowing with all his might at a solid red brick house that stands completely firm, two little pigs safely watching through the window looking smug, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "Three little pigs celebrating joyfully inside a cozy brick house while the big bad wolf tumbles down the chimney into a steaming pot of soup below, party atmosphere, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
+// ─── boy-who-cried-wolf ───────────────────────────────────────────────────────
+// page-1.jpg → "A young shepherd boy sitting alone on a green hillside looking bored, a flock of fluffy white sheep grazing around him, a peaceful village visible far below, bright blue sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A mischievous grinning boy shouting from a hilltop while confused villagers run up toward him carrying farm tools, looking around for a wolf that is not there, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A boy giggling and laughing while frustrated villagers march back down the hill shaking their fists and looking very cross, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "A large scary cartoon wolf prowling toward a flock of frightened sheep while a terrified boy screams and waves his arms desperately, dark and tense scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A sad lonely boy sitting on a dark hillside at dusk with scattered sheep, the village below with all windows dark and no one coming to help, the boy looking very sorry and regretful, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── goldilocks ───────────────────────────────────────────────────────────────
+// page-1.jpg → "A curious girl with big golden curly hair discovering a charming little cottage deep in a lush green forest, three bears visible walking away in the background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "Goldilocks with golden curly hair sitting at a wooden dining table with three bowls of porridge, making a face at the steaming hot one, happily eating the third just-right bowl, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "Goldilocks sitting in a tiny wooden chair that is cracking and breaking under her with a big CRACK, looking startled and surprised, two bigger chairs nearby, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "Goldilocks sleeping peacefully and cosily in a small snug bed upstairs in a cottage, moonlight streaming through the window, two larger beds beside her, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "Three bears of different sizes discovering Goldilocks asleep in the tiny bear's bed, all looking surprised and wide-eyed, Goldilocks jumping up to run away, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
+// ─── tortoise-and-hare ────────────────────────────────────────────────────────
+// page-1.jpg → "A small determined tortoise and a tall confident hare standing at a starting line in a sunny countryside, cheerful woodland animals watching from the sidelines, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A cartoon hare sprinting incredibly fast down a winding country road in a blur of speed, leaving the tiny tortoise far behind in the distance, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A smug hare lounging under a big shady tree with eyes closed, napping in warm golden sunshine, looking very satisfied with himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "A small determined tortoise walking slowly and steadily down a sunny path, one careful step at a time, calm focused expression, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A tortoise crossing a finish line triumphantly with colorful confetti falling and woodland animals cheering wildly, the hare running desperately in the background but too late, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
+// ─── little-red-riding-hood ───────────────────────────────────────────────────
+// page-1.jpg → "A sweet little girl in a bright red hooded cape carrying a wicker basket, stepping onto a sunlit forest path lined with colorful wildflowers and tall green trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A sly cartoon wolf leaning toward a little girl in a red cape on a forest path, acting friendly but looking sneaky, tall trees around them, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A cartoon wolf tucked into a small cottage bed wearing a nightcap, pretending to be grandma, grandmother peeking out from a wardrobe in the background, cozy cottage interior, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "A little girl in a red cape inside a cottage bedroom leaning forward with wide frightened eyes, looking at something in grandma's bed that does not seem right, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats spread on the table, warm and joyful scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
+// ─── change-moon ──────────────────────────────────────────────────────────────
+// page-1.jpg → "A beautiful woman in elegant traditional Chinese hanfu dress with ornate hair decorations, standing in a serene moonlit Chinese courtyard with red paper lanterns and cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "Ten blazing giant cartoon suns all rising together in a fiery sky over ancient China, the landscape below scorched and parched, people and animals suffering from the intense heat, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A heroic archer in traditional Chinese armor drawing back a gleaming golden bow and shooting a glowing arrow at blazing suns in the sky, suns exploding dramatically one by one, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "A graceful Chinese woman in flowing traditional dress holding a small glowing golden bottle of magic potion that radiates beautiful golden light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A beautiful woman in flowing white and silver Chinese robes floating gracefully upward toward a large luminous full moon in a star-filled night sky, looking peaceful and serene, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+//
+// ─── hou-yi-ten-suns ──────────────────────────────────────────────────────────
+// page-1.jpg → "Ten giant blazing suns rising together in a dramatic fiery sky over ancient Chinese mountains and temples, the land below shimmering with overwhelming heat and light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "Dried cracked fields with wilted crops, rivers turned to dusty riverbeds, sad animals and weary people seeking shade in ancient China under a burning sky with many suns, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A tall powerful archer standing proudly in traditional Chinese armor holding a magnificent gleaming golden bow, looking up at the sky with fierce determination, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "The archer rapidly firing golden arrows into the sky one after another, suns bursting and falling with dramatic flashes of light, dynamic action scene, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A single gentle golden sun shining softly over ancient China, rain falling peacefully, green plants sprouting from the earth, rivers flowing again, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-6.jpg → "People and animals dancing and celebrating joyfully under a rainbow sky in ancient China, crops growing tall, birds singing in the trees, everyone happy and thankful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+//
+// ─── hua-mulan ────────────────────────────────────────────────────────────────
+// page-1.jpg → "An imperial decree scroll unrolled before a grand ancient Chinese palace with red walls and golden roofs, swords and shields on display conveying a call to war, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A frail elderly Chinese man sitting sadly beside military armor, his loving daughter kneeling beside him with a worried expression, a cozy traditional Chinese family home interior, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A determined young Chinese woman cutting her long black hair by the light of a single candle at night, her father's armor and helmet laid out before her, resolute expression, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "Mulan in full Chinese military armor fighting bravely alongside fellow soldiers in rain and wind, a military camp with tents and banners in the background, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A young soldier kneeling respectfully before a kind dignified Emperor in a magnificent ancient Chinese throne room, the Emperor gesturing generously, warm golden light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-6.jpg → "A beautiful young Chinese woman in a colorful floral dress embracing her elderly white-haired father outside a traditional Chinese family home, tears of joy, cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+//
+// ─── magic-paintbrush ─────────────────────────────────────────────────────────
+// page-1.jpg → "A small cheerful poor Chinese boy drawing in the dirt with a stick on a mountainside, surrounded by beautiful misty Chinese mountain scenery, looking at nature with artistic wonder, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A glowing fairy with soft golden wings appearing in a dream, gently handing a magical golden paintbrush that radiates warm light to a small sleeping boy below, ethereal and magical, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "An amazed Chinese boy watching as a painted bird lifts off the paper and flies away, and a painted fish leaps from the paper into a pond and swims, the magic golden paintbrush glowing in his hand, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "A greedy king in elaborate robes sitting on a golden throne and snatching a glowing paintbrush, pointing and demanding treasure, royal guards standing nearby, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "A small wooden sailing ship being overwhelmed by a massive stormy wave in a dark swirling sea, a greedy king clinging to the mast looking terrified, children's book illustration style, vibrant colors, dramatic, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-6.jpg → "A kind boy using a glowing magic paintbrush to paint colorful houses, fields of food, and rainbow skies for happy smiling families in a Chinese village, warm and joyful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+//
+// ─── monkey-king ──────────────────────────────────────────────────────────────
+// page-1.jpg → "A magical glowing stone cracking open on a misty mountain peak in ancient China with a brilliant flash of light, a tiny cute baby monkey emerging and looking around with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-2.jpg → "A clever young monkey leaping joyfully through a sparkling magical waterfall to discover a beautiful lush hidden kingdom behind it, animals bowing and placing a golden crown on the monkey's head, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-3.jpg → "A young monkey sitting attentively before a wise old teacher in a cozy mountain cave, open books and scrolls spread around them, a single warm candle glowing, a feeling of deep study, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-4.jpg → "The Monkey King standing majestically on a golden cloud with lightning and wind swirling around him, eyes glowing with magical power, dramatic and impressive pose, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-5.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, creating hundreds of tiny identical monkeys in a spectacular whoosh of golden magical light, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// page-6.jpg → "The Monkey King standing on a dramatic mountaintop looking out at a vast beautiful world below, holding a scroll map, excitement and adventure in his eyes, ready to explore, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const STORY_BOOKS = [
   // ─── Western Stories ──────────────────────────────────────────────────────
 
