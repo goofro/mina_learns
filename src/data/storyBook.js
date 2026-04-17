@@ -67,11 +67,18 @@
 // page-11.jpg → "Tortoise crossing a finish line first as woodland animals cheer and celebrate, colorful confetti falling, the hare sprinting desperately in the background arriving too late, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
 //
 // ─── little-red-riding-hood ───────────────────────────────────────────────────
-// page-1.jpg → "A sweet little girl in a bright red hooded cape carrying a wicker basket, stepping onto a sunlit forest path lined with colorful wildflowers and tall green trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "A sly cartoon wolf leaning toward a little girl in a red cape on a forest path, acting friendly but looking sneaky, tall trees around them, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A cartoon wolf tucked into a small cottage bed wearing a nightcap, pretending to be grandma, grandmother peeking out from a wardrobe in the background, cozy cottage interior, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "A little girl in a red cape inside a cottage bedroom leaning forward with wide frightened eyes, looking at something in grandma's bed that does not seem right, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats spread on the table, warm and joyful scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A mother packing a wicker basket with bread and cakes for her daughter, a little girl in a red cape watching eagerly, warm cozy kitchen, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A mother kneeling to look her daughter in the eyes with a serious but loving expression, warning her to stay on the path, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A little girl in a bright red cape skipping happily along a sunlit forest path, birds singing in the trees around her, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A little girl in a red cape bending down to pick colorful wildflowers just off the path, a dark shadow visible between the trees behind her, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A sly smiling wolf leaning against a tree talking to a little girl in a red cape, acting friendly but looking devious, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A wolf sprinting through dark forest trees on a shortcut, grinning wickedly, children's book illustration style, vibrant colors, slightly tense, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A wolf knocking on an old grandmother's cottage door in the woods, pretending to be the granddaughter, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A wolf tucked into a cottage bed wearing a grandma's nightcap and glasses, grandmother peeking out from a wardrobe behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A little girl in a red cape knocking on a cottage door in the forest, basket in hand, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A little girl in a red cape leaning toward the bed with wide worried eyes, noticing something is very wrong with grandma, children's book illustration style, vibrant colors, tense scene, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A wolf leaping out of bed roaring with his mouth open wide, a little girl in red screaming in fright, children's book illustration style, vibrant colors, dramatic, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats on the table, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── change-moon ──────────────────────────────────────────────────────────────
 // page-1.jpg → "A beautiful woman in elegant traditional Chinese hanfu dress with ornate hair decorations, standing in a serene moonlit Chinese courtyard with red paper lanterns and cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
@@ -359,24 +366,52 @@ export const STORY_BOOKS = [
     shadow: '#dc2626',
     pages: [
       {
-        scene: ['👧', '🧺', '🌸', '🌲'],
-        text: 'Little Red Riding Hood put on her red cape and picked up a basket of treats for her dear Grandma who lived in the forest.',
+        scene: ['👩', '👧', '🧺', '🌻'],
+        text: 'One sunny morning, Little Red Riding Hood\'s mother filled a basket with fresh bread, golden honey, and sweet cakes. "Your grandmother is feeling poorly," said Mama kindly. "Take this to her — she lives through the forest, just follow the path."',
       },
       {
-        scene: ['🐺', '👧', '🌲', '😬'],
-        text: 'Deep in the forest, a sneaky wolf appeared. "Where are you going, little girl?" he asked with a sly smile.',
+        scene: ['👩', '👧', '⚠️', '🌲'],
+        text: 'Mama knelt down and looked Little Red Riding Hood straight in the eyes. "Stay on the path at all times," she said firmly. "Do not wander off. And do NOT talk to strangers." Little Red nodded seriously and gave her mama the biggest hug.',
       },
       {
-        scene: ['🐺', '🏠', '🛏️', '👵'],
-        text: "The wolf raced ahead to Grandma's cottage, locked Grandma safely away, and jumped into her bed — pretending to be Grandma!",
+        scene: ['👧', '🌲', '🌸', '🎵'],
+        text: 'Little Red Riding Hood skipped along the sunny forest path, her red cape bright among the tall green trees. Birds sang sweetly overhead. Colourful wildflowers bloomed along the sides of the path. It was a beautiful, beautiful morning.',
       },
       {
-        scene: ['👧', '🏠', '👁️', '👂', '😨'],
-        text: '"Grandma, what big eyes you have! What big ears! What great big TEETH!" Little Red was very frightened. Something was very wrong!',
+        scene: ['👧', '🌸', '🌷', '💐'],
+        text: 'She stopped to pick a lovely bunch of wildflowers for Grandma. "She will love these!" Little Red thought happily. She stepped just a tiny bit off the path to reach the prettiest ones — and that was when she heard a voice behind her.',
       },
       {
-        scene: ['🪓', '👨', '🐺', '💨', '👧', '👵', '🎉'],
-        text: 'A brave woodcutter heard her shout and burst through the door! He chased the wolf far away. Grandma was safe and they all shared the treats together.',
+        scene: ['🐺', '😏', '👧', '🌲'],
+        text: '"Well, hello there, little girl!" said a silky smooth voice. Little Red turned to find a large wolf leaning against a tree, smiling his very widest smile. She had quite forgotten her mother\'s warning. "I\'m going to Grandma\'s cottage!" she said cheerfully.',
+      },
+      {
+        scene: ['🐺', '🏃', '🌲', '🌲', '🏠'],
+        text: 'The wolf\'s eyes gleamed hungrily. "I may go that way too — what a coincidence!" And with that he bounded off into the trees. But he wasn\'t being friendly at all. He was racing ahead through a secret shortcut as fast as he possibly could.',
+      },
+      {
+        scene: ['🐺', '🚪', '👵', '😨'],
+        text: 'The wolf knocked on Grandma\'s door and called out in a wobbly, sweet voice: "It\'s Little Red Riding Hood, Grandma! I\'ve brought you treats!" Kind old Grandma opened the door — and the wolf leapt straight inside!',
+      },
+      {
+        scene: ['🐺', '🛏️', '🪖', '🧣'],
+        text: 'Quick as a flash, the wolf locked Grandma safely in the wardrobe. Then he pulled on her spare nightcap, wrapped her shawl around his shoulders, and tucked himself deep into her bed. He smiled a wicked wolfish smile and waited.',
+      },
+      {
+        scene: ['👧', '🚪', '🏠', '🌸'],
+        text: 'Little Red Riding Hood arrived at Grandma\'s cottage and knocked on the door. "Come in, my dear!" said a strange, grumbly voice. Little Red stepped inside and walked slowly toward the bed. Something felt not quite right.',
+      },
+      {
+        scene: ['👧', '👀', '🛏️', '😨'],
+        text: '"Grandma, what big eyes you have!" "All the better to see you with, my dear!" "Grandma, what big ears you have!" "All the better to hear you with!" "Grandma, what enormous great BIG TEETH you have!" The wolf threw back the covers — "ALL THE BETTER TO EAT YOU WITH!"',
+      },
+      {
+        scene: ['👧', '😱', '🐺', '🪓', '👨'],
+        text: 'Little Red Riding Hood screamed at the top of her voice! A brave woodcutter who was chopping logs nearby heard her cry. He burst through the cottage door with his axe, and the wolf took one look at him and fled out the window as fast as his legs would carry him.',
+      },
+      {
+        scene: ['👵', '👧', '🧺', '🎉', '🏠'],
+        text: 'The woodcutter opened the wardrobe and out tumbled Grandma, quite safe and sound! She hugged Little Red Riding Hood so tightly. They sat together at the table and shared every single treat from the basket. And Little Red Riding Hood never, ever forgot to stay on the path again.',
       },
     ],
   },
