@@ -94,12 +94,17 @@
 // page-11.jpg → "A beautiful woman in flowing white and silver Chinese robes floating gracefully upward toward a large luminous full moon in a star-filled night sky, looking peaceful and serene, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hou-yi-ten-suns ──────────────────────────────────────────────────────────
-// page-1.jpg → "Ten giant blazing suns rising together in a dramatic fiery sky over ancient Chinese mountains and temples, the land below shimmering with overwhelming heat and light, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "Dried cracked fields with wilted crops, rivers turned to dusty riverbeds, sad animals and weary people seeking shade in ancient China under a burning sky with many suns, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "A tall powerful archer standing proudly in traditional Chinese armor holding a magnificent gleaming golden bow, looking up at the sky with fierce determination, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "The archer rapidly firing golden arrows into the sky one after another, suns bursting and falling with dramatic flashes of light, dynamic action scene, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "A single gentle golden sun shining softly over ancient China, rain falling peacefully, green plants sprouting from the earth, rivers flowing again, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// page-6.jpg → "People and animals dancing and celebrating joyfully under a rainbow sky in ancient China, crops growing tall, birds singing in the trees, everyone happy and thankful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "Ten small suns living happily in a giant magical tree in the east, glowing warmly, ancient Chinese landscape, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "Ten giant blazing suns all rising together in a dramatic fiery sky over ancient Chinese mountains and temples, the land below shimmering with heat, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Dried cracked fields with wilted crops and dried rivers in ancient China, sad animals and weary people hiding from burning heat under a sky with many suns, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "People kneeling and praying to the sky in ancient China, looking desperate and hopeful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A tall powerful archer in traditional Chinese armor holding a magnificent gleaming golden bow, looking up at the sky with fierce determination on a mountaintop, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "The archer drawing his golden bow and shooting glowing arrows at the blazing suns, the first sun exploding dramatically, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Multiple suns bursting and falling from the sky as golden arrows strike them one by one, a dynamic action scene, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "The archer stopping with one last arrow, choosing to leave one gentle golden sun shining in the sky, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Cool rain falling over ancient China, rivers filling up again, green shoots sprouting from the earth, one gentle sun in the sky, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Farmers joyfully tending new green crops in ancient China, animals returning to the fields, birds singing, people smiling, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "People and animals celebrating joyfully under a rainbow sky in ancient China, the archer lifted on shoulders as a hero, everyone cheering and dancing, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hua-mulan ────────────────────────────────────────────────────────────────
 // page-1.jpg → "An imperial decree scroll unrolled before a grand ancient Chinese palace with red walls and golden roofs, swords and shields on display conveying a call to war, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
@@ -490,28 +495,48 @@ export const STORY_BOOKS = [
     shadow: '#ea580c',
     pages: [
       {
+        scene: ['🌳', '☀️', '☀️', '✨', '🌅'],
+        text: 'Long, long ago, there was a magical tree at the edge of the world where ten golden suns made their home. Each day, one sun would take its turn to rise and shine, keeping the earth warm and the crops growing tall.',
+      },
+      {
         scene: ['☀️', '☀️', '☀️', '☀️', '☀️'],
-        text: 'Long, long ago, ten giant suns all rose into the sky at the very same time! The whole world was burning hot.',
+        text: 'But one morning, all ten suns decided to play together in the sky at the same time! Up they rose — one, two, three, four… all the way to ten! The sky blazed like a furnace. The whole world began to burn.',
       },
       {
         scene: ['🌾', '🔥', '🏜️', '😢'],
-        text: 'The crops burned and shrivelled up. The rivers dried away. People and animals everywhere were suffering terribly.',
+        text: 'The crops shrivelled and turned black. The rivers boiled and dried away. Animals hid deep in the ground. People could not eat, could not drink, and could not go outside without the terrible heat scorching their skin.',
+      },
+      {
+        scene: ['🙏', '👨', '👩', '👧', '👦'],
+        text: 'The people fell to their knees and prayed with all their hearts. "Please, someone save us!" they cried. "Someone with great courage and great skill — please help us before the whole world burns away!"',
       },
       {
         scene: ['👨', '💪', '🏹', '⭐'],
-        text: 'Hou Yi was the greatest archer in all the land. He stood tall, picked up his golden bow, and took careful aim at the sky.',
+        text: 'Hou Yi was the greatest archer who had ever lived. His arms were strong as oak, and his eye was sharp as an eagle. He heard the people\'s cries, took up his magnificent golden bow, and climbed to the very top of the highest mountain.',
+      },
+      {
+        scene: ['🏹', '💥', '☀️', '💥'],
+        text: 'He pulled back the string with all his might — TWANG! The first blazing sun exploded in a shower of sparks and fell from the sky! The crowd below gasped and cheered. Hou Yi reached for the next arrow.',
       },
       {
         scene: ['🏹', '💥', '☀️', '🏹', '💥'],
-        text: 'Twang! He shot one sun right out of the sky! Then another! And another! He kept shooting, one sun after the other.',
+        text: 'He shot again, and again, and again! Sun after sun tumbled from the sky in great bursts of flame and light. Hou Yi\'s arms ached and his fingers burned, but he did not stop. The people needed him.',
       },
       {
-        scene: ['☀️', '🎯', '🌿', '💧'],
-        text: 'Hou Yi shot down nine suns and left just one — the golden sun we still see today. Rain fell and the earth turned green again!',
+        scene: ['☀️', '🎯', '🏹', '✋'],
+        text: 'When only one sun was left, Hou Yi lowered his bow. "One sun is enough," he said wisely. "We need its warmth and its light." He put his golden bow on his back and climbed back down the mountain.',
+      },
+      {
+        scene: ['🌧️', '🌿', '💧', '🌊'],
+        text: 'Cool rain began to fall from the sky — soft, beautiful rain. The scorched earth soaked it up greedily. Green shoots pushed up through the cracked ground. Rivers began to fill and sparkle once more.',
+      },
+      {
+        scene: ['🌾', '🌱', '🐦', '🐰', '😊'],
+        text: 'Slowly the world came back to life. Crops grew taller than ever before. Animals came out of hiding. Birds sang. Children laughed and ran through the fields, feeling the one gentle sun warm on their faces.',
       },
       {
         scene: ['👏', '🎊', '🌈', '🌾', '🐦'],
-        text: 'The crops grew again and the rivers flowed. The people cheered and celebrated brave Hou Yi, the hero who saved the world!',
+        text: 'The people lifted Hou Yi onto their shoulders and cheered until their voices rang out across every mountain and valley. "Hou Yi! Hou Yi!" they sang. He was the greatest hero the world had ever known — and the world was green and alive once more.',
       },
     ],
   },
