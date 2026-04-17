@@ -40,11 +40,18 @@
 // page-11.jpg → "A sad lonely boy sitting alone on a dark hill at dusk, a few scattered sheep around him, looking very sorry and regretful, stars beginning to appear in the sky, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── goldilocks ───────────────────────────────────────────────────────────────
-// page-1.jpg → "A curious girl with big golden curly hair discovering a charming little cottage deep in a lush green forest, three bears visible walking away in the background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg → "Goldilocks with golden curly hair sitting at a wooden dining table with three bowls of porridge, making a face at the steaming hot one, happily eating the third just-right bowl, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg → "Goldilocks sitting in a tiny wooden chair that is cracking and breaking under her with a big CRACK, looking startled and surprised, two bigger chairs nearby, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg → "Goldilocks sleeping peacefully and cosily in a small snug bed upstairs in a cottage, moonlight streaming through the window, two larger beds beside her, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-5.jpg → "Three bears of different sizes discovering Goldilocks asleep in the tiny bear's bed, all looking surprised and wide-eyed, Goldilocks jumping up to run away, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-1.jpg  → "A curious girl with big golden curly hair skipping along a winding forest path, butterflies around her, tall green trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "Goldilocks discovering a charming little cottage in a forest clearing, knocking on the red front door, three bears visible walking away in the background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Goldilocks peeking through the open front door of the cottage, looking curious and excited, cozy interior visible inside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Goldilocks at a wooden kitchen table with three steaming bowls of porridge, making a pained face at the hot one, shivering at the cold one, eating the just-right one with delight, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "Goldilocks happily eating the last spoonful of porridge from a tiny bowl, looking very satisfied, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Goldilocks sitting in a tiny wooden chair that is cracking and breaking under her, looking very surprised, two bigger chairs nearby, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Goldilocks climbing the stairs of the cottage, looking around curiously, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Goldilocks trying three beds in a row, bouncing on the hard one, sinking too deep in the soft one, then curling up perfectly in the tiny cozy one, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Three bears of different sizes coming home through the forest, Papa Bear, Mama Bear and Baby Bear, looking forward to their breakfast, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Three bears looking at their porridge bowls with shock and anger, Papa Bear roaring, Baby Bear looking tearfully at his empty bowl, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Three bears looking at their chairs and broken tiny chair, all looking increasingly upset, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-12.jpg → "Three bears discovering Goldilocks asleep in the tiny bear's bed, all gasping in surprise, Goldilocks waking with a start and leaping out the window to run home through the forest, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── tortoise-and-hare ────────────────────────────────────────────────────────
 // page-1.jpg → "A small determined tortoise and a tall confident hare standing at a starting line in a sunny countryside, cheerful woodland animals watching from the sidelines, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -230,24 +237,52 @@ export const STORY_BOOKS = [
     shadow: '#059669',
     pages: [
       {
-        scene: ['👧', '🌲', '🌲', '🏠', '🐻', '🐻'],
-        text: 'A girl with golden curls named Goldilocks found a cosy little house in the forest. The three bears who lived there had gone for a walk.',
+        scene: ['👧', '🌲', '🌸', '🦋'],
+        text: 'One bright morning, a curious girl named Goldilocks skipped into the deep green forest to look at the flowers. She followed a pretty butterfly further and further down a winding path she had never walked before.',
       },
       {
-        scene: ['👧', '🥣', '🥣', '🥣', '😋'],
-        text: '"This porridge is too hot! This one is too cold! This one is just right!" Goldilocks ate it all up!',
+        scene: ['👧', '🏠', '🌲', '❓'],
+        text: 'Deeper into the forest she went, until she spotted a charming little cottage with a bright red door. She knocked politely — tap, tap, tap. But nobody answered. The door swung open all by itself!',
       },
       {
-        scene: ['👧', '🪑', '🪑', '💥', '😬'],
-        text: 'She tried the big chair — too big. She tried the middle chair — still too big. She sat in the tiny chair... and it broke with a CRACK!',
+        scene: ['👧', '🚪', '🍽️', '🥣'],
+        text: 'Goldilocks peeked inside and tiptoed in. On the kitchen table sat three bowls of porridge — one big, one medium, and one tiny. They smelled absolutely wonderful. "I\'ll just try a tiny spoonful," she said.',
+      },
+      {
+        scene: ['👧', '🥣', '🔥', '🥶', '😋'],
+        text: 'She tried the first big bowl. "Ouch! Too hot!" She tried the middle bowl. "Brr! Too cold!" She tried the tiny little bowl. "Mmm! Just right!" It was so perfectly delicious that she ate every single spoonful all the way to the bottom.',
+      },
+      {
+        scene: ['👧', '🪑', '🪑', '🪑'],
+        text: 'In the sitting room, Goldilocks found three chairs lined up in a row. She climbed into the biggest one — it was far too big and hard. She tried the middle one — too wide and wobbly. Then she spotted the little chair in the corner.',
+      },
+      {
+        scene: ['👧', '💥', '🪑', '😲'],
+        text: 'She sat down in the tiny chair — and CRACK! The legs snapped right off and Goldilocks tumbled onto the floor with a thump! She sat there blinking, surrounded by broken pieces of chair, her cheeks very red indeed.',
+      },
+      {
+        scene: ['👧', '🪜', '🛏️', '🛏️', '🛏️'],
+        text: 'Goldilocks climbed the stairs to see what was upstairs. She found a cosy bedroom with three beds all in a row. "Oh, I am rather tired," she yawned, stretching her arms.',
       },
       {
         scene: ['👧', '🛏️', '😴', '💤'],
-        text: 'Upstairs there were three beds. Too hard! Too soft! The little bed was just right. Goldilocks curled up and fell fast asleep.',
+        text: 'She tried the big bed — too hard and lumpy. She tried the middle bed — too soft and squidgy. She climbed into the tiny bed and pulled up the covers. It was perfectly snug and warm. Before she could even count to ten, she was fast asleep.',
       },
       {
-        scene: ['🐻', '🐻', '🐻', '😲', '👧', '🏃'],
-        text: 'The bears came home and found their porridge eaten and their little bed slept in! Goldilocks woke up, saw the bears, and ran all the way home!',
+        scene: ['🐻', '🐻', '🐻', '🌲', '🏠'],
+        text: 'Meanwhile, the three bears — big grumbly Papa Bear, gentle Mama Bear, and little Baby Bear — had been for a lovely walk in the woods while their porridge cooled. Now they were very hungry and ready for breakfast.',
+      },
+      {
+        scene: ['🐻', '🥣', '😠', '😕', '😢'],
+        text: 'Papa Bear looked at his bowl and roared, "SOMEONE HAS BEEN EATING MY PORRIDGE!" Mama Bear looked at hers and said quietly, "Someone has been eating MY porridge too." Baby Bear looked at his tiny bowl and burst into tears. "Someone has eaten ALL of MY porridge — it\'s completely gone!"',
+      },
+      {
+        scene: ['🐻', '🪑', '💥', '😤'],
+        text: 'Then they noticed the chairs. "SOMEONE HAS BEEN SITTING IN MY CHAIR!" roared Papa Bear. "Someone has been sitting in mine too," said Mama Bear. Baby Bear pointed at the pile of broken pieces on the floor and sobbed, "Someone has sat in MY chair and BROKEN IT TO BITS!"',
+      },
+      {
+        scene: ['🐻', '🐻', '🐻', '👧', '😱', '🏃'],
+        text: 'Upstairs, the three bears crept in quietly — and there was Goldilocks, fast asleep in Baby Bear\'s bed! "SOMEONE IS IN MY BED!" Baby Bear cried. Goldilocks woke with a scream! She leapt out of the window, ran through the forest as fast as her legs would go, and never ever went into a stranger\'s house again.',
       },
     ],
   },
