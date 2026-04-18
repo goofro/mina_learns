@@ -227,16 +227,25 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '32px 20px',
+          padding: '0',
           minHeight: '220px',
+          overflow: 'hidden',
         }}>
+          <img
+            key={`${story.id}-${currentPage}`}
+            src={`/images/stories/${story.id}/page-${currentPage + 1}.png`}
+            alt={`Page ${currentPage + 1}`}
+            onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.nextSibling.style.display = 'flex' }}
+            style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+          />
           <div style={{
-            display: 'flex',
+            display: 'none',
             flexWrap: 'wrap',
             justifyContent: 'center',
             alignItems: 'center',
             gap: '14px',
             maxWidth: '300px',
+            padding: '32px 20px',
           }}>
             {page.scene.map((emoji, i) => (
               <TwEmoji key={i} emoji={emoji} size={68} />
