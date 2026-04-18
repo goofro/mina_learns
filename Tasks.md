@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-17 (v1.32.0 — FEAT-054 Writing section, FEAT-050 save-to-home from tracing, FEAT-052 SVG body icons)  
+**Last updated:** 2026-04-18 (Story elaboration — all 10 Story Time stories expanded to 11–13 pages, ChatGPT image prompts updated)  
 **Current version:** v1.32.0
 
 ---
@@ -377,9 +377,10 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ### [x] FEAT-048: Story Time — classic bedtime stories with illustrated scenes
 **Priority:** High
-**Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. 4–6 pages per story, TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
+**Description:** Dedicated "📖 Story Time" section on home screen. 10 classic stories (5 Western, 5 Chinese) presented as a book with emoji-composed scene illustrations on the left and large text on the right. TTS "Read to me" button per page, night mode toggle, 3 stars on completion. Stories: Three Little Pigs, Boy Who Cried Wolf, Goldilocks, Tortoise & Hare, Little Red Riding Hood, Chang'e and the Moon, Hou Yi and the Ten Suns, Hua Mulan, The Magic Paintbrush, The Monkey King's First Quest.
 **Components:** `src/data/storyBook.js` (all story content), `src/components/storybook/StoryBookHome.jsx`, `src/components/storybook/StoryReader.jsx`
-**Done:** 2026-04-12 ✅ — `StoryBookHome` shows 10 stories in a grid with Western/Chinese filter tabs and read/unread indicators. `StoryBookReader` has a split-panel book layout (emoji scene left, story text right), page-dot navigation, 🌙 night mode, "🔊 Read to me" TTS per page, and a completion screen that awards 3 stars on first read. All 10 stories written with child-friendly prose (4–6 pages each) and emoji illustration arrays.
+**Done:** 2026-04-12 ✅ — `StoryBookHome` shows 10 stories in a grid with Western/Chinese filter tabs and read/unread indicators. `StoryBookReader` has a split-panel book layout (emoji scene left, story text right), page-dot navigation, 🌙 night mode, "🔊 Read to me" TTS per page, and a completion screen that awards 3 stars on first read. All 10 stories written with child-friendly prose and emoji illustration arrays.
+**Expanded:** 2026-04-18 ✅ — All 10 stories expanded to 11–13 pages each (was 4–6). Richer prose, more story beats, better pacing for read-aloud. ChatGPT/DALL·E image prompts added as comments in `storyBook.js` for every page of every story (50+ prompts total), stored alongside story data following the same pattern as `DinosaurExplorer.jsx`.
 
 ---
 
@@ -534,7 +535,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] FEAT-055: Expand Story Library — 17 additional stories
+### [~] FEAT-055: Expand Story Library — 17 additional stories
 **Priority:** Medium  
 **Description:** Add 17 more stories to `src/data/storyBook.js`. The current library has 10 stories; the target is a rich multi-cultural library covering Aesop fables, classic European fairy tales, and stories from Asia and Africa. Each story should follow the existing format: 4–6 pages, each with a `scene` (emoji array) and `text` (child-friendly prose). Use a non-scary, age-appropriate retelling for any darker stories (Hansel & Gretel, etc.).
 
@@ -589,6 +590,14 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 ---
 
 ## 📝 Session Notes
+
+### 2026-04-18 – Story elaboration + image prompts
+- All 10 Story Time stories expanded from 4–6 pages to 11–13 pages each
+- Richer prose with more story beats, character detail, and age-appropriate language
+- ChatGPT/DALL·E image prompts written for every page of every story (100+ prompts)
+- Prompts stored as comments at top of `src/data/storyBook.js` (same pattern as DinosaurExplorer)
+- New image directories already exist under `public/images/stories/<story-id>/`
+- Committed and pushed to main in 10 individual story commits
 
 ### 2026-04-12 – Story Time v1.27.0
 - FEAT-048: "📖 Story Time" button added to home screen
