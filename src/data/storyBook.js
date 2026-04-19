@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── crow-and-pitcher ─────────────────────────────────────────────────────────
+// page-1.jpg  → "A clever black crow flying over a dry sunny countryside on a hot summer day, looking thirsty, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A crow landing beside a tall clay pitcher in a garden, peering inside with curious eyes, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A crow trying to tip over a heavy pitcher and squeeze his beak inside, struggling, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A crow sitting back and looking thoughtfully at pebbles scattered on the garden ground, a clever gleam in his eye, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A crow picking up a small pebble in his beak and dropping it into the pitcher, watching the water below, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A crow dropping pebble after pebble into the pitcher, the water level slowly rising, shown in cross-section, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A crow working diligently, carrying more pebbles, the water level visibly higher in the pitcher, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A crow peering eagerly over the rim as the water rises close to the top of the pitcher, eyes wide with anticipation, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A crow finally reaching the water with his beak, drinking happily from the pitcher full of pebbles, looking very satisfied, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A happy crow flying away from the garden refreshed, the pitcher sitting behind him with pebbles visible inside, sunny and cheerful scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const STORY_BOOKS = [
@@ -1349,27 +1361,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐦‍⬛', '☀️', '🏜️', '😓'],
-        text: 'One hot summer\'s day, a clever crow was flying over the countryside feeling very, very thirsty. The sun blazed down and there was not a drop of water to be seen anywhere. His throat was parched and dry.',
+        text: 'One blazing hot summer\'s day, a clever crow was flying high over the countryside. The sun beat down without mercy and the land below was dry and golden. The crow\'s throat was parched and scratchy. He had been flying for a long time and he was desperately, achingly thirsty.',
+      },
+      {
+        scene: ['🐦‍⬛', '🌿', '💧', '🔍'],
+        text: 'He circled lower, searching carefully for anything to drink. He checked the dried-up stream beds — empty. He peered into the hollow stumps — bone dry. He scanned every corner of the fields and hedgerows below. Nothing. Not a single drop of water anywhere.',
       },
       {
         scene: ['🐦‍⬛', '🫙', '💧', '😄'],
-        text: 'At last the crow spotted a tall pitcher sitting in a garden. He flew down and peered inside — there was water at the bottom! But the pitcher was tall and narrow, and the water was so far down that his beak could not reach it no matter how he tried.',
+        text: 'Then, in a cottage garden below, the crow spotted something — a tall clay pitcher sitting in the shade of a wall. He swooped down and landed beside it. Peering over the rim, he could see a glimmer of water at the bottom. He craned his neck — but the water was far, far too low to reach.',
       },
       {
         scene: ['🐦‍⬛', '🫙', '😤', '💭'],
-        text: 'The crow tried tipping the pitcher — it was too heavy. He tried squeezing his head in further — it was too narrow. He sat back and thought hard. There had to be a way. He looked around the garden carefully.',
+        text: 'The crow tried every trick he could think of. He pushed at the pitcher with all his strength — it was far too heavy to tip. He tried squeezing his beak down inside — the neck was too narrow. He tried pecking at the clay sides — nothing happened. He stepped back and stared at the pitcher in frustration.',
       },
       {
-        scene: ['🐦‍⬛', '🪨', '🪨', '🪨'],
-        text: 'Then the crow had a brilliant idea! He picked up a small pebble in his beak and dropped it into the pitcher. Plop! He picked up another pebble. Plop! And another. Plop, plop, plop!',
+        scene: ['🐦‍⬛', '🪨', '💭', '✨'],
+        text: 'The crow sat very still and thought hard. He was a clever bird and he was not going to give up. He looked at the pitcher, then looked at the ground around him. The garden path was covered in small smooth pebbles — hundreds of them, all shapes and sizes.',
       },
       {
-        scene: ['🫙', '💧', '⬆️', '🐦‍⬛', '😊'],
-        text: 'With each pebble he dropped in, the water rose a little higher. Slowly, slowly, slowly — the water crept up the neck of the pitcher. The crow kept working, dropping in pebble after pebble.',
+        scene: ['🐦‍⬛', '🪨', '🫙', '😊'],
+        text: 'Then the crow had a brilliant idea! He picked up one small pebble in his beak and waddled to the pitcher. He dropped it in. Plop! The pebble sank to the bottom. The water moved — just a tiny bit. The crow tilted his head. Yes! That was it!',
       },
       {
-        scene: ['🐦‍⬛', '🫙', '💧', '😄', '🌟'],
-        text: 'At last the water was high enough for the crow to dip his beak in and drink! Cool, refreshing water! He drank until he was no longer thirsty, then flew away happily. A little thinking can solve any problem!',
+        scene: ['🐦‍⬛', '🪨', '🪨', '🫙'],
+        text: 'The crow got to work. He picked up pebble after pebble and dropped them in, one by one. Plop, plop, plop. Each pebble took up space at the bottom of the pitcher, and each one pushed the water just a little bit higher. The crow worked steadily and patiently, not stopping.',
+      },
+      {
+        scene: ['🫙', '💧', '⬆️', '🐦‍⬛'],
+        text: 'Slowly, slowly, the water crept upward. The crow checked after every few pebbles, watching the water level rise a little more each time. It was hard work in the hot sun, but he could see it was working. He kept going, never giving up, beak after beak of pebbles.',
+      },
+      {
+        scene: ['🐦‍⬛', '🫙', '💧', '😃'],
+        text: 'At last — at long, wonderful last — the water rose high enough! The crow stretched his neck over the rim and dipped his beak into the cool, clear water. He drank long and deep, feeling the refreshing water ease his parched throat with every sip. It was the most delicious drink he had ever tasted.',
+      },
+      {
+        scene: ['🐦‍⬛', '🌿', '🌟', '😄'],
+        text: 'The crow flew away refreshed and happy, spreading his shining wings on the warm summer air. He had not given up when things seemed impossible. He had used his wits, tried something clever, and solved the problem himself. Think carefully, work patiently — and even the hardest problem has a solution.',
       },
     ],
   },
