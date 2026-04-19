@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── gingerbread-man ──────────────────────────────────────────────────────────
+// page-1.jpg  → "A little old woman mixing gingerbread dough in a cozy kitchen, shaping a little gingerbread man on a baking tray, warm oven glowing, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A gingerbread man leaping out of the oven door with a big grin, the little old woman and old man reaching for him in surprise, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A gingerbread man running happily down a country road, arms wide, singing, the old couple running behind him in the distance, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A gingerbread man running past a surprised cow in a field, the cow watching and starting to run too, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A gingerbread man running past a pig and a horse, a growing crowd of animals chasing him down the road, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A gingerbread man running through a field, laughing and singing, a long line of people and animals chasing behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A gingerbread man arriving at a wide river, stopping at the bank, looking at the water, a sly fox padding up calmly beside him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A smiling fox offering his tail as a bridge, the gingerbread man stepping onto it carefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A gingerbread man climbing from the fox's tail up to his back as the fox swims deeper, looking nervous, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A fox tossing the gingerbread man up and snapping him out of the air with his jaws, one half of the gingerbread man in his mouth, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
 // ─── crow-and-pitcher ─────────────────────────────────────────────────────────
 // page-1.jpg  → "A clever black crow flying over a dry sunny countryside on a hot summer day, looking thirsty, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A crow landing beside a tall clay pitcher in a garden, peering inside with curious eyes, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -1325,27 +1337,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['👩', '🍪', '🔥', '🏠'],
-        text: 'One morning, a little old woman decided to bake a gingerbread man. She mixed the dough, shaped his little body with buttons and a smile, and popped him into the warm oven to bake.',
+        text: 'One morning, a little old woman had a wonderful idea. She was going to bake a gingerbread man! She mixed butter and sugar and spice and flour together into soft, sweet-smelling dough. She shaped it carefully into a little man, gave him raisin eyes and a big smile, and slid him into the warm oven to bake.',
       },
       {
         scene: ['🍪', '🚪', '💨', '😲'],
-        text: 'When she opened the oven door — whoosh! The gingerbread man leapt out, jumped over the tray, and ran straight out the kitchen door! "Stop!" cried the little old woman. "Stop!" cried the little old man. But the gingerbread man just laughed.',
+        text: 'The whole cottage filled with the most delicious smell. The little old woman waited and waited. At last she opened the oven door — and whoosh! Out leaped the gingerbread man! He jumped over the tray, slid across the kitchen floor, and dashed straight out the open door! "Stop!" cried the little old woman. "Stop!" cried the little old man running in from the garden. But the gingerbread man just laughed.',
       },
       {
         scene: ['🍪', '🏃', '😄', '🌿'],
-        text: '"Run, run, as fast as you can! You can\'t catch me, I\'m the Gingerbread Man!" he sang as he raced down the road. The little old woman and the little old man ran after him, but he was far too fast.',
+        text: '"Run, run, as fast as you can! You can\'t catch me, I\'m the Gingerbread Man!" he sang at the top of his voice as he sprinted down the road, his little legs a blur. The little old woman huffed and the little old man puffed — but the gingerbread man was much too fast for either of them.',
       },
       {
-        scene: ['🐄', '🐖', '🦊', '🍪', '💨'],
-        text: 'He ran past a cow — "Stop!" mooed the cow. He ran past a pig — "Stop!" oinked the pig. He ran past a fox — but the fox just watched him quietly with clever eyes. "Run, run, as fast as you can!" the gingerbread man sang on.',
+        scene: ['🐄', '🍪', '💨', '😮'],
+        text: 'He dashed past a field where a cow was grazing. "Stop, little gingerbread man! I want to eat you!" mooed the cow. The gingerbread man looked back and laughed. "I\'ve run from a little old woman and a little old man, and I can run from you too!" And off he ran, with the cow lumbering along behind him.',
       },
       {
-        scene: ['🦊', '🍪', '🌊', '💭'],
-        text: 'At last the gingerbread man came to a wide river. He could not swim! The fox padded up beside him and smiled sweetly. "Jump on my tail," said the fox. "I\'ll carry you safely across." The gingerbread man hopped on.',
+        scene: ['🐖', '🐴', '🍪', '🏃'],
+        text: 'He ran past a pig — "Stop!" oinked the pig. He ran past a horse in the meadow — "Stop!" neighed the horse. Everyone wanted a piece of him! But the gingerbread man was the fastest thing on the road that day. "Run, run, as fast as you can! You can\'t catch me, I\'m the Gingerbread Man!" he sang.',
+      },
+      {
+        scene: ['🌾', '🍪', '🧑‍🌾', '🏃'],
+        text: 'A group of farmers working in their field looked up at the noise. "Stop, gingerbread man!" they called, putting down their tools and joining the chase. Now there was a whole crowd running behind him — the old woman, the old man, a cow, a pig, a horse, and a string of farmers. Still the gingerbread man laughed and ran.',
+      },
+      {
+        scene: ['🍪', '🌊', '😮', '🦊'],
+        text: 'Then the gingerbread man came to the bank of a wide, deep river. He stopped at the water\'s edge. He looked at the crowd of people and animals rushing toward him. He could not swim! A sly fox was sitting calmly on the bank, watching everything with bright eyes.',
+      },
+      {
+        scene: ['🦊', '🍪', '🌊', '💬'],
+        text: '"Dear gingerbread man," said the fox smoothly, "you look like you need to cross this river. Jump on my tail and I will carry you safely to the other side." The gingerbread man looked at the rushing water, then at the approaching crowd, then at the fox\'s bushy tail. He hesitated — then hopped on.',
+      },
+      {
+        scene: ['🦊', '🍪', '💧', '😟'],
+        text: 'The fox waded into the river. "The water is getting deep," said the fox sweetly. "Climb up to my back or you\'ll get wet!" The gingerbread man scrambled up to the fox\'s back. The fox swam deeper. "Higher still!" said the fox. "Climb up to my head!" Up went the gingerbread man, wondering if this was quite such a good idea after all.',
       },
       {
         scene: ['🦊', '🍪', '😮', '💦'],
-        text: '"Climb up to my back," said the fox as they swam. "You\'ll get wet on my tail." Up climbed the gingerbread man. "Now my head," said the fox. Up he went — SNAP! And that was the end of the gingerbread man. If you run from everyone, you may run straight into trouble!',
+        text: '"Now my nose!" said the fox, flicking him up into the air — SNAP! And that was the very end of the gingerbread man. The fox trotted out of the river looking rather pleased. The crowd on the bank stood silent. Running away from everyone is all very well — but watch out for those who pretend to help while meaning harm!',
       },
     ],
   },
