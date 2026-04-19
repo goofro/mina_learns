@@ -199,6 +199,19 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── peter-rabbit ─────────────────────────────────────────────────────────────
+// page-1.jpg  → "A mother rabbit with a blue shawl and four little bunnies under the roots of a big fir tree, cozy and warm, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A mother rabbit warning her children seriously not to go into Mr McGregor's garden, holding her basket, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Three little rabbits picking berries happily in a meadow, one little rabbit sneaking away in the opposite direction toward a garden gate, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Peter Rabbit squeezing under a garden gate into a lush vegetable garden full of cabbages, lettuce and radishes, looking excited, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "Peter Rabbit eating happily among rows of vegetables, lettuce leaves, carrots and beans, looking very pleased, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A red-faced Mr McGregor chasing Peter Rabbit between vegetable beds, rake in hand, Peter bolting away in a blue jacket, children's book illustration style, vibrant colors, action scene, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Peter Rabbit losing his little shoes among the cabbages, running faster without them, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Peter Rabbit hiding inside a big watering can in a garden tool shed, looking very scared, drops of water dripping, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Peter Rabbit spotting the garden gate and making a desperate dash for freedom, feet barely touching the ground, children's book illustration style, vibrant colors, action scene, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Peter Rabbit squeezing through the iron bars of the gate just in time, leaving a tuft of fur behind, Mr McGregor reaching for him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Mother rabbit tucking a sick Peter into bed and giving him chamomile tea, three good rabbits eating bread and berries at the table, cozy cottage, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── velveteen-rabbit ─────────────────────────────────────────────────────────
 // page-1.jpg  → "A boy unwrapping a beautiful velveteen rabbit toy on Christmas morning, eyes wide with delight, cozy home with Christmas decorations, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A velveteen rabbit sitting among shiny mechanical toy soldiers and wind-up toys in a nursery, looking uncertain and plain beside them, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -987,35 +1000,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐇', '🐇', '🐇', '🐇', '🌳'],
-        text: 'Once upon a time, four little rabbits lived with their mother under the roots of a big fir tree. Their names were Flopsy, Mopsy, Cotton-tail — and Peter. Peter was the most adventurous and mischievous of all.',
+        text: 'Once upon a time, four little rabbits lived with their mother under the roots of a big fir tree in a cosy, sandy burrow. Their names were Flopsy, Mopsy, Cotton-tail — and Peter. Flopsy, Mopsy, and Cotton-tail were good, obedient little rabbits. Peter was the most adventurous and mischievous of all.',
       },
       {
-        scene: ['🐇', '👩', '⚠️', '🥕'],
-        text: 'One morning, Mother Rabbit put on her shawl and picked up her basket. "You may go to the meadow and the lane," she said to her children, "but do NOT go into Mr McGregor\'s garden. Your father had an accident there, and ended up in a pie." Flopsy, Mopsy and Cotton-tail nodded. Peter was already thinking about the garden.',
+        scene: ['🐇', '👩', '⚠️', '🌿'],
+        text: '"Now, my dears," said Mother Rabbit one morning, putting on her cloak and picking up her basket, "you may go out into the fields and down the lane, but do NOT — under any circumstances — go into Mr McGregor\'s garden. Your father had an accident there, and he ended up in one of Mr McGregor\'s pies." Flopsy, Mopsy, and Cotton-tail nodded solemnly. Peter was already thinking about the garden.',
       },
       {
-        scene: ['🐇', '🚪', '🌿', '🥕'],
-        text: 'The moment his mother was gone, Peter squeezed under the gate into Mr McGregor\'s garden. It was full of lettuces and French beans and radishes — and Peter began to eat them up, one by one, feeling very pleased with himself.',
+        scene: ['🐇', '🐇', '🐇', '🌸', '🏃'],
+        text: 'The three good rabbits went off to gather blackberries in the lane, picking plump juicy ones and dropping them carefully into their baskets. Peter, however, ran straight to Mr McGregor\'s garden as fast as his little legs would carry him. He found the gate, squeezed underneath it, and slipped inside.',
+      },
+      {
+        scene: ['🥕', '🥬', '🐇', '😋'],
+        text: 'The garden was magnificent. Rows and rows of lettuces, fat French beans, crisp radishes — and, at the far end, a whole row of carrots! Peter helped himself to some lettuces, then some French beans, then, feeling rather full, he went to look for some parsley to settle his stomach. Everything tasted wonderful.',
+      },
+      {
+        scene: ['🐇', '🥬', '😄', '🌿'],
+        text: 'He ate and ate, hopping cheerfully from one row to the next. He was so busy eating that he completely forgot to be careful, or quiet, or to keep an eye on where he was going. And then he turned a corner among the cucumber frames — and came face to face with Mr McGregor himself, down on his knees planting cabbages.',
       },
       {
         scene: ['👨', '🐇', '😱', '🏃'],
-        text: 'Suddenly — "Stop, thief!" Mr McGregor came running around the corner with a rake! Peter bolted — he ran so fast his little blue jacket flew out behind him! He dashed between the flowerpots, knocked over watering cans, and squeezed through gaps with his heart hammering.',
+        text: '"Stop, thief!" shouted Mr McGregor, jumping to his feet and grabbing his rake. Peter bolted. He shot between the vegetable beds, skidded on a pile of loose earth, knocked over a watering can with a tremendous CLANG, and dodged around a cucumber frame — his heart hammering so hard he could feel it in his ears.',
       },
       {
         scene: ['🐇', '👟', '🥕', '🌿'],
-        text: 'In the scramble, Peter lost one shoe among the cabbages and another among the potatoes. He lost his little blue jacket too. Without them, he could run much faster — but he had no idea which way led to the gate.',
+        text: 'In the desperate scramble, Peter lost one shoe among the cabbages. He lost the other one among the potatoes. He lost his smart blue jacket entirely somewhere near the French beans. Without them he could run faster, but now he had no idea which direction the gate was. He ran one way — a wall. He ran another — a toolshed. He was completely lost.',
       },
       {
-        scene: ['🐇', '💧', '😢', '🌿'],
-        text: 'Peter felt quite dizzy and lost. He sat down and cried his big round tears. A friendly robin flew near him, but could not show him the way. Peter wandered into the tool shed by mistake and hid inside a watering can, very cold and very frightened.',
+        scene: ['🐇', '💧', '😢', '🏺'],
+        text: 'Peter felt dizzy and terrified. He sat down between two flowerpots and cried big, round tears. A friendly robin perched nearby and watched him with bright eyes, but couldn\'t show him the way. Then Peter heard the scrape of Mr McGregor\'s hoe getting closer, and he fled blindly into the toolshed — and dived headfirst into a large tin watering can.',
+      },
+      {
+        scene: ['🐇', '🪣', '🙈', '😰'],
+        text: 'He crouched inside the cold, wet can, barely breathing, while Mr McGregor poked about among the flowerpots looking for him. After what felt like forever, the footsteps went away. Peter crept out and looked cautiously round the door. He could see the garden, and beyond the rhubarb — the gate! The very same gate he had squeezed under at the start.',
       },
       {
         scene: ['🐇', '🚪', '🌿', '🏃'],
-        text: 'At last Peter spotted the gate! He darted for it and squeezed through the iron bars — leaving behind a tuft of his fur but getting himself FREE! He ran all the way through the meadow and back under the fir tree root, gasping for breath.',
+        text: 'Peter gathered every ounce of speed he had and made a dash for it. He flew across the garden, dived under the gate — and squeezed through with just a tuft of fur left caught on the iron bar. He burst out into the lane and ran all the way home without stopping, never once looking back.',
       },
       {
         scene: ['🐇', '🛏️', '🍵', '👩'],
-        text: 'His mother found Peter feeling quite unwell and put him straight to bed. She made him chamomile tea and tucked him in warmly. Flopsy, Mopsy and Cotton-tail, who had been very good, had bread and milk and blackberries for supper. Peter slept for a long, long time — and next time, he thought, he might listen to his mother.',
+        text: 'His mother found him on the doorstep, exhausted and shaking. She put him straight to bed with a hot-water bottle and a cup of chamomile tea. Flopsy, Mopsy, and Cotton-tail, who had been perfectly good all day, had bread and milk and blackberries for supper. Peter had nothing but tea and a very uncomfortable night — and next time, he thought, he really might listen to his mother.',
       },
     ],
   },
