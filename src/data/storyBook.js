@@ -149,6 +149,18 @@
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
+// ─── dog-and-shadow ───────────────────────────────────────────────────────────
+// page-1.jpg  → "A happy dog finding a big juicy bone and picking it up proudly, looking very pleased with himself, sunny park setting, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A dog trotting home proudly through a park with a big bone in his mouth, tail wagging, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A dog approaching a wooden bridge over a sparkling stream, sunlight reflecting on the water, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A dog on a bridge looking down into the water and seeing his own reflection with a bone, looking very interested, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A dog staring at his reflection with a greedy expression, thinking the reflection's bone looks bigger than his own, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A dog growling at his own reflection in the water, the reflection growling back, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A dog opening his mouth wide to snap at his reflection, the bone falling from his mouth, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A bone splashing into the stream water with ripples spreading out, the dog watching in horror, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A dog watching his bone sink to the bottom of the clear stream, looking devastated, his reflection gone, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A sad dog walking home slowly with nothing, head hanging low, the bridge behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
 // ─── ant-and-grasshopper ──────────────────────────────────────────────────────
 // page-1.jpg  → "A sunny summer meadow full of flowers, a tiny ant carrying a large crumb of food along a path, looking determined and hardworking, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "An ant marching back and forth carrying food to an underground home, busy and focused, summer flowers all around, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1373,27 +1385,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐕', '🥩', '😄', '🌳'],
-        text: 'A dog was trotting home through the park, feeling very pleased with himself. Clenched between his teeth was a big, juicy bone — the finest bone he had ever found. He could not wait to get home and eat it.',
+        text: 'One sunny afternoon, a dog was sniffing happily around the park when he found something wonderful — a big, fat, juicy bone lying right there in the grass! His tail wagged so fast it was a blur. It was the finest bone he had ever seen in his whole life.',
+      },
+      {
+        scene: ['🐕', '🥩', '💭', '🏠'],
+        text: 'The dog picked up the bone carefully in his teeth and stood there for a moment, imagining the magnificent feast he was going to have. He would take it home, settle down in his favourite sunny spot, and gnaw on it for hours. What a perfectly wonderful day!',
+      },
+      {
+        scene: ['🐕', '🌳', '🏃', '😊'],
+        text: 'He set off for home, trotting along the park path with his head held high and the bone clamped firmly in his mouth. Other dogs he passed glanced at the bone with wide, envious eyes, and the dog felt very proud indeed. Nobody had a bone as fine as his.',
       },
       {
         scene: ['🐕', '🌉', '💧', '☀️'],
-        text: 'To get home, the dog had to cross a little wooden bridge over a stream. He trotted out onto the bridge, his claws clicking on the planks, the bone held proudly in his mouth.',
+        text: 'To get home, the dog had to cross a little wooden bridge over a clear, sparkling stream. The sun shone brightly on the water below and made everything glitter and dance. He trotted out onto the bridge, his claws clicking cheerfully on the wooden planks.',
       },
       {
         scene: ['🐕', '💧', '🐕', '🥩'],
-        text: 'The dog looked down into the clear water below — and saw another dog looking back up at him! And that other dog had a bone too! A bone that looked even bigger and juicier than his own.',
+        text: 'Halfway across, the dog glanced down — and stopped dead. There in the water below was another dog, staring straight back up at him! And that other dog had a bone in his mouth too! A bone that looked absolutely enormous — even bigger and juicier than his own!',
       },
       {
         scene: ['🐕', '😤', '💭', '🥩'],
-        text: 'The dog did not realise he was looking at his own reflection. He thought it was a real dog with a real bone. "I want THAT bone too!" he growled to himself. "I shall have both!"',
+        text: 'The dog did not realise he was looking at his own reflection shimmering in the water. He truly believed it was a different dog with a different bone. His eyes went wide with greed. "I want THAT bone as well!" he growled to himself. "If I can grab it, I shall have TWO bones!"',
+      },
+      {
+        scene: ['🐕', '😠', '💧', '🐕'],
+        text: 'He leaned over the edge of the bridge and growled at the reflection. The reflection growled back. He barked — the reflection barked. This made the dog furious. "How DARE you growl at me?" he snarled. "That bone is going to be mine!"',
       },
       {
         scene: ['🐕', '💦', '🥩', '😱'],
-        text: 'He opened his mouth to snap at the reflection — and his own bone fell straight into the water with a great SPLASH! He watched it sink slowly to the bottom of the stream. It was gone.',
+        text: 'He lunged forward and opened his mouth wide to snatch the bone from the other dog — and his own precious bone dropped straight out of his teeth! It hit the water with a great SPLASH and sank immediately to the bottom of the stream.',
       },
       {
-        scene: ['🐕', '😢', '💧', '💭'],
-        text: 'The dog stared sadly at the empty water. Now he had no bone at all. He had been so greedy, trying to take what wasn\'t his, that he lost the wonderful thing he already had. Be happy with what you have — or you may end up with nothing.',
+        scene: ['🐕', '💧', '😢', '🥩'],
+        text: 'The dog stared down into the water in horror. His bone was gone — sinking slowly, slowly down through the clear water until it disappeared into the mud below. The reflection was gone too, of course, because it had never been a real dog at all. Just himself.',
+      },
+      {
+        scene: ['🐕', '😢', '🌉', '🏠'],
+        text: 'The dog plodded home slowly, his tail dragging along the ground. He had started the afternoon with a perfectly wonderful bone. Now he had nothing at all. It is a foolish thing to drop what is real in your mouth whilst grasping at shadows. Be grateful for what you already have.',
       },
     ],
   },
