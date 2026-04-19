@@ -199,6 +199,19 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── velveteen-rabbit ─────────────────────────────────────────────────────────
+// page-1.jpg  → "A boy unwrapping a beautiful velveteen rabbit toy on Christmas morning, eyes wide with delight, cozy home with Christmas decorations, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A velveteen rabbit sitting among shiny mechanical toy soldiers and wind-up toys in a nursery, looking uncertain and plain beside them, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A wise old Skin Horse talking kindly to a velveteen rabbit, glowing warmly, the nursery around them, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A boy carrying his beloved velveteen rabbit everywhere — to bed, on a picnic, in the garden, shown in a split scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A velveteen rabbit with worn patches and floppy ears being hugged by a sleeping boy in bed, very loved and well-used, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A sick boy clutching his velveteen rabbit in bed with a fever, the rabbit keeping him company through the night, warm bedside lamp, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A healthy boy playing in a spring garden, spotting real wild rabbits playing in the grass, his velveteen rabbit in his arms, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A glowing fairy appearing in a moonlit garden, reaching her hand toward the velveteen rabbit with a gentle smile, magical light, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "The velveteen rabbit surrounded by a warm golden glow, beginning to transform, glowing from the inside out, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A real rabbit leaping joyfully in a garden, nose twitching, real paws hitting the soft grass for the first time, magical sparkles fading, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A real rabbit bounding across a meadow into the sunrise, joyful and free, the garden and the boy's window visible behind, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+//
 // ─── anansi-pot-of-wisdom ─────────────────────────────────────────────────────
 // page-1.jpg  → "A clever cartoon spider named Anansi sitting in a lush green West African forest, looking bright and mischievous, surrounded by animals and tall trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A divine Sky God figure in the clouds handing a glowing clay pot to a small excited spider, golden light radiating from the pot, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1018,35 +1031,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐰', '🎁', '🎄', '👦'],
-        text: 'On Christmas morning, a boy found a velveteen rabbit in his stocking. The rabbit was plump and soft, with a brown-and-white coat and pink silk ears. The boy hugged him tightly and thought he was the most beautiful thing he had ever seen.',
+        text: 'On Christmas morning, a boy pulled a velveteen rabbit out of his stocking. The rabbit was wonderfully soft — made of brown-and-white velvet, with real thread whiskers, glass bead eyes, and ears lined with pink silk. The boy hugged him tightly and thought he was the most beautiful thing he had ever seen.',
       },
       {
         scene: ['🐰', '🧸', '🎮', '😔'],
-        text: 'In the nursery, the velveteen rabbit sat among all the other toys. Some were shiny and new with mechanical parts. The rabbit felt very plain beside them. "Am I a real rabbit?" he asked the wise old Skin Horse one day.',
+        text: 'The velveteen rabbit was placed in the nursery with all the other toys. Some were very grand — there were wind-up soldiers, a mechanical mouse, and a glossy rocking horse who said he had been to the country twice with the boy. The rabbit sat quietly among them, feeling rather plain and ordinary.',
       },
       {
         scene: ['🐴', '🐰', '💬', '✨'],
-        text: '"Real isn\'t how you are made," said the Skin Horse gently. "It\'s a thing that happens to you when a child loves you for a long, long time. It doesn\'t happen all at once, but once you are Real, you can never become unreal again."',
+        text: 'One day the rabbit asked the wise old Skin Horse — who had been loved by generations of children — "What does it mean to be Real?" The Skin Horse thought carefully. "Real isn\'t how you are made," he said at last. "It\'s a thing that happens to you. When a child loves you for a long, long time — not just to play with but truly loves you — then you become Real."',
+      },
+      {
+        scene: ['🐴', '🐰', '💭', '❤️'],
+        text: '"Does it hurt?" asked the rabbit. "Sometimes," said the Skin Horse honestly. "But when you are Real, you don\'t mind being hurt. It doesn\'t happen all at once. It takes a long time. But once you are Real, you can never become unreal again. It lasts for always."',
       },
       {
         scene: ['👦', '🐰', '🛏️', '❤️'],
-        text: 'Time passed, and the rabbit became the boy\'s favourite. The boy took him everywhere — to bed every single night, on picnics, into the garden. The rabbit\'s fur grew worn and shabby, his ears floppy, his velvet coat rubbed thin. But he didn\'t mind, because he was loved.',
+        text: 'Then something wonderful happened. The boy lost his other toys one by one, but he kept the velveteen rabbit. He took him to bed every single night. He carried him to breakfast. He brought him on picnics and into the garden and on long walks. Slowly the rabbit\'s fur rubbed thin in patches. His ears grew floppy. His velvet coat became worn and soft. But he did not mind — because he was loved.',
       },
       {
-        scene: ['🤒', '👦', '🐰', '🏠'],
-        text: 'One winter the boy fell ill with a fever. Through the long, frightening nights, he clutched the velveteen rabbit close. The rabbit kept him company through every difficult hour, never leaving his side.',
+        scene: ['🤒', '👦', '🐰', '🌙'],
+        text: 'One winter the boy fell ill with a terrible fever that lasted many days. He clutched the velveteen rabbit close through every long, frightening night, and the rabbit kept him company through it all — never complaining, never leaving his side. When the boy finally got better, he was thin and pale, but he held the rabbit up and said, "You stayed with me the whole time."',
       },
       {
-        scene: ['🌸', '👦', '😊', '🐰'],
-        text: 'The boy recovered, and spring came again. One afternoon in the garden, the boy saw real wild rabbits playing in the grass. They were so lively and real! He looked at his own beloved rabbit. "He is MORE real than they are," the boy thought firmly. "Because I love him."',
+        scene: ['🌸', '👦', '😊', '🐇'],
+        text: 'Spring came again, warm and green. One afternoon in the garden the boy saw real wild rabbits playing by the hedge — twitching their real noses, kicking their real legs, bounding and leaping in the sunshine. They were so alive! The boy looked down at his own beloved rabbit with his worn velvet and patched ears. "He is MORE real than any of them," the boy thought firmly, "because I love him."',
+      },
+      {
+        scene: ['🌙', '🐰', '✨', '🧚'],
+        text: 'That night, when the garden was quiet and moonlit, a small, bright fairy appeared from among the flowers. She floated up to the velveteen rabbit, who lay alone in the grass, and she looked at him with kind, serious eyes. "Little Rabbit," she said softly, "you have been loved. Really, truly loved. And that makes you deserve to be Real."',
       },
       {
         scene: ['🐰', '✨', '🌟', '🌿'],
-        text: 'That night, a magical thing happened. A fairy appeared in the garden and touched the velveteen rabbit. A warm golden light spread over him. And slowly, gently, the velveteen rabbit became — truly and completely — a real rabbit.',
+        text: 'She breathed on him, and a warm golden light spread from her fingertips right through the velveteen rabbit\'s body. Something changed — something deep and wonderful and impossible to describe. The rabbit blinked. He wriggled. He felt — different.',
       },
       {
-        scene: ['🐰', '🌿', '🌸', '🌈'],
-        text: 'He leapt! He felt the soft grass under his new real paws. He smelled the flowers with a real nose. He bounded across the garden with real rabbit legs. He was real at last — made real by love. And somewhere nearby, the boy smiled in his sleep, feeling happy without quite knowing why.',
+        scene: ['🐰', '🌿', '🌸', '😲'],
+        text: 'He stretched his hind legs — and they moved! Real legs, with real muscles! He twitched his nose — a real nose, smelling real grass and real night air! He leapt — truly leapt — and felt the soft earth spring under his real paws. He was real! He was a real rabbit at last!',
+      },
+      {
+        scene: ['🐰', '🐇', '🌅', '🌈'],
+        text: 'He bounded joyfully into the meadow where the wild rabbits ran. They welcomed him as one of their own. Somewhere in the house behind him, the boy slept deeply and peacefully, smiling in his sleep without knowing why. And the velveteen rabbit ran and leapt and played — made real at last, by love.',
       },
     ],
   },
