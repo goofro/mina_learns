@@ -743,4 +743,46 @@ export const STORY_BOOKS = [
       },
     ],
   },
+
+  // ─── Aesop Fables ────────────────────────────────────────────────────────────
+
+  {
+    id: 'lion-and-mouse',
+    title: 'The Lion and the Mouse',
+    subtitle: 'Even the smallest friend can help',
+    coverEmoji: '🦁',
+    origin: 'western',
+    color: '#f59e0b',
+    shadow: '#d97706',
+    pages: [
+      {
+        scene: ['🦁', '🌿', '😴', '☀️'],
+        text: 'A mighty lion lay sleeping in the warm sunshine, his great golden mane spread out around him. All the animals tiptoed past, careful not to wake the most powerful creature in the land.',
+      },
+      {
+        scene: ['🐭', '🦁', '😱', '🐾'],
+        text: 'A tiny mouse was scurrying through the grass when she accidentally ran right across the lion\'s nose! The lion woke with a roar and slapped his enormous paw down, trapping the little mouse underneath.',
+      },
+      {
+        scene: ['🦁', '😤', '🐭', '🙏'],
+        text: '"How dare you wake me!" growled the lion, lifting his paw to peer at the trembling mouse. "I shall eat you for disturbing my sleep!" The tiny mouse looked up at him with her biggest eyes. "Please, great lion — spare me! One day I may be able to help you!"',
+      },
+      {
+        scene: ['🦁', '😄', '🐭', '🌿'],
+        text: 'The lion burst out laughing. "YOU help ME? That is the funniest thing I have ever heard! You are so tiny!" But the lion was in a good mood, and the mouse\'s courage had amused him. He lifted his paw. "Go on then, little one. You are free."',
+      },
+      {
+        scene: ['🦁', '🕸️', '😰', '🌳'],
+        text: 'Some days later, the lion was padding through the jungle when — SNAP! — he stepped into a hunter\'s net. He struggled and roared, but the more he fought, the tighter the ropes pulled. His great strength was no use at all.',
+      },
+      {
+        scene: ['🐭', '🦁', '✂️', '🕸️'],
+        text: 'The little mouse heard his roars and came running. She saw the lion trapped in the net and without a moment\'s hesitation, she began to gnaw at the ropes with her sharp little teeth — nibble, nibble, nibble — as fast as she possibly could.',
+      },
+      {
+        scene: ['🦁', '🐭', '🎉', '🌟'],
+        text: 'One by one the ropes snapped, and the lion stepped free! He looked down at the tiny mouse with wonder and gratitude. "You were right, little friend," he said softly. "No act of kindness is ever too small. Thank you." And the two were friends for the rest of their days.',
+      },
+    ],
+  },
 ]
