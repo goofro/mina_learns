@@ -750,6 +750,52 @@ export const STORY_BOOKS = [
 
   // ─── World Stories ────────────────────────────────────────────────────────────
 
+  // ─── Beloved Classics ─────────────────────────────────────────────────────────
+
+  {
+    id: 'velveteen-rabbit',
+    title: 'The Velveteen Rabbit',
+    subtitle: 'Love makes things real',
+    coverEmoji: '🐰',
+    origin: 'western',
+    color: '#f59e0b',
+    shadow: '#d97706',
+    pages: [
+      {
+        scene: ['🐰', '🎁', '🎄', '👦'],
+        text: 'On Christmas morning, a boy found a velveteen rabbit in his stocking. The rabbit was plump and soft, with a brown-and-white coat and pink silk ears. The boy hugged him tightly and thought he was the most beautiful thing he had ever seen.',
+      },
+      {
+        scene: ['🐰', '🧸', '🎮', '😔'],
+        text: 'In the nursery, the velveteen rabbit sat among all the other toys. Some were shiny and new with mechanical parts. The rabbit felt very plain beside them. "Am I a real rabbit?" he asked the wise old Skin Horse one day.',
+      },
+      {
+        scene: ['🐴', '🐰', '💬', '✨'],
+        text: '"Real isn\'t how you are made," said the Skin Horse gently. "It\'s a thing that happens to you when a child loves you for a long, long time. It doesn\'t happen all at once, but once you are Real, you can never become unreal again."',
+      },
+      {
+        scene: ['👦', '🐰', '🛏️', '❤️'],
+        text: 'Time passed, and the rabbit became the boy\'s favourite. The boy took him everywhere — to bed every single night, on picnics, into the garden. The rabbit\'s fur grew worn and shabby, his ears floppy, his velvet coat rubbed thin. But he didn\'t mind, because he was loved.',
+      },
+      {
+        scene: ['🤒', '👦', '🐰', '🏠'],
+        text: 'One winter the boy fell ill with a fever. Through the long, frightening nights, he clutched the velveteen rabbit close. The rabbit kept him company through every difficult hour, never leaving his side.',
+      },
+      {
+        scene: ['🌸', '👦', '😊', '🐰'],
+        text: 'The boy recovered, and spring came again. One afternoon in the garden, the boy saw real wild rabbits playing in the grass. They were so lively and real! He looked at his own beloved rabbit. "He is MORE real than they are," the boy thought firmly. "Because I love him."',
+      },
+      {
+        scene: ['🐰', '✨', '🌟', '🌿'],
+        text: 'That night, a magical thing happened. A fairy appeared in the garden and touched the velveteen rabbit. A warm golden light spread over him. And slowly, gently, the velveteen rabbit became — truly and completely — a real rabbit.',
+      },
+      {
+        scene: ['🐰', '🌿', '🌸', '🌈'],
+        text: 'He leapt! He felt the soft grass under his new real paws. He smelled the flowers with a real nose. He bounded across the garden with real rabbit legs. He was real at last — made real by love. And somewhere nearby, the boy smiled in his sleep, feeling happy without quite knowing why.',
+      },
+    ],
+  },
+
   {
     id: 'anansi-pot-of-wisdom',
     title: 'Anansi and the Pot of Wisdom',
