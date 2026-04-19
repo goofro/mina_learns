@@ -753,6 +753,50 @@ export const STORY_BOOKS = [
   // ─── Beloved Classics ─────────────────────────────────────────────────────────
 
   {
+    id: 'frog-and-toad',
+    title: 'Frog and Toad Are Friends',
+    subtitle: 'The best thing in the world is a good friend',
+    coverEmoji: '🐸',
+    origin: 'western',
+    color: '#10b981',
+    shadow: '#059669',
+    pages: [
+      {
+        scene: ['🐸', '🍂', '🏠', '🌤️'],
+        text: 'It was early spring and Frog went hopping through the forest to visit his very best friend, Toad. The sun was warm, the birds were singing, and Frog felt wonderfully happy. He couldn\'t wait to see Toad.',
+      },
+      {
+        scene: ['🐸', '🚪', '🐊', '😴'],
+        text: 'Frog knocked on Toad\'s door. Nothing. He knocked again, louder. At last the door creaked open a tiny bit and one eye peered out. "Go away," mumbled Toad. "I am still asleep. It is not yet spring." He shut the door again.',
+      },
+      {
+        scene: ['🐸', '📅', '🌸', '😄'],
+        text: 'Frog opened the door and walked inside. "Toad!" he said cheerfully, "Look at the calendar! It IS spring — May is here! The flowers are blooming and the whole world is waiting for us." Toad pulled his blanket over his head. "Wake me in a few months," he said.',
+      },
+      {
+        scene: ['🐸', '🪟', '🌸', '🦋'],
+        text: 'Frog opened the curtains. Warm sunshine flooded the little room. Toad groaned and buried himself deeper. So Frog sat quietly on the edge of the bed, and began to tell Toad about all the wonderful things waiting outside — the pond sparkling, the meadow green, the butterflies just starting to fly.',
+      },
+      {
+        scene: ['🐊', '🐸', '🌿', '😊'],
+        text: 'One ear appeared from under the blanket. Then the other. Then Toad\'s blinking eyes. "The pond is really sparkling?" he asked. "Truly sparkling," said Frog. Toad sat up slowly and looked out the window. Even he had to admit it did look rather lovely.',
+      },
+      {
+        scene: ['🐸', '🐊', '🌸', '🌊', '🦋'],
+        text: 'They spent the whole wonderful day together — walking by the pond, watching the dragonflies, eating sandwiches on a warm flat rock, and laughing about everything and nothing. Toad decided that spring was quite a good idea after all.',
+      },
+      {
+        scene: ['🌅', '🐸', '🐊', '🏠'],
+        text: 'As the golden sun dipped low, they walked back to Toad\'s house. "Thank you for waking me," said Toad quietly. "I almost missed this whole wonderful day." Frog smiled. "That\'s what best friends are for," he said.',
+      },
+      {
+        scene: ['🐸', '🐊', '⭐', '🌙'],
+        text: 'They sat on Toad\'s doorstep as the first stars came out, not saying much at all — just being happy to be together. And there is nothing quite as good in the whole world as sitting beside your very best friend and feeling perfectly content.',
+      },
+    ],
+  },
+
+  {
     id: 'peter-rabbit',
     title: 'Peter Rabbit',
     subtitle: 'Sometimes rules are there to keep us safe',
