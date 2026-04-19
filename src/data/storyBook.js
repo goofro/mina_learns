@@ -749,6 +749,50 @@ export const STORY_BOOKS = [
   // ─── Classic European Fairy Tales ────────────────────────────────────────────
 
   {
+    id: 'princess-and-pea',
+    title: 'The Princess and the Pea',
+    subtitle: 'A true princess feels everything',
+    coverEmoji: '👸',
+    origin: 'western',
+    color: '#8b5cf6',
+    shadow: '#7c3aed',
+    pages: [
+      {
+        scene: ['🤴', '🏰', '💭', '👸'],
+        text: 'Once upon a time, a young prince lived in a grand castle. He wanted very much to find a true princess to marry — but how could he be sure someone was a real princess? He had met many ladies who claimed to be princesses, but none quite seemed right.',
+      },
+      {
+        scene: ['⛈️', '🌧️', '🚪', '👸'],
+        text: 'One wild and stormy night, there came a knock at the castle gate. The king opened the door to find a young woman standing in the pouring rain, her hair dripping and her dress soaking wet. "I am a princess!" she said.',
+      },
+      {
+        scene: ['👑', '👸', '🤔', '💭'],
+        text: 'The queen looked at the soggy visitor carefully. She didn\'t say a word, but she had a clever idea — a secret test that only a true princess could pass. She slipped quietly upstairs to prepare the guest bedroom.',
+      },
+      {
+        scene: ['🛏️', '🫛', '📚', '📚'],
+        text: 'The queen placed one tiny green pea on the base of the bed. Then she piled twenty mattresses on top of it, one by one. Then twenty thick feather quilts on top of those. The bed was so tall the princess needed a ladder to climb up.',
+      },
+      {
+        scene: ['👸', '🛏️', '😴', '🌙'],
+        text: 'The princess climbed up and settled down to sleep. The whole castle was quiet and dark. The rain drummed on the windows. Everyone else slept soundly — but would the princess?',
+      },
+      {
+        scene: ['👸', '☀️', '😩', '🛏️'],
+        text: 'In the morning, the princess came down to breakfast looking rather tired. "How did you sleep, my dear?" asked the queen pleasantly. The princess hesitated, not wanting to seem rude. But then she said honestly: "I am sorry — I slept terribly! There was something hard in the bed and I tossed and turned all night. I am covered in little bruises!"',
+      },
+      {
+        scene: ['👑', '👸', '😄', '🫛'],
+        text: 'The queen smiled a wide smile and clasped her hands together. Only a true princess could be sensitive enough to feel a tiny pea through twenty mattresses and twenty quilts! She showed everyone the little pea, and the king and queen agreed — this was indeed a real princess.',
+      },
+      {
+        scene: ['🤴', '👸', '💍', '🎉'],
+        text: 'The prince was delighted. He had found his true princess at last! They were married with a wonderful celebration, and the tiny pea was put in a glass case in the royal museum where everyone could see it. And they all lived happily ever after.',
+      },
+    ],
+  },
+
+  {
     id: 'ugly-duckling',
     title: 'The Ugly Duckling',
     subtitle: 'You are beautiful just as you are',
