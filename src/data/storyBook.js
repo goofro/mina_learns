@@ -199,6 +199,19 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── jack-and-the-beanstalk ───────────────────────────────────────────────────
+// page-1.jpg  → "A boy and his mother in a small cottage looking sad and poor, a skinny old cow standing outside, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A boy on a country road exchanging a cow for a handful of colourful glowing magic beans from a mysterious old man, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "An angry mother throwing glowing beans out the window into the garden at night, the boy looking sad, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "An enormous magical beanstalk growing overnight through clouds, twisting and spiralling up into the sky from a small garden, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A boy climbing an enormous beanstalk high into the clouds, looking up adventurously, tiny cottage far below, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A gigantic castle above the clouds on a huge landscape, a tiny boy approaching cautiously, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A boy tiptoeing through an enormous room with giant furniture, bags of gold coins on the table, a golden goose sitting on a perch, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A terrifying giant bellowing FEE FI FO FUM in an enormous room, a tiny boy dashing away with a bag of gold, children's book illustration style, vibrant colors, dramatic, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A boy sliding down the beanstalk as fast as he can, the giant's huge hand reaching after him from above the clouds, children's book illustration style, vibrant colors, action scene, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A boy chopping at the base of a giant beanstalk with an axe, the beanstalk beginning to sway and topple, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A boy and his mother dancing joyfully in their cottage with bags of gold and a golden goose, the toppled beanstalk visible outside the window, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+//
 // ─── hansel-and-gretel ────────────────────────────────────────────────────────
 // page-1.jpg  → "A boy and girl holding hands at the edge of a dark forest, tall trees all around them, looking a little worried, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "Hansel and Gretel walking deeper into a dense magical forest, sunbeams through the trees, looking around curiously, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1269,31 +1282,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['👦', '🐄', '🏠', '😔'],
-        text: 'Jack lived with his mother in a small cottage. They were very poor, and one day his mother said sadly, "Jack, we have no food and no money. You must take our old cow to market and sell her."',
+        text: 'Jack lived with his mother in a small, tumbledown cottage at the edge of the village. They were very poor indeed — the cupboards were bare and the purse was empty. One morning his mother said sadly, "Jack, I am sorry, but we have no food left and no money. You must take our old cow Bessie to market and sell her. It\'s the only way."',
       },
       {
-        scene: ['👦', '🐄', '👴', '🫘'],
-        text: 'On the way to market, Jack met an old man who offered him five colourful beans in exchange for the cow. "These are magic beans!" said the old man with a wink. Jack thought that sounded exciting — so he made the swap.',
+        scene: ['👦', '🐄', '🌿', '👴'],
+        text: 'Jack set off along the road with Bessie plodding slowly beside him. He hadn\'t gone far when an old man appeared at the side of the road, leaning on a gnarled stick. "Fine cow you have there, boy," he said. "I\'ll make you a trade — this old cow for these five beans." He held out his hand. In his palm were five small, ordinary-looking beans.',
+      },
+      {
+        scene: ['👦', '🫘', '✨', '💭'],
+        text: '"They\'re MAGIC beans," said the old man, his eyes twinkling. "Plant them tonight and see what happens by morning." Jack looked at the beans. They did seem to be glowing very faintly. A swap for beans instead of money! His mother would not be pleased. But Jack was curious — and he made the trade.',
       },
       {
         scene: ['👦', '👩', '😠', '🫘', '🌙'],
-        text: 'His mother was furious. "Magic beans?! You traded our cow for BEANS?" She threw them out the window and sent Jack to bed with no supper. But when morning came, something extraordinary had happened overnight.',
+        text: 'As expected, his mother was furious. "Magic beans?! You traded our only cow for BEANS?!" She threw the beans out the window in a rage and sent Jack to bed without any supper at all. Jack lay in the dark feeling rather foolish. But when he woke the next morning and looked out the window, his mouth fell open.',
       },
       {
         scene: ['🌱', '🌿', '🌳', '☁️', '✨'],
-        text: 'A gigantic beanstalk had grown up through the night — twisting and spiralling all the way up through the clouds and beyond! Jack grabbed the stalk and started to climb. Up, up, up he went until he reached the top.',
+        text: 'Overnight, a tremendous beanstalk had erupted from the ground where the beans had fallen. It twisted and spiralled upward — past the rooftops, past the treetops, up through the low clouds, and far, far higher, disappearing into the sky above. Jack didn\'t hesitate for even a moment. He grabbed the stalk and began to climb.',
       },
       {
-        scene: ['🏰', '👣', '💰', '🥚'],
-        text: 'Above the clouds was a vast kingdom and a huge castle. Inside lived an enormous giant who had bags of gold coins and a magical golden goose that laid golden eggs. Jack crept in very quietly and grabbed the bag of gold.',
+        scene: ['👦', '☁️', '🏰', '😮'],
+        text: 'Up Jack climbed, hand over hand, until he pushed through the clouds and found himself standing in a completely different world. There were grey rolling hills of cloud and in the distance, an enormous castle — tall as a mountain, wide as a village, built of dark stone that rumbled when the wind blew.',
+      },
+      {
+        scene: ['🏰', '👦', '💰', '🪿'],
+        text: 'Jack crept to the castle and squeezed through a crack in the enormous door. Inside was a vast hall with a table as big as a field. On the table sat bags and bags of gold coins. And on a perch in the corner sat a beautiful goose with golden feathers. Even as Jack watched, the goose laid an egg — a perfect, gleaming golden egg. Jack had never seen anything so wonderful.',
+      },
+      {
+        scene: ['👹', '💢', '🏠', '😱'],
+        text: 'Then the ground shook. The walls trembled. And a voice like thundering boulders roared through the castle: "FEE-FI-FO-FUM! I smell the blood of an Englishman! Be he alive or be he dead, I\'ll grind his bones to make my bread!" The giant had come home. Jack grabbed the bag of gold and ran.',
       },
       {
         scene: ['👹', '😠', '🏃', '💨'],
-        text: '"FEE FI FO FUM!" roared the giant, shaking the whole castle. Jack sprinted for the beanstalk with the giant thundering behind him. Down Jack climbed — faster than he had ever moved in his life!',
+        text: 'The giant\'s footsteps shook the whole castle like an earthquake. "THIEF!" he bellowed, and came thundering after Jack. Jack sprinted down the hallway and leapt onto the beanstalk, sliding and scrambling down as fast as he could possibly go, the giant\'s furious roar echoing above him.',
       },
       {
-        scene: ['🪓', '🌿', '💥', '👦', '👩', '🎉'],
-        text: 'When he reached the bottom, Jack grabbed an axe and CHOP, CHOP, CHOP — he cut down the beanstalk! The giant was gone, and Jack and his mother had the bag of gold. They never went hungry again, and they lived happily ever after.',
+        scene: ['🪓', '🌿', '👦', '💪'],
+        text: 'The moment Jack\'s feet touched the ground, he raced to the shed and grabbed the woodcutting axe. CHOP — the beanstalk shuddered. CHOP — it cracked and groaned. CHOP! The enormous beanstalk toppled and crashed to the ground with a noise like a falling oak tree. The giant was gone.',
+      },
+      {
+        scene: ['👦', '👩', '💰', '🪿', '🎉'],
+        text: 'Jack\'s mother rushed out of the cottage and stared at the gold and the golden goose. Then she looked at her son, and her eyes went rather wide. The golden goose laid them one more golden egg, right there on the garden path. Jack and his mother hugged each other and laughed. They never went hungry again — and they lived happily ever after.',
       },
     ],
   },
