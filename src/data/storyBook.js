@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── anansi-pot-of-wisdom ─────────────────────────────────────────────────────
+// page-1.jpg  → "A clever cartoon spider named Anansi sitting in a lush green West African forest, looking bright and mischievous, surrounded by animals and tall trees, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A divine Sky God figure in the clouds handing a glowing clay pot to a small excited spider, golden light radiating from the pot, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Anansi the spider sneaking away with a glowing pot, looking scheming, thinking about keeping all wisdom for himself, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Anansi trying to climb a tall tree with a big pot strapped to his front, struggling and slipping, the pot getting in the way, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A small boy watching his spider father struggle and helpfully suggesting he put the pot on his back instead, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Anansi sitting on a tree branch looking thoughtful and surprised, realizing his own son outsmarted him with the pot of all wisdom, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Anansi opening the glowing pot, wisdom floating out as glowing sparks and swirls in the air, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Glowing sparks of wisdom floating on the wind across a beautiful African landscape, spreading over villages, forests, and people, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "People in a village sharing stories and wisdom together, children listening, elders speaking, Anansi watching happily, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Anansi the spider spinning a beautiful web full of stories, animals and people gathered to listen, warm firelight scene in a West African village, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── princess-and-pea ─────────────────────────────────────────────────────────
 // page-1.jpg  → "A handsome young prince looking wistfully out a castle window at the kingdom below, looking thoughtful and lonely, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A dark stormy night with lightning and rain, a bedraggled young woman with soaking wet dress knocking at a grand castle gate, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1050,35 +1062,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🕷️', '🌍', '🌳', '☀️'],
-        text: 'Long ago in West Africa, there lived a very clever spider named Anansi. Anansi loved to think and to trick and to tell stories. He was small, but his mind was quick as lightning, and all the animals respected him.',
+        text: 'Long ago in West Africa, there lived a very clever spider named Anansi. He was not large or strong, but his mind was sharper and quicker than anyone\'s. He loved to think up clever plans, to tell stories, and to outwit animals three times his size. All the creatures of the forest knew Anansi — and they all respected him.',
       },
       {
         scene: ['🕷️', '🏺', '✨', '💭'],
-        text: 'One day, the Sky God Nyame gathered all the wisdom in the world and poured it into a great clay pot. He called for Anansi. "Take this pot," said Nyame. "Guard it well. It holds all the wisdom there is." Anansi took the pot and held it very tightly.',
+        text: 'One extraordinary day, the great Sky God Nyame called for Anansi. Anansi climbed all the way up on his web of silk until he reached the realm of clouds. There Nyame held out a clay pot that glowed with a warm golden light. "Anansi," said the Sky God, "I have gathered all the wisdom in the whole world and placed it inside this pot. I am giving it to you to guard." Anansi took the pot and felt it warm his legs.',
       },
       {
         scene: ['🕷️', '🏺', '🌳', '🧗'],
-        text: '"I will keep it all for myself!" thought Anansi cleverly. "If I have ALL the wisdom, I will be the most powerful creature in the world!" He decided to hide the pot at the very top of the tallest tree so nobody else could ever reach it.',
+        text: 'Anansi carried the pot home, but as he walked, a very tempting thought crept into his mind. "If I have ALL the wisdom in the world," he said to himself, "I will be more powerful than anyone! The animals will have to come to ME for every answer. I shall hide this pot at the very top of the tallest tree, where no one else can ever reach it!"',
       },
       {
         scene: ['🕷️', '🏺', '🌳', '😤'],
-        text: 'Anansi tied the pot to the front of his body with a vine and tried to climb the tree. But the pot kept getting in the way, bumping against the trunk. He slipped and slid. No matter how hard he tried, he could not climb with the big pot on his front.',
+        text: 'Anansi found the tallest tree in the forest. He tied the pot to the front of his round body using a strong vine, and began to climb. But the pot kept bumping against the bark of the trunk. His legs slipped. He tried again — bump, slip. He tried harder — bump, slip. No matter what he did, he could not get more than a few feet up the tree with the great pot on his front.',
       },
       {
         scene: ['🕷️', '👦', '💬', '🌳'],
-        text: 'Anansi\'s little son had been watching from the ground. "Father," said the boy helpfully, "why not tie the pot to your back? Then it won\'t be in your way." Anansi stopped and stared at his son. Such a simple, clever idea — and he hadn\'t thought of it himself!',
+        text: 'Anansi\'s little son had been sitting quietly at the foot of the tree, watching the whole time. Finally the boy said, very politely: "Father, could you not tie the pot to your back instead? Then it would not be in your way and you could climb much more easily." Anansi froze. He stared at his son for a long moment.',
       },
       {
         scene: ['🕷️', '🏺', '💭', '🌟'],
-        text: 'Anansi sat down on a branch and thought hard. Here he was, carrying a pot of ALL the wisdom in the world — and his own little son had just outsmarted him! What did that mean?',
+        text: 'Anansi climbed down and sat very still. The thought hit him like a stone dropped from a great height. Here he was — holding a pot containing ALL the wisdom in the world — and his own small son had just thought of something that he himself had not. His son, who had no pot of wisdom at all! What did that mean?',
+      },
+      {
+        scene: ['🕷️', '🏺', '😊', '💡'],
+        text: 'It meant that wisdom could not be owned. Wisdom was not something you could lock away or climb to the top of a tree with. Every creature already carried some wisdom inside them — even a small boy watching his father struggle. The more wisdom is shared and used and passed between people, the more of it there is.',
       },
       {
         scene: ['🕷️', '🏺', '🌬️', '🌍'],
-        text: 'Anansi understood. If he kept all the wisdom locked in one pot for himself, wisdom would be wasted. No pot could hold wisdom better than it was held by being shared and used and passed between people. He opened the pot and let the wisdom scatter on the wind.',
+        text: 'Anansi stood up straight and held the pot high above his head. Then he opened it wide. The wisdom rose up like warm golden smoke and scattered on the wind — drifting over the treetops, flowing into every village, settling into every heart and mind across the whole wide world.',
       },
       {
         scene: ['🌍', '👨', '👩', '👦', '✨'],
-        text: 'The wisdom floated out across the whole world — into every village, every heart, every mind. From that day on, wisdom was not owned by anyone. It was everywhere, found in stories, in questions, in listening, and in teaching others. And Anansi became the keeper of all stories, which he shared with everyone.',
+        text: 'From that day on, wisdom belonged to no one — and to everyone. It lived in the questions children asked and the answers elders gave. It lived in the stories people told around evening fires, in the lessons learned from mistakes, in the kindness shown to strangers. Wisdom was everywhere.',
+      },
+      {
+        scene: ['🕷️', '🌐', '📖', '🌟'],
+        text: 'And Anansi? He became the keeper of stories. He wove tales into his great silken web and shared them with any creature who came to listen. And so the spider who once wanted all the wisdom for himself ended up giving the greatest gift of all — the gift of stories for everyone.',
       },
     ],
   },
