@@ -149,6 +149,19 @@
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
+// ─── ant-and-grasshopper ──────────────────────────────────────────────────────
+// page-1.jpg  → "A sunny summer meadow full of flowers, a tiny ant carrying a large crumb of food along a path, looking determined and hardworking, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "An ant marching back and forth carrying food to an underground home, busy and focused, summer flowers all around, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A cheerful grasshopper playing a tiny violin and singing in the sunshine, flowers all around, looking completely carefree, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A grasshopper laughing and waving at a passing ant, gesturing for the ant to stop and play, the ant shaking her head while still carrying food, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A tiny ant looking up at the grasshopper seriously, pointing toward winter clouds in the distance, warning him to prepare, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A grasshopper laughing off the warning, sprawled on a sunny flower, playing his violin without a care, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Autumn leaves falling in an orange and golden meadow, the grasshopper looking up at the changing leaves with a slightly worried face, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A winter scene with snow falling, a cold shivering grasshopper searching desperately in the snow for food and finding nothing, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A freezing grasshopper knocking weakly on a small cozy door in the snowy ground, light glowing warmly from inside, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A kind ant opening her warm cozy underground home to the shivering grasshopper, firelight glowing inside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "An ant and grasshopper sitting together by a cozy fire underground eating together warmly, the grasshopper looking grateful and thoughtful, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── fox-and-grapes ───────────────────────────────────────────────────────────
 // page-1.jpg  → "A cheerful fox trotting through a sunny countryside on a hot summer day, looking hungry, flowers and fields around him, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A fox wandering through fields looking everywhere for food, tummy rumbling, nothing to eat in sight, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1396,27 +1409,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐜', '☀️', '🌾', '💪'],
-        text: 'All through the long, warm summer, a little ant worked hard every single day. Back and forth she trudged, carrying crumbs of food and seeds to store safely in her cosy underground home.',
+        text: 'All through the long, golden summer, a little ant worked hard from sunrise to sunset, every single day. She never rested and never complained. Back and forth she trudged along her path, carrying crumbs of bread, seeds from grasses, and tiny morsels of food to store safely in her cosy home underground.',
+      },
+      {
+        scene: ['🐜', '🏠', '🌾', '💾'],
+        text: 'Her underground larder was growing bigger every day. The ant counted her stores carefully and worked out exactly how much more she would need to last through the cold months ahead. She was not going to let winter catch her out.',
       },
       {
         scene: ['🦗', '🎵', '🌸', '😎'],
-        text: 'Nearby, a grasshopper spent his days singing and jumping and lounging in the sunshine. He laughed when he saw the ant rushing past. "Why work so hard?" he called. "Come and play with me! Summer will last forever!"',
+        text: 'Just a little way across the meadow, a grasshopper was having a perfectly wonderful time. He spent his days hopping from flower to flower, playing his tiny violin, singing his favourite songs at the top of his voice, and soaking up the glorious sunshine without a single worry in the world.',
       },
       {
-        scene: ['🐜', '🌾', '🦗', '🎵'],
-        text: '"I am storing food for winter," said the ant. "You should do the same." The grasshopper waved his long leg. "Winter is months away! There is plenty of time. Today I shall sing!" And he played his finest tune while the ant carried on working.',
+        scene: ['🦗', '🐜', '😄', '💬'],
+        text: 'One afternoon the grasshopper spotted the ant trudging past, loaded with food as usual. "Friend!" called the grasshopper cheerfully. "Why do you work so hard on such a beautiful day? Put down your load and come and sing with me! Summer is wonderful and there is plenty for everyone!"',
       },
       {
-        scene: ['🍂', '🌬️', '🦗', '🥶'],
-        text: 'But summer does not last forever. Autumn arrived, and then — whoosh — the cold winds of winter blew in. The flowers died, the grass turned brown, and the grasshopper had not saved a single crumb of food.',
+        scene: ['🐜', '🌾', '🦗', '⚠️'],
+        text: '"I am storing food for the winter," said the ant, not breaking her stride. "You should do the same. Winter will come before you know it and there will be nothing left to eat." The grasshopper waved a long leg dismissively. "Winter is months away! I shall worry about that later."',
       },
       {
-        scene: ['❄️', '🦗', '😢', '🏠'],
-        text: 'The grasshopper shivered and searched desperately for something to eat, but the ground was hard and frozen. There was nothing left anywhere. Hungry and cold, he went to knock at the ant\'s door.',
+        scene: ['🦗', '🎵', '🌞', '😄'],
+        text: 'The grasshopper played on. He played all through July and all through August, composing new songs and dancing in the warm evenings. The ant kept working. Day after day, the ant\'s store grew fuller and fuller, while the grasshopper\'s remained completely empty.',
+      },
+      {
+        scene: ['🍂', '🌬️', '🦗', '😟'],
+        text: 'Then one morning the grasshopper woke to find that the air was colder and the leaves on the trees had turned to gold and red. Autumn had arrived, and with it the first chilly breeze. He rubbed his front legs together uneasily. "There\'s still time," he told himself, but his voice was not quite as confident as before.',
+      },
+      {
+        scene: ['❄️', '🦗', '🌾', '😢'],
+        text: 'Then came winter. Snow fell, the ground froze, and every blade of grass vanished under a white blanket. The grasshopper searched desperately — under every stone, in every corner, along every frozen path. There was nothing. Not a crumb, not a seed, not a single thing to eat.',
+      },
+      {
+        scene: ['🦗', '❄️', '🏠', '🥺'],
+        text: 'Cold and thin and very sorry, the grasshopper made his way through the snow to the ant\'s door and knocked quietly. He felt ashamed. He remembered how he had laughed at her all those months ago and told her she worked too hard.',
+      },
+      {
+        scene: ['🐜', '🦗', '🔥', '🏠'],
+        text: 'The ant opened the door. She saw the grasshopper shivering on her doorstep, and although she remembered his laughter, she had a kind heart. She stepped back and said, "Come in out of the cold." She gave him warm soup and a place by her fire.',
       },
       {
         scene: ['🐜', '🦗', '🏠', '🌟'],
-        text: 'The kind ant opened the door and saw how cold and thin the grasshopper looked. Her heart softened. She shared some of her food with him and let him warm up by her fire. "Next summer," said the ant gently, "please remember to save a little for winter." The grasshopper nodded — he would never forget this lesson.',
+        text: '"Next summer," said the ant gently, "save a little each day, even when the sun is shining and you feel like singing. The summer is for both — for joy AND for preparing." The grasshopper nodded slowly, warming his cold legs by the fire. He would never, ever forget this lesson.',
       },
     ],
   },
