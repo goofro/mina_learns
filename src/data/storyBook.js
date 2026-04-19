@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── princess-and-pea ─────────────────────────────────────────────────────────
+// page-1.jpg  → "A handsome young prince looking wistfully out a castle window at the kingdom below, looking thoughtful and lonely, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A dark stormy night with lightning and rain, a bedraggled young woman with soaking wet dress knocking at a grand castle gate, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A king and queen opening the castle gate to find a beautiful but dripping wet young woman on the doorstep claiming to be a princess, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A queen alone in a bedroom with a sly knowing smile, placing one tiny green pea on the base of a bed, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A queen piling mattress after mattress on top of the pea, a huge tall stack growing almost to the ceiling, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A young woman in a nightgown climbing a ladder to reach the top of an enormous bed piled with mattresses and quilts, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A princess lying in an enormous tall bed at night, tossing and turning, unable to sleep, moonlight through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A tired-looking princess at the breakfast table telling the queen she slept terribly, the queen smiling widely with delight, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "The queen triumphantly holding up the tiny green pea for everyone to see, the king and prince looking amazed, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A prince and princess in a joyful wedding celebration, the tiny pea in a glass case on a royal pedestal nearby, castle ballroom, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+//
 // ─── jack-and-the-beanstalk ───────────────────────────────────────────────────
 // page-1.jpg  → "A boy and his mother in a small cottage looking sad and poor, a skinny old cow standing outside, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A boy on a country road exchanging a cow for a handful of colourful glowing magic beans from a mysterious old man, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1186,35 +1198,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🤴', '🏰', '💭', '👸'],
-        text: 'Once upon a time, a young prince lived in a grand castle. He wanted very much to find a true princess to marry — but how could he be sure someone was a real princess? He had met many ladies who claimed to be princesses, but none quite seemed right.',
+        text: 'Once upon a time, a young prince lived in a grand castle with his mother the queen and his father the king. He was kind and thoughtful and very ready to find a true princess to marry — but how could he be sure someone was a real princess? He had met many ladies who claimed to be princesses, but something about each one always seemed not quite right.',
       },
       {
-        scene: ['⛈️', '🌧️', '🚪', '👸'],
-        text: 'One wild and stormy night, there came a knock at the castle gate. The king opened the door to find a young woman standing in the pouring rain, her hair dripping and her dress soaking wet. "I am a princess!" she said.',
+        scene: ['⛈️', '🌧️', '🌙', '🏰'],
+        text: 'One wild autumn night, a ferocious storm broke over the kingdom. Thunder crashed, lightning split the sky, and rain hammered against the castle windows so hard that the candles flickered. The whole royal family had gone to bed early — when suddenly there came a loud knocking at the great castle gate.',
+      },
+      {
+        scene: ['👑', '🚪', '👸', '💧'],
+        text: 'The king himself went to see who could possibly be out on such a dreadful night. He opened the gate — and there stood a young woman, soaking wet from head to toe. Her beautiful dress was plastered with mud, her hair was dripping, and water was running down her nose. "Good evening," she said with great dignity. "I am a princess."',
       },
       {
         scene: ['👑', '👸', '🤔', '💭'],
-        text: 'The queen looked at the soggy visitor carefully. She didn\'t say a word, but she had a clever idea — a secret test that only a true princess could pass. She slipped quietly upstairs to prepare the guest bedroom.',
+        text: 'The queen looked the young woman up and down from behind the king\'s shoulder. She did not say what she was thinking. But she had a very clever idea — a secret test that not just anyone could pass. Only a true princess could pass it. She excused herself quietly and slipped upstairs.',
       },
       {
-        scene: ['🛏️', '🫛', '📚', '📚'],
-        text: 'The queen placed one tiny green pea on the base of the bed. Then she piled twenty mattresses on top of it, one by one. Then twenty thick feather quilts on top of those. The bed was so tall the princess needed a ladder to climb up.',
+        scene: ['🛏️', '🫛', '🪶', '😊'],
+        text: 'In the guest bedroom, the queen took one tiny green pea and placed it carefully in the very centre of the bed. Then she began piling mattresses on top — one, two, five, ten, twenty mattresses, one after another, stacked all the way up. Then twenty thick goose-down quilts on top of those. The bed was now so tall it nearly touched the ceiling.',
       },
       {
-        scene: ['👸', '🛏️', '😴', '🌙'],
-        text: 'The princess climbed up and settled down to sleep. The whole castle was quiet and dark. The rain drummed on the windows. Everyone else slept soundly — but would the princess?',
+        scene: ['👸', '🪜', '🛏️', '😮'],
+        text: 'The young woman was shown to her room. She looked up at the enormous stack of mattresses with wide eyes, then climbed the tall ladder that had been set beside the bed, and settled herself on top with a polite smile. The queen said goodnight and closed the door.',
       },
       {
-        scene: ['👸', '☀️', '😩', '🛏️'],
-        text: 'In the morning, the princess came down to breakfast looking rather tired. "How did you sleep, my dear?" asked the queen pleasantly. The princess hesitated, not wanting to seem rude. But then she said honestly: "I am sorry — I slept terribly! There was something hard in the bed and I tossed and turned all night. I am covered in little bruises!"',
+        scene: ['🌙', '👸', '🛏️', '😩'],
+        text: 'The whole castle slept. The storm gradually quieted. But the princess lay there in the dark, unable to get comfortable. She shifted and wriggled and turned. Something hard — impossibly tiny but maddeningly hard — was pressing into her, right through all those mattresses. She could not sleep a wink.',
+      },
+      {
+        scene: ['👸', '☀️', '😪', '🍳'],
+        text: 'In the morning the princess came down to breakfast looking dreadfully tired, with dark circles under her eyes. "How did you sleep, my dear?" asked the queen pleasantly, hiding a smile. The princess took a breath. She didn\'t want to seem ungrateful — but she had been raised to tell the truth. "I am so sorry," she said, "I slept absolutely terribly. There was something in the bed — something very small but very hard — and I barely slept a moment. I am quite covered in little bruises."',
       },
       {
         scene: ['👑', '👸', '😄', '🫛'],
-        text: 'The queen smiled a wide smile and clasped her hands together. Only a true princess could be sensitive enough to feel a tiny pea through twenty mattresses and twenty quilts! She showed everyone the little pea, and the king and queen agreed — this was indeed a real princess.',
+        text: 'The queen clapped her hands with delight. She reached under the enormous stack of mattresses and produced the tiny green pea. "THAT," she announced triumphantly to the whole room, "is a real princess! Only a true princess could be so delicate and sensitive that she could feel a single pea through twenty mattresses and twenty feather quilts!" The king nodded sagely. The prince looked at the princess with shining eyes.',
       },
       {
         scene: ['🤴', '👸', '💍', '🎉'],
-        text: 'The prince was delighted. He had found his true princess at last! They were married with a wonderful celebration, and the tiny pea was put in a glass case in the royal museum where everyone could see it. And they all lived happily ever after.',
+        text: 'The prince and the princess were married with the most wonderful celebration the kingdom had ever seen. The tiny pea was placed in a glass case in the royal museum, where visitors came from far and wide to see it. And as for the prince and princess — they lived, of course, happily ever after.',
       },
     ],
   },
