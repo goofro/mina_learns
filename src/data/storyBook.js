@@ -149,6 +149,19 @@
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
+// ─── lion-and-mouse ───────────────────────────────────────────────────────────
+// page-1.jpg  → "A peaceful sunny savanna with golden grass, a majestic lion sleeping contentedly in the warm sun, animals tiptoeing quietly past, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A tiny cute mouse scurrying busily through tall green grass, looking cheerful and busy, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A tiny mouse accidentally running across a sleeping lion's big nose, the lion's eye snapping open in surprise, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A large lion holding a tiny mouse under his enormous paw, looking down with a fierce expression, the mouse looking up with big pleading eyes, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A lion laughing with his head thrown back, a tiny mouse looking up bravely with hands clasped, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A lion gently lifting his paw to release a tiny mouse, the mouse running free with a grateful look back, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A tiny mouse sitting with her family telling an exciting story with big gestures, other mice listening with wide eyes, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Hunters in a forest setting a large rope net trap between the trees, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A large lion caught in a tangle of ropes, struggling and roaring, looking very worried, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const STORY_BOOKS = [
@@ -1443,31 +1456,47 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🦁', '🌿', '😴', '☀️'],
-        text: 'A mighty lion lay sleeping in the warm sunshine, his great golden mane spread out around him. All the animals tiptoed past, careful not to wake the most powerful creature in the land.',
+        text: 'On a warm and golden afternoon, the mighty lion lay stretched out in the sunshine, fast asleep. His great mane spread around his head like a crown. All the animals of the savanna tiptoed past quietly, careful not to disturb the most powerful creature in the land.',
+      },
+      {
+        scene: ['🐭', '🌿', '🌾', '🏃'],
+        text: 'Nearby, a tiny mouse was scurrying busily through the long grass, collecting seeds for her family. She was in such a hurry that she was not looking where she was going — darting this way and that, her little paws moving as fast as they could.',
       },
       {
         scene: ['🐭', '🦁', '😱', '🐾'],
-        text: 'A tiny mouse was scurrying through the grass when she accidentally ran right across the lion\'s nose! The lion woke with a roar and slapped his enormous paw down, trapping the little mouse underneath.',
+        text: 'Suddenly she ran right across something huge and warm and furry — the lion\'s nose! The lion\'s eyes flew open. He gave a tremendous roar and slapped his enormous paw down, pinning the tiny mouse firmly to the ground.',
       },
       {
         scene: ['🦁', '😤', '🐭', '🙏'],
-        text: '"How dare you wake me!" growled the lion, lifting his paw to peer at the trembling mouse. "I shall eat you for disturbing my sleep!" The tiny mouse looked up at him with her biggest eyes. "Please, great lion — spare me! One day I may be able to help you!"',
+        text: '"How DARE you wake me!" growled the lion, peering down at the trembling creature under his paw. His golden eyes narrowed. "I shall eat you for disturbing my rest!" The tiny mouse looked up at him and took the deepest breath of her life.',
+      },
+      {
+        scene: ['🐭', '💬', '🦁', '👂'],
+        text: '"Please, great and mighty lion — spare me!" she squeaked bravely. "I am so small I would not even be a mouthful for you. But if you let me go, I promise that one day I will help you in return!" She stood up as tall as she possibly could.',
       },
       {
         scene: ['🦁', '😄', '🐭', '🌿'],
-        text: 'The lion burst out laughing. "YOU help ME? That is the funniest thing I have ever heard! You are so tiny!" But the lion was in a good mood, and the mouse\'s courage had amused him. He lifted his paw. "Go on then, little one. You are free."',
+        text: 'The lion burst out laughing — a great rumbling roar of a laugh. "YOU help ME? Ha! That is the most ridiculous thing I have ever heard! Look at you!" But the mouse\'s courage had tickled him. He lifted his paw. "You are free, little one. Go on."',
+      },
+      {
+        scene: ['🐭', '🏠', '👨‍👩‍👧', '💬'],
+        text: 'The mouse raced home and told her whole family about the magnificent lion who had shown her mercy. "He was so big!" she said, stretching her tiny arms wide. "But he had a kind heart." Her family listened with wide, shining eyes.',
+      },
+      {
+        scene: ['🏹', '🌲', '🕸️', '😰'],
+        text: 'Some days later, hunters came to the savanna and set a cunning trap — a great net of thick ropes hidden on the forest floor. They hoped to catch the mighty lion. And sure enough, as the lion padded through the trees that evening, he stepped right into it.',
       },
       {
         scene: ['🦁', '🕸️', '😰', '🌳'],
-        text: 'Some days later, the lion was padding through the jungle when — SNAP! — he stepped into a hunter\'s net. He struggled and roared, but the more he fought, the tighter the ropes pulled. His great strength was no use at all.',
+        text: 'SNAP! The net closed around him! The lion roared and thrashed with all his enormous strength. But the more he fought, the tighter the ropes pulled. He was completely stuck. His great power was useless against the tangle of knots.',
       },
       {
         scene: ['🐭', '🦁', '✂️', '🕸️'],
-        text: 'The little mouse heard his roars and came running. She saw the lion trapped in the net and without a moment\'s hesitation, she began to gnaw at the ropes with her sharp little teeth — nibble, nibble, nibble — as fast as she possibly could.',
+        text: 'The little mouse heard his desperate roars from far away. She came running as fast as her tiny legs would carry her. She saw the lion trapped and, without a single moment\'s hesitation, she put her sharp teeth to the ropes and began to gnaw. Nibble, nibble, nibble — as fast as she could go.',
       },
       {
         scene: ['🦁', '🐭', '🎉', '🌟'],
-        text: 'One by one the ropes snapped, and the lion stepped free! He looked down at the tiny mouse with wonder and gratitude. "You were right, little friend," he said softly. "No act of kindness is ever too small. Thank you." And the two were friends for the rest of their days.',
+        text: 'One by one the ropes snapped. The lion stepped free, shook his great mane, and looked down at the tiny mouse with wonder and deep gratitude. "You were right, little friend," he said softly. "No act of kindness is ever too small. Thank you." And from that day, the mighty lion and the tiny mouse were the very best of friends.',
       },
     ],
   },
