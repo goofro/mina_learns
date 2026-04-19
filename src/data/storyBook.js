@@ -199,6 +199,19 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── frog-and-toad ────────────────────────────────────────────────────────────
+// page-1.jpg  → "A cheerful green frog hopping through a sunny spring forest, birds singing in the trees, flowers just beginning to bloom, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "Frog knocking on a small cozy door in a tree stump, Toad's sleepy eye peeking through a crack, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Frog inside a cozy cottage trying to pull blankets off a grumpy Toad who is still in bed, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Frog opening curtains to let bright spring sunshine into Toad's room, Toad squinting and grumbling, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "Toad peeking with one eye at the beautiful spring world outside the window, looking slightly interested despite himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Frog and Toad walking together along a path by a sparkling pond, dragonflies hovering above the water, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Frog and Toad sitting on a warm flat rock by the pond eating sandwiches together, looking relaxed and happy, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Frog and Toad watching butterflies and dragonflies over the pond, pointing and smiling, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Frog and Toad walking home together along a forest path in golden afternoon light, shadows long, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Frog and Toad sitting side by side on Toad's doorstep in the evening, first stars appearing, looking content, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-11.jpg → "Frog waving goodbye to Toad at his door in the moonlight, both smiling warmly, a perfect friendship scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── peter-rabbit ─────────────────────────────────────────────────────────────
 // page-1.jpg  → "A mother rabbit with a blue shawl and four little bunnies under the roots of a big fir tree, cozy and warm, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A mother rabbit warning her children seriously not to go into Mr McGregor's garden, holding her basket, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -955,36 +968,48 @@ export const STORY_BOOKS = [
     shadow: '#059669',
     pages: [
       {
-        scene: ['🐸', '🍂', '🏠', '🌤️'],
-        text: 'It was early spring and Frog went hopping through the forest to visit his very best friend, Toad. The sun was warm, the birds were singing, and Frog felt wonderfully happy. He couldn\'t wait to see Toad.',
+        scene: ['🐸', '🌸', '🌿', '☀️'],
+        text: 'It was the very first morning of spring, and Frog woke up feeling absolutely wonderful. The sun was warm, the birds were singing their first songs, and the forest smelled of new leaves and damp earth. There was only one thing Frog wanted to do — visit his very best friend, Toad.',
       },
       {
         scene: ['🐸', '🚪', '🐊', '😴'],
-        text: 'Frog knocked on Toad\'s door. Nothing. He knocked again, louder. At last the door creaked open a tiny bit and one eye peered out. "Go away," mumbled Toad. "I am still asleep. It is not yet spring." He shut the door again.',
+        text: 'Frog hopped down the path and knocked on Toad\'s door. Silence. He knocked again, louder. There was a long pause, then the door opened the tiniest crack and one bleary eye appeared. "Go away," growled Toad. "I am still asleep. It is not yet spring." He shut the door firmly.',
       },
       {
         scene: ['🐸', '📅', '🌸', '😄'],
-        text: 'Frog opened the door and walked inside. "Toad!" he said cheerfully, "Look at the calendar! It IS spring — May is here! The flowers are blooming and the whole world is waiting for us." Toad pulled his blanket over his head. "Wake me in a few months," he said.',
+        text: 'Frog opened the door and walked right in. "Toad! Look at the calendar!" he said cheerfully, pointing to the wall. "It IS spring! May is here! The whole world is waiting for us outside." Toad pulled his blanket all the way over his head. Only a muffled voice came out: "Wake me in September."',
       },
       {
-        scene: ['🐸', '🪟', '🌸', '🦋'],
-        text: 'Frog opened the curtains. Warm sunshine flooded the little room. Toad groaned and buried himself deeper. So Frog sat quietly on the edge of the bed, and began to tell Toad about all the wonderful things waiting outside — the pond sparkling, the meadow green, the butterflies just starting to fly.',
+        scene: ['🐸', '🪟', '☀️', '🌸'],
+        text: 'Frog drew back the curtains. Warm golden sunshine poured across the floor and lit up the whole room. Toad made a very displeased sound and tried to burrow deeper under the blankets. Frog sat patiently on the edge of the bed and began describing, in a slow and dreamy voice, everything that was waiting outside.',
+      },
+      {
+        scene: ['🐊', '👁️', '🌿', '💭'],
+        text: '"The pond," said Frog, "is absolutely sparkling today. And there are dragonflies — the blue ones. And the meadow grass is so green it almost glows." One of Toad\'s ears emerged from under the blanket. Then the other. Then two blinking eyes. "The blue dragonflies?" Toad said carefully. "The very ones," said Frog.',
       },
       {
         scene: ['🐊', '🐸', '🌿', '😊'],
-        text: 'One ear appeared from under the blanket. Then the other. Then Toad\'s blinking eyes. "The pond is really sparkling?" he asked. "Truly sparkling," said Frog. Toad sat up slowly and looked out the window. Even he had to admit it did look rather lovely.',
+        text: 'Toad sat up slowly, squinting at the sunny window. He looked at the bright sky. He looked at Frog\'s cheerful face. He sighed a very deep sigh — but it was not entirely an unhappy sigh. "I suppose," said Toad slowly, "that I could get up. Just for a little while."',
       },
       {
-        scene: ['🐸', '🐊', '🌸', '🌊', '🦋'],
-        text: 'They spent the whole wonderful day together — walking by the pond, watching the dragonflies, eating sandwiches on a warm flat rock, and laughing about everything and nothing. Toad decided that spring was quite a good idea after all.',
+        scene: ['🐸', '🐊', '🌊', '🦋'],
+        text: 'They walked down to the pond together. The water did sparkle, exactly as Frog had promised. They watched a family of ducks. They found a sunny flat rock and sat on it, and Frog had packed sandwiches, which they ate while watching the dragonflies dart back and forth over the shimmering water.',
+      },
+      {
+        scene: ['🐊', '🌸', '😄', '🌿'],
+        text: 'Toad found he was having a rather good time. He watched a frog jump into the pond with a satisfying splash. He listened to the birds. He ate three sandwiches. He began to think that perhaps spring was not so dreadful after all. He almost said so to Frog — but Frog already knew, and just smiled.',
+      },
+      {
+        scene: ['🐸', '🐊', '🌾', '🌅'],
+        text: 'They spent the whole long wonderful day outside — talking about nothing and everything, watching the afternoon shadows grow long across the meadow, and laughing at stories they had told each other a hundred times before but never seemed to get old.',
       },
       {
         scene: ['🌅', '🐸', '🐊', '🏠'],
-        text: 'As the golden sun dipped low, they walked back to Toad\'s house. "Thank you for waking me," said Toad quietly. "I almost missed this whole wonderful day." Frog smiled. "That\'s what best friends are for," he said.',
+        text: 'As the sky turned pink and gold, they walked slowly back toward Toad\'s house. "Thank you for waking me," Toad said quietly. He paused. "I almost missed the whole day." Frog put one hand on Toad\'s shoulder. "That\'s what best friends are for," he said simply.',
       },
       {
         scene: ['🐸', '🐊', '⭐', '🌙'],
-        text: 'They sat on Toad\'s doorstep as the first stars came out, not saying much at all — just being happy to be together. And there is nothing quite as good in the whole world as sitting beside your very best friend and feeling perfectly content.',
+        text: 'They sat together on Toad\'s doorstep as the stars came out one by one, not talking at all — just sitting side by side, listening to the frogs singing down by the pond, feeling perfectly, completely happy. And that, really, is the very best thing in the whole world.',
       },
     ],
   },
