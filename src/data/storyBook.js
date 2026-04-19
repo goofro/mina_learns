@@ -751,6 +751,58 @@ export const STORY_BOOKS = [
   // ─── World Stories ────────────────────────────────────────────────────────────
 
   {
+    id: 'momotaro',
+    title: 'Momotaro the Peach Boy',
+    subtitle: 'Kindness and teamwork win the day',
+    coverEmoji: '🍑',
+    origin: 'chinese',
+    color: '#ec4899',
+    shadow: '#db2777',
+    pages: [
+      {
+        scene: ['👩', '🏔️', '🌊', '🍑'],
+        text: 'Long ago in Japan, a kind old woman was washing clothes by the river when she noticed a huge, beautiful peach floating toward her. It was the biggest, rosiest peach she had ever seen! She carried it home to share with her husband.',
+      },
+      {
+        scene: ['🍑', '💥', '👶', '😲'],
+        text: 'When the old man raised his knife to cut the peach — it split open by itself! And inside, nestled in the sweet golden flesh, was a healthy baby boy! He had the rosiest cheeks and the brightest eyes. The old couple who had always longed for a child held him close with joy.',
+      },
+      {
+        scene: ['👦', '🍑', '👩', '👨', '🏠'],
+        text: 'They named him Momotaro — Peach Boy. He grew up quickly, strong and kind and brave. He helped with every chore, was gentle with every creature, and always had a smile for everyone he met. The whole village loved him dearly.',
+      },
+      {
+        scene: ['👦', '💪', '🗺️', '😤'],
+        text: 'But in those days, terrible ogres lived on a faraway island and terrorised the people, stealing food and causing misery everywhere. Momotaro could not bear it. "I will go to Ogre Island," he told his parents firmly, "and stop them." His parents packed him dumplings for the journey.',
+      },
+      {
+        scene: ['🐕', '🍑', '👦', '🌿'],
+        text: 'On the road, a dog came bounding up. "Where are you going?" it asked. "To Ogre Island!" said Momotaro. "May I come?" asked the dog. Momotaro gave the dog a dumpling, and together they walked on.',
+      },
+      {
+        scene: ['🐒', '🐦', '🍑', '👦', '🐕'],
+        text: 'Next a monkey joined them, then a pheasant — each given a dumpling, each eager to help. By the time they reached the sea, Momotaro had three brave companions walking beside him. Together they sailed to Ogre Island.',
+      },
+      {
+        scene: ['🏯', '👹', '👹', '⚔️'],
+        text: 'Ogre Island was dark and frightening, with a great iron fortress on a rocky cliff. The ogres were huge and fearsome — but Momotaro and his friends did not hesitate. The pheasant flew over the walls to scout, the monkey climbed the gate, and the dog charged forward barking.',
+      },
+      {
+        scene: ['👦', '👹', '💪', '🌟'],
+        text: 'Momotaro fought bravely while his three friends helped from every direction. The ogres, facing such a bold and clever team, were overwhelmed. One by one they surrendered, bowing their heads and promising never to trouble anyone again.',
+      },
+      {
+        scene: ['👦', '💰', '🎊', '🐕', '🐒', '🐦'],
+        text: 'Momotaro and his friends freed the stolen treasures and sailed back home loaded with riches. The whole village came out to cheer. Momotaro gave the treasure to help everyone in need, and his three brave friends were celebrated as heroes too.',
+      },
+      {
+        scene: ['👦', '👩', '👨', '🏠', '❤️'],
+        text: 'Momotaro ran to his parents and hugged them tightly. They wept happy tears. From that day on, the people of Japan lived in peace, and Momotaro was remembered as a hero — not just for his bravery, but for his kindness and the friends that kindness had won him.',
+      },
+    ],
+  },
+
+  {
     id: 'empty-pot',
     title: 'The Empty Pot',
     subtitle: 'Honesty is always the best choice',
