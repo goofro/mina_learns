@@ -749,6 +749,58 @@ export const STORY_BOOKS = [
   // ─── Classic European Fairy Tales ────────────────────────────────────────────
 
   {
+    id: 'ugly-duckling',
+    title: 'The Ugly Duckling',
+    subtitle: 'You are beautiful just as you are',
+    coverEmoji: '🦢',
+    origin: 'western',
+    color: '#14b8a6',
+    shadow: '#0d9488',
+    pages: [
+      {
+        scene: ['🦆', '🥚', '🥚', '🥚', '🌿'],
+        text: 'One spring morning on a peaceful farm pond, a mother duck sat warming her eggs. One by one the eggs began to crack and tiny fluffy ducklings wiggled out — cheeping and wobbling on their new little legs.',
+      },
+      {
+        scene: ['🥚', '💥', '🐣', '😮'],
+        text: 'But one egg was bigger than all the rest, and it took much longer to hatch. At last it cracked open — and out tumbled a duckling quite unlike the others. He was large and grey and clumsy, nothing like his small, fluffy yellow brothers and sisters.',
+      },
+      {
+        scene: ['🐣', '🦆', '🦆', '😢'],
+        text: '"Look at him!" quacked the other ducklings, waddling away. "He is so big and grey and odd! He is not like us at all." The little grey duckling hung his head sadly. Even his own brothers and sisters did not want to play with him.',
+      },
+      {
+        scene: ['🐣', '🐔', '🐕', '😔'],
+        text: 'The other farm animals were no kinder. The hens clucked at him. The dog barked and chased him away. Everyone seemed to think there was something very wrong with him. The ugly duckling felt utterly alone.',
+      },
+      {
+        scene: ['🐣', '🌲', '🌿', '🏃'],
+        text: 'Unable to bear it any longer, the little duckling ran away from the farm. He wandered across fields and through marshes, searching for somewhere he might belong. But everywhere he went, animals took one look at him and turned away.',
+      },
+      {
+        scene: ['❄️', '🐣', '🌊', '🥶'],
+        text: 'Winter came and the cold was bitter. The duckling shivered alone by the freezing pond, his feathers ruffled against the icy wind. It was the loneliest, hardest time he had ever known. But still he kept going, one day at a time.',
+      },
+      {
+        scene: ['🌸', '🌱', '☀️', '🐣'],
+        text: 'Slowly, slowly, winter melted into spring. Warm sunshine returned, flowers bloomed, and the duckling felt something changing inside him. He was bigger now, and his feathers had grown long and smooth and white.',
+      },
+      {
+        scene: ['🦢', '🦢', '🌊', '✨'],
+        text: 'He came to a beautiful lake where three magnificent white swans were gliding across the shimmering water. They were the most graceful, lovely birds he had ever seen. Feeling very small, he bent his head shyly — and saw his own reflection in the water.',
+      },
+      {
+        scene: ['🦢', '💧', '😲', '✨'],
+        text: 'Looking back at him was not an ugly duckling at all — but a beautiful white swan! Tall, graceful, with a long elegant neck and pure white wings. He was a swan! He had been a swan all along, just waiting to grow into himself.',
+      },
+      {
+        scene: ['🦢', '🦢', '🦢', '🌊', '😊'],
+        text: 'The three swans swam over to welcome him warmly. Children on the bank pointed and said, "Look at that new swan — he\'s the most beautiful of all!" The young swan tucked his head in happiness. He had found where he truly belonged, and he was never lonely again.',
+      },
+    ],
+  },
+
+  {
     id: 'jack-and-the-beanstalk',
     title: 'Jack and the Beanstalk',
     subtitle: 'A big adventure from tiny seeds',
