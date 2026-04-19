@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── hansel-and-gretel ────────────────────────────────────────────────────────
+// page-1.jpg  → "A boy and girl holding hands at the edge of a dark forest, tall trees all around them, looking a little worried, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "Hansel and Gretel walking deeper into a dense magical forest, sunbeams through the trees, looking around curiously, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A magical little cottage made entirely of gingerbread, candy canes, chocolate roof, sugar windows, discovered in a forest clearing, warm light inside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Hansel and Gretel nibbling pieces of the gingerbread cottage with big smiles, crumbs on their faces, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "An old woman appearing at the door of the cottage with a sweet smile, beckoning Hansel and Gretel inside, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Hansel and Gretel inside the cozy but strange cottage, eating at a little table, looking a bit uncertain about the old woman, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A brave Gretel looking determined, spotting a key hanging on the wall while the old woman isn't watching, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Gretel grabbing Hansel's hand and running for the door, key in hand, the old woman just turning around, children's book illustration style, vibrant colors, action scene, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Hansel and Gretel running through the forest together at full speed, hand in hand, the dark trees behind them, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Hansel and Gretel bursting out of the forest to see their home ahead, their father running toward them with open arms, joyful reunion, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── gingerbread-man ──────────────────────────────────────────────────────────
 // page-1.jpg  → "A little old woman mixing gingerbread dough in a cozy kitchen, shaping a little gingerbread man on a baking tray, warm oven glowing, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A gingerbread man leaping out of the oven door with a big grin, the little old woman and old man reaching for him in surprise, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
@@ -1296,32 +1308,44 @@ export const STORY_BOOKS = [
     shadow: '#db2777',
     pages: [
       {
-        scene: ['👦', '👧', '🌲', '🌲', '🏠'],
-        text: 'Hansel and Gretel were a brother and sister who lived near a great forest. One day they wandered too far into the trees and got completely lost. The forest grew dark all around them and they held each other\'s hands tight.',
+        scene: ['👦', '👧', '🌲', '🌲', '🌅'],
+        text: 'Hansel and Gretel were a brother and sister who lived with their father near the edge of a great forest. One bright morning they decided to go exploring among the trees. The forest looked friendly in the morning light, full of birdsong and dappled sunshine. So in they went.',
+      },
+      {
+        scene: ['🌲', '🌲', '👦', '👧', '😟'],
+        text: 'They walked and walked, following one path and then another, going deeper and deeper. The trees grew taller and the sunlight dimmer. Hansel looked back — the way they had come was gone. Gretel looked all around — every direction looked the same. They were completely lost.',
+      },
+      {
+        scene: ['👦', '👧', '🌲', '🌲', '🤝'],
+        text: 'The forest grew quieter and darker. Strange sounds rustled in the branches. Gretel felt a little shiver, and Hansel squeezed her hand firmly. "Don\'t worry," he said in his bravest voice. "We\'ll find our way." But inside, he wasn\'t quite so sure.',
       },
       {
         scene: ['🍭', '🍬', '🏠', '😲'],
-        text: 'Then through the trees they spotted the most extraordinary sight — a little cottage built entirely of gingerbread and sweets! The roof was made of chocolate, the windows were clear sugar, and candy canes lined the path. "Oh!" gasped Gretel. "It\'s a sweet house!"',
+        text: 'Then through the trees they spotted something that made them both stop and stare. A little cottage — but not an ordinary cottage! The walls were made of golden gingerbread, the roof of dark chocolate, the windows of clear sugar glass, and candy canes lined the garden path. "Oh!" gasped Gretel. "Can it be real?"',
       },
       {
         scene: ['👦', '👧', '🍭', '😋'],
-        text: 'Hansel broke off a piece of the roof and Gretel nibbled a window. The gingerbread tasted wonderful! They were so hungry that they kept eating and eating, not noticing the cottage door slowly creak open behind them.',
+        text: 'They were very hungry after their long walk, and the cottage smelled absolutely wonderful. Hansel reached up and broke off a piece of the gingerbread roof. Delicious! Gretel nibbled at a sugar window pane. Magnificent! They were so busy eating they didn\'t notice the front door slowly, silently creaking open behind them.',
       },
       {
         scene: ['👩', '😊', '👦', '👧', '🏠'],
-        text: 'An old woman appeared, smiling sweetly. "My poor dear children — you must be hungry! Come inside and rest." She seemed so kind that Hansel and Gretel went in. But this old woman was not as nice as she seemed.',
+        text: 'An old woman appeared in the doorway, smiling the sweetest smile they had ever seen. "My poor darling children — out here all alone and so hungry! Come in, come in!" Her voice was as warm as fresh bread. She seemed so kind that Hansel and Gretel followed her inside.',
+      },
+      {
+        scene: ['👦', '👧', '🍽️', '😊', '🏠'],
+        text: 'Inside, she gave them warm milk and pancakes and apples and honey. They ate until they were full, and she showed them two little beds with clean white sheets. They were so tired that they fell asleep almost instantly. But while they slept, Gretel noticed something that made her uneasy.',
       },
       {
         scene: ['👧', '🔑', '🔒', '💪'],
-        text: 'Gretel saw that the old woman was unkind and up to no good. So while the woman wasn\'t looking, brave Gretel found the key, unlocked the door, and grabbed her brother\'s hand. "Now, Hansel — RUN!" she cried.',
+        text: 'In the morning Gretel\'s sharp eyes spotted a key hanging on a hook by the back wall. She waited until the old woman turned her back — then quick as a flash, Gretel grabbed the key, flew to the door, and turned it in the lock. "HANSEL!" she hissed, grabbing his hand. "RUN — NOW!"',
       },
       {
-        scene: ['👦', '👧', '🏃', '🌲', '🏠'],
-        text: 'The two children ran through the forest as fast as their legs would carry them — through the trees, over the stream, past the big oak, until finally they burst out of the forest and saw their own home in the distance. They ran straight into their father\'s arms and were safe at last.',
+        scene: ['👦', '👧', '🏃', '🌲', '💨'],
+        text: 'They burst through the door and ran. They ran faster than they had ever run in their lives — through the dark trees, splashing through the stream, ducking under branches, jumping over roots. Behind them they could hear shouting, but they didn\'t look back. They just ran and ran and ran.',
       },
       {
         scene: ['👨', '👦', '👧', '❤️', '🏠'],
-        text: 'Their father hugged them so tightly, tears running down his cheeks. "I was so worried!" he cried. From that day on, Hansel and Gretel never wandered into the forest alone again. And whenever things got scary, they remembered: together, they could face anything.',
+        text: 'At last the trees thinned and light broke through — and there was their own house, and their father in the garden, who had been searching for them and could not sleep for worry. He ran toward them and swept them both up in his arms, squeezing them so tight they could barely breathe. "You\'re safe!" he cried. "You\'re safe!" And from that day on, they never forgot: when things go wrong, stay together — and together you can face anything.',
       },
     ],
   },
