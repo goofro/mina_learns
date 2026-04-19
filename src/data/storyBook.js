@@ -747,6 +747,42 @@ export const STORY_BOOKS = [
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
   {
+    id: 'dog-and-shadow',
+    title: 'The Dog and the Shadow',
+    subtitle: 'Be happy with what you have',
+    coverEmoji: '🐕',
+    origin: 'western',
+    color: '#f97316',
+    shadow: '#ea580c',
+    pages: [
+      {
+        scene: ['🐕', '🥩', '😄', '🌳'],
+        text: 'A dog was trotting home through the park, feeling very pleased with himself. Clenched between his teeth was a big, juicy bone — the finest bone he had ever found. He could not wait to get home and eat it.',
+      },
+      {
+        scene: ['🐕', '🌉', '💧', '☀️'],
+        text: 'To get home, the dog had to cross a little wooden bridge over a stream. He trotted out onto the bridge, his claws clicking on the planks, the bone held proudly in his mouth.',
+      },
+      {
+        scene: ['🐕', '💧', '🐕', '🥩'],
+        text: 'The dog looked down into the clear water below — and saw another dog looking back up at him! And that other dog had a bone too! A bone that looked even bigger and juicier than his own.',
+      },
+      {
+        scene: ['🐕', '😤', '💭', '🥩'],
+        text: 'The dog did not realise he was looking at his own reflection. He thought it was a real dog with a real bone. "I want THAT bone too!" he growled to himself. "I shall have both!"',
+      },
+      {
+        scene: ['🐕', '💦', '🥩', '😱'],
+        text: 'He opened his mouth to snap at the reflection — and his own bone fell straight into the water with a great SPLASH! He watched it sink slowly to the bottom of the stream. It was gone.',
+      },
+      {
+        scene: ['🐕', '😢', '💧', '💭'],
+        text: 'The dog stared sadly at the empty water. Now he had no bone at all. He had been so greedy, trying to take what wasn\'t his, that he lost the wonderful thing he already had. Be happy with what you have — or you may end up with nothing.',
+      },
+    ],
+  },
+
+  {
     id: 'ant-and-grasshopper',
     title: 'The Ant and the Grasshopper',
     subtitle: 'Always plan ahead',
