@@ -746,6 +746,48 @@ export const STORY_BOOKS = [
 
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
+  // ─── Classic European Fairy Tales ────────────────────────────────────────────
+
+  {
+    id: 'hansel-and-gretel',
+    title: 'Hansel and Gretel',
+    subtitle: 'Brave together, safe together',
+    coverEmoji: '🏠',
+    origin: 'western',
+    color: '#ec4899',
+    shadow: '#db2777',
+    pages: [
+      {
+        scene: ['👦', '👧', '🌲', '🌲', '🏠'],
+        text: 'Hansel and Gretel were a brother and sister who lived near a great forest. One day they wandered too far into the trees and got completely lost. The forest grew dark all around them and they held each other\'s hands tight.',
+      },
+      {
+        scene: ['🍭', '🍬', '🏠', '😲'],
+        text: 'Then through the trees they spotted the most extraordinary sight — a little cottage built entirely of gingerbread and sweets! The roof was made of chocolate, the windows were clear sugar, and candy canes lined the path. "Oh!" gasped Gretel. "It\'s a sweet house!"',
+      },
+      {
+        scene: ['👦', '👧', '🍭', '😋'],
+        text: 'Hansel broke off a piece of the roof and Gretel nibbled a window. The gingerbread tasted wonderful! They were so hungry that they kept eating and eating, not noticing the cottage door slowly creak open behind them.',
+      },
+      {
+        scene: ['👩', '😊', '👦', '👧', '🏠'],
+        text: 'An old woman appeared, smiling sweetly. "My poor dear children — you must be hungry! Come inside and rest." She seemed so kind that Hansel and Gretel went in. But this old woman was not as nice as she seemed.',
+      },
+      {
+        scene: ['👧', '🔑', '🔒', '💪'],
+        text: 'Gretel saw that the old woman was unkind and up to no good. So while the woman wasn\'t looking, brave Gretel found the key, unlocked the door, and grabbed her brother\'s hand. "Now, Hansel — RUN!" she cried.',
+      },
+      {
+        scene: ['👦', '👧', '🏃', '🌲', '🏠'],
+        text: 'The two children ran through the forest as fast as their legs would carry them — through the trees, over the stream, past the big oak, until finally they burst out of the forest and saw their own home in the distance. They ran straight into their father\'s arms and were safe at last.',
+      },
+      {
+        scene: ['👨', '👦', '👧', '❤️', '🏠'],
+        text: 'Their father hugged them so tightly, tears running down his cheeks. "I was so worried!" he cried. From that day on, Hansel and Gretel never wandered into the forest alone again. And whenever things got scary, they remembered: together, they could face anything.',
+      },
+    ],
+  },
+
   {
     id: 'gingerbread-man',
     title: 'The Gingerbread Man',
