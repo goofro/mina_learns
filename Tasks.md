@@ -535,7 +535,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [~] FEAT-055: Expand Story Library — 17 additional stories
+### [x] FEAT-055: Expand Story Library — 17 additional stories
 **Priority:** Medium  
 **Description:** Add 17 more stories to `src/data/storyBook.js`. The current library has 10 stories; the target is a rich multi-cultural library covering Aesop fables, classic European fairy tales, and stories from Asia and Africa. Each story should follow the existing format: 4–6 pages, each with a `scene` (emoji array) and `text` (child-friendly prose). Use a non-scary, age-appropriate retelling for any darker stories (Hansel & Gretel, etc.).
 
@@ -590,6 +590,13 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 ---
 
 ## 📝 Session Notes
+
+### 2026-04-18 – FEAT-055: 17 new stories added
+- Aesop Fables (6): The Lion and the Mouse, The Fox and the Grapes, The Ant and the Grasshopper, The Dog and the Shadow, The Crow and the Pitcher, The Gingerbread Man
+- Classic European Fairy Tales (4): Hansel and Gretel, Jack and the Beanstalk, The Ugly Duckling, The Princess and the Pea
+- World Stories (3): The Empty Pot (Chinese/Korean), Momotaro (Japanese), Anansi and the Pot of Wisdom (African)
+- Beloved Classics (4): The Velveteen Rabbit, Peter Rabbit, Frog and Toad Are Friends, Guess How Much I Love You
+- Each story 6–10 pages, child-friendly prose, emoji scene arrays, committed individually to main
 
 ### 2026-04-18 – Story elaboration + image prompts
 - All 10 Story Time stories expanded from 4–6 pages to 11–13 pages each
