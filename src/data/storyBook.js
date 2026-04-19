@@ -199,6 +199,18 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── guess-how-much-i-love-you ────────────────────────────────────────────────
+// page-1.jpg  → "A tiny brown hare and a big brown hare in a soft green meadow at twilight, stars just appearing, warm and peaceful, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "Little Nutbrown Hare stretching his arms as wide as they can go to show how much he loves Big Nutbrown Hare, both smiling, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "Little Nutbrown Hare reaching his arms up as high as possible, Big Nutbrown Hare stretching his much longer arms even higher into the sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "Little Nutbrown Hare hopping as far as he can down a moonlit path, turning to show Big Nutbrown Hare, who hops even farther, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "Little Nutbrown Hare pointing to the distant sparkling river and beyond to gentle hills, Big Nutbrown Hare pointing even farther, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Little Nutbrown Hare tumbling on his back in the soft grass, waving his feet in the air happily, Big Nutbrown Hare gently catching his feet, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Little Nutbrown Hare holding out his arms toward Big Nutbrown Hare in a big hug, both looking happy and safe, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Little Nutbrown Hare lying in soft grass looking up at the big round full moon in a dark blue starry sky, looking sleepy and peaceful, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "Big Nutbrown Hare gently laying Little Nutbrown Hare down in soft grass and tucking a leaf under his chin, the little hare's eyes closing, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "Big Nutbrown Hare leaning close to the sleeping Little Nutbrown Hare and whispering something, moonlight all around them, stars above, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+//
 // ─── frog-and-toad ────────────────────────────────────────────────────────────
 // page-1.jpg  → "A cheerful green frog hopping through a sunny spring forest, birds singing in the trees, flowers just beginning to bloom, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "Frog knocking on a small cozy door in a tree stump, Toad's sleepy eye peeking through a crack, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -925,35 +937,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🐰', '🐇', '🌿', '🌙'],
-        text: 'Little Nutbrown Hare and Big Nutbrown Hare were getting ready for bed. The evening was soft and warm and the first stars were appearing in the sky. But before going to sleep, Little Nutbrown Hare had something very important to say.',
+        text: 'The evening was warm and still, and the first stars were beginning to appear in the deep blue sky. Little Nutbrown Hare and Big Nutbrown Hare were getting ready for bed in the soft grass by the hedgerow. But before he could sleep, Little Nutbrown Hare had something very important he needed to say.',
       },
       {
         scene: ['🐰', '🐇', '💬', '❤️'],
-        text: '"Guess how much I love you!" said Little Nutbrown Hare, stretching his arms out as wide as they would go. Big Nutbrown Hare smiled. "Oh, I\'d say about that much," he said, stretching his own arms out wide — and Big Nutbrown Hare\'s arms were very long indeed.',
+        text: '"Guess how much I love you!" said Little Nutbrown Hare. He stretched his arms out as wide as they would possibly go — as wide as they could reach in both directions. Big Nutbrown Hare looked at those small outstretched arms and smiled a warm smile. "Oh," he said, "I\'d say about that much." And he stretched his own arms wide — much, much wider, because Big Nutbrown Hare\'s arms were very long indeed.',
       },
       {
-        scene: ['🐰', '🌿', '⬆️', '💪'],
-        text: 'Little Nutbrown Hare raised his arms up as high as he could reach. "I love you this high!" Big Nutbrown Hare raised his own long arms — right up to the sky. "And I love YOU this high," he said gently. Little Nutbrown Hare looked up. That was very high.',
+        scene: ['🐰', '⬆️', '💪', '🌿'],
+        text: 'Little Nutbrown Hare thought for a moment. Then he raised his arms up as high above his head as they would go, standing on his very tiptoes to reach even higher. "I love you THIS high!" he announced proudly. Big Nutbrown Hare raised his own arms — slowly, stretching upward until his fingertips were pointing at the sky. "And I love you THIS high," he said softly. Little Nutbrown Hare stared up at those long arms. That was very, very high.',
       },
       {
         scene: ['🐰', '🌿', '🏃', '💨'],
-        text: 'Little Nutbrown Hare had another idea. He hopped as far down the path as he could — hop, hop, hop — then turned and called back, "I love you as far as I can hop!" Big Nutbrown Hare hopped even further. "And I love you as far as I can hop," he said with a laugh.',
+        text: 'Little Nutbrown Hare had another idea. He turned and hopped down the path as fast as he could — hop hop hop hop hop — until he could go no further, then spun around. "I love you as far as I can HOP!" he called back, panting a little. Big Nutbrown Hare laughed and hopped after him — bounding past him in great long leaps, going much, much farther before he turned. "And I love you as far as I can hop," he said.',
       },
       {
         scene: ['🐰', '🌊', '🏔️', '💭'],
-        text: '"I love you all the way to the river!" said Little Nutbrown Hare. "I love you across the river and over the hills," said Big Nutbrown Hare. Little Nutbrown Hare looked at the distant hills. That was an awfully long way.',
+        text: 'Little Nutbrown Hare looked out at the wide world around them. He could see the glimmer of the river in the distance. He could see the dark shapes of the hills beyond. "I love you all the way to the river!" he said. Big Nutbrown Hare looked at the river, then at the hills behind it. "I love you all the way across the river and over those hills," he said gently. Little Nutbrown Hare looked at those hills for a long time. That was very far.',
       },
       {
         scene: ['🐰', '🌿', '🙃', '😄'],
-        text: 'Little Nutbrown Hare tumbled onto his back and waved his feet in the air. "I love you all the way up to my toes!" he giggled. Big Nutbrown Hare caught his feet and tickled them gently. "And I love you right up to your toes," he said warmly.',
+        text: 'Little Nutbrown Hare flopped backward into the soft grass, and waved his feet cheerfully up in the air. "I love you right up to my toes!" he giggled. Big Nutbrown Hare reached over and caught those small waggling feet in his big hands. "And I love you right up to your toes too," he said with a laugh, giving them a gentle squeeze.',
+      },
+      {
+        scene: ['🐰', '🐇', '🤗', '❤️'],
+        text: 'Little Nutbrown Hare wriggled upright again and threw his arms around Big Nutbrown Hare\'s neck as tight as he could. He held on for a very long moment. Big Nutbrown Hare held him back, warm and safe and still. They stayed like that for a little while, saying nothing at all.',
       },
       {
         scene: ['🌙', '⭐', '🐰', '💭'],
-        text: 'Little Nutbrown Hare looked at the big round moon hanging in the dark blue sky. "I love you all the way to the moon," he said sleepily. His eyes were growing heavy. He could not think of anything further away than the moon.',
+        text: 'Little Nutbrown Hare looked up at the sky. The moon had risen — round and full and glowing, hanging above the dark trees like a lantern. He stared at it for a long time. It was the most faraway thing he could think of. "I love you all the way to the moon," he said quietly. His eyes felt very heavy now.',
       },
       {
-        scene: ['🐇', '🐰', '🌙', '⭐', '❤️'],
-        text: 'Big Nutbrown Hare settled him down in the soft grass and tucked a leaf under his chin. He waited until Little Nutbrown Hare was fast asleep, then leaned close and whispered: "I love you all the way to the moon — and back." And that is the farthest love of all.',
+        scene: ['🐇', '🐰', '🌿', '😴'],
+        text: 'Big Nutbrown Hare gently laid Little Nutbrown Hare down in the soft grass and folded a warm leaf under his chin like a blanket. Little Nutbrown Hare\'s eyes fluttered. The stars were very bright. The moon was very round. Everything was perfectly still.',
+      },
+      {
+        scene: ['🐇', '🌙', '⭐', '❤️'],
+        text: 'Little Nutbrown Hare fell fast asleep. Big Nutbrown Hare bent very close and whispered, just once, as softly as the night wind: "I love you all the way to the moon — and back." And that, of all things, is the very farthest way of all.',
       },
     ],
   },
