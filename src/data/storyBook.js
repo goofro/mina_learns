@@ -747,6 +747,42 @@ export const STORY_BOOKS = [
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
   {
+    id: 'gingerbread-man',
+    title: 'The Gingerbread Man',
+    subtitle: 'Run, run, as fast as you can!',
+    coverEmoji: '🫚',
+    origin: 'western',
+    color: '#f59e0b',
+    shadow: '#d97706',
+    pages: [
+      {
+        scene: ['👩', '🍪', '🔥', '🏠'],
+        text: 'One morning, a little old woman decided to bake a gingerbread man. She mixed the dough, shaped his little body with buttons and a smile, and popped him into the warm oven to bake.',
+      },
+      {
+        scene: ['🍪', '🚪', '💨', '😲'],
+        text: 'When she opened the oven door — whoosh! The gingerbread man leapt out, jumped over the tray, and ran straight out the kitchen door! "Stop!" cried the little old woman. "Stop!" cried the little old man. But the gingerbread man just laughed.',
+      },
+      {
+        scene: ['🍪', '🏃', '😄', '🌿'],
+        text: '"Run, run, as fast as you can! You can\'t catch me, I\'m the Gingerbread Man!" he sang as he raced down the road. The little old woman and the little old man ran after him, but he was far too fast.',
+      },
+      {
+        scene: ['🐄', '🐖', '🦊', '🍪', '💨'],
+        text: 'He ran past a cow — "Stop!" mooed the cow. He ran past a pig — "Stop!" oinked the pig. He ran past a fox — but the fox just watched him quietly with clever eyes. "Run, run, as fast as you can!" the gingerbread man sang on.',
+      },
+      {
+        scene: ['🦊', '🍪', '🌊', '💭'],
+        text: 'At last the gingerbread man came to a wide river. He could not swim! The fox padded up beside him and smiled sweetly. "Jump on my tail," said the fox. "I\'ll carry you safely across." The gingerbread man hopped on.',
+      },
+      {
+        scene: ['🦊', '🍪', '😮', '💦'],
+        text: '"Climb up to my back," said the fox as they swam. "You\'ll get wet on my tail." Up climbed the gingerbread man. "Now my head," said the fox. Up he went — SNAP! And that was the end of the gingerbread man. If you run from everyone, you may run straight into trouble!',
+      },
+    ],
+  },
+
+  {
     id: 'crow-and-pitcher',
     title: 'The Crow and the Pitcher',
     subtitle: 'Use your brain to solve problems',
