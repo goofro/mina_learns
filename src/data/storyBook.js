@@ -149,6 +149,18 @@
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
+// ─── fox-and-grapes ───────────────────────────────────────────────────────────
+// page-1.jpg  → "A cheerful fox trotting through a sunny countryside on a hot summer day, looking hungry, flowers and fields around him, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A fox wandering through fields looking everywhere for food, tummy rumbling, nothing to eat in sight, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A fox spotting a beautiful bunch of plump purple grapes hanging high on a vine, his eyes wide and mouth watering, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A fox leaping up toward grapes on a high vine, just barely missing them, paws outstretched, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A fox trying harder to reach grapes, jumping from a rock, stretching on tiptoes, trying every angle, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A fox taking a long running leap toward the grapes with everything he has, still just out of reach, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "An exhausted fox sitting on the ground panting and tired, staring up at the grapes still hanging out of reach, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A fox turning up his nose at the grapes with a dismissive sniff, pretending not to care, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A fox trotting away from the grapevine looking nonchalant, the grapes still hanging perfectly ripe behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A fox walking home alone with a thoughtful expression, the vineyard behind him in the golden afternoon light, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
 // ─── lion-and-mouse ───────────────────────────────────────────────────────────
 // page-1.jpg  → "A peaceful sunny savanna with golden grass, a majestic lion sleeping contentedly in the warm sun, animals tiptoeing quietly past, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A tiny cute mouse scurrying busily through tall green grass, looking cheerful and busy, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -1420,27 +1432,43 @@ export const STORY_BOOKS = [
     pages: [
       {
         scene: ['🦊', '🌿', '☀️', '🏞️'],
-        text: 'On a hot summer\'s day, a fox was trotting through the countryside feeling very hungry indeed. His tummy rumbled as he searched for something delicious to eat.',
+        text: 'It was the hottest day of the summer, and the fox was trotting along a dusty country lane feeling very hungry indeed. The sun beat down on his orange fur and his stomach was rumbling loudly. He had been searching for food all morning without any luck.',
+      },
+      {
+        scene: ['🦊', '🌾', '🍎', '😔'],
+        text: 'He sniffed at an apple that had fallen in the road — too bruised. He peered under a hedge for berries — all gone. He checked the meadow — nothing but dry summer grass. The fox sighed and trotted on, getting hungrier with every step.',
       },
       {
         scene: ['🦊', '🍇', '🌿', '😍'],
-        text: 'Suddenly he spotted a beautiful bunch of plump purple grapes hanging high on a vine. They glistened in the sunshine, fat and juicy and absolutely perfect. "Oh!" said the fox. "Those are exactly what I want!"',
+        text: 'Then, through a garden gate, he spotted something wonderful. A beautiful bunch of plump, deep-purple grapes hanging high on a vine, fat and glistening in the sunshine. They looked absolutely, perfectly, magnificently delicious. The fox\'s mouth began to water at once.',
       },
       {
         scene: ['🦊', '🍇', '⬆️', '😤'],
-        text: 'The fox jumped up as high as he could — but the grapes were just out of reach. He tried again, leaping with all his might. His paws swiped at the air but caught nothing. The grapes dangled there, perfectly still.',
+        text: 'The fox crouched low, then sprang up as high as he could — but the grapes were just out of reach. His paws swiped at empty air. The grapes swayed gently in the breeze, as if teasing him. He landed and tried again, jumping even harder this time.',
       },
       {
-        scene: ['🦊', '🍇', '🏃', '💨'],
-        text: 'He backed up and took a running leap. Still nothing. He tried jumping from a rock nearby. He tried stretching up on his very tiptoes. No matter what he did, the grapes stayed just beyond his reach.',
+        scene: ['🦊', '🪨', '🍇', '💨'],
+        text: 'He spotted a flat rock nearby and jumped from it — still not quite enough. He stretched himself up on the very tips of his toes, straining every muscle. He backed right up and took a tremendous running leap. Each time, the grapes hung there, perfectly calm and perfectly unreachable.',
+      },
+      {
+        scene: ['🦊', '🍇', '😤', '💦'],
+        text: 'The fox tried again and again. He tried jumping sideways. He tried jumping with a little spin. He tried running at full speed and leaping at the very last second. Every single attempt ended the same way — with the fox landing back on the ground, the grapes unmoved.',
+      },
+      {
+        scene: ['🦊', '😮‍💨', '🌿', '☀️'],
+        text: 'At last the fox sat down heavily, panting and hot and exhausted. He stared up at the grapes. The grapes stared back. They were every bit as plump and purple and perfect as when he had started. He had not got a single one.',
       },
       {
         scene: ['🦊', '😤', '🍇', '🌿'],
-        text: 'At last the fox sat down, panting and tired. He looked up at the grapes one more time, then turned up his nose with a sniff. "I didn\'t really want them anyway," he said to nobody in particular. "They\'re probably sour."',
+        text: 'The fox smoothed down his fur, lifted his chin, and turned up his nose with a very deliberate sniff. "I didn\'t really want them anyway," he said, loudly, to nobody in particular. "They\'re probably sour. Horribly sour. I\'m quite glad I didn\'t bother."',
       },
       {
         scene: ['🦊', '🚶', '🍇', '💭'],
-        text: 'And with that, the fox trotted away, pretending he didn\'t care at all. But deep down, he knew the grapes had looked perfectly sweet. It is easy to say you don\'t want something — when you simply cannot have it.',
+        text: 'And with that, the fox trotted away down the lane, his nose in the air and his tail held high, pretending with everything he had that he did not care one single bit. But a little voice inside him knew perfectly well how sweet those grapes had looked.',
+      },
+      {
+        scene: ['🦊', '🌅', '💭', '🌟'],
+        text: 'It is one of the oldest tricks we play on ourselves — when we cannot have something we want, we tell ourselves we did not really want it at all. But the fox who says the grapes are sour is really just a fox who could not jump high enough. And that is a very different thing.',
       },
     ],
   },
