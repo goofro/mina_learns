@@ -747,6 +747,42 @@ export const STORY_BOOKS = [
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
   {
+    id: 'ant-and-grasshopper',
+    title: 'The Ant and the Grasshopper',
+    subtitle: 'Always plan ahead',
+    coverEmoji: '🐜',
+    origin: 'western',
+    color: '#10b981',
+    shadow: '#059669',
+    pages: [
+      {
+        scene: ['🐜', '☀️', '🌾', '💪'],
+        text: 'All through the long, warm summer, a little ant worked hard every single day. Back and forth she trudged, carrying crumbs of food and seeds to store safely in her cosy underground home.',
+      },
+      {
+        scene: ['🦗', '🎵', '🌸', '😎'],
+        text: 'Nearby, a grasshopper spent his days singing and jumping and lounging in the sunshine. He laughed when he saw the ant rushing past. "Why work so hard?" he called. "Come and play with me! Summer will last forever!"',
+      },
+      {
+        scene: ['🐜', '🌾', '🦗', '🎵'],
+        text: '"I am storing food for winter," said the ant. "You should do the same." The grasshopper waved his long leg. "Winter is months away! There is plenty of time. Today I shall sing!" And he played his finest tune while the ant carried on working.',
+      },
+      {
+        scene: ['🍂', '🌬️', '🦗', '🥶'],
+        text: 'But summer does not last forever. Autumn arrived, and then — whoosh — the cold winds of winter blew in. The flowers died, the grass turned brown, and the grasshopper had not saved a single crumb of food.',
+      },
+      {
+        scene: ['❄️', '🦗', '😢', '🏠'],
+        text: 'The grasshopper shivered and searched desperately for something to eat, but the ground was hard and frozen. There was nothing left anywhere. Hungry and cold, he went to knock at the ant\'s door.',
+      },
+      {
+        scene: ['🐜', '🦗', '🏠', '🌟'],
+        text: 'The kind ant opened the door and saw how cold and thin the grasshopper looked. Her heart softened. She shared some of her food with him and let him warm up by her fire. "Next summer," said the ant gently, "please remember to save a little for winter." The grasshopper nodded — he would never forget this lesson.',
+      },
+    ],
+  },
+
+  {
     id: 'fox-and-grapes',
     title: 'The Fox and the Grapes',
     subtitle: 'It is easy to dislike what you cannot have',
