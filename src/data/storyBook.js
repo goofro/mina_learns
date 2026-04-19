@@ -747,6 +747,42 @@ export const STORY_BOOKS = [
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
   {
+    id: 'fox-and-grapes',
+    title: 'The Fox and the Grapes',
+    subtitle: 'It is easy to dislike what you cannot have',
+    coverEmoji: '🦊',
+    origin: 'western',
+    color: '#8b5cf6',
+    shadow: '#7c3aed',
+    pages: [
+      {
+        scene: ['🦊', '🌿', '☀️', '🏞️'],
+        text: 'On a hot summer\'s day, a fox was trotting through the countryside feeling very hungry indeed. His tummy rumbled as he searched for something delicious to eat.',
+      },
+      {
+        scene: ['🦊', '🍇', '🌿', '😍'],
+        text: 'Suddenly he spotted a beautiful bunch of plump purple grapes hanging high on a vine. They glistened in the sunshine, fat and juicy and absolutely perfect. "Oh!" said the fox. "Those are exactly what I want!"',
+      },
+      {
+        scene: ['🦊', '🍇', '⬆️', '😤'],
+        text: 'The fox jumped up as high as he could — but the grapes were just out of reach. He tried again, leaping with all his might. His paws swiped at the air but caught nothing. The grapes dangled there, perfectly still.',
+      },
+      {
+        scene: ['🦊', '🍇', '🏃', '💨'],
+        text: 'He backed up and took a running leap. Still nothing. He tried jumping from a rock nearby. He tried stretching up on his very tiptoes. No matter what he did, the grapes stayed just beyond his reach.',
+      },
+      {
+        scene: ['🦊', '😤', '🍇', '🌿'],
+        text: 'At last the fox sat down, panting and tired. He looked up at the grapes one more time, then turned up his nose with a sniff. "I didn\'t really want them anyway," he said to nobody in particular. "They\'re probably sour."',
+      },
+      {
+        scene: ['🦊', '🚶', '🍇', '💭'],
+        text: 'And with that, the fox trotted away, pretending he didn\'t care at all. But deep down, he knew the grapes had looked perfectly sweet. It is easy to say you don\'t want something — when you simply cannot have it.',
+      },
+    ],
+  },
+
+  {
     id: 'lion-and-mouse',
     title: 'The Lion and the Mouse',
     subtitle: 'Even the smallest friend can help',
