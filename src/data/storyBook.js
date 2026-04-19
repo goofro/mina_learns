@@ -753,6 +753,50 @@ export const STORY_BOOKS = [
   // ─── Beloved Classics ─────────────────────────────────────────────────────────
 
   {
+    id: 'peter-rabbit',
+    title: 'Peter Rabbit',
+    subtitle: 'Sometimes rules are there to keep us safe',
+    coverEmoji: '🐇',
+    origin: 'western',
+    color: '#6366f1',
+    shadow: '#4338ca',
+    pages: [
+      {
+        scene: ['🐇', '🐇', '🐇', '🐇', '🌳'],
+        text: 'Once upon a time, four little rabbits lived with their mother under the roots of a big fir tree. Their names were Flopsy, Mopsy, Cotton-tail — and Peter. Peter was the most adventurous and mischievous of all.',
+      },
+      {
+        scene: ['🐇', '👩', '⚠️', '🥕'],
+        text: 'One morning, Mother Rabbit put on her shawl and picked up her basket. "You may go to the meadow and the lane," she said to her children, "but do NOT go into Mr McGregor\'s garden. Your father had an accident there, and ended up in a pie." Flopsy, Mopsy and Cotton-tail nodded. Peter was already thinking about the garden.',
+      },
+      {
+        scene: ['🐇', '🚪', '🌿', '🥕'],
+        text: 'The moment his mother was gone, Peter squeezed under the gate into Mr McGregor\'s garden. It was full of lettuces and French beans and radishes — and Peter began to eat them up, one by one, feeling very pleased with himself.',
+      },
+      {
+        scene: ['👨', '🐇', '😱', '🏃'],
+        text: 'Suddenly — "Stop, thief!" Mr McGregor came running around the corner with a rake! Peter bolted — he ran so fast his little blue jacket flew out behind him! He dashed between the flowerpots, knocked over watering cans, and squeezed through gaps with his heart hammering.',
+      },
+      {
+        scene: ['🐇', '👟', '🥕', '🌿'],
+        text: 'In the scramble, Peter lost one shoe among the cabbages and another among the potatoes. He lost his little blue jacket too. Without them, he could run much faster — but he had no idea which way led to the gate.',
+      },
+      {
+        scene: ['🐇', '💧', '😢', '🌿'],
+        text: 'Peter felt quite dizzy and lost. He sat down and cried his big round tears. A friendly robin flew near him, but could not show him the way. Peter wandered into the tool shed by mistake and hid inside a watering can, very cold and very frightened.',
+      },
+      {
+        scene: ['🐇', '🚪', '🌿', '🏃'],
+        text: 'At last Peter spotted the gate! He darted for it and squeezed through the iron bars — leaving behind a tuft of his fur but getting himself FREE! He ran all the way through the meadow and back under the fir tree root, gasping for breath.',
+      },
+      {
+        scene: ['🐇', '🛏️', '🍵', '👩'],
+        text: 'His mother found Peter feeling quite unwell and put him straight to bed. She made him chamomile tea and tucked him in warmly. Flopsy, Mopsy and Cotton-tail, who had been very good, had bread and milk and blackberries for supper. Peter slept for a long, long time — and next time, he thought, he might listen to his mother.',
+      },
+    ],
+  },
+
+  {
     id: 'velveteen-rabbit',
     title: 'The Velveteen Rabbit',
     subtitle: 'Love makes things real',
