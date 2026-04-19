@@ -748,6 +748,60 @@ export const STORY_BOOKS = [
 
   // ─── Classic European Fairy Tales ────────────────────────────────────────────
 
+  // ─── World Stories ────────────────────────────────────────────────────────────
+
+  {
+    id: 'empty-pot',
+    title: 'The Empty Pot',
+    subtitle: 'Honesty is always the best choice',
+    coverEmoji: '🪴',
+    origin: 'chinese',
+    color: '#f97316',
+    shadow: '#ea580c',
+    pages: [
+      {
+        scene: ['👑', '🌸', '🏰', '🌱'],
+        text: 'Long ago in China, there lived an Emperor who loved flowers more than anything in the world. His palace gardens were filled with every beautiful bloom you could imagine. But the Emperor was growing old, and he needed to choose someone to rule after him.',
+      },
+      {
+        scene: ['👑', '🌱', '👦', '👧', '👶'],
+        text: 'The Emperor sent a special seed to every child in the kingdom. "Plant this seed," he announced. "Care for it all year. In one year\'s time, bring me what you have grown — and I will choose my successor from among you."',
+      },
+      {
+        scene: ['👦', '🌱', '🪴', '💧', '☀️'],
+        text: 'A boy named Ping loved flowers and plants dearly. He planted his seed in the finest soil, watered it every single day, and set it in the sunniest spot on his windowsill. He tended it with all the care and love he had.',
+      },
+      {
+        scene: ['🪴', '❓', '😟', '🌱'],
+        text: 'Weeks passed. Then months. All around him, Ping saw other children\'s seeds growing into beautiful plants. But in Ping\'s pot — nothing. Not a single sprout, not a single leaf. Just bare, empty soil.',
+      },
+      {
+        scene: ['👦', '🪴', '😢', '💭'],
+        text: 'Ping tried everything. New soil. More water. Less water. A different sunny spot. But still nothing grew. "What am I doing wrong?" he whispered sadly, staring at the empty pot. He felt ashamed that he had nothing to show.',
+      },
+      {
+        scene: ['👦', '👩', '💬', '❤️'],
+        text: 'His mother put her arm around him. "You have done your best, Ping," she said gently. "Sometimes that is all we can do. Take your empty pot to the Emperor and tell him the truth." Ping took a deep breath. He would do just that.',
+      },
+      {
+        scene: ['👑', '🌸', '🌺', '🌼', '🪴'],
+        text: 'On the day of the great gathering, children came from all over the kingdom carrying magnificent pots bursting with flowers — roses, lilies, orchids. Ping walked among them carrying his empty pot, his cheeks red with embarrassment.',
+      },
+      {
+        scene: ['👑', '🪴', '👦', '😮'],
+        text: 'The Emperor walked slowly through the crowd, looking at each child\'s plant. When he came to Ping and his empty pot, he stopped. He looked at Ping for a long, long moment. Ping\'s heart hammered.',
+      },
+      {
+        scene: ['👑', '👦', '🌟', '👑'],
+        text: '"This boy," said the Emperor, his voice ringing out for all to hear, "shall be the next Emperor!" Everyone gasped. The Emperor smiled and explained: "The seeds I gave you were all boiled — nothing could ever grow from them. Every child here planted different seeds to make their pots look full. Only this boy had the honesty and courage to show me the truth."',
+      },
+      {
+        scene: ['👦', '👑', '🌸', '🎊'],
+        text: 'Ping stood straight and tall, the empty pot in his hands. The Emperor placed the royal crown gently on his head. Ping had not grown a single flower — but he had shown something far more precious: an honest heart. And that made him worthy to lead the whole kingdom.',
+      },
+    ],
+  },
+
   {
     id: 'princess-and-pea',
     title: 'The Princess and the Pea',
