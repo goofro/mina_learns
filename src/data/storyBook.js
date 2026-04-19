@@ -749,6 +749,46 @@ export const STORY_BOOKS = [
   // ─── Classic European Fairy Tales ────────────────────────────────────────────
 
   {
+    id: 'jack-and-the-beanstalk',
+    title: 'Jack and the Beanstalk',
+    subtitle: 'A big adventure from tiny seeds',
+    coverEmoji: '🌱',
+    origin: 'western',
+    color: '#10b981',
+    shadow: '#059669',
+    pages: [
+      {
+        scene: ['👦', '🐄', '🏠', '😔'],
+        text: 'Jack lived with his mother in a small cottage. They were very poor, and one day his mother said sadly, "Jack, we have no food and no money. You must take our old cow to market and sell her."',
+      },
+      {
+        scene: ['👦', '🐄', '👴', '🫘'],
+        text: 'On the way to market, Jack met an old man who offered him five colourful beans in exchange for the cow. "These are magic beans!" said the old man with a wink. Jack thought that sounded exciting — so he made the swap.',
+      },
+      {
+        scene: ['👦', '👩', '😠', '🫘', '🌙'],
+        text: 'His mother was furious. "Magic beans?! You traded our cow for BEANS?" She threw them out the window and sent Jack to bed with no supper. But when morning came, something extraordinary had happened overnight.',
+      },
+      {
+        scene: ['🌱', '🌿', '🌳', '☁️', '✨'],
+        text: 'A gigantic beanstalk had grown up through the night — twisting and spiralling all the way up through the clouds and beyond! Jack grabbed the stalk and started to climb. Up, up, up he went until he reached the top.',
+      },
+      {
+        scene: ['🏰', '👣', '💰', '🥚'],
+        text: 'Above the clouds was a vast kingdom and a huge castle. Inside lived an enormous giant who had bags of gold coins and a magical golden goose that laid golden eggs. Jack crept in very quietly and grabbed the bag of gold.',
+      },
+      {
+        scene: ['👹', '😠', '🏃', '💨'],
+        text: '"FEE FI FO FUM!" roared the giant, shaking the whole castle. Jack sprinted for the beanstalk with the giant thundering behind him. Down Jack climbed — faster than he had ever moved in his life!',
+      },
+      {
+        scene: ['🪓', '🌿', '💥', '👦', '👩', '🎉'],
+        text: 'When he reached the bottom, Jack grabbed an axe and CHOP, CHOP, CHOP — he cut down the beanstalk! The giant was gone, and Jack and his mother had the bag of gold. They never went hungry again, and they lived happily ever after.',
+      },
+    ],
+  },
+
+  {
     id: 'hansel-and-gretel',
     title: 'Hansel and Gretel',
     subtitle: 'Brave together, safe together',
