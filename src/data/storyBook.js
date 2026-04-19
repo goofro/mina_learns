@@ -751,6 +751,50 @@ export const STORY_BOOKS = [
   // ─── World Stories ────────────────────────────────────────────────────────────
 
   {
+    id: 'anansi-pot-of-wisdom',
+    title: 'Anansi and the Pot of Wisdom',
+    subtitle: 'True wisdom is meant to be shared',
+    coverEmoji: '🕷️',
+    origin: 'western',
+    color: '#d97706',
+    shadow: '#b45309',
+    pages: [
+      {
+        scene: ['🕷️', '🌍', '🌳', '☀️'],
+        text: 'Long ago in West Africa, there lived a very clever spider named Anansi. Anansi loved to think and to trick and to tell stories. He was small, but his mind was quick as lightning, and all the animals respected him.',
+      },
+      {
+        scene: ['🕷️', '🏺', '✨', '💭'],
+        text: 'One day, the Sky God Nyame gathered all the wisdom in the world and poured it into a great clay pot. He called for Anansi. "Take this pot," said Nyame. "Guard it well. It holds all the wisdom there is." Anansi took the pot and held it very tightly.',
+      },
+      {
+        scene: ['🕷️', '🏺', '🌳', '🧗'],
+        text: '"I will keep it all for myself!" thought Anansi cleverly. "If I have ALL the wisdom, I will be the most powerful creature in the world!" He decided to hide the pot at the very top of the tallest tree so nobody else could ever reach it.',
+      },
+      {
+        scene: ['🕷️', '🏺', '🌳', '😤'],
+        text: 'Anansi tied the pot to the front of his body with a vine and tried to climb the tree. But the pot kept getting in the way, bumping against the trunk. He slipped and slid. No matter how hard he tried, he could not climb with the big pot on his front.',
+      },
+      {
+        scene: ['🕷️', '👦', '💬', '🌳'],
+        text: 'Anansi\'s little son had been watching from the ground. "Father," said the boy helpfully, "why not tie the pot to your back? Then it won\'t be in your way." Anansi stopped and stared at his son. Such a simple, clever idea — and he hadn\'t thought of it himself!',
+      },
+      {
+        scene: ['🕷️', '🏺', '💭', '🌟'],
+        text: 'Anansi sat down on a branch and thought hard. Here he was, carrying a pot of ALL the wisdom in the world — and his own little son had just outsmarted him! What did that mean?',
+      },
+      {
+        scene: ['🕷️', '🏺', '🌬️', '🌍'],
+        text: 'Anansi understood. If he kept all the wisdom locked in one pot for himself, wisdom would be wasted. No pot could hold wisdom better than it was held by being shared and used and passed between people. He opened the pot and let the wisdom scatter on the wind.',
+      },
+      {
+        scene: ['🌍', '👨', '👩', '👦', '✨'],
+        text: 'The wisdom floated out across the whole world — into every village, every heart, every mind. From that day on, wisdom was not owned by anyone. It was everywhere, found in stories, in questions, in listening, and in teaching others. And Anansi became the keeper of all stories, which he shared with everyone.',
+      },
+    ],
+  },
+
+  {
     id: 'momotaro',
     title: 'Momotaro the Peach Boy',
     subtitle: 'Kindness and teamwork win the day',
