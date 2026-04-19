@@ -747,6 +747,42 @@ export const STORY_BOOKS = [
   // ─── Aesop Fables ────────────────────────────────────────────────────────────
 
   {
+    id: 'crow-and-pitcher',
+    title: 'The Crow and the Pitcher',
+    subtitle: 'Use your brain to solve problems',
+    coverEmoji: '🐦‍⬛',
+    origin: 'western',
+    color: '#6366f1',
+    shadow: '#4338ca',
+    pages: [
+      {
+        scene: ['🐦‍⬛', '☀️', '🏜️', '😓'],
+        text: 'One hot summer\'s day, a clever crow was flying over the countryside feeling very, very thirsty. The sun blazed down and there was not a drop of water to be seen anywhere. His throat was parched and dry.',
+      },
+      {
+        scene: ['🐦‍⬛', '🫙', '💧', '😄'],
+        text: 'At last the crow spotted a tall pitcher sitting in a garden. He flew down and peered inside — there was water at the bottom! But the pitcher was tall and narrow, and the water was so far down that his beak could not reach it no matter how he tried.',
+      },
+      {
+        scene: ['🐦‍⬛', '🫙', '😤', '💭'],
+        text: 'The crow tried tipping the pitcher — it was too heavy. He tried squeezing his head in further — it was too narrow. He sat back and thought hard. There had to be a way. He looked around the garden carefully.',
+      },
+      {
+        scene: ['🐦‍⬛', '🪨', '🪨', '🪨'],
+        text: 'Then the crow had a brilliant idea! He picked up a small pebble in his beak and dropped it into the pitcher. Plop! He picked up another pebble. Plop! And another. Plop, plop, plop!',
+      },
+      {
+        scene: ['🫙', '💧', '⬆️', '🐦‍⬛', '😊'],
+        text: 'With each pebble he dropped in, the water rose a little higher. Slowly, slowly, slowly — the water crept up the neck of the pitcher. The crow kept working, dropping in pebble after pebble.',
+      },
+      {
+        scene: ['🐦‍⬛', '🫙', '💧', '😄', '🌟'],
+        text: 'At last the water was high enough for the crow to dip his beak in and drink! Cool, refreshing water! He drank until he was no longer thirsty, then flew away happily. A little thinking can solve any problem!',
+      },
+    ],
+  },
+
+  {
     id: 'dog-and-shadow',
     title: 'The Dog and the Shadow',
     subtitle: 'Be happy with what you have',
