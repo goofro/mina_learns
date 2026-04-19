@@ -753,6 +753,50 @@ export const STORY_BOOKS = [
   // ─── Beloved Classics ─────────────────────────────────────────────────────────
 
   {
+    id: 'guess-how-much-i-love-you',
+    title: 'Guess How Much I Love You',
+    subtitle: 'Love is bigger than anything',
+    coverEmoji: '🐰',
+    origin: 'western',
+    color: '#14b8a6',
+    shadow: '#0d9488',
+    pages: [
+      {
+        scene: ['🐰', '🐇', '🌿', '🌙'],
+        text: 'Little Nutbrown Hare and Big Nutbrown Hare were getting ready for bed. The evening was soft and warm and the first stars were appearing in the sky. But before going to sleep, Little Nutbrown Hare had something very important to say.',
+      },
+      {
+        scene: ['🐰', '🐇', '💬', '❤️'],
+        text: '"Guess how much I love you!" said Little Nutbrown Hare, stretching his arms out as wide as they would go. Big Nutbrown Hare smiled. "Oh, I\'d say about that much," he said, stretching his own arms out wide — and Big Nutbrown Hare\'s arms were very long indeed.',
+      },
+      {
+        scene: ['🐰', '🌿', '⬆️', '💪'],
+        text: 'Little Nutbrown Hare raised his arms up as high as he could reach. "I love you this high!" Big Nutbrown Hare raised his own long arms — right up to the sky. "And I love YOU this high," he said gently. Little Nutbrown Hare looked up. That was very high.',
+      },
+      {
+        scene: ['🐰', '🌿', '🏃', '💨'],
+        text: 'Little Nutbrown Hare had another idea. He hopped as far down the path as he could — hop, hop, hop — then turned and called back, "I love you as far as I can hop!" Big Nutbrown Hare hopped even further. "And I love you as far as I can hop," he said with a laugh.',
+      },
+      {
+        scene: ['🐰', '🌊', '🏔️', '💭'],
+        text: '"I love you all the way to the river!" said Little Nutbrown Hare. "I love you across the river and over the hills," said Big Nutbrown Hare. Little Nutbrown Hare looked at the distant hills. That was an awfully long way.',
+      },
+      {
+        scene: ['🐰', '🌿', '🙃', '😄'],
+        text: 'Little Nutbrown Hare tumbled onto his back and waved his feet in the air. "I love you all the way up to my toes!" he giggled. Big Nutbrown Hare caught his feet and tickled them gently. "And I love you right up to your toes," he said warmly.',
+      },
+      {
+        scene: ['🌙', '⭐', '🐰', '💭'],
+        text: 'Little Nutbrown Hare looked at the big round moon hanging in the dark blue sky. "I love you all the way to the moon," he said sleepily. His eyes were growing heavy. He could not think of anything further away than the moon.',
+      },
+      {
+        scene: ['🐇', '🐰', '🌙', '⭐', '❤️'],
+        text: 'Big Nutbrown Hare settled him down in the soft grass and tucked a leaf under his chin. He waited until Little Nutbrown Hare was fast asleep, then leaned close and whispered: "I love you all the way to the moon — and back." And that is the farthest love of all.',
+      },
+    ],
+  },
+
+  {
     id: 'frog-and-toad',
     title: 'Frog and Toad Are Friends',
     subtitle: 'The best thing in the world is a good friend',
