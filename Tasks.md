@@ -635,6 +635,31 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
+### [ ] CHORE-005: Find and add more stories — Western and Eastern cultures
+**Priority:** Low
+**Description:** Expand the Story Library beyond the current 27 stories. Aim for a diverse mix of cultures with strong moral lessons, age-appropriate themes, and vivid imagery that lends itself to illustration. All stories must be **public domain** (see copyright note in session notes). Suggested areas to explore:
+
+*Western / European (public domain):*
+- More Aesop fables (The Tortoise and the Birds, The Wind and the Sun, The Milkmaid and Her Pail)
+- More Hans Christian Andersen (Thumbelina, The Little Mermaid, The Wild Swans)
+- More Brothers Grimm (Rapunzel, Rumpelstiltskin, Snow White, The Bremen Town Musicians)
+
+*Eastern / Asian:*
+- More Chinese folk tales (The Cowherd and the Weaver Girl, Nian the Monster, The Jade Rabbit)
+- Japanese folk tales (Urashima Taro, Issun-Boshi / One-Inch Boy, Tanuki the Raccoon Dog)
+- Indian folk tales (from the Panchatantra — The Monkey and the Crocodile, The Blue Jackal)
+- Korean folk tales (The Sun and the Moon — siblings who became sun and moon)
+- Middle Eastern (One Thousand and One Nights excerpts suitable for children — Sinbad, Ali Baba)
+
+*African / Other:*
+- More Anansi stories (Anansi and the Tiger, How Anansi Got His Stories)
+- Aboriginal Australian Dreamtime stories
+- Native American folk tales (How the Raven Stole the Sun)
+
+**How to add:** Follow the existing story format in `src/data/storyBook.js` — add an entry with `id`, `title`, `subtitle`, `coverEmoji`, `origin` (`'western'` or `'chinese'`), `color`, `shadow`, and `pages` (8–12 pages, each with `scene` emoji array and `text`). Add AI image prompts in the comments block at the top of the file.
+
+---
+
 ### [ ] CHORE-002: Generate AI images for Dinosaur Explorer
 **Priority:** Low  
 **Description:** The Dinosaur Explorer already has a `DinoImage` component that loads images from `/public/images/dinosaurs/` and falls back to emoji if absent. All 11 prompts are ready — just generate and drop in the JPGs.  
