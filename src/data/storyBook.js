@@ -199,30 +199,29 @@
 // page-10.jpg → "A tiny determined mouse gnawing rapidly through thick rope with sharp little teeth, the lion watching hopefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-11.jpg → "A freed lion bowing his great head gratefully toward a tiny mouse, both looking happy and proud, sunny savanna background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
-// ─── guess-how-much-i-love-you ────────────────────────────────────────────────
-// page-1.jpg  → "A very small young brown hare with short ears standing beside a very tall adult brown hare with long ears, in a soft green meadow at twilight, stars just appearing, warm and peaceful, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg  → "A small young hare stretching his tiny arms as wide as they can go, a tall adult hare watching with a gentle smile, green meadow background, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg  → "A small young hare reaching his short arms up as high as possible, a tall adult hare stretching his much longer arms way up high above, both looking up, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg  → "A small young hare hopping as far as he can along a moonlit path, a tall adult hare hopping an even greater distance ahead, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-5.jpg  → "A small young hare pointing toward a distant sparkling river, a tall adult hare pointing even farther toward far-away hills beyond the river, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-6.jpg  → "A small young hare lying on his back in soft grass waving his feet happily in the air, a tall adult hare gently holding his tiny feet, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-7.jpg  → "A small young hare holding his arms open wide toward a tall adult hare in a big hug, both looking happy and warm, soft green meadow, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-8.jpg  → "A small young hare lying alone in soft grass looking up at a big glowing full moon in a dark blue starry sky, looking sleepy and peaceful, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-9.jpg  → "A tall adult hare gently laying a tiny sleeping young hare down in soft grass and tucking a leaf blanket under his chin, moonlight all around, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-10.jpg → "A tall adult hare leaning close to a tiny sleeping young hare and whispering softly, the little hare fast asleep, moonlight and stars above, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// ─── steadfast-tin-soldier ────────────────────────────────────────────────────
+// page-1.jpg  → "A small boy opening a birthday gift box to find twenty-five tiny tin soldiers in red and blue uniforms standing in a row, the last one with only one leg, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A one-legged tin soldier standing on a table gazing across at a tiny beautiful paper dancer in front of a paper castle, hearts in the air, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A one-legged tin soldier standing perfectly still and straight on a table, watching a paper dancer all day, sunlight through a window, other soldiers marching around him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A scary jack-in-the-box springing out of its box with a loud pop at night, pointing at the tin soldier, the soldier standing firm and unafraid, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A small tin soldier falling out of an open window, tumbling down toward the cobblestone street far below, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Two small boys folding a paper boat and placing a tin soldier inside it, floating it down a rushing rain gutter, a large grey rat blocking the way ahead, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A tiny paper boat with a tin soldier standing bravely inside, tipping over into a deep dark pond, the soldier sinking slowly with eyes open and chin up, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A large fish swimming up and swallowing a tin soldier whole in dark underwater, the soldier standing upright even inside the fish's belly, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A cook in a kitchen slicing open a large fish and finding a little tin soldier standing perfectly upright inside, looking astonished, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A one-legged tin soldier placed back on a table next to a beautiful paper dancer, both standing side by side, warm sunny room, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
-// ─── frog-and-toad ────────────────────────────────────────────────────────────
-// page-1.jpg  → "A cheerful green frog hopping through a sunny spring forest, birds singing in the trees, flowers just beginning to bloom, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-2.jpg  → "Frog knocking on a small cozy door in a tree stump, Toad's sleepy eye peeking through a crack, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-3.jpg  → "Frog inside a cozy cottage trying to pull blankets off a grumpy Toad who is still in bed, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-4.jpg  → "Frog opening curtains to let bright spring sunshine into Toad's room, Toad squinting and grumbling, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-5.jpg  → "Toad peeking with one eye at the beautiful spring world outside the window, looking slightly interested despite himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-6.jpg  → "Frog and Toad walking together along a path by a sparkling pond, dragonflies hovering above the water, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-7.jpg  → "Frog and Toad sitting on a warm flat rock by the pond eating sandwiches together, looking relaxed and happy, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-8.jpg  → "Frog and Toad watching butterflies and dragonflies over the pond, pointing and smiling, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-9.jpg  → "Frog and Toad walking home together along a forest path in golden afternoon light, shadows long, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-10.jpg → "Frog and Toad sitting side by side on Toad's doorstep in the evening, first stars appearing, looking content, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// page-11.jpg → "Frog waving goodbye to Toad at his door in the moonlight, both smiling warmly, a perfect friendship scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// ─── sun-and-moon-in-the-sky ──────────────────────────────────────────────────
+// page-1.jpg  → "A smiling golden sun and a sparkling river of water greeting each other warmly on the earth, a lush green landscape all around, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A cheerful sun walking down to visit a wide shimmering river teeming with fish, crabs, dolphins and whales, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A friendly sun asking the river why water never comes to visit, the water replying and gesturing at the sun's small house, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A cheerful sun and a silver crescent moon hammering and building together, constructing a vast enormous house with a huge wide doorway, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A wide river flowing up to the doorway of a huge house, the sun and moon standing at the door welcoming water inside, tiny fish beginning to stream in, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Hundreds of tiny silver fish flowing through the door of the big house, water reaching ankle level, the sun smiling happily from inside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Crabs, turtles and eels filling the big house, water rising to knee height, sun and moon watching with wide eyes from higher up, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Dolphins and enormous whales swimming slowly through the door of the flooded house, water nearly at the ceiling, sun and moon climbing out onto the roof, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "The sun and moon standing on the roof of a flooded house as water rises all around, both beginning to float upward into the sky, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-10.jpg → "A glowing sun and a silver moon shining high up in the vast blue sky above a world covered with ocean, looking down peacefully, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
 // ─── peter-rabbit ─────────────────────────────────────────────────────────────
 // page-1.jpg  → "A mother rabbit wearing a blue shawl sitting cosily under the roots of a big fir tree with her young bunnies nestled around her, warm and snug, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -963,109 +962,105 @@ export const STORY_BOOKS = [
   // ─── Beloved Classics ─────────────────────────────────────────────────────────
 
   {
-    id: 'guess-how-much-i-love-you',
-    title: 'Guess How Much I Love You',
-    subtitle: 'Love is bigger than anything',
-    coverEmoji: '🐰',
+    id: 'steadfast-tin-soldier',
+    title: 'The Steadfast Tin Soldier',
+    subtitle: 'Be brave, no matter what',
+    coverEmoji: '💂',
     origin: 'western',
     color: '#14b8a6',
     shadow: '#0d9488',
     pages: [
       {
-        scene: ['🐰', '🐇', '🌿', '🌙'],
-        text: 'The evening was warm and still, and the first stars were beginning to appear in the deep blue sky. Little Nutbrown Hare and Big Nutbrown Hare were getting ready for bed in the soft grass by the hedgerow. But before he could sleep, Little Nutbrown Hare had something very important he needed to say.',
+        scene: ['🎁', '💂', '💂', '💂', '⭐'],
+        text: 'A little boy once received a wonderful birthday gift — a box of twenty-five tin soldiers, all brothers, all wearing smart red and blue uniforms. They stood in a row, rifles on their shoulders, proud as could be. But the very last soldier had only one leg, for when he was made, there was not quite enough tin left over.',
       },
       {
-        scene: ['🐰', '🐇', '💬', '❤️'],
-        text: '"Guess how much I love you!" said Little Nutbrown Hare. He stretched his arms out as wide as they would possibly go — as wide as they could reach in both directions. Big Nutbrown Hare looked at those small outstretched arms and smiled a warm smile. "Oh," he said, "I\'d say about that much." And he stretched his own arms wide — much, much wider, because Big Nutbrown Hare\'s arms were very long indeed.',
+        scene: ['💂', '🏰', '💃', '❤️'],
+        text: 'On the same table stood a beautiful paper castle, and in front of it danced a tiny paper dancer. She held her arms wide and stretched one leg so high behind her that the tin soldier could not see it at all. "She must have only one leg — just like me!" he thought. He gazed at her and felt his tin heart flutter. He fell in love at once.',
       },
       {
-        scene: ['🐰', '⬆️', '💪', '🌿'],
-        text: 'Little Nutbrown Hare thought for a moment. Then he raised his arms up as high above his head as they would go, standing on his very tiptoes to reach even higher. "I love you THIS high!" he announced proudly. Big Nutbrown Hare raised his own arms — slowly, stretching upward until his fingertips were pointing at the sky. "And I love you THIS high," he said softly. Little Nutbrown Hare stared up at those long arms. That was very, very high.',
+        scene: ['💂', '💃', '👁️', '☀️'],
+        text: 'All day long the tin soldier stood perfectly still and watched the dancer. The other soldiers marched about, clattered and fell over, and generally made a great deal of noise. But the steadfast tin soldier never moved. He stood straight and still, eyes fixed on the dancer, from morning until the sun went down.',
       },
       {
-        scene: ['🐰', '🌿', '🏃', '💨'],
-        text: 'Little Nutbrown Hare had another idea. He turned and hopped down the path as fast as he could — hop hop hop hop hop — until he could go no further, then spun around. "I love you as far as I can HOP!" he called back, panting a little. Big Nutbrown Hare laughed and hopped after him — bounding past him in great long leaps, going much, much farther before he turned. "And I love you as far as I can hop," he said.',
+        scene: ['📦', '💥', '😤', '💂'],
+        text: 'That night, when the house was quiet, the lid of a little black box flew open with a loud BANG. Out sprang a mischievous jack-in-the-box with wild hair and a wicked grin. "Stop staring at the dancer!" it shouted. "Keep your eyes to yourself!" But the steadfast tin soldier paid no attention whatsoever.',
       },
       {
-        scene: ['🐰', '🌊', '🏔️', '💭'],
-        text: 'Little Nutbrown Hare looked out at the wide world around them. He could see the glimmer of the river in the distance. He could see the dark shapes of the hills beyond. "I love you all the way to the river!" he said. Big Nutbrown Hare looked at the river, then at the hills behind it. "I love you all the way across the river and over those hills," he said gently. Little Nutbrown Hare looked at those hills for a long time. That was very far.',
+        scene: ['💂', '🪟', '💨', '⬇️'],
+        text: 'The very next morning, the window was open and a gust of wind swept through the room. The tin soldier wobbled on his one leg — and fell! Out the window he tumbled, down, down, past the flowers on the sill, and landed with a tiny CLANG on the cobblestone street far, far below.',
       },
       {
-        scene: ['🐰', '🌿', '🙃', '😄'],
-        text: 'Little Nutbrown Hare flopped backward into the soft grass, and waved his feet cheerfully up in the air. "I love you right up to my toes!" he giggled. Big Nutbrown Hare reached over and caught those small waggling feet in his big hands. "And I love you right up to your toes too," he said with a laugh, giving them a gentle squeeze.',
+        scene: ['💂', '🚤', '🌊', '🐀'],
+        text: 'Two boys found him lying in the gutter and made him a little paper boat. They set him sailing in the stream of rainwater rushing along the street. Down he went, round corners and into a dark drainpipe underground. A large grey rat blocked the tunnel and growled, "Show me your passport!" But the paper boat rushed past in the rushing water before the rat could do a thing.',
       },
       {
-        scene: ['🐰', '🐇', '🤗', '❤️'],
-        text: 'Little Nutbrown Hare wriggled upright again and threw his arms around Big Nutbrown Hare\'s neck as tight as he could. He held on for a very long moment. Big Nutbrown Hare held him back, warm and safe and still. They stayed like that for a little while, saying nothing at all.',
+        scene: ['💂', '🌊', '⬇️', '💧'],
+        text: 'The pipe opened out over a wide canal and the paper boat shot over the edge. The water rushed in and the boat tipped over. The tin soldier fell out — and sank. Down, down, down through the cold dark water he went, still standing straight and tall, chin up, eyes open, brave as any soldier could be.',
       },
       {
-        scene: ['🌙', '⭐', '🐰', '💭'],
-        text: 'Little Nutbrown Hare looked up at the sky. The moon had risen — round and full and glowing, hanging above the dark trees like a lantern. He stared at it for a long time. It was the most faraway thing he could think of. "I love you all the way to the moon," he said quietly. His eyes felt very heavy now.',
+        scene: ['💂', '🐟', '😮', '🌑'],
+        text: 'In the darkness below, a large fish swam up and opened its mouth — GULP! — and swallowed the tin soldier whole. It was very dark and quite cramped inside the fish, but the soldier stood perfectly upright and did not complain, for that is what a steadfast soldier does.',
       },
       {
-        scene: ['🐇', '🐰', '🌿', '😴'],
-        text: 'Big Nutbrown Hare gently laid Little Nutbrown Hare down in the soft grass and folded a warm leaf under his chin like a blanket. Little Nutbrown Hare\'s eyes fluttered. The stars were very bright. The moon was very round. Everything was perfectly still.',
+        scene: ['💂', '🐟', '👩‍🍳', '✨'],
+        text: 'The fish was caught that very morning by a fisherman, sold at the market, and brought to a kitchen to be cooked for dinner. When the cook sliced it open, she let out a cry of surprise — for there inside the fish, standing perfectly upright, was a shining tin soldier! "Well!" she said. "You came from upstairs, didn\'t you?" And she carried him back up.',
       },
       {
-        scene: ['🐇', '🌙', '⭐', '❤️'],
-        text: 'Little Nutbrown Hare fell fast asleep. Big Nutbrown Hare bent very close and whispered, just once, as softly as the night wind: "I love you all the way to the moon — and back." And that, of all things, is the very farthest way of all.',
+        scene: ['💂', '💃', '❤️', '🏠'],
+        text: 'The cook set the tin soldier back on the table — and there was the paper dancer, still standing on her one leg, arms wide open, just as he remembered. The tin soldier stood tall beside her, and his tin heart was full. He had crossed rivers and dark drains and the belly of a fish, and he had never once given up. And from that day on, he and the dancer stood side by side and watched over each other always.',
       },
     ],
   },
 
   {
-    id: 'frog-and-toad',
-    title: 'Frog and Toad Are Friends',
-    subtitle: 'The best thing in the world is a good friend',
-    coverEmoji: '🐸',
+    id: 'sun-and-moon-in-the-sky',
+    title: 'Why the Sun and Moon Live in the Sky',
+    subtitle: 'A story from West Africa',
+    coverEmoji: '☀️',
     origin: 'western',
-    color: '#10b981',
-    shadow: '#059669',
+    color: '#f59e0b',
+    shadow: '#d97706',
     pages: [
       {
-        scene: ['🐸', '🌸', '🌿', '☀️'],
-        text: 'It was the very first morning of spring, and Frog woke up feeling absolutely wonderful. The sun was warm, the birds were singing their first songs, and the forest smelled of new leaves and damp earth. There was only one thing Frog wanted to do — visit his very best friend, Toad.',
+        scene: ['☀️', '💧', '🤝', '🌍'],
+        text: 'Long, long ago, when the world was young and everything was new, the Sun and the Water were the very best of friends. Every morning the Sun shone golden and warm, and the Water sparkled and danced, and they called out hello to each other across the wide earth.',
       },
       {
-        scene: ['🐸', '🚪', '🐊', '😴'],
-        text: 'Frog hopped down the path and knocked on Toad\'s door. Silence. He knocked again, louder. There was a long pause, then the door opened the tiniest crack and one bleary eye appeared. "Go away," growled Toad. "I am still asleep. It is not yet spring." He shut the door firmly.',
+        scene: ['☀️', '🌊', '🐟', '🐋'],
+        text: 'The Sun often went to visit the Water, walking down to the great wide river where the Water lived with all his people — the silver fish and the spotted crabs, the leaping dolphins and the slow great whales, and every creature of the deep. It was always a wonderful visit.',
       },
       {
-        scene: ['🐸', '📅', '🌸', '😄'],
-        text: 'Frog opened the door and walked right in. "Toad! Look at the calendar!" he said cheerfully, pointing to the wall. "It IS spring! May is here! The whole world is waiting for us outside." Toad pulled his blanket all the way over his head. Only a muffled voice came out: "Wake me in September."',
+        scene: ['☀️', '💧', '💬', '🏠'],
+        text: 'But the Water never came to visit the Sun. One day the Sun asked, "Dear Water, why do you never come to my home? I visit you all the time!" The Water replied, "I would love to, dear Sun — but your house is not nearly big enough for me and all my people. We are very, very many."',
       },
       {
-        scene: ['🐸', '🪟', '☀️', '🌸'],
-        text: 'Frog drew back the curtains. Warm golden sunshine poured across the floor and lit up the whole room. Toad made a very displeased sound and tried to burrow deeper under the blankets. Frog sat patiently on the edge of the bed and began describing, in a slow and dreamy voice, everything that was waiting outside.',
+        scene: ['☀️', '🌙', '🔨', '🏗️'],
+        text: 'The Sun looked at his house. He thought about this carefully. Then he said, "I shall build a bigger one!" He and the Moon — his dear companion — worked very hard together, hammering and sawing and heaving, until they had built the most enormous house anyone had ever seen, with a doorway wide enough for a whale.',
       },
       {
-        scene: ['🐊', '👁️', '🌿', '💭'],
-        text: '"The pond," said Frog, "is absolutely sparkling today. And there are dragonflies — the blue ones. And the meadow grass is so green it almost glows." One of Toad\'s ears emerged from under the blanket. Then the other. Then two blinking eyes. "The blue dragonflies?" Toad said carefully. "The very ones," said Frog.',
+        scene: ['💧', '🚪', '☀️', '😄'],
+        text: '"Come now, dear Water!" called the Sun. The Water flowed up to the great wide doorway and paused. "Are you truly sure?" said the Water. "We are a great many people." "Come in! Come in! There is room for everyone!" said the Sun warmly. So the Water began to flow inside.',
       },
       {
-        scene: ['🐊', '🐸', '🌿', '😊'],
-        text: 'Toad sat up slowly, squinting at the sunny window. He looked at the bright sky. He looked at Frog\'s cheerful face. He sighed a very deep sigh — but it was not entirely an unhappy sigh. "I suppose," said Toad slowly, "that I could get up. Just for a little while."',
+        scene: ['🐟', '🐟', '💧', '☀️'],
+        text: 'First came the little fish — hundreds of tiny silver ones that flicked and darted around the floor like living sparks. The water reached only ankle deep. The Sun and Moon stood by the window and smiled. "You see?" said the Sun. "Plenty of room!"',
       },
       {
-        scene: ['🐸', '🐊', '🌊', '🦋'],
-        text: 'They walked down to the pond together. The water did sparkle, exactly as Frog had promised. They watched a family of ducks. They found a sunny flat rock and sat on it, and Frog had packed sandwiches, which they ate while watching the dragonflies dart back and forth over the shimmering water.',
+        scene: ['🦀', '🐢', '🦑', '💧'],
+        text: 'Then came the bigger creatures — spotted crabs sideways-scuttling, long eels winding, orange starfish rolling, great sea turtles gliding slowly through the door. The water rose to the Sun\'s knees. The Sun looked around at the rising water. "There is still room!" he said cheerfully.',
       },
       {
-        scene: ['🐊', '🌸', '😄', '🌿'],
-        text: 'Toad found he was having a rather good time. He watched a frog jump into the pond with a satisfying splash. He listened to the birds. He ate three sandwiches. He began to think that perhaps spring was not so dreadful after all. He almost said so to Frog — but Frog already knew, and just smiled.',
+        scene: ['🐬', '🐳', '🌊', '😮'],
+        text: 'Then came the dolphins, leaping and splashing. Then came the enormous whales, gliding majestically through the wide doorway one by one. The water rose above the windows. It rose above the walls. It nearly touched the ceiling. "Shall we keep coming?" called the Water. "Yes, yes! Come in!" said the Sun.',
       },
       {
-        scene: ['🐸', '🐊', '🌾', '🌅'],
-        text: 'They spent the whole long wonderful day outside — talking about nothing and everything, watching the afternoon shadows grow long across the meadow, and laughing at stories they had told each other a hundred times before but never seemed to get old.',
+        scene: ['☀️', '🌙', '⬆️', '🌤️'],
+        text: 'So the Sun and the Moon climbed up onto the roof. The water rose above the chimney pots and kept on rising. The Sun and the Moon climbed higher — up, up, up into the great blue sky — higher than the clouds, higher than the birds, higher than anything.',
       },
       {
-        scene: ['🌅', '🐸', '🐊', '🏠'],
-        text: 'As the sky turned pink and gold, they walked slowly back toward Toad\'s house. "Thank you for waking me," Toad said quietly. He paused. "I almost missed the whole day." Frog put one hand on Toad\'s shoulder. "That\'s what best friends are for," he said simply.',
-      },
-      {
-        scene: ['🐸', '🐊', '⭐', '🌙'],
-        text: 'They sat together on Toad\'s doorstep as the stars came out one by one, not talking at all — just sitting side by side, listening to the frogs singing down by the pond, feeling perfectly, completely happy. And that, really, is the very best thing in the whole world.',
+        scene: ['☀️', '🌙', '🌌', '✨'],
+        text: 'And there they stayed. The Water and all his people filled the whole wide earth below. The Sun and the Moon could not come back down. And so, from that day to this, the Sun and the Moon have lived up in the sky — and that is exactly where you will always find them, looking down warmly on the world below.',
       },
     ],
   },
