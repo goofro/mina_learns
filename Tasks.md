@@ -5,8 +5,8 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-18 (Story elaboration — all 10 Story Time stories expanded to 11–13 pages, ChatGPT image prompts updated)  
-**Current version:** v1.32.0
+**Last updated:** 2026-04-20 (FEAT-041: PWA deployment — GitHub Actions + GitHub Pages)  
+**Current version:** v1.33.0
 
 ---
 
@@ -116,9 +116,10 @@ Current font (Nunito) renders capital I and lowercase l nearly identically, and 
 **Files:** `src/components/art/FreeDrawStudio.jsx`, `src/components/home/HomeScreen.jsx`
 **Fixed:** 2026-04-05 ✅ — Free Draw Studio now full-screen with left sidebar (15 color swatches + stamp picker), 5 brush sizes, dark canvas UI. "Save to Home" stores drawing to `mina_art_gallery` array (max 6) in localStorage. HomeScreen reads the gallery and displays drawings as polaroid frames pinned at the left/right viewport edges behind the main content.
 
-### [ ] FEAT-041: PWA deployment for iPad (and other tablets)
+### [x] FEAT-041: PWA deployment for iPad (and other tablets)
 **Priority:** Medium  
 **Description:** Deploy the app as a hosted Progressive Web App so it can be used on an iPad without needing a PC running. Steps: (1) run `npm run build` to produce a static `dist/` folder; (2) deploy to Netlify, Vercel, or GitHub Pages; (3) open the URL in iPad Safari and tap "Add to Home Screen" for a full-screen, icon-on-homescreen experience. The app is already touch-optimised (FEAT-007) and has iOS PWA meta tags in `index.html`. No code changes required — this is purely a deployment/hosting task.
+**Done:** 2026-04-20 ✅ — Added `public/manifest.json` + `public/icon.svg`, linked manifest in `index.html`, set `base: '/mina_learns/'` in `vite.config.js`. GitHub Actions workflow at `.github/workflows/deploy.yml` auto-builds on every push to main and deploys to GitHub Pages. **URL:** https://goofro.github.io/mina_learns/ — To install on iPad: open in Safari → Share → Add to Home Screen.
 
 ### [x] FEAT-014: Vowels & Consonants intro lesson
 **Priority:** High  
