@@ -29,11 +29,11 @@ const COLORS = [
 ]
 
 const BRUSHES = [
-  { size: 4,  title: 'Thin'   },
-  { size: 14, title: 'Small'  },
-  { size: 28, title: 'Medium' },
-  { size: 50, title: 'Thick'  },
-  { size: 80, title: 'Chunky' },
+  { size: 4,  display: 8,  title: 'Thin'   },
+  { size: 14, display: 14, title: 'Small'  },
+  { size: 28, display: 22, title: 'Medium' },
+  { size: 50, display: 32, title: 'Thick'  },
+  { size: 80, display: 44, title: 'Chunky' },
 ]
 
 const STAMPS = ['⭐', '🌸', '🦋', '🌈', '🐱', '🐶', '🍭', '🎈', '❤️', '🌺', '🐸', '🌟', '🦄', '🍦', '🎀', '🌻', '🚀', '🎵']
@@ -284,11 +284,10 @@ export function FreeDrawStudio({ onBack }) {
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', marginLeft: '8px' }}>
           <span style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 700 }}>Size:</span>
           {BRUSHES.map((b, i) => {
-            const d = 12 + i * 8
             return (
               <button key={i} onClick={() => setBrushIdx(i)} title={b.title}
                 style={{
-                  width: d, height: d, borderRadius: '50%', padding: 0,
+                  width: b.display, height: b.display, borderRadius: '50%', padding: 0,
                   background: brushIdx === i ? color : '#4b5563',
                   border: `2px solid ${brushIdx === i ? 'white' : 'transparent'}`,
                   cursor: 'pointer', flexShrink: 0,
