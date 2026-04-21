@@ -483,6 +483,27 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 📋 New Features
 
+### [ ] FEAT-058: Larger images in storybook reader
+**Priority:** Medium
+**Description:** The story page images in StoryBookReader are too small — they don't fill enough of the screen, making the illustrations hard to appreciate on a tablet. Increase the image size so it takes up the majority of the page view (ideally edge-to-edge width or a large centered panel), with the story text displayed below or in an overlay rather than side-by-side. Consider a tap-to-expand mode that shows the image full-screen while the text slides in from the bottom on a second tap.
+**File:** `src/components/storybook/StoryBookReader.jsx`
+
+---
+
+### [ ] FEAT-057: Curriculum tracker / learning progress dashboard
+**Priority:** Medium
+**Description:** A parent-facing screen that maps Mina's activity completion to an age-appropriate curriculum framework (e.g. UK Early Years Foundation Stage or US Kindergarten Common Core). Shows which curriculum areas have been covered, which need more practice, and suggests the next activity to focus on. Organized by domain:
+- **Literacy:** phonics, sight words, reading, writing, spelling
+- **Mathematics:** counting, addition, subtraction, shapes, patterns, measurement
+- **Science & World:** dinosaurs, animals, body, life cycles, seasons
+- **Creative:** art, music, drawing
+- **Cognitive:** sorting, memory, sequencing, cause & effect
+
+Each domain shows a simple progress bar (activities attempted / total available) and a "suggested next" card linking directly into the app. Could live in the Parent Dashboard as a new "📚 Curriculum" tab alongside Overview, Progress Report, and Settings.
+**Files:** `src/components/parent/ParentDashboard.jsx` (add tab), new `src/components/parent/CurriculumTracker.jsx`
+
+---
+
 ### [ ] FEAT-056: Spelling section
 **Priority:** High
 **Description:** A dedicated Spelling World section teaching Mina to spell words she already knows from Reading World. Structured in progressive levels, from simple 3-letter CVC words up to 5-letter words. Three activity types:
