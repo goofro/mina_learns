@@ -483,6 +483,44 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 📋 New Features
 
+### [ ] FEAT-056: Spelling section
+**Priority:** High
+**Description:** A dedicated Spelling World section teaching Mina to spell words she already knows from Reading World. Structured in progressive levels, from simple 3-letter CVC words up to 5-letter words. Three activity types:
+
+**1. Spell It! (main activity)**
+- Hear a word spoken by TTS + see a picture/emoji clue
+- Drag or tap letters from a shuffled letter bank to fill in the blank boxes (one box per letter)
+- Correct: celebrate + next word. Wrong: gentle shake, try again
+- Letters drawn from the sight word and CVC word lists already in the app
+
+**2. Missing Letter**
+- Show a partially spelled word with one letter blanked out (e.g. `c_t`)
+- TTS speaks the word; Mina taps the correct missing letter from 4 choices
+- Easier entry point than full spelling — good for beginners
+
+**3. Spell from Memory**
+- Flash the word for 2 seconds, then hide it
+- Mina taps letters from a scrambled set to reconstruct it from memory
+- Harder mode; unlocks after passing Spell It! for that level
+
+**Levels:**
+- Level 1: 3-letter CVC words (cat, dog, sun, hat, bed, pig…) — 20 words
+- Level 2: Sight words 3–4 letters (the, and, was, they, have…) — 20 words
+- Level 3: 4-letter words (frog, ship, rain, tree, play…) — 20 words
+- Level 4: 5-letter words (chair, light, bread, green, night…) — 20 words
+
+**UI:**
+- Letter tiles: large, chunky, easy to tap on tablet
+- Empty boxes highlight as letters are placed
+- Backspace/clear button to undo
+- 2 stars per correct word on first try, 1 star on retry
+- Progress tracked per level in `useProgress`
+
+**Files to create:** `src/components/spelling/SpellingHome.jsx`, `src/components/spelling/SpellIt.jsx`, `src/components/spelling/MissingLetter.jsx`, `src/components/spelling/SpellFromMemory.jsx`, `src/data/spellingWords.js`
+**Also update:** `src/components/home/HomeScreen.jsx` (add Spelling World button), `src/App.jsx` (routing)
+
+---
+
 ### [x] FEAT-049: Add "Mina" to Write Your Name activity
 **Priority:** High  
 **Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
