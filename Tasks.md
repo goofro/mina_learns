@@ -606,6 +606,46 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
+### [ ] CHORE-003: Generate AI images for Story Library
+**Priority:** Low  
+**Description:** 27 stories exist in the library. 8 are fully illustrated, 2 are partially done, and 17 have no images at all (falling back to emoji scenes). Image prompts are embedded as comments in `src/data/storyBook.js` for most stories — check the relevant story block before generating.
+
+**Fully illustrated ✅ (no action needed):**
+three-little-pigs, goldilocks, tortoise-and-hare, little-red-riding-hood, change-moon, hou-yi-ten-suns, hua-mulan, magic-paintbrush
+
+**Partially done — missing pages only:**
+- `boy-who-cried-wolf` — has page-1 to page-6, needs **page-7 through page-11**
+- `monkey-king` — has page-1 to page-12, needs **page-13**
+
+**No images — needs full set:**
+| Story | Folder | Pages needed |
+|-------|--------|-------------|
+| Guess How Much I Love You | `guess-how-much-i-love-you` | 10 |
+| Frog and Toad Are Friends | `frog-and-toad` | 11 |
+| Peter Rabbit | `peter-rabbit` | 11 |
+| The Velveteen Rabbit | `velveteen-rabbit` | 11 |
+| Anansi and the Pot of Wisdom | `anansi-pot-of-wisdom` | 10 |
+| Momotaro | `momotaro` | 10 |
+| The Empty Pot | `empty-pot` | 10 |
+| The Princess and the Pea | `princess-and-pea` | 10 |
+| The Ugly Duckling | `ugly-duckling` | 10 |
+| Jack and the Beanstalk | `jack-and-the-beanstalk` | 11 |
+| Hansel and Gretel | `hansel-and-gretel` | 10 |
+| The Gingerbread Man | `gingerbread-man` | 10 |
+| The Crow and the Pitcher | `crow-and-pitcher` | 10 |
+| The Dog and the Shadow | `dog-and-shadow` | 10 |
+| The Ant and the Grasshopper | `ant-and-grasshopper` | 11 |
+| The Fox and the Grapes | `fox-and-grapes` | 10 |
+| The Lion and the Mouse | `lion-and-mouse` | 11 |
+
+**Steps per story:**
+1. Find the story block in `src/data/storyBook.js` and copy the per-page image prompts from the comments
+2. Generate images with DALL-E / ChatGPT Image
+3. Save as `public/images/stories/<folder>/page-1.png`, `page-2.png`, etc.
+4. Commit and push — images appear immediately on the deployed site
+
+---
+
 ### [ ] CHORE-001: Delete stale remote feature branches
 **Priority:** Low  
 **Description:** Five feature branches on GitHub have been fully merged into `main` and can be safely deleted. Run the following command (requires push permission to the repo):
