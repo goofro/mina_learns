@@ -570,6 +570,34 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File:** `src/data/storyBook.js`  
 **Note:** After adding stories, also generate illustration prompts for the image folders under `public/images/stories/`.
 
+### [ ] FEAT-057: Profile export / import — portable backup file
+**Priority:** High
+**Description:** Allow parents to export any child profile (progress, stars, milestones, settings, custom word lists, teaching sequence state) as a single downloadable JSON file, and re-import it on a new device (iPad, PC, etc.) to restore everything exactly as it was.
+
+**Export flow:**
+- "Export Profile" button in Parent Dashboard → Settings (per profile).
+- Collects all localStorage keys belonging to that profile (`mina_learns_progress_${id}`, `mina_teaches_${id}`, `mina_art_settings`, `mina_custom_words`, `mina_art_gallery`, `mina_learns_profiles` entry, etc.).
+- Bundles into a single JSON object with a metadata header: `{ exportVersion: 1, exportedAt: "ISO date", profileName: "Mina", data: { ... } }`.
+- Triggers a browser `<a download="mina-profile-2026-04-21.json">` download — no server required, works fully offline.
+
+**Import flow:**
+- "Import Profile" button on the Profile Picker screen and in Parent Settings.
+- File picker (`<input type="file" accept=".json">`).
+- Validates the `exportVersion` field and presence of required keys before writing.
+- On success: writes all keys into localStorage, creates or updates the profile entry, and switches to the imported profile.
+- On failure: shows a clear error message ("This file doesn't look like a Mina Learns backup").
+
+**Safety:**
+- If a profile with the same name already exists, prompt: "Replace existing Mina profile?" with Cancel / Replace options.
+- Never silently overwrite without confirmation.
+
+**Scope:** Export/import covers all data — progress, streaks, difficulty levels, stars, sticker book, art gallery (base64 images), custom words, teaching sequence, and profile metadata. The art gallery images may make the file large (~1–2 MB) — note this in the UI ("Your backup includes saved artwork and may be a few MB").
+
+**Files to create/modify:**
+- New `src/utils/profileBackup.js` — `exportProfile(profileId)` and `importProfile(file)` helpers
+- `src/components/profiles/ProfilePicker.jsx` — add Import button
+- `src/components/parent/ParentSettings.jsx` — add Export Profile button
+
 ### [ ] FEAT-056: Teaching Sequence Tracker — parent curriculum planner with taught/mastered tracking
 **Priority:** High
 **Description:** A dedicated section in the Parent Dashboard for planning and tracking the order in which reading and maths concepts are introduced to Mina. Parents can define a curriculum sequence where some topics must be taught before others (sequential dependencies, e.g. "Short Vowels → Magic E → Vowel Teams") and some can be worked on in parallel (e.g. practising Digraphs alongside Sight Words Level 2). Each topic has two independent checkboxes: **Taught** (parent has introduced it) and **Mastered** (Mina has demonstrated solid understanding). Dates are recorded for each.
