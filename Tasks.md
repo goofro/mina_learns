@@ -483,6 +483,65 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 📋 New Features
 
+### [ ] FEAT-058: Larger images in storybook reader
+**Priority:** Medium
+**Description:** The story page images in StoryBookReader are too small — they don't fill enough of the screen, making the illustrations hard to appreciate on a tablet. Increase the image size so it takes up the majority of the page view (ideally edge-to-edge width or a large centered panel), with the story text displayed below or in an overlay rather than side-by-side. Consider a tap-to-expand mode that shows the image full-screen while the text slides in from the bottom on a second tap.
+**File:** `src/components/storybook/StoryBookReader.jsx`
+
+---
+
+### [ ] FEAT-057: Curriculum tracker / learning progress dashboard
+**Priority:** Medium
+**Description:** A parent-facing screen that maps Mina's activity completion to an age-appropriate curriculum framework (e.g. UK Early Years Foundation Stage or US Kindergarten Common Core). Shows which curriculum areas have been covered, which need more practice, and suggests the next activity to focus on. Organized by domain:
+- **Literacy:** phonics, sight words, reading, writing, spelling
+- **Mathematics:** counting, addition, subtraction, shapes, patterns, measurement
+- **Science & World:** dinosaurs, animals, body, life cycles, seasons
+- **Creative:** art, music, drawing
+- **Cognitive:** sorting, memory, sequencing, cause & effect
+
+Each domain shows a simple progress bar (activities attempted / total available) and a "suggested next" card linking directly into the app. Could live in the Parent Dashboard as a new "📚 Curriculum" tab alongside Overview, Progress Report, and Settings.
+**Files:** `src/components/parent/ParentDashboard.jsx` (add tab), new `src/components/parent/CurriculumTracker.jsx`
+
+---
+
+### [ ] FEAT-056: Spelling section
+**Priority:** High
+**Description:** A dedicated Spelling World section teaching Mina to spell words she already knows from Reading World. Structured in progressive levels, from simple 3-letter CVC words up to 5-letter words. Three activity types:
+
+**1. Spell It! (main activity)**
+- Hear a word spoken by TTS + see a picture/emoji clue
+- Drag or tap letters from a shuffled letter bank to fill in the blank boxes (one box per letter)
+- Correct: celebrate + next word. Wrong: gentle shake, try again
+- Letters drawn from the sight word and CVC word lists already in the app
+
+**2. Missing Letter**
+- Show a partially spelled word with one letter blanked out (e.g. `c_t`)
+- TTS speaks the word; Mina taps the correct missing letter from 4 choices
+- Easier entry point than full spelling — good for beginners
+
+**3. Spell from Memory**
+- Flash the word for 2 seconds, then hide it
+- Mina taps letters from a scrambled set to reconstruct it from memory
+- Harder mode; unlocks after passing Spell It! for that level
+
+**Levels:**
+- Level 1: 3-letter CVC words (cat, dog, sun, hat, bed, pig…) — 20 words
+- Level 2: Sight words 3–4 letters (the, and, was, they, have…) — 20 words
+- Level 3: 4-letter words (frog, ship, rain, tree, play…) — 20 words
+- Level 4: 5-letter words (chair, light, bread, green, night…) — 20 words
+
+**UI:**
+- Letter tiles: large, chunky, easy to tap on tablet
+- Empty boxes highlight as letters are placed
+- Backspace/clear button to undo
+- 2 stars per correct word on first try, 1 star on retry
+- Progress tracked per level in `useProgress`
+
+**Files to create:** `src/components/spelling/SpellingHome.jsx`, `src/components/spelling/SpellIt.jsx`, `src/components/spelling/MissingLetter.jsx`, `src/components/spelling/SpellFromMemory.jsx`, `src/data/spellingWords.js`
+**Also update:** `src/components/home/HomeScreen.jsx` (add Spelling World button), `src/App.jsx` (routing)
+
+---
+
 ### [x] FEAT-049: Add "Mina" to Write Your Name activity
 **Priority:** High  
 **Description:** The Write Your Name activity in Reading World currently lists: Aria, Albert, Melissa, mom, dad, sister, Lily — but "Mina" is missing! Add Mina as the first option (most motivating name for the child using the app).  
@@ -647,6 +706,145 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** The drawing pad in Art Studio → Free Drawing is too small. Expand the canvas to fill as much of the screen as possible — ideally edge-to-edge on tablets. Move the toolbar (colors, brush sizes, eraser, stamps) to a compact sidebar or collapsible strip so it doesn't eat into canvas space. Ensure the canvas resolution scales up with its display size so drawings don't look pixelated.  
 **File:** `src/components/art/FreeDrawStudio.jsx`  
 **Fixed:** Already done as part of FEAT-042 ✅ — Canvas is `position: fixed` filling the full viewport (minus StarBar), colors live in a 68px left sidebar, tools in a slim top bar. Internal resolution is 1600×1000 with CSS scaling so there's no pixelation.
+
+---
+
+## 🔧 Maintenance
+
+### [ ] CHORE-004: Image accuracy review — story illustrations
+**Priority:** Medium
+**Description:** Read each story page text, view the actual image file, and compare against the AI prompt. Flag any mismatches in `src/data/storyBook.js` with `// **** IMAGE MISMATCH:` on the line before the prompt, explaining what the actual image shows and what's wrong. Regenerate flagged images using the corrected prompt.
+
+**Stories with images — need review:**
+
+| Story | Folder | Pages | Status |
+|-------|--------|-------|--------|
+| Goldilocks | `goldilocks` | 12 | ⚠️ Pages 5–12 flagged — sprite-sheet cutting errors, 8 images need regeneration |
+| Three Little Pigs | `three-little-pigs` | 12 | [ ] not reviewed |
+| Boy Who Cried Wolf | `boy-who-cried-wolf` | 6 of 11 | [ ] not reviewed |
+| Tortoise and the Hare | `tortoise-and-hare` | 11 | [ ] not reviewed |
+| Little Red Riding Hood | `little-red-riding-hood` | 12 | [ ] not reviewed |
+| Chang'e and the Moon | `change-moon` | 11 | [ ] not reviewed |
+| Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
+| Hua Mulan | `hua-mulan` | 12 | [ ] not reviewed |
+| The Magic Paintbrush | `magic-paintbrush` | 12 | [ ] not reviewed |
+| The Monkey King | `monkey-king` | 12 of 13 | [ ] not reviewed |
+
+**Stories with no images — generate first, then review:**
+
+| Story | Folder | Pages | Status |
+|-------|--------|-------|--------|
+| The Steadfast Tin Soldier | `steadfast-tin-soldier` | 10 | [ ] no images |
+| Why the Sun and Moon Live in the Sky | `sun-and-moon-in-the-sky` | 10 | [ ] no images |
+| Peter Rabbit | `peter-rabbit` | 11 | [ ] no images |
+| The Velveteen Rabbit | `velveteen-rabbit` | 11 | [ ] no images |
+| Anansi and the Pot of Wisdom | `anansi-pot-of-wisdom` | 10 | [ ] no images |
+| Momotaro | `momotaro` | 10 | [ ] no images |
+| The Empty Pot | `empty-pot` | 10 | [ ] no images |
+| The Princess and the Pea | `princess-and-pea` | 10 | [ ] no images |
+| The Ugly Duckling | `ugly-duckling` | 10 | [ ] no images |
+| Jack and the Beanstalk | `jack-and-the-beanstalk` | 11 | [ ] no images |
+| Hansel and Gretel | `hansel-and-gretel` | 10 | [ ] no images |
+| The Gingerbread Man | `gingerbread-man` | 10 | [ ] no images |
+| The Crow and the Pitcher | `crow-and-pitcher` | 10 | [ ] no images |
+| The Dog and the Shadow | `dog-and-shadow` | 10 | [ ] no images |
+| The Ant and the Grasshopper | `ant-and-grasshopper` | 11 | [ ] no images |
+| The Fox and the Grapes | `fox-and-grapes` | 10 | [ ] no images |
+| The Lion and the Mouse | `lion-and-mouse` | 11 | [ ] no images |
+
+---
+
+### [ ] CHORE-005: Find and add more stories — Western and Eastern cultures
+**Priority:** Low
+**Description:** Expand the Story Library beyond the current 27 stories. Aim for a diverse mix of cultures with strong moral lessons, age-appropriate themes, and vivid imagery that lends itself to illustration. All stories must be **public domain** (see copyright note in session notes). Suggested areas to explore:
+
+*Western / European (public domain):*
+- More Aesop fables (The Tortoise and the Birds, The Wind and the Sun, The Milkmaid and Her Pail)
+- More Hans Christian Andersen (Thumbelina, The Little Mermaid, The Wild Swans)
+- More Brothers Grimm (Rapunzel, Rumpelstiltskin, Snow White, The Bremen Town Musicians)
+
+*Eastern / Asian:*
+- More Chinese folk tales (The Cowherd and the Weaver Girl, Nian the Monster, The Jade Rabbit)
+- Japanese folk tales (Urashima Taro, Issun-Boshi / One-Inch Boy, Tanuki the Raccoon Dog)
+- Indian folk tales (from the Panchatantra — The Monkey and the Crocodile, The Blue Jackal)
+- Korean folk tales (The Sun and the Moon — siblings who became sun and moon)
+- Middle Eastern (One Thousand and One Nights excerpts suitable for children — Sinbad, Ali Baba)
+
+*African / Other:*
+- More Anansi stories (Anansi and the Tiger, How Anansi Got His Stories)
+- Aboriginal Australian Dreamtime stories
+- Native American folk tales (How the Raven Stole the Sun)
+
+**How to add:** Follow the existing story format in `src/data/storyBook.js` — add an entry with `id`, `title`, `subtitle`, `coverEmoji`, `origin` (`'western'` or `'chinese'`), `color`, `shadow`, and `pages` (8–12 pages, each with `scene` emoji array and `text`). Add AI image prompts in the comments block at the top of the file.
+
+---
+
+### [ ] CHORE-002: Generate AI images for Dinosaur Explorer
+**Priority:** Low  
+**Description:** The Dinosaur Explorer already has a `DinoImage` component that loads images from `/public/images/dinosaurs/` and falls back to emoji if absent. All 11 prompts are ready — just generate and drop in the JPGs.  
+**Steps:**
+1. Open `src/components/science/DinosaurExplorer.jsx` and copy the prompts from the comments at the top (lines 8–18)
+2. Generate each image with DALL-E / ChatGPT Image / any image AI
+3. Save as `/public/images/dinosaurs/<name>.jpg` — filenames must match exactly:
+   `t-rex.jpg`, `triceratops.jpg`, `stegosaurus.jpg`, `brachiosaurus.jpg`,
+   `velociraptor.jpg`, `pterodactyl.jpg`, `ankylosaurus.jpg`, `spinosaurus.jpg`,
+   `diplodocus.jpg`, `parasaurolophus.jpg`, `allosaurus.jpg`
+4. Commit and push — images will appear immediately on the deployed site
+
+---
+
+### [ ] CHORE-003: Generate AI images for Story Library
+**Priority:** Low  
+**Description:** 27 stories exist in the library. 8 are fully illustrated, 2 are partially done, and 17 have no images at all (falling back to emoji scenes). Image prompts are embedded as comments in `src/data/storyBook.js` for most stories — check the relevant story block before generating.
+
+**Fully illustrated ✅ (no action needed):**
+three-little-pigs, goldilocks, tortoise-and-hare, little-red-riding-hood, change-moon, hou-yi-ten-suns, hua-mulan, magic-paintbrush
+
+**Partially done — missing pages only:**
+- `boy-who-cried-wolf` — has page-1 to page-6, needs **page-7 through page-11**
+- `monkey-king` — has page-1 to page-12, needs **page-13**
+
+**No images — needs full set:**
+| Story | Folder | Pages needed |
+|-------|--------|-------------|
+| The Steadfast Tin Soldier | `steadfast-tin-soldier` | 10 |
+| Why the Sun and Moon Live in the Sky | `sun-and-moon-in-the-sky` | 10 |
+| Peter Rabbit | `peter-rabbit` | 11 |
+| The Velveteen Rabbit | `velveteen-rabbit` | 11 |
+| Anansi and the Pot of Wisdom | `anansi-pot-of-wisdom` | 10 |
+| Momotaro | `momotaro` | 10 |
+| The Empty Pot | `empty-pot` | 10 |
+| The Princess and the Pea | `princess-and-pea` | 10 |
+| The Ugly Duckling | `ugly-duckling` | 10 |
+| Jack and the Beanstalk | `jack-and-the-beanstalk` | 11 |
+| Hansel and Gretel | `hansel-and-gretel` | 10 |
+| The Gingerbread Man | `gingerbread-man` | 10 |
+| The Crow and the Pitcher | `crow-and-pitcher` | 10 |
+| The Dog and the Shadow | `dog-and-shadow` | 10 |
+| The Ant and the Grasshopper | `ant-and-grasshopper` | 11 |
+| The Fox and the Grapes | `fox-and-grapes` | 10 |
+| The Lion and the Mouse | `lion-and-mouse` | 11 |
+
+**Steps per story:**
+1. Find the story block in `src/data/storyBook.js` and copy the per-page image prompts from the comments
+2. Generate images with DALL-E / ChatGPT Image
+3. Save as `public/images/stories/<folder>/page-1.png`, `page-2.png`, etc.
+4. Commit and push — images appear immediately on the deployed site
+
+---
+
+### [ ] CHORE-001: Delete stale remote feature branches
+**Priority:** Low  
+**Description:** Five feature branches on GitHub have been fully merged into `main` and can be safely deleted. Run the following command (requires push permission to the repo):
+```bash
+git push origin --delete \
+  claude/add-drawing-wallpaper-collage-1jjcX \
+  claude/create-story-image-prompts-OJVYE \
+  claude/display-todos-J21zR \
+  claude/ipad-compatibility-check-JYWUP \
+  claude/review-remaining-tasks-4kaPa
+```
+Alternatively, delete them via GitHub → Settings → Branches.
 
 ---
 
