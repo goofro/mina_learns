@@ -592,6 +592,25 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 🔧 Maintenance
 
+### [ ] CHORE-004: Image accuracy review — story illustrations
+**Priority:** Medium
+**Description:** Read each story page text, view the actual image file, and compare against the AI prompt. Flag any mismatches in `src/data/storyBook.js` with `// **** IMAGE MISMATCH:` on the line before the prompt, explaining what the actual image shows and what's wrong. Regenerate flagged images using the corrected prompt.
+
+| Story | Folder | Pages | Status |
+|-------|--------|-------|--------|
+| Goldilocks | `goldilocks` | 12 | ⚠️ Pages 5–12 flagged — sprite-sheet cutting errors, 8 images need regeneration |
+| Three Little Pigs | `three-little-pigs` | 12 | [ ] not reviewed |
+| Boy Who Cried Wolf | `boy-who-cried-wolf` | 6 of 11 | [ ] not reviewed |
+| Tortoise and the Hare | `tortoise-and-hare` | 11 | [ ] not reviewed |
+| Little Red Riding Hood | `little-red-riding-hood` | 12 | [ ] not reviewed |
+| Chang'e and the Moon | `change-moon` | 11 | [ ] not reviewed |
+| Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
+| Hua Mulan | `hua-mulan` | 12 | [ ] not reviewed |
+| The Magic Paintbrush | `magic-paintbrush` | 12 | [ ] not reviewed |
+| The Monkey King | `monkey-king` | 12 of 13 | [ ] not reviewed |
+
+---
+
 ### [ ] CHORE-002: Generate AI images for Dinosaur Explorer
 **Priority:** Low  
 **Description:** The Dinosaur Explorer already has a `DinoImage` component that loads images from `/public/images/dinosaurs/` and falls back to emoji if absent. All 11 prompts are ready — just generate and drop in the JPGs.  
