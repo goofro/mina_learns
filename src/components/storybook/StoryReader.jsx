@@ -17,9 +17,8 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
   const [currentPage, setCurrentPage] = useState(0)
   const [phase, setPhase] = useState('reading') // 'reading' | 'complete'
   const [nightMode, setNightMode] = useState(false)
-  const [firstRead, setFirstRead] = useState(false) // true if this play was the first completion
+  const [firstRead, setFirstRead] = useState(false)
 
-  // Cancel TTS on unmount
   useEffect(() => {
     return () => window.speechSynthesis?.cancel()
   }, [])
@@ -71,7 +70,7 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
   const storyTextColor = nightMode ? '#f0e8d5'  : '#1f2937'
   const pageNumColor   = nightMode ? '#94a3b8'  : story.color
   const dotInactive    = nightMode ? '#334155'  : '#d1d5db'
-  const navBg          = nightMode ? '#0f172a'  : 'rgba(255,255,255,0.85)'
+  const navBg          = nightMode ? '#0f172a'  : 'rgba(255,255,255,0.92)'
   const navBorder      = nightMode ? '#1e293b'  : '#e5e7eb'
   const prevDisabled   = nightMode ? '#1e293b'  : '#f3f4f6'
   const prevDisabledTx = nightMode ? '#475569'  : '#9ca3af'
@@ -154,9 +153,16 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
     )
   }
 
-  // ── Reading screen ─────────────────────────────────────────────────────────
+  // ── Reading screen — true 50/50 split layout ───────────────────────────────
   return (
-    <div style={{ minHeight: '100vh', background: bg, display: 'flex', flexDirection: 'column', paddingTop: '64px' }}>
+    <div style={{
+      height: '100vh',
+      background: bg,
+      display: 'flex',
+      flexDirection: 'column',
+      paddingTop: '64px',
+      overflow: 'hidden',
+    }}>
 
       {/* Header bar */}
       <div style={{
@@ -216,174 +222,184 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
         </button>
       </div>
 
-      {/* Main area: scene + text panels */}
-      <div style={{ flex: 1, display: 'flex', flexWrap: 'wrap', overflow: 'auto' }}>
+      {/* Main area: true 50/50 side-by-side split */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'row', overflow: 'hidden' }}>
 
-        {/* Scene panel (left on wide, top on narrow) */}
+        {/* ── Illustration panel (left, 50%) ── */}
         <div style={{
-          flex: '0 0 min(42%, 360px)',
-          minWidth: '260px',
+          flex: '0 0 50%',
           background: sceneBg,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '0',
-          minHeight: '220px',
           overflow: 'hidden',
+          position: 'relative',
         }}>
           <img
             key={`${story.id}-${currentPage}`}
             src={`${import.meta.env.BASE_URL}images/stories/${story.id}/page-${currentPage + 1}.png`}
             alt={`Page ${currentPage + 1}`}
-            onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.nextSibling.style.display = 'flex' }}
+            onError={e => {
+              e.currentTarget.style.display = 'none'
+              e.currentTarget.nextSibling.style.display = 'flex'
+            }}
             style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
           />
+          {/* Emoji fallback — shown only when image fails to load */}
           <div style={{
             display: 'none',
             flexWrap: 'wrap',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '14px',
-            maxWidth: '300px',
-            padding: '32px 20px',
+            gap: '20px',
+            padding: '40px',
           }}>
             {page.scene.map((emoji, i) => (
-              <TwEmoji key={i} emoji={emoji} size={68} />
+              <TwEmoji key={i} emoji={emoji} size={140} />
             ))}
           </div>
         </div>
 
-        {/* Text panel (right on wide, bottom on narrow) */}
+        {/* ── Text panel (right, 50%) ── */}
         <div style={{
-          flex: '1 1 260px',
+          flex: '0 0 50%',
           background: textPanelBg,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          padding: '36px 32px',
-          gap: '20px',
+          overflow: 'hidden',
+          borderLeft: `1px solid ${navBorder}`,
         }}>
-          {/* Page indicator */}
+
+          {/* Scrollable story content */}
           <div style={{
-            fontSize: '13px',
-            fontWeight: 700,
-            color: pageNumColor,
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
+            flex: 1,
+            overflow: 'auto',
+            padding: '32px 36px 20px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
           }}>
-            Page {currentPage + 1} of {story.pages.length}
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 700,
+              color: pageNumColor,
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+            }}>
+              Page {currentPage + 1} of {story.pages.length}
+            </div>
+
+            <p style={{
+              fontSize: '26px',
+              fontWeight: 700,
+              color: storyTextColor,
+              lineHeight: 1.8,
+              margin: 0,
+            }}>
+              {page.text}
+            </p>
           </div>
 
-          {/* Story text */}
-          <p style={{
-            fontSize: '26px',
-            fontWeight: 700,
-            color: storyTextColor,
-            lineHeight: 1.75,
-            margin: 0,
+          {/* Docked footer: Read to me + navigation */}
+          <div style={{
+            flexShrink: 0,
+            borderTop: `1px solid ${navBorder}`,
+            background: navBg,
+            padding: '16px 24px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '14px',
           }}>
-            {page.text}
-          </p>
-
-          {/* Read to me button */}
-          <button
-            onClick={readPage}
-            style={{
-              alignSelf: 'flex-start',
-              background: nightMode ? '#4f46e5' : '#7c3aed',
-              color: 'white',
-              border: 'none',
-              borderRadius: '999px',
-              padding: '14px 28px',
-              fontSize: '17px',
-              fontWeight: 800,
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-              boxShadow: nightMode ? '0 4px 0 #312e81' : '0 4px 0 #5b21b6',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            🔊 Read to me
-          </button>
-        </div>
-      </div>
-
-      {/* Navigation bar */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '20px',
-        padding: '18px 24px',
-        borderTop: `1px solid ${navBorder}`,
-        background: navBg,
-        flexShrink: 0,
-      }}>
-        {/* Prev */}
-        <button
-          onClick={goPrev}
-          disabled={currentPage === 0}
-          style={{
-            background: currentPage === 0 ? prevDisabled : story.color,
-            color: currentPage === 0 ? prevDisabledTx : 'white',
-            border: 'none',
-            borderRadius: '999px',
-            width: '52px',
-            height: '52px',
-            fontSize: '22px',
-            fontWeight: 900,
-            cursor: currentPage === 0 ? 'default' : 'pointer',
-            fontFamily: 'inherit',
-            boxShadow: currentPage === 0 ? 'none' : `0 4px 0 ${story.shadow}`,
-            flexShrink: 0,
-          }}
-        >
-          ◀
-        </button>
-
-        {/* Page dots */}
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          {story.pages.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => goToPage(i)}
+            {/* Read to me */}
+            <button
+              onClick={readPage}
               style={{
-                width: i === currentPage ? '20px' : '10px',
-                height: '10px',
+                background: nightMode ? '#4f46e5' : '#7c3aed',
+                color: 'white',
+                border: 'none',
                 borderRadius: '999px',
-                background: i === currentPage ? story.color : dotInactive,
+                padding: '12px 28px',
+                fontSize: '17px',
+                fontWeight: 800,
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                flexShrink: 0,
+                fontFamily: 'inherit',
+                boxShadow: nightMode ? '0 4px 0 #312e81' : '0 4px 0 #5b21b6',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                width: '100%',
+                justifyContent: 'center',
               }}
-            />
-          ))}
-        </div>
+            >
+              🔊 Read to me
+            </button>
 
-        {/* Next / Finish */}
-        <button
-          onClick={goNext}
-          style={{
-            background: story.color,
-            color: 'white',
-            border: 'none',
-            borderRadius: '999px',
-            height: '52px',
-            padding: isLastPage ? '0 22px' : '0',
-            width: isLastPage ? 'auto' : '52px',
-            fontSize: isLastPage ? '16px' : '22px',
-            fontWeight: 900,
-            cursor: 'pointer',
-            fontFamily: 'inherit',
-            boxShadow: `0 4px 0 ${story.shadow}`,
-            whiteSpace: 'nowrap',
-            flexShrink: 0,
-          }}
-        >
-          {isLastPage ? '✓ Finish' : '▶'}
-        </button>
+            {/* Prev / dots / next */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', width: '100%', justifyContent: 'center' }}>
+              <button
+                onClick={goPrev}
+                disabled={currentPage === 0}
+                style={{
+                  background: currentPage === 0 ? prevDisabled : story.color,
+                  color: currentPage === 0 ? prevDisabledTx : 'white',
+                  border: 'none',
+                  borderRadius: '999px',
+                  width: '48px',
+                  height: '48px',
+                  fontSize: '20px',
+                  fontWeight: 900,
+                  cursor: currentPage === 0 ? 'default' : 'pointer',
+                  fontFamily: 'inherit',
+                  boxShadow: currentPage === 0 ? 'none' : `0 4px 0 ${story.shadow}`,
+                  flexShrink: 0,
+                }}
+              >
+                ◀
+              </button>
+
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', flex: 1 }}>
+                {story.pages.map((_, i) => (
+                  <div
+                    key={i}
+                    onClick={() => goToPage(i)}
+                    style={{
+                      width: i === currentPage ? '18px' : '9px',
+                      height: '9px',
+                      borderRadius: '999px',
+                      background: i === currentPage ? story.color : dotInactive,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      flexShrink: 0,
+                    }}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={goNext}
+                style={{
+                  background: story.color,
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '999px',
+                  height: '48px',
+                  padding: isLastPage ? '0 18px' : '0',
+                  width: isLastPage ? 'auto' : '48px',
+                  fontSize: isLastPage ? '15px' : '20px',
+                  fontWeight: 900,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  boxShadow: `0 4px 0 ${story.shadow}`,
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                }}
+              >
+                {isLastPage ? '✓ Finish' : '▶'}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
