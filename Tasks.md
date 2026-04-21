@@ -620,8 +620,8 @@ three-little-pigs, goldilocks, tortoise-and-hare, little-red-riding-hood, change
 **No images — needs full set:**
 | Story | Folder | Pages needed |
 |-------|--------|-------------|
-| Guess How Much I Love You | `guess-how-much-i-love-you` | 10 |
-| Frog and Toad Are Friends | `frog-and-toad` | 11 |
+| The Steadfast Tin Soldier | `steadfast-tin-soldier` | 10 |
+| Why the Sun and Moon Live in the Sky | `sun-and-moon-in-the-sky` | 10 |
 | Peter Rabbit | `peter-rabbit` | 11 |
 | The Velveteen Rabbit | `velveteen-rabbit` | 11 |
 | Anansi and the Pot of Wisdom | `anansi-pot-of-wisdom` | 10 |
