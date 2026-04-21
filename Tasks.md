@@ -504,7 +504,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 
 ---
 
-### [ ] FEAT-056: Spelling section
+### [x] FEAT-056: Spelling section
 **Priority:** High
 **Description:** A dedicated Spelling World section teaching Mina to spell words she already knows from Reading World. Structured in progressive levels, from simple 3-letter CVC words up to 5-letter words. Three activity types:
 
@@ -539,6 +539,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 
 **Files to create:** `src/components/spelling/SpellingHome.jsx`, `src/components/spelling/SpellIt.jsx`, `src/components/spelling/MissingLetter.jsx`, `src/components/spelling/SpellFromMemory.jsx`, `src/data/spellingWords.js`
 **Also update:** `src/components/home/HomeScreen.jsx` (add Spelling World button), `src/App.jsx` (routing)
+**Done:** 2026-04-21 ✅ — `SpellingHome` shows 4 level cards (CVC, Sight Words, 4-letter, 5-letter). Each level offers Spell It! (tap letters into boxes, auto-checks, shake on wrong), Missing Letter (blank one letter, pick from 4), and Spell from Memory (2.5s flash then reconstruct — unlocks after completing Spell It for that level). 2 stars first try, 1 star on retry. `🔡 Spelling` button added to HomeScreen.
 
 ---
 

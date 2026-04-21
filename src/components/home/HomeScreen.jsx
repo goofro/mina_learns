@@ -161,6 +161,18 @@ export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName =
             }}
           />
           <SubjectCard
+            emoji="🔡"
+            title="Spelling"
+            subtitle="Spell words & build memory"
+            bgColor="linear-gradient(135deg, #ccfbf1, #99f6e4)"
+            borderColor="#0d9488"
+            shadowColor="#0f766e"
+            onClick={() => {
+              speak('Spelling World! Let us spell some words!')
+              onNavigate('spelling')
+            }}
+          />
+          <SubjectCard
             emoji="🔢"
             title="Math"
             subtitle="Numbers, Shapes & More"

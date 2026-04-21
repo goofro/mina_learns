@@ -78,6 +78,11 @@ import { StoryBookHome } from './components/storybook/StoryBookHome'
 import { StoryBookReader } from './components/storybook/StoryReader'
 import { ReadingTime } from './components/reading/ReadingTime'
 
+import { SpellingHome } from './components/spelling/SpellingHome'
+import { SpellIt } from './components/spelling/SpellIt'
+import { MissingLetter } from './components/spelling/MissingLetter'
+import { SpellFromMemory } from './components/spelling/SpellFromMemory'
+
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 import { ProfilePicker, loadProfiles, ACTIVE_PROFILE_KEY } from './components/profiles/ProfilePicker'
@@ -121,6 +126,7 @@ export default function App() {
   const [screen, setScreen] = useState('home')
   const [activeStoryId, setActiveStoryId] = useState(null)
   const [activeStoryBookId, setActiveStoryBookId] = useState(null)
+  const [activeSpellingLevel, setActiveSpellingLevel] = useState(1)
   const [sessionStart, setSessionStart] = useState(null)
 
   // Check milestones on progress change
@@ -185,11 +191,29 @@ export default function App() {
             else if (subject === 'cognitive') navigate('cognitive', 'cognitive')
             else if (subject === 'science') navigate('science', 'science')
             else if (subject === 'writing') navigate('writing', 'writing')
+            else if (subject === 'spelling') navigate('spelling', 'spelling')
             else if (subject === 'storytime') navigate('storybookhome', 'storytime')
             else if (subject === 'skillmap') navigate('skillmap')
             else if (subject === 'stickerbook') navigate('stickerbook')
           }}
         />
+      )}
+
+      {/* Spelling screens */}
+      {screen === 'spelling' && (
+        <SpellingHome
+          onNavigate={(activity, levelId) => { setActiveSpellingLevel(levelId); navigate(activity, 'spelling') }}
+          onBack={() => goBack('home')}
+        />
+      )}
+      {screen === 'spellit' && (
+        <SpellIt levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
+      )}
+      {screen === 'missingletterspell' && (
+        <MissingLetter levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
+      )}
+      {screen === 'spellfrommemory' && (
+        <SpellFromMemory levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
       )}
 
       {/* Writing screens */}
