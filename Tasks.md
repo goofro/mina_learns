@@ -570,6 +570,31 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File:** `src/data/storyBook.js`  
 **Note:** After adding stories, also generate illustration prompts for the image folders under `public/images/stories/`.
 
+### [ ] FEAT-056: Teaching Sequence Tracker — parent curriculum planner with taught/mastered tracking
+**Priority:** High
+**Description:** A dedicated section in the Parent Dashboard for planning and tracking the order in which reading and maths concepts are introduced to Mina. Parents can define a curriculum sequence where some topics must be taught before others (sequential dependencies, e.g. "Short Vowels → Magic E → Vowel Teams") and some can be worked on in parallel (e.g. practising Digraphs alongside Sight Words Level 2). Each topic has two independent checkboxes: **Taught** (parent has introduced it) and **Mastered** (Mina has demonstrated solid understanding). Dates are recorded for each.
+
+**Core features:**
+- **Sequence board** — a vertical list of teaching topics grouped by subject (Reading, Writing, Maths). Each topic is a card showing: topic name, prerequisite badge (e.g. "needs: Short Vowels"), Taught checkbox + date, Mastered checkbox + date.
+- **Dependency awareness** — topics with unmet prerequisites are visually dimmed/locked with a "teach X first" tooltip. Met prerequisites show a green unlock indicator.
+- **Parallel tracks** — topics with no dependency on each other are shown side-by-side in the same row (e.g. two parallel columns: Phonics track and Sight Words track).
+- **Quick-add** — parents can mark a topic Taught or Mastered with a single tap; a confirmation records the current date automatically.
+- **Progress overview** — summary card at the top: "X of Y topics taught · Z mastered".
+- **Custom topics** — ability to add a freeform topic not in the default list (e.g. "Writing her name independently").
+
+**Default topic list (Reading track):**
+1. Letter names A–Z → 2. Letter sounds (phonics) → 3. CVC words (short vowels) → 4. Sight Words Level 1 → 5. Magic E / Silent E → 6. Consonant digraphs (sh, ch, th) → 7. Consonant blends (bl, cr, str) → 8. Vowel teams (ai, ea, oa) → 9. R-controlled vowels (ar, er, ir, or, ur) → 10. Sight Words Level 2–3
+
+**Default topic list (Maths track, parallel to Reading):**
+1. Counting to 10 → 2. Number recognition 0–10 → 3. More/Less/Equal → 4. Addition to 5 → 5. Subtraction to 5 → 6. Number bonds → 7. Addition to 10 → 8. Subtraction to 10 → 9. Counting to 30 → 10. Shapes
+
+**Storage:** All taught/mastered dates stored per-profile in localStorage under `mina_teaches_${profileId}`.
+
+**Files to create/modify:**
+- New `src/components/parent/TeachingSequence.jsx` — main board component
+- New `src/data/teachingTopics.js` — default topic list with dependency graph
+- `src/components/parent/ParentDashboard.jsx` — add "📚 Teaching Sequence" tab
+
 ### [x] FEAT-051: Multiple child profiles (Mina + Aria)
 **Priority:** High  
 **Description:** Support more than one child profile so Aria can have her own separate progress, stars, and settings alongside Mina. Each profile stores its own data in localStorage under a profile-keyed namespace (e.g. `mina_learns_progress_mina`, `mina_learns_progress_aria`). A profile picker screen appears on first launch or can be accessed from the home screen. Parent dashboard shows a profile switcher. The active profile name is displayed in the StarBar or home screen greeting.  
