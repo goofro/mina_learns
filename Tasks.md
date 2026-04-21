@@ -596,6 +596,8 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Priority:** Medium
 **Description:** Read each story page text, view the actual image file, and compare against the AI prompt. Flag any mismatches in `src/data/storyBook.js` with `// **** IMAGE MISMATCH:` on the line before the prompt, explaining what the actual image shows and what's wrong. Regenerate flagged images using the corrected prompt.
 
+**Stories with images — need review:**
+
 | Story | Folder | Pages | Status |
 |-------|--------|-------|--------|
 | Goldilocks | `goldilocks` | 12 | ⚠️ Pages 5–12 flagged — sprite-sheet cutting errors, 8 images need regeneration |
@@ -608,6 +610,28 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 | Hua Mulan | `hua-mulan` | 12 | [ ] not reviewed |
 | The Magic Paintbrush | `magic-paintbrush` | 12 | [ ] not reviewed |
 | The Monkey King | `monkey-king` | 12 of 13 | [ ] not reviewed |
+
+**Stories with no images — generate first, then review:**
+
+| Story | Folder | Pages | Status |
+|-------|--------|-------|--------|
+| The Steadfast Tin Soldier | `steadfast-tin-soldier` | 10 | [ ] no images |
+| Why the Sun and Moon Live in the Sky | `sun-and-moon-in-the-sky` | 10 | [ ] no images |
+| Peter Rabbit | `peter-rabbit` | 11 | [ ] no images |
+| The Velveteen Rabbit | `velveteen-rabbit` | 11 | [ ] no images |
+| Anansi and the Pot of Wisdom | `anansi-pot-of-wisdom` | 10 | [ ] no images |
+| Momotaro | `momotaro` | 10 | [ ] no images |
+| The Empty Pot | `empty-pot` | 10 | [ ] no images |
+| The Princess and the Pea | `princess-and-pea` | 10 | [ ] no images |
+| The Ugly Duckling | `ugly-duckling` | 10 | [ ] no images |
+| Jack and the Beanstalk | `jack-and-the-beanstalk` | 11 | [ ] no images |
+| Hansel and Gretel | `hansel-and-gretel` | 10 | [ ] no images |
+| The Gingerbread Man | `gingerbread-man` | 10 | [ ] no images |
+| The Crow and the Pitcher | `crow-and-pitcher` | 10 | [ ] no images |
+| The Dog and the Shadow | `dog-and-shadow` | 10 | [ ] no images |
+| The Ant and the Grasshopper | `ant-and-grasshopper` | 11 | [ ] no images |
+| The Fox and the Grapes | `fox-and-grapes` | 10 | [ ] no images |
+| The Lion and the Mouse | `lion-and-mouse` | 11 | [ ] no images |
 
 ---
 
