@@ -34,7 +34,7 @@ const DINOS = [
 const UNIQUE_DINOS = DINOS.filter((d, i, a) => a.findIndex(x => x.name === d.name) === i)
 
 function dinoImg(name) {
-  return `/images/dinosaurs/${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.jpg`
+  return `${import.meta.env.BASE_URL}images/dinosaurs/${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.jpg`
 }
 
 // Loads the AI image; falls back to TwEmoji if the file isn't present yet

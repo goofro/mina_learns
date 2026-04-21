@@ -233,7 +233,7 @@ export function StoryBookReader({ storyId, onBack, addStars }) {
         }}>
           <img
             key={`${story.id}-${currentPage}`}
-            src={`/images/stories/${story.id}/page-${currentPage + 1}.png`}
+            src={`${import.meta.env.BASE_URL}images/stories/${story.id}/page-${currentPage + 1}.png`}
             alt={`Page ${currentPage + 1}`}
             onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.nextSibling.style.display = 'flex' }}
             style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
