@@ -592,6 +592,20 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 🔧 Maintenance
 
+### [ ] CHORE-002: Generate AI images for Dinosaur Explorer
+**Priority:** Low  
+**Description:** The Dinosaur Explorer already has a `DinoImage` component that loads images from `/public/images/dinosaurs/` and falls back to emoji if absent. All 11 prompts are ready — just generate and drop in the JPGs.  
+**Steps:**
+1. Open `src/components/science/DinosaurExplorer.jsx` and copy the prompts from the comments at the top (lines 8–18)
+2. Generate each image with DALL-E / ChatGPT Image / any image AI
+3. Save as `/public/images/dinosaurs/<name>.jpg` — filenames must match exactly:
+   `t-rex.jpg`, `triceratops.jpg`, `stegosaurus.jpg`, `brachiosaurus.jpg`,
+   `velociraptor.jpg`, `pterodactyl.jpg`, `ankylosaurus.jpg`, `spinosaurus.jpg`,
+   `diplodocus.jpg`, `parasaurolophus.jpg`, `allosaurus.jpg`
+4. Commit and push — images will appear immediately on the deployed site
+
+---
+
 ### [ ] CHORE-001: Delete stale remote feature branches
 **Priority:** Low  
 **Description:** Five feature branches on GitHub have been fully merged into `main` and can be safely deleted. Run the following command (requires push permission to the repo):
