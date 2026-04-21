@@ -590,6 +590,23 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
+## 🔧 Maintenance
+
+### [ ] CHORE-001: Delete stale remote feature branches
+**Priority:** Low  
+**Description:** Five feature branches on GitHub have been fully merged into `main` and can be safely deleted. Run the following command (requires push permission to the repo):
+```bash
+git push origin --delete \
+  claude/add-drawing-wallpaper-collage-1jjcX \
+  claude/create-story-image-prompts-OJVYE \
+  claude/display-todos-J21zR \
+  claude/ipad-compatibility-check-JYWUP \
+  claude/review-remaining-tasks-4kaPa
+```
+Alternatively, delete them via GitHub → Settings → Branches.
+
+---
+
 ## 📝 Session Notes
 
 ### 2026-04-20 – PWA deployment + service worker + image fixes v1.33.0
