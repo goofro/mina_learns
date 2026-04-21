@@ -592,6 +592,14 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ## 📝 Session Notes
 
+### 2026-04-20 – PWA deployment + service worker + image fixes v1.33.0
+- FEAT-041 complete: app deployed to https://goofro.github.io/mina_learns/ via GitHub Actions
+- Added `public/manifest.json` + `public/icon.svg`, set `base: '/mina_learns/'` in vite.config.js
+- Fixed story/dino image paths to use `import.meta.env.BASE_URL` (broken after base change)
+- Added `public/sw.js` service worker — network-first, auto-updates on next open after each push
+- Rewrote image prompts in `storyBook.js` to avoid DALL-E character-count issues (bears, pigs, hares now described by size/role not number)
+- iPad install: open URL in Safari → Share → Add to Home Screen
+
 ### 2026-04-18 – FEAT-055: 17 new stories added
 - Aesop Fables (6): The Lion and the Mouse, The Fox and the Grapes, The Ant and the Grasshopper, The Dog and the Shadow, The Crow and the Pitcher, The Gingerbread Man
 - Classic European Fairy Tales (4): Hansel and Gretel, Jack and the Beanstalk, The Ugly Duckling, The Princess and the Pea
