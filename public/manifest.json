@@ -1,0 +1,31 @@
+{
+  "name": "Mina Learns",
+  "short_name": "Mina Learns",
+  "description": "Fun learning activities for Mina",
+  "start_url": "/mina_learns/",
+  "scope": "/mina_learns/",
+  "display": "standalone",
+  "background_color": "#f0f4ff",
+  "theme_color": "#7c3aed",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/mina_learns/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/mina_learns/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/mina_learns/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

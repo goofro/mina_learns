@@ -9,10 +9,10 @@ function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5) }
 function generateQuestion(maxCount) {
   const count = Math.floor(Math.random() * maxCount) + 1
   const obj = COUNT_OBJECTS[Math.floor(Math.random() * COUNT_OBJECTS.length)]
-  const correct = count
-  const wrong1 = correct === 1 ? 2 : correct - 1
-  const wrong2 = correct === maxCount ? correct - 2 : correct + 1
-  const choices = shuffle([correct, wrong1, wrong2])
+  // Build unique wrong answers from adjacent numbers, no duplicates
+  const candidates = [count - 1, count + 1, count - 2, count + 2].filter(n => n >= 1 && n !== count)
+  const [wrong1, wrong2] = candidates
+  const choices = shuffle([count, wrong1, wrong2])
   return { count, obj, choices }
 }
 

@@ -33,11 +33,29 @@ const defaultProgress = {
   }
 }
 
+function progressScore(parsed) {
+  return (parsed.stars || 0) + (parsed.sessions ? parsed.sessions.length : 0)
+}
+
 function loadProgress(profileId) {
   try {
-    const saved = localStorage.getItem(getKey(profileId))
-    if (!saved) return defaultProgress
-    return { ...defaultProgress, ...JSON.parse(saved) }
+    const key = getKey(profileId)
+    const saved = localStorage.getItem(key)
+    const parsed = saved ? { ...defaultProgress, ...JSON.parse(saved) } : null
+
+    // One-time migration: if legacy key has more progress than profile key, migrate it
+    if (profileId) {
+      const legacy = localStorage.getItem(BASE_KEY)
+      if (legacy) {
+        const legacyParsed = { ...defaultProgress, ...JSON.parse(legacy) }
+        if (progressScore(legacyParsed) > progressScore(parsed || defaultProgress)) {
+          localStorage.setItem(key, legacy)
+          return legacyParsed
+        }
+      }
+    }
+
+    return parsed || defaultProgress
   } catch {
     return defaultProgress
   }
