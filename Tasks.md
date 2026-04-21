@@ -570,6 +570,13 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **File:** `src/data/storyBook.js`  
 **Note:** After adding stories, also generate illustration prompts for the image folders under `public/images/stories/`.
 
+### [ ] FEAT-058: Storybook — larger illustrations, true 50/50 split layout
+**Priority:** High
+**Description:** The current StoryBookReader uses a split-panel layout but the illustration side is too small. Redesign so the screen is divided exactly 50/50: the left half is the illustration (emoji scene or loaded image) and the right half is the story text. On portrait/tablet orientations the split should remain side-by-side (landscape reading mode). The illustration area should fill its half edge-to-edge with the emoji scene scaled up significantly (emoji font size ~120–160px, or image filling the full panel). Story text on the right should use large, comfortable line-height with TTS "Read to me" and page navigation controls docked at the bottom of the text panel.
+
+**Changes needed:**
+- `src/components/storybook/StoryBookReader.jsx` — update the page layout container to `display: flex; flex-direction: row` with each half at `width: 50%; height: 100%`. Scale up emoji scene font size. Move nav dots and Read button into the text panel footer.
+
 ### [ ] FEAT-057: Profile export / import — portable backup file
 **Priority:** High
 **Description:** Allow parents to export any child profile (progress, stars, milestones, settings, custom word lists, teaching sequence state) as a single downloadable JSON file, and re-import it on a new device (iPad, PC, etc.) to restore everything exactly as it was.
