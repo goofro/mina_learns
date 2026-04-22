@@ -481,6 +481,16 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
+### [ ] BUG-013: Sight Words — quiz doesn't start from the first word
+**Screen:** Reading → Sight Words → Level → Quiz phase  
+**Reported:** 2026-04-21  
+**Priority:** High  
+**Description:** When starting a Sight Words level, the quiz begins partway through the word list rather than at the first word. The word queue appears to be shuffled or offset incorrectly so the first word shown is not index 0 of the level's word list.  
+**Fix:** Investigate how the word queue is initialised in `SightWords.jsx`. Check whether `useState` is picking up a stale value, whether the shuffle is applied before or after state is set, or whether the initial word index is non-zero. Ensure `queue` is reset to a freshly shuffled copy of the full word list starting from index 0 each time a level is selected.  
+**File:** `src/components/reading/SightWords.jsx`
+
+---
+
 ## 📋 New Features
 
 ### [ ] FEAT-058: Larger images in storybook reader
