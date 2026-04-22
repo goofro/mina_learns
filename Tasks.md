@@ -739,7 +739,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 | Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
 | Hua Mulan | `hua-mulan` | 12 | ⚠️ Reviewed — pages 1–2 ✅; page 12 ✅; pages 5–7, 9 fixed (moved); pages 3, 4, 8, 10, 11 need regeneration |
 | The Magic Paintbrush | `magic-paintbrush` | 12 | [ ] not reviewed |
-| The Monkey King | `monkey-king` | 12 of 13 | [ ] not reviewed |
+| The Monkey King | `monkey-king` | 12 of 13 | ⚠️ Reviewed — pages 1–2 ✅; pages 4–6, 8–11 fixed (moved); pages 3, 7, 12 need regeneration; page-13 missing (need generation) |
 
 **Stories with no images — generate first, then review:**
 

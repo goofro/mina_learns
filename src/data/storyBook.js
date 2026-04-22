@@ -174,18 +174,30 @@
 // page-12.jpg → "A kind boy using a glowing magic paintbrush to paint colorful houses, food, and rainbows for happy families in a Chinese village, warm and joyful, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── monkey-king ──────────────────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–2 ✅; pages 4–6, 8–11 fixed (moved); pages 3, 7, 12, 13 need regeneration/generation.
 // page-1.jpg  → "A magical glowing stone sitting on a misty mountain peak surrounded by clouds in ancient China, pulsing with light, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A magical stone cracking open with a brilliant flash of golden light, a tiny cute baby monkey emerging and blinking with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image is a sprite-sheet stitching error — two separate scenes merged side-by-side (monkey in flowers left, waterfall right). Regenerate with the prompt below.
 // page-3.jpg  → "A young playful monkey exploring a beautiful misty mountain, swinging through trees, discovering flowers and waterfalls, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-4 image was wrong (leaping through waterfall); replaced with page-5's discovering-waterfall image which matches this prompt.
 // page-4.jpg  → "A young monkey discovering a magnificent thundering waterfall on a mountain, looking at it with curiosity and excitement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-5 image was wrong; replaced with page-6's magical-leap image which matches this prompt.
 // page-5.jpg  → "A brave young monkey leaping through a magical sparkling waterfall, eyes closed, taking a big leap of faith, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's paradise image. Shows monkey in lush paradise — missing the fruit trees and happy animals but approximately correct. Regenerate for full accuracy if needed.
 // page-6.jpg  → "A beautiful lush paradise hidden behind the waterfall, full of fruit trees and happy animals, the monkey arriving and looking around in amazement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image (after move) still shows monkey in paradise without crowning scene — same as page-6. Regenerate with the prompt below.
 // page-7.jpg  → "Animals crowning the monkey as their king with a golden crown, all bowing happily, a lush paradise setting, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-8 image was wrong; replaced with page-9's monkey-riding-staff image which matches this prompt.
 // page-8.jpg  → "The Monkey King setting off on a long journey over mountains and seas to find a wise teacher, looking determined and adventurous, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-9 image was wrong; replaced with page-10's teacher+student image which matches this prompt. Note: student in image appears human rather than a monkey — acceptable for now.
 // page-9.jpg  → "A young monkey sitting attentively before a wise old teacher in a mountain cave, scrolls and books all around, a single candle glowing, studying hard, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-10 image was wrong; replaced with page-11's golden-sparkles transformation image which matches this prompt.
 // page-10.jpg → "The Monkey King transforming magically into different animals one after another, surrounded by golden magical sparkles, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-11 image was wrong; replaced with page-12's golden-cloud image which matches this prompt.
 // page-11.jpg → "The Monkey King standing on a golden cloud with lightning and wind swirling around him, eyes glowing with magical power, dramatic and impressive, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image (after move) still shows figure on golden cloud — same as page-11. Regenerate with the prompt below.
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-13 does not exist yet. Generate with the prompt below.
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
 //
 // ─── dog-and-shadow ───────────────────────────────────────────────────────────
