@@ -27,16 +27,22 @@
 // page-12.jpg → "Three small identical pigs dancing and celebrating joyfully together inside their cozy brick house, the wolf running away into the far distance visible through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── boy-who-cried-wolf ───────────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–6 reviewed ✅ all match prompts. Pages 7–11 images missing — need generation.
 // page-1.jpg  → "A young shepherd boy sitting alone on a sunny green hillside looking bored, fluffy white sheep grazing peacefully around him, a village visible far below, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A shepherd boy lying on his back in the grass staring at the clouds, looking bored and restless, sheep around him, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-3.jpg  → "A mischievous grinning boy standing on a hilltop with his hands cupped around his mouth shouting, a naughty gleam in his eye, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-4.jpg  → "Confused villagers running up a hill carrying farm tools and pitchforks, looking around for a wolf that is nowhere to be seen, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-5.jpg  → "A boy laughing and rolling on the grass while angry villagers march back down the hill shaking their fists, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-6.jpg  → "The same boy shouting wolf again the next day, looking even more gleeful and mischievous, villagers running up the hill again looking frustrated, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-7 does not exist yet. Generate with the prompt below.
 // page-7.jpg  → "Villagers pointing their fingers and scolding the boy sternly, the boy looking slightly sheepish, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-8 does not exist yet. Generate with the prompt below.
 // page-8.jpg  → "A large scary wolf creeping out from a dark forest toward a flock of frightened sheep, yellow eyes glowing, children's book illustration style, vibrant colors, tense scene, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-9 does not exist yet. Generate with the prompt below.
 // page-9.jpg  → "A terrified boy screaming with his arms waving desperately, the wolf prowling closer to the sheep behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-10 does not exist yet. Generate with the prompt below.
 // page-10.jpg → "The quiet village below the hill with all doors and windows shut, nobody coming out, the hill visible in the background, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-11 does not exist yet. Generate with the prompt below.
 // page-11.jpg → "A sad lonely boy sitting alone on a dark hill at dusk, a few scattered sheep around him, looking very sorry and regretful, stars beginning to appear in the sky, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── goldilocks ───────────────────────────────────────────────────────────────
@@ -46,11 +52,11 @@
 // page-4.jpg  → "Goldilocks at a wooden kitchen table with a large bowl, a medium bowl, and a tiny bowl of steaming porridge, making a pained face at the too-hot large bowl, shivering at the too-cold medium bowl, happily eating from the tiny just-right bowl, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH: Actual image shows Goldilocks happily eating porridge — a repeat of the page 4 porridge scene. Page 5 story text is about finding the three chairs. Regenerate with the prompt below.
 // page-5.jpg  → "Goldilocks happily eating the last spoonful of porridge from a tiny bowl, looking very satisfied, wooden kitchen table, cozy cottage, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows Goldilocks skipping happily through a sunny forest path — looks like a duplicate of page 1. Should show the chair-breaking scene. Regenerate with the prompt below.
+// **** IMAGE MISMATCH (MOVED): page-6 image was a forest-path duplicate; replaced with page-7's chair-breaking image. Goldilocks looks happy rather than surprised — close enough for now but regenerate for full accuracy.
 // page-6.jpg  → "Goldilocks sitting in a tiny wooden chair that is cracking and breaking apart under her weight, looking very surprised, a large chair and a medium chair visible nearby, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows Goldilocks sitting on a broken chair surrounded by pieces — this is the page 6 chair-breaking scene, not the staircase. Images appear offset from page 6 onwards due to a sprite-sheet cutting error. Regenerate with the prompt below.
+// **** IMAGE MISMATCH (MOVED): page-7 image was the chair scene; replaced with page-8's staircase image. May show a bear in bed in background — regenerate for full accuracy.
 // page-7.jpg  → "Goldilocks climbing a wooden staircase inside a cozy cottage, looking around curiously, sunlight streaming through a small window, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows Goldilocks standing near the bottom of stairs with a single bear asleep in one bed visible — does not show the three-bed-testing sequence. Regenerate with the prompt below.
+// **** IMAGE MISMATCH: Actual image still shows staircase scene (used for page-7); page-8 needs a new three-beds image. Regenerate with the prompt below.
 // page-8.jpg  → "Goldilocks trying a large hard bed and bouncing off it, then sinking deep into a medium too-soft bed, then curling up perfectly in a tiny cozy bed with a smile, three beds shown side by side, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH: Actual image shows Goldilocks dancing happily in the forest alongside two bears — Goldilocks should not be in this scene at all. Should show the three bears walking home alone without Goldilocks. Regenerate with the prompt below.
 // page-9.jpg  → "A large Papa Bear, a medium-sized Mama Bear, and a tiny Baby Bear walking home together through a forest, all looking forward to breakfast, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
