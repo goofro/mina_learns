@@ -89,17 +89,25 @@
 // page-11.jpg → "Tortoise crossing a finish line first as woodland animals cheer and celebrate, colorful confetti falling, the hare sprinting desperately in the background arriving too late, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
 //
 // ─── little-red-riding-hood ───────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–3 ✅; page 12 ≈✅; pages 4–6 fixed (moved); pages 7, 10, 11 need regeneration.
 // page-1.jpg  → "A mother packing a wicker basket with bread and cakes for her daughter, a little girl in a red cape watching eagerly, warm cozy kitchen, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A mother kneeling to look her daughter in the eyes with a serious but loving expression, warning her to stay on the path, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-3.jpg  → "A little girl in a bright red cape skipping happily along a sunlit forest path, birds singing in the trees around her, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-4 image was wolf-meeting-girl (page-5 content); replaced with page-5's flower-picking image which matches this prompt.
 // page-4.jpg  → "A little girl in a red cape bending down to pick colorful wildflowers just off the path, a dark shadow visible between the trees behind her, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-5 image was wrong; replaced with page-6's friendly-wolf-meeting image which matches this prompt.
 // page-5.jpg  → "A sly smiling wolf leaning against a tree talking to a little girl in a red cape, acting friendly but looking devious, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's wolf-sprinting-through-forest image which matches this prompt.
 // page-6.jpg  → "A wolf sprinting through dark forest trees on a shortcut, grinning wickedly, children's book illustration style, vibrant colors, slightly tense, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: No image exists showing the wolf at grandmother's door. Regenerate with the prompt below.
 // page-7.jpg  → "A wolf knocking on an old grandmother's cottage door in the woods, pretending to be the granddaughter, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-8.jpg  → "A wolf tucked into a cottage bed wearing a grandma's nightcap and glasses, grandmother peeking out from a wardrobe behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-9.jpg  → "A little girl in a red cape knocking on a cottage door in the forest, basket in hand, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows wolf alone in bed smiling — no girl visible. Regenerate with the prompt below.
 // page-10.jpg → "A little girl in a red cape leaning toward the bed with wide worried eyes, noticing something is very wrong with grandma, children's book illustration style, vibrant colors, tense scene, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows girl walking in forest from behind — completely wrong scene. Regenerate with the prompt below.
 // page-11.jpg → "A wolf leaping out of bed roaring with his mouth open wide, a little girl in red screaming in fright, children's book illustration style, vibrant colors, dramatic, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MINOR): Actual image shows wolf roaring while girl and grandmother hug — woodcutter is absent. Close enough for now; regenerate for full accuracy if needed.
 // page-12.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats on the table, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── change-moon ──────────────────────────────────────────────────────────────

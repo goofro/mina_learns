@@ -734,7 +734,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 | Three Little Pigs | `three-little-pigs` | 12 | ⚠️ Reviewed — pages 1–4 ✅; page 12 ✅; pages 5–8, 10 fixed (moved); pages 9, 11 need regeneration |
 | Boy Who Cried Wolf | `boy-who-cried-wolf` | 6 of 11 | ⚠️ Reviewed — pages 1–6 ✅; pages 7–11 missing (need generation) |
 | Tortoise and the Hare | `tortoise-and-hare` | 11 | [ ] not reviewed |
-| Little Red Riding Hood | `little-red-riding-hood` | 12 | [ ] not reviewed |
+| Little Red Riding Hood | `little-red-riding-hood` | 12 | ⚠️ Reviewed — pages 1–3 ✅; page 12 ≈✅; pages 4–6 fixed (moved); pages 7, 10, 11 need regeneration |
 | Chang'e and the Moon | `change-moon` | 11 | ⚠️ Reviewed — pages 1,2,5 ✅; pages 3,4,10 need regeneration; page 6 fixed (moved from p7); page 7 needs regeneration; page 8 fixed (moved from p9); pages 9,11 need regeneration |
 | Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
 | Hua Mulan | `hua-mulan` | 12 | ⚠️ Reviewed — pages 1–2 ✅; page 12 ✅; pages 5–7, 9 fixed (moved); pages 3, 4, 8, 10, 11 need regeneration |
