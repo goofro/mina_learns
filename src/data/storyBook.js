@@ -13,16 +13,24 @@
 //   "East Asian art style, traditional Chinese setting"
 //
 // ─── three-little-pigs ────────────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–4 ✅; page 12 ✅; pages 5–8, 10 fixed (moved); pages 9, 11 need regeneration.
 // page-1.jpg  → "A mother pig saying a warm goodbye to her three small identical piglet children outside a cozy farmhouse, mother hugging them, sunny countryside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "One little pig sitting lazily next to a big pile of golden straw in a sunny field, smiling and relaxing, not doing any work, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-3.jpg  → "One little pig finishing building a wonky lopsided house made entirely of yellow straw, looking very pleased with himself, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-4.jpg  → "A big bad cartoon wolf huffing and puffing with puffed cheeks at a small wobbly straw house, straw flying everywhere, one terrified little pig peeking from the doorway, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-5 was a straw-pile duplicate; replaced with page-6's pig-running image which matches this prompt.
 // page-5.jpg  → "One scared little pig running as fast as he can down a country path toward a stick house in the distance, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's wolf-at-stick-house image which matches this prompt.
 // page-6.jpg  → "A big bad wolf blowing down a house made of sticks, sticks flying everywhere, two little pigs running away together in fright, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-7 image was wrong; replaced with page-8's pigs-arriving-at-brick-house image which matches this prompt.
 // page-7.jpg  → "Two out-of-breath little pigs arriving at a strong red brick house, the third pig standing in the doorway welcoming them in with open arms, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-8 image was wrong; replaced with page-10's wolf-blowing-at-brick-house image which matches this prompt.
 // page-8.jpg  → "A big bad wolf blowing as hard as he can at a solid red brick house that does not move at all, two little pigs watching smugly through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows two pigs running near brick house — no exhausted wolf visible. Regenerate with the prompt below.
 // page-9.jpg  → "A big bad wolf with bright red puffed-out cheeks blowing furiously but looking exhausted, the solid brick house completely unmoved, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-10 image was wrong; replaced with page-11's wolf-climbing-roof image which matches this prompt.
 // page-10.jpg → "A sneaky wolf creeping around to the back of a brick house and climbing up the drainpipe onto the roof toward the chimney, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image (after move) still shows wolf climbing roof — duplicate of page-10. Regenerate with the prompt below.
 // page-11.jpg → "A wolf tumbling headfirst down a chimney into a big bubbling pot of hot soup on a fireplace inside a cozy kitchen, yelping in shock, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-12.jpg → "Three small identical pigs dancing and celebrating joyfully together inside their cozy brick house, the wolf running away into the far distance visible through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
