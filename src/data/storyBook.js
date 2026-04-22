@@ -76,16 +76,25 @@
 // page-12.jpg → "A large Papa Bear, a medium Mama Bear, and a tiny Baby Bear discovering Goldilocks asleep in the tiny bed, all gasping in surprise, Goldilocks waking with wide eyes and leaping toward the open window to escape, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── tortoise-and-hare ────────────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–2 ✅; page 3 ≈✅ (no Fox with flag but close); pages 4–7, 9, 10 fixed (moved); page 8 ✅; page 11 missing (need generation).
 // page-1.jpg  → "A boastful hare showing off his speed to woodland animals in a sunny meadow, zooming past a slow tortoise, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A calm tortoise looking up at a boastful hare and challenging him to a race, woodland animals looking surprised, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MINOR): Actual image shows hare jumping excitedly with animals watching — no Fox with a starting flag visible. Close enough for now; regenerate for full accuracy if needed.
 // page-3.jpg  → "Lots of woodland animals gathered at a starting line in a sunny meadow, Fox holding up a starting flag, tortoise and hare ready to race, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-4 was wrong (hare and tortoise walking side by side); replaced with page-5's hare-blasting-off image which matches this prompt.
 // page-4.jpg  → "A hare shooting off like a rocket from the starting line in a blur of speed, the tortoise taking his first slow steady step, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-5 image was wrong; replaced with page-6's hare-looking-back image which matches this prompt.
 // page-5.jpg  → "A hare far ahead on a winding road looking back, the tortoise just a tiny speck in the far distance, hare looking very smug, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's hare-yawning image which matches this prompt.
 // page-6.jpg  → "A smug hare yawning and stretching under a big shady oak tree beside the road, eyes drooping, looking very relaxed and overconfident, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-7 image was wrong; replaced with page-9's hare-asleep image which matches this prompt.
 // page-7.jpg  → "A hare fast asleep under a tree snoring with his feet twitching, the sun high in the sky, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-8.jpg  → "A determined tortoise walking slowly and steadily down a sunny path, one careful step at a time, peaceful and focused, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-9 image was wrong; replaced with page-10's tortoise-past-sleeping-hare image which matches this prompt.
 // page-9.jpg  → "Tortoise quietly walking past the sleeping hare under the tree without waking him, looking straight ahead, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-10 image was wrong; replaced with page-11's hare-waking image which matches this prompt.
 // page-10.jpg → "A hare waking up with a start, looking at the lower sun in the sky in a panic, jumping to his feet to run, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// **** MISSING IMAGE: page-11 does not exist (was used for page-10). Generate with the prompt below.
 // page-11.jpg → "Tortoise crossing a finish line first as woodland animals cheer and celebrate, colorful confetti falling, the hare sprinting desperately in the background arriving too late, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
 //
 // ─── little-red-riding-hood ───────────────────────────────────────────────────

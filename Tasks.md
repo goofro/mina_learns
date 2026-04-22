@@ -733,7 +733,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 | Goldilocks | `goldilocks` | 12 | ⚠️ Reviewed — pages 1–4 ✅; page 5 needs regeneration; pages 6–7 fixed (moved from p7/p8); pages 8–12 need regeneration (6 images total) |
 | Three Little Pigs | `three-little-pigs` | 12 | ⚠️ Reviewed — pages 1–4 ✅; page 12 ✅; pages 5–8, 10 fixed (moved); pages 9, 11 need regeneration |
 | Boy Who Cried Wolf | `boy-who-cried-wolf` | 6 of 11 | ⚠️ Reviewed — pages 1–6 ✅; pages 7–11 missing (need generation) |
-| Tortoise and the Hare | `tortoise-and-hare` | 11 | [ ] not reviewed |
+| Tortoise and the Hare | `tortoise-and-hare` | 11 | ⚠️ Reviewed — pages 1–2 ✅; page 3 ≈✅; page 8 ✅; pages 4–7, 9, 10 fixed (moved); page 11 missing (need generation) |
 | Little Red Riding Hood | `little-red-riding-hood` | 12 | ⚠️ Reviewed — pages 1–3 ✅; page 12 ≈✅; pages 4–6 fixed (moved); pages 7, 10, 11 need regeneration |
 | Chang'e and the Moon | `change-moon` | 11 | ⚠️ Reviewed — pages 1,2,5 ✅; pages 3,4,10 need regeneration; page 6 fixed (moved from p7); page 7 needs regeneration; page 8 fixed (moved from p9); pages 9,11 need regeneration |
 | Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
