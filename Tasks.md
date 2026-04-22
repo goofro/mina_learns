@@ -737,7 +737,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 | Little Red Riding Hood | `little-red-riding-hood` | 12 | [ ] not reviewed |
 | Chang'e and the Moon | `change-moon` | 11 | ⚠️ Reviewed — pages 1,2,5 ✅; pages 3,4,10 need regeneration; page 6 fixed (moved from p7); page 7 needs regeneration; page 8 fixed (moved from p9); pages 9,11 need regeneration |
 | Hou Yi and the Ten Suns | `hou-yi-ten-suns` | 11 | [ ] not reviewed |
-| Hua Mulan | `hua-mulan` | 12 | [ ] not reviewed |
+| Hua Mulan | `hua-mulan` | 12 | ⚠️ Reviewed — pages 1–2 ✅; page 12 ✅; pages 5–7, 9 fixed (moved); pages 3, 4, 8, 10, 11 need regeneration |
 | The Magic Paintbrush | `magic-paintbrush` | 12 | [ ] not reviewed |
 | The Monkey King | `monkey-king` | 12 of 13 | [ ] not reviewed |
 

@@ -128,16 +128,26 @@
 // page-11.jpg → "People and animals celebrating joyfully under a rainbow sky in ancient China, the archer lifted on shoulders as a hero, everyone cheering and dancing, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hua-mulan ────────────────────────────────────────────────────────────────
+// REVIEW STATUS: pages 1–2 ✅; page 3 close (man at desk not reaching for armor); pages 4, 8, 10, 11 need regeneration; pages 5–7, 9 fixed by moving images.
 // page-1.jpg  → "A young Chinese woman weaving at a loom in a cozy family home, peaceful and content, traditional Chinese interior, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "An imperial conscription scroll arriving at a traditional Chinese family home, a family looking worried, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows elderly man writing at a desk by candlelight with a young person watching — close to the prompt but he is not reaching for armor. Regenerate for full accuracy.
 // page-3.jpg  → "A frail elderly Chinese man reaching for his old military armor with trembling hands, his daughter watching with deep concern, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows two riders on horseback leaving a building — completely wrong scene. Should show Mulan alone by candlelight, deep in thought. Regenerate with the prompt below.
 // page-4.jpg  → "A young Chinese woman sitting alone by candlelight at night, deep in thought with a determined expression, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-5 image was wrong; replaced with page-6's candlelight+armor image which matches this prompt. May show Mulan cutting someone else's hair rather than her own — regenerate for full accuracy if needed.
 // page-5.jpg  → "A determined young Chinese woman cutting her long black hair by candlelight, her father's armor and helmet laid out before her, resolute expression, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's lone-rider image which matches this prompt.
 // page-6.jpg  → "Mulan riding away on horseback at dawn in military armor, looking back at her family home one last time, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-7 image was wrong; replaced with page-8's training-camp image which matches this prompt.
 // page-7.jpg  → "Mulan at a military training camp doing exercises alongside other soldiers, working hard and keeping up with everyone, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image (after move) still shows training camp — same as page-7. Needs a new snowy battle scene. Regenerate with the prompt below.
 // page-8.jpg  → "Mulan in full Chinese military armor fighting bravely alongside soldiers in wind and snow, a snowy mountain battlefield, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH (MOVED): page-9 image was a wrong landscape; replaced with page-11's celebration image which matches this prompt.
 // page-9.jpg  → "Soldiers cheering and celebrating victory after a great battle in ancient China, banners waving, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image shows a lone armored archer drawing a bow on a mountain — not a throne room scene. Regenerate with the prompt below.
 // page-10.jpg → "A young soldier kneeling before a kind dignified Emperor in a magnificent golden throne room, the Emperor gesturing generously with admiration, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
+// **** IMAGE MISMATCH: Actual image (after move) still shows celebration soldiers — same as page-9. Needs Mulan riding home in floral dress. Regenerate with the prompt below.
 // page-11.jpg → "Mulan back in her beautiful floral dress riding home past cherry blossom trees, looking happy and relieved, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-12.jpg → "A beautiful young Chinese woman in a colorful dress embracing her elderly father outside their family home with tears of joy, whole family reunited, cherry blossoms falling, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
