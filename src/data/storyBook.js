@@ -26,11 +26,11 @@
 // page-7.jpg  → "Two out-of-breath little pigs arriving at a strong red brick house, the third pig standing in the doorway welcoming them in with open arms, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-8 image was wrong; replaced with page-10's wolf-blowing-at-brick-house image which matches this prompt.
 // page-8.jpg  → "A big bad wolf blowing as hard as he can at a solid red brick house that does not move at all, two little pigs watching smugly through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows two pigs running near brick house — no exhausted wolf visible. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows two pigs running near brick house — no exhausted wolf visible.
 // page-9.jpg  → "A big bad wolf with bright red puffed-out cheeks blowing furiously but looking exhausted, the solid brick house completely unmoved, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-10 image was wrong; replaced with page-11's wolf-climbing-roof image which matches this prompt.
 // page-10.jpg → "A sneaky wolf creeping around to the back of a brick house and climbing up the drainpipe onto the roof toward the chimney, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image (after move) still shows wolf climbing roof — duplicate of page-10. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image (after move) still shows wolf climbing roof — duplicate of page-10.
 // page-11.jpg → "A wolf tumbling headfirst down a chimney into a big bubbling pot of hot soup on a fireplace inside a cozy kitchen, yelping in shock, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-12.jpg → "Three small identical pigs dancing and celebrating joyfully together inside their cozy brick house, the wolf running away into the far distance visible through the window, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
@@ -58,28 +58,28 @@
 // page-2.jpg  → "Goldilocks discovering a charming little cottage in a forest clearing and knocking on the red front door, in the background a large Papa Bear, a medium Mama Bear, and a tiny Baby Bear walking away together into the forest, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-3.jpg  → "Goldilocks peeking through the open front door of a cozy bear cottage, looking curious and excited, warm interior with wooden furniture visible inside, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-4.jpg  → "Goldilocks at a wooden kitchen table with a large bowl, a medium bowl, and a tiny bowl of steaming porridge, making a pained face at the too-hot large bowl, shivering at the too-cold medium bowl, happily eating from the tiny just-right bowl, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows Goldilocks happily eating porridge — a repeat of the page 4 porridge scene. Page 5 story text is about finding the three chairs. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows Goldilocks happily eating porridge — a repeat of the page 4 porridge scene. Page 5 story text is about finding the three chairs.
 // page-5.jpg  → "Goldilocks happily eating the last spoonful of porridge from a tiny bowl, looking very satisfied, wooden kitchen table, cozy cottage, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-6 image was a forest-path duplicate; replaced with page-7's chair-breaking image. Goldilocks looks happy rather than surprised — close enough for now but regenerate for full accuracy.
 // page-6.jpg  → "Goldilocks sitting in a tiny wooden chair that is cracking and breaking apart under her weight, looking very surprised, a large chair and a medium chair visible nearby, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-7 image was the chair scene; replaced with page-8's staircase image. May show a bear in bed in background — regenerate for full accuracy.
 // page-7.jpg  → "Goldilocks climbing a wooden staircase inside a cozy cottage, looking around curiously, sunlight streaming through a small window, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image still shows staircase scene (used for page-7); page-8 needs a new three-beds image. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image still shows staircase scene (used for page-7); page-8 needs a new three-beds image.
 // page-8.jpg  → "Goldilocks trying a large hard bed and bouncing off it, then sinking deep into a medium too-soft bed, then curling up perfectly in a tiny cozy bed with a smile, three beds shown side by side, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows Goldilocks dancing happily in the forest alongside two bears — Goldilocks should not be in this scene at all. Should show the three bears walking home alone without Goldilocks. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows Goldilocks dancing happily in the forest alongside two bears — Goldilocks should not be in this scene at all. Should show the three bears walking home alone without Goldilocks.
 // page-9.jpg  → "A large Papa Bear, a medium-sized Mama Bear, and a tiny Baby Bear walking home together through a forest, all looking forward to breakfast, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows bears and Goldilocks running together outdoors — same wrong scene as page 9. Should show three bears inside at the kitchen table reacting to their eaten porridge. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows bears and Goldilocks running together outdoors — same wrong scene as page 9. Should show three bears inside at the kitchen table reacting to their eaten porridge.
 // page-10.jpg → "A large Papa Bear roaring angrily at his porridge bowl, a medium Mama Bear looking shocked at her bowl, a tiny Baby Bear crying with big tears at his completely empty bowl, all at the kitchen table, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image is COMPLETELY WRONG STORY — shows a wolf blowing at a brick wall with a bear peeking through a window. This is a Three Little Pigs image accidentally placed here, likely a sprite-sheet mix-up. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image is COMPLETELY WRONG STORY — shows a wolf blowing at a brick wall with a bear peeking through a window. This is a Three Little Pigs image accidentally placed here, likely a sprite-sheet mix-up.
 // page-11.jpg → "A large Papa Bear, a medium Mama Bear, and a tiny Baby Bear staring at their chairs, the tiny chair broken in pieces on the floor, all looking upset, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows two blonde girls in a bedroom — one leaning over the other who is sitting up in bed. No bears present at all. Should show three bears discovering Goldilocks asleep. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows two blonde girls in a bedroom — one leaning over the other who is sitting up in bed. No bears present at all. Should show three bears discovering Goldilocks asleep.
 // page-12.jpg → "A large Papa Bear, a medium Mama Bear, and a tiny Baby Bear discovering Goldilocks asleep in the tiny bed, all gasping in surprise, Goldilocks waking with wide eyes and leaping toward the open window to escape, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── tortoise-and-hare ────────────────────────────────────────────────────────
 // REVIEW STATUS: pages 1–2 ✅; page 3 ≈✅ (no Fox with flag but close); pages 4–7, 9, 10 fixed (moved); page 8 ✅; page 11 missing (need generation).
 // page-1.jpg  → "A boastful hare showing off his speed to woodland animals in a sunny meadow, zooming past a slow tortoise, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A calm tortoise looking up at a boastful hare and challenging him to a race, woodland animals looking surprised, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH (MINOR): Actual image shows hare jumping excitedly with animals watching — no Fox with a starting flag visible. Close enough for now; regenerate for full accuracy if needed.
+// **** OPTIONAL REGENERATION (minor): Actual image shows hare jumping excitedly with animals watching — no Fox with a starting flag visible. Close enough for now.
 // page-3.jpg  → "Lots of woodland animals gathered at a starting line in a sunny meadow, Fox holding up a starting flag, tortoise and hare ready to race, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-4 was wrong (hare and tortoise walking side by side); replaced with page-5's hare-blasting-off image which matches this prompt.
 // page-4.jpg  → "A hare shooting off like a rocket from the starting line in a blur of speed, the tortoise taking his first slow steady step, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
@@ -108,35 +108,35 @@
 // page-5.jpg  → "A sly smiling wolf leaning against a tree talking to a little girl in a red cape, acting friendly but looking devious, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's wolf-sprinting-through-forest image which matches this prompt.
 // page-6.jpg  → "A wolf sprinting through dark forest trees on a shortcut, grinning wickedly, children's book illustration style, vibrant colors, slightly tense, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: No image exists showing the wolf at grandmother's door. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: No image exists showing the wolf at grandmother's door.
 // page-7.jpg  → "A wolf knocking on an old grandmother's cottage door in the woods, pretending to be the granddaughter, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-8.jpg  → "A wolf tucked into a cottage bed wearing a grandma's nightcap and glasses, grandmother peeking out from a wardrobe behind him, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 // page-9.jpg  → "A little girl in a red cape knocking on a cottage door in the forest, basket in hand, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows wolf alone in bed smiling — no girl visible. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows wolf alone in bed smiling — no girl visible.
 // page-10.jpg → "A little girl in a red cape leaning toward the bed with wide worried eyes, noticing something is very wrong with grandma, children's book illustration style, vibrant colors, tense scene, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows girl walking in forest from behind — completely wrong scene. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows girl walking in forest from behind — completely wrong scene.
 // page-11.jpg → "A wolf leaping out of bed roaring with his mouth open wide, a little girl in red screaming in fright, children's book illustration style, vibrant colors, dramatic, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH (MINOR): Actual image shows wolf roaring while girl and grandmother hug — woodcutter is absent. Close enough for now; regenerate for full accuracy if needed.
+// **** OPTIONAL REGENERATION (minor): Actual image shows wolf roaring while girl and grandmother hug — woodcutter is absent. Close enough for now.
 // page-12.jpg → "A brave woodcutter bursting through a cottage door chasing a wolf away, a little girl in red and her grandmother hugging happily, treats on the table, warm and joyful scene, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
 //
 // ─── change-moon ──────────────────────────────────────────────────────────────
 // page-1.jpg  → "A beautiful woman in elegant traditional Chinese hanfu dress with ornate hair decorations, standing in a serene moonlit Chinese courtyard with red paper lanterns and cherry blossoms, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A handsome archer in traditional Chinese robes and a graceful woman in hanfu dress together in a beautiful garden, looking happy, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-3 shows Chang'e as the main foreground figure watching the suns — should show suffering villagers and scorched brown landscape with no named character in focus.
+// **** NEEDS REGENERATION: page-3 shows Chang'e as the main foreground figure watching the suns — should show suffering villagers and scorched brown landscape with no named character in focus.
 // page-3.jpg  → "Ten blazing giant cartoon suns all rising together in a fiery sky over ancient China, the landscape below scorched and brown, people and animals suffering from the heat, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-4 shows only a scorched landscape — no people hiding, no drying rivers visible; needs clear human figures cowering from the heat.
+// **** NEEDS REGENERATION: page-4 shows only a scorched landscape — no people hiding, no drying rivers visible; needs clear human figures cowering from the heat.
 // page-4.jpg  → "People and animals in ancient China hiding from unbearable heat, crops dying, rivers drying up, everyone looking distressed, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-5.jpg  → "A heroic archer in traditional Chinese armor drawing back a gleaming golden bow, aiming at the blazing suns in the sky with fierce determination, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-6 shows a woman lying in a flower garden with two figures in the background — completely wrong scene; should show suns bursting apart as golden arrows strike them.
+// **** NEEDS REGENERATION: page-6 shows a woman lying in a flower garden with two figures in the background — completely wrong scene; should show suns bursting apart as golden arrows strike them.
 // page-6.jpg  → "Suns exploding and falling from the sky one by one as golden arrows strike them, the archer shooting rapidly, children's book illustration style, vibrant colors, dramatic, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-7 needs regeneration — old image (archer shooting) was moved to page-6 where it belongs; page-7 now needs a new image showing people celebrating with rain and green plants.
+// **** NEEDS REGENERATION: page-7 old image (archer shooting) was moved to page-6 where it belongs; page-7 now needs a new image showing people celebrating with rain and green plants.
 // page-7.jpg  → "People celebrating as the earth cools, one gentle sun in the sky, rain falling softly, green plants growing again, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-8.jpg  → "A regal Queen of Heaven in the clouds presenting a glowing golden potion bottle to a kneeling archer, heavenly scene with clouds and light, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-9 needs regeneration — old image (Queen of Heaven + archer) was moved to page-8 where it belongs; page-9 now needs a new image showing Chang'e alone discovering the bottle at home.
+// **** NEEDS REGENERATION: page-9 old image (Queen of Heaven + archer) was moved to page-8 where it belongs; page-9 now needs a new image showing Chang'e alone discovering the bottle at home.
 // page-9.jpg  → "A graceful Chinese woman in flowing traditional dress discovering a small glowing golden bottle of magic potion, light radiating from it, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-10 shows Chang'e holding the bottle and smiling — she should be mid-drink with feet lifting off the ground, looking surprised.
+// **** NEEDS REGENERATION: page-10 shows Chang'e holding the bottle and smiling — she should be mid-drink with feet lifting off the ground, looking surprised.
 // page-10.jpg → "A Chinese woman drinking from a glowing bottle, beginning to float off the ground, looking surprised and peaceful, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: page-11 shows Chang'e in a red dress watching a small glowing figure fly upward in daylight — should be Chang'e herself in white/silver robes floating toward a large full moon in a dark star-filled night sky.
+// **** NEEDS REGENERATION: page-11 shows Chang'e in a red dress watching a small glowing figure fly upward in daylight — should be Chang'e herself in white/silver robes floating toward a large full moon in a dark star-filled night sky.
 // page-11.jpg → "A beautiful woman in flowing white and silver Chinese robes floating gracefully upward toward a large luminous full moon in a star-filled night sky, looking peaceful and serene, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
 // ─── hou-yi-ten-suns ──────────────────────────────────────────────────────────
@@ -156,9 +156,9 @@
 // REVIEW STATUS: pages 1–2 ✅; page 3 close (man at desk not reaching for armor); pages 4, 8, 10, 11 need regeneration; pages 5–7, 9 fixed by moving images.
 // page-1.jpg  → "A young Chinese woman weaving at a loom in a cozy family home, peaceful and content, traditional Chinese interior, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "An imperial conscription scroll arriving at a traditional Chinese family home, a family looking worried, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows elderly man writing at a desk by candlelight with a young person watching — close to the prompt but he is not reaching for armor. Regenerate for full accuracy.
+// **** NEEDS REGENERATION: Actual image shows elderly man writing at a desk by candlelight with a young person watching — close to the prompt but he is not reaching for armor.
 // page-3.jpg  → "A frail elderly Chinese man reaching for his old military armor with trembling hands, his daughter watching with deep concern, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows two riders on horseback leaving a building — completely wrong scene. Should show Mulan alone by candlelight, deep in thought. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows two riders on horseback leaving a building — completely wrong scene. Should show Mulan alone by candlelight, deep in thought.
 // page-4.jpg  → "A young Chinese woman sitting alone by candlelight at night, deep in thought with a determined expression, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-5 image was wrong; replaced with page-6's candlelight+armor image which matches this prompt. May show Mulan cutting someone else's hair rather than her own — regenerate for full accuracy if needed.
 // page-5.jpg  → "A determined young Chinese woman cutting her long black hair by candlelight, her father's armor and helmet laid out before her, resolute expression, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
@@ -166,13 +166,13 @@
 // page-6.jpg  → "Mulan riding away on horseback at dawn in military armor, looking back at her family home one last time, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-7 image was wrong; replaced with page-8's training-camp image which matches this prompt.
 // page-7.jpg  → "Mulan at a military training camp doing exercises alongside other soldiers, working hard and keeping up with everyone, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image (after move) still shows training camp — same as page-7. Needs a new snowy battle scene. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image (after move) still shows training camp — same as page-7. Needs a new snowy battle scene.
 // page-8.jpg  → "Mulan in full Chinese military armor fighting bravely alongside soldiers in wind and snow, a snowy mountain battlefield, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-9 image was a wrong landscape; replaced with page-11's celebration image which matches this prompt.
 // page-9.jpg  → "Soldiers cheering and celebrating victory after a great battle in ancient China, banners waving, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image shows a lone armored archer drawing a bow on a mountain — not a throne room scene. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image shows a lone armored archer drawing a bow on a mountain — not a throne room scene.
 // page-10.jpg → "A young soldier kneeling before a kind dignified Emperor in a magnificent golden throne room, the Emperor gesturing generously with admiration, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image (after move) still shows celebration soldiers — same as page-9. Needs Mulan riding home in floral dress. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image (after move) still shows celebration soldiers — same as page-9. Needs Mulan riding home in floral dress.
 // page-11.jpg → "Mulan back in her beautiful floral dress riding home past cherry blossom trees, looking happy and relieved, children's book illustration style, vibrant colors, East Asian art style, traditional Chinese setting, no text, suitable for children ages 4 to 7"
 // page-12.jpg → "A beautiful young Chinese woman in a colorful dress embracing her elderly father outside their family home with tears of joy, whole family reunited, cherry blossoms falling, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 //
@@ -194,7 +194,7 @@
 // REVIEW STATUS: pages 1–2 ✅; pages 4–6, 8–11 fixed (moved); pages 3, 7, 12, 13 need regeneration/generation.
 // page-1.jpg  → "A magical glowing stone sitting on a misty mountain peak surrounded by clouds in ancient China, pulsing with light, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // page-2.jpg  → "A magical stone cracking open with a brilliant flash of golden light, a tiny cute baby monkey emerging and blinking with wide curious eyes, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image is a sprite-sheet stitching error — two separate scenes merged side-by-side (monkey in flowers left, waterfall right). Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image is a sprite-sheet stitching error — two separate scenes merged side-by-side (monkey in flowers left, waterfall right).
 // page-3.jpg  → "A young playful monkey exploring a beautiful misty mountain, swinging through trees, discovering flowers and waterfalls, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-4 image was wrong (leaping through waterfall); replaced with page-5's discovering-waterfall image which matches this prompt.
 // page-4.jpg  → "A young monkey discovering a magnificent thundering waterfall on a mountain, looking at it with curiosity and excitement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
@@ -202,7 +202,7 @@
 // page-5.jpg  → "A brave young monkey leaping through a magical sparkling waterfall, eyes closed, taking a big leap of faith, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-6 image was wrong; replaced with page-7's paradise image. Shows monkey in lush paradise — missing the fruit trees and happy animals but approximately correct. Regenerate for full accuracy if needed.
 // page-6.jpg  → "A beautiful lush paradise hidden behind the waterfall, full of fruit trees and happy animals, the monkey arriving and looking around in amazement, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image (after move) still shows monkey in paradise without crowning scene — same as page-6. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image (after move) still shows monkey in paradise without crowning scene — same as page-6.
 // page-7.jpg  → "Animals crowning the monkey as their king with a golden crown, all bowing happily, a lush paradise setting, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-8 image was wrong; replaced with page-9's monkey-riding-staff image which matches this prompt.
 // page-8.jpg  → "The Monkey King setting off on a long journey over mountains and seas to find a wise teacher, looking determined and adventurous, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
@@ -212,7 +212,7 @@
 // page-10.jpg → "The Monkey King transforming magically into different animals one after another, surrounded by golden magical sparkles, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // **** IMAGE MISMATCH (MOVED): page-11 image was wrong; replaced with page-12's golden-cloud image which matches this prompt.
 // page-11.jpg → "The Monkey King standing on a golden cloud with lightning and wind swirling around him, eyes glowing with magical power, dramatic and impressive, children's book illustration style, vibrant colors, East Asian art style, no text, suitable for children ages 4 to 7"
-// **** IMAGE MISMATCH: Actual image (after move) still shows figure on golden cloud — same as page-11. Regenerate with the prompt below.
+// **** NEEDS REGENERATION: Actual image (after move) still shows figure on golden cloud — same as page-11.
 // page-12.jpg → "The Monkey King holding up a single glowing golden hair and blowing on it, hundreds of tiny identical monkeys appearing in a spectacular magical whoosh, children's book illustration style, vibrant colors, East Asian art style, magical, no text, suitable for children ages 4 to 7"
 // **** MISSING IMAGE: page-13 does not exist yet. Generate with the prompt below.
 // page-13.jpg → "The Monkey King standing on a mountaintop looking out at a vast beautiful world below, holding a scroll map, eyes full of excitement and adventure, children's book illustration style, vibrant colors, East Asian art style, adventurous, no text, suitable for children ages 4 to 7"
