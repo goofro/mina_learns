@@ -2215,4 +2215,43 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'milkmaid-pail',
+    title: 'The Milkmaid and Her Pail',
+    subtitle: 'Don\'t count your chickens before they hatch',
+    coverEmoji: '🥛',
+    origin: 'western',
+    color: '#fbbf24',
+    shadow: '#d97706',
+    pages: [
+      {
+        scene: ['👧', '🐄', '🥛', '🌅'],
+        text: 'Patty the milkmaid walked to the meadow early one morning, her shiny pail swinging in her hand. The cows were waiting, the grass was wet with dew, and the birds were singing. It was a perfect day — and Patty had a very exciting plan growing in her head.',
+      },
+      {
+        scene: ['🥛', '💭', '🧈', '💰'],
+        text: 'She milked the cows carefully until the pail was full to the brim with fresh, creamy milk. As she balanced it on her head for the walk home, she began to daydream. "I\'ll sell this milk," she thought, "and with the money I\'ll buy a hundred eggs."',
+      },
+      {
+        scene: ['🥚', '🐣', '🐔', '💭'],
+        text: '"From those hundred eggs I\'ll hatch a hundred chicks," she went on dreamily, stepping along the path. "I\'ll feed them corn all summer and by autumn they\'ll be fine fat hens worth a great deal of money at market!"',
+      },
+      {
+        scene: ['💰', '👗', '🎀', '💭'],
+        text: '"With all that money," she thought happily, "I\'ll buy the most beautiful dress in the village — red with yellow ribbons. All the young men will look at me at the fair. They\'ll bow and beg me to dance!" She smiled to herself and tossed her head proudly.',
+      },
+      {
+        scene: ['💦', '🥛', '😱', '🌿'],
+        text: 'But when she tossed her head, the pail tipped. The milk poured out in a great white splash and soaked into the grass. In an instant the hundred eggs, the hundred chicks, the fine hens, the dress, and all the dancing vanished — every last drop of daydream gone with the milk.',
+      },
+      {
+        scene: ['👧', '😢', '🏡', '👩'],
+        text: 'Patty picked up her empty pail and trudged home. Her mother listened to the whole story and then gave her a hug. "Oh, Patty," she said gently. "There\'s a saying: don\'t count your chickens before they hatch. Take care of what you have, and then dream about what might come next."',
+      },
+      {
+        scene: ['🐄', '🥛', '🌟', '😊'],
+        text: 'The next morning Patty went back to the meadow. She milked the cows just as carefully, and this time she walked home slowly and steadily, watching every step. She sold the milk at a good price — real coins in her pocket. It wasn\'t a hundred eggs, but it was a fine beginning.',
+      },
+    ],
+  },
 ]
