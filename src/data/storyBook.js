@@ -2254,4 +2254,47 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'cowherd-weaver-girl',
+    title: 'The Cowherd and the Weaver Girl',
+    subtitle: 'A Chinese love story written in the stars',
+    coverEmoji: '🌌',
+    origin: 'chinese',
+    color: '#6366f1',
+    shadow: '#4338ca',
+    pages: [
+      {
+        scene: ['🌌', '⭐', '🌠', '💫'],
+        text: 'Long ago in the heavens, the Jade Emperor\'s granddaughter Zhinü was the most gifted weaver of all. Each day she sat at her loom and wove clouds — pink at dawn, orange at sunset, silver at night — and the sky was beautiful because of her work.',
+      },
+      {
+        scene: ['🐄', '👨‍🌾', '🌾', '🌟'],
+        text: 'On the earth below lived Niulang, a kind and hardworking cowherd. He cared for his cattle with great love, and in return his old ox spoke to him in a gentle voice, giving him wise advice. Niulang was honest and good, but he was lonely.',
+      },
+      {
+        scene: ['👗', '🏊', '👧', '❤️'],
+        text: 'One evening the old ox told Niulang that the weaver maidens from heaven would come to bathe in the river. If he hid one of their silk robes, the owner would stay behind. Niulang felt shy about this, but the ox assured him: "She is your match. You were meant to find each other."',
+      },
+      {
+        scene: ['👨‍🌾', '👧', '🌾', '😊'],
+        text: 'When Zhinü could not find her robe she stayed behind while the others flew home. Niulang came out shyly and returned her robe at once. They talked all evening under the stars, and something wonderful happened: they fell deeply in love. Soon they were married and had two children, and the family was very happy.',
+      },
+      {
+        scene: ['👑', '😠', '☁️', '😢'],
+        text: 'But the Jade Emperor was furious. A heavenly weaver had no business marrying a mortal cowherd! He sent the Queen Mother of the West to drag Zhinü back to heaven. She tore the sky open with a silver hairpin, creating a wide, rushing river of stars — the Milky Way — to keep them apart forever.',
+      },
+      {
+        scene: ['🐦', '🌉', '🌌', '❤️'],
+        text: 'Niulang\'s grief was so deep that even the magpies of the world felt sorry for him. Thousands of them flew up into the sky and formed a bridge of wings across the Milky Way so he could cross to see Zhinü. When the Jade Emperor saw his granddaughter\'s joy, his heart softened a little.',
+      },
+      {
+        scene: ['📅', '🎑', '🌠', '👨‍👩‍👧‍👦'],
+        text: 'The Emperor made a rule: on the seventh day of the seventh month each year, the magpies would form their bridge and the cowherd and the weaver girl could meet. On that night people say you can see two bright stars — Altair and Vega — drawing close across the sky.',
+      },
+      {
+        scene: ['🌌', '💫', '❤️', '🌠'],
+        text: 'Every year on that special night, children in China look up at the sky and whisper wishes to the stars. They remember Niulang and Zhinü, and they learn that love is patient, that it crosses great distances, and that even a sky full of stars cannot keep two hearts truly apart.',
+      },
+    ],
+  },
 ]
