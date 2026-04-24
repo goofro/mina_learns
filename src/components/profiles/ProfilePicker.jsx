@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { speak } from '../../utils/speech'
+import { parseBackupFile, applyImport, backupHasConflict } from '../../utils/profileBackup'
 
 export const PROFILES_KEY = 'mina_learns_profiles'
 export const ACTIVE_PROFILE_KEY = 'mina_learns_active_profile'
@@ -23,6 +24,10 @@ export function ProfilePicker({ onSelect }) {
   const [adding, setAdding] = useState(() => loadProfiles().length === 0)
   const [name, setName] = useState('')
   const [avatar, setAvatar] = useState('🦄')
+  const [importPending, setImportPending] = useState(null) // parsed backup
+  const [importConflict, setImportConflict] = useState(false)
+  const [importError, setImportError] = useState(null)
+  const fileInputRef = useRef(null)
 
   function handleAdd() {
     const trimmed = name.trim()
@@ -44,6 +49,32 @@ export function ProfilePicker({ onSelect }) {
       speak(`Hi ${profile.name}! Let's learn!`, { rate: 0.85, pitch: 1.2 })
       onSelect(profile)
     }
+  }
+
+  async function handleFileSelected(e) {
+    const file = e.target.files?.[0]
+    if (!fileInputRef.current) return
+    fileInputRef.current.value = ''
+    if (!file) return
+    setImportError(null)
+    try {
+      const backup = await parseBackupFile(file)
+      const hasConflict = backupHasConflict(backup)
+      setImportPending(backup)
+      setImportConflict(hasConflict)
+    } catch (err) {
+      setImportError(err.message)
+    }
+  }
+
+  function handleConfirmImport() {
+    if (!importPending) return
+    const profile = applyImport(importPending)
+    setImportPending(null)
+    setImportConflict(false)
+    setProfiles(loadProfiles())
+    speak(`Welcome back, ${profile.name}!`, { rate: 0.85, pitch: 1.2 })
+    onSelect(profile)
   }
 
   function handleSelect(profile) {
@@ -69,6 +100,44 @@ export function ProfilePicker({ onSelect }) {
       <p style={{ fontSize: '20px', color: '#6b7280', marginBottom: '40px', fontWeight: 600, textAlign: 'center' }}>
         {profiles.length === 0 ? "Let's set up your first profile!" : "Who's learning today?"}
       </p>
+
+      {/* Import confirmation dialog */}
+      {importPending && (
+        <div style={{
+          background: 'white', borderRadius: '20px', padding: '28px', maxWidth: '380px', width: '100%',
+          boxShadow: '0 12px 40px rgba(0,0,0,0.15)', border: '4px solid #3b82f6', marginBottom: '28px', textAlign: 'center',
+        }}>
+          <div style={{ fontSize: '40px', marginBottom: '12px' }}>📥</div>
+          <h3 style={{ fontSize: '20px', fontWeight: 900, color: '#1f2937', marginBottom: '8px' }}>
+            {importConflict ? `Replace existing "${importPending.profileName}" profile?` : `Import "${importPending.profileName}"?`}
+          </h3>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '20px' }}>
+            {importConflict
+              ? 'A profile with this name already exists. Importing will overwrite their progress, stars, and settings.'
+              : 'This will restore all progress, stars, custom words, art settings, and saved drawings from the backup.'}
+          </p>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+            <button
+              onClick={() => { setImportPending(null); setImportConflict(false) }}
+              style={{ background: '#f3f4f6', color: '#374151', border: 'none', borderRadius: '12px', padding: '12px 24px', fontSize: '15px', fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleConfirmImport}
+              style={{ background: importConflict ? '#ef4444' : '#3b82f6', color: 'white', border: 'none', borderRadius: '12px', padding: '12px 24px', fontSize: '15px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
+            >
+              {importConflict ? 'Replace' : 'Import'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {importError && (
+        <div style={{ background: '#fee2e2', border: '2px solid #fca5a5', borderRadius: '12px', padding: '12px 20px', marginBottom: '16px', color: '#dc2626', fontSize: '14px', fontWeight: 700 }}>
+          ⚠️ {importError}
+        </div>
+      )}
 
       {/* Existing profiles grid */}
       {!adding && (
@@ -115,8 +184,34 @@ export function ProfilePicker({ onSelect }) {
             <div style={{ fontSize: '48px', marginBottom: '10px' }}>➕</div>
             <div style={{ fontSize: '18px', fontWeight: 700, color: '#6b7280' }}>Add Profile</div>
           </button>
+
+          {/* Import profile card */}
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            style={{
+              background: '#f9fafb',
+              border: '4px dashed #93c5fd',
+              borderRadius: '28px',
+              padding: '28px 36px',
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              textAlign: 'center',
+              minWidth: '140px',
+            }}
+          >
+            <div style={{ fontSize: '48px', marginBottom: '10px' }}>📥</div>
+            <div style={{ fontSize: '18px', fontWeight: 700, color: '#3b82f6' }}>Import Backup</div>
+          </button>
         </div>
       )}
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".json"
+        onChange={handleFileSelected}
+        style={{ display: 'none' }}
+      />
 
       {/* Add profile form */}
       {adding && (

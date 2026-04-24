@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-20 (FEAT-041: PWA deployment — GitHub Actions + GitHub Pages)  
+**Last updated:** 2026-04-24 (BUG-013: Sight Words quiz start fix; FEAT-060: profile export/import)  
 **Current version:** v1.33.0
 
 ---
@@ -481,7 +481,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-013: Sight Words — quiz doesn't start from the first word
+### [x] BUG-013: Sight Words — quiz doesn't start from the first word
 **Screen:** Reading → Sight Words → Level → Quiz phase  
 **Reported:** 2026-04-21  
 **Priority:** High  
@@ -647,7 +647,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 **Changes needed:**
 - `src/components/storybook/StoryBookReader.jsx` — update the page layout container to `display: flex; flex-direction: row` with each half at `width: 50%; height: 100%`. Scale up emoji scene font size. Move nav dots and Read button into the text panel footer.
 
-### [ ] FEAT-060: Profile export / import — portable backup file
+### [x] FEAT-060: Profile export / import — portable backup file
 **Priority:** High
 **Description:** Allow parents to export any child profile (progress, stars, milestones, settings, custom word lists, teaching sequence state) as a single downloadable JSON file, and re-import it on a new device (iPad, PC, etc.) to restore everything exactly as it was.
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { BackButton } from '../shared/BackButton'
 import { Celebration, StarBurst } from '../shared/Celebration'
 import { speak, speakWord, speakEncouragement, speakTryAgain } from '../../utils/speech'
@@ -45,6 +45,7 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
   // phase: 'flashcard' = show the word | 'quiz' = hide the word, pick it from choices
   const [phase, setPhase] = useState('flashcard')
   const [customWords, setCustomWords] = useState(loadCustomWords)
+  const advanceTimerRef = useRef(null)
 
   const isCustom = selectedLevel === 'custom'
   const levelData = (!isCustom && selectedLevel) ? SIGHT_WORD_LEVELS.find(l => l.level === selectedLevel) : null
@@ -56,6 +57,10 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
   }
 
   function startLevel(level) {
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current)
+      advanceTimerRef.current = null
+    }
     setSelectedLevel(level)
     const words = getWordsForLevel(level)
     setQueue(shuffle(words))
@@ -115,7 +120,8 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
       addStars(1)
       setShowStar(true)
       setTimeout(() => setShowStar(false), 1500)
-      setTimeout(() => {
+      advanceTimerRef.current = setTimeout(() => {
+        advanceTimerRef.current = null
         setQueue(q => q.slice(1))
         setCurrent(null)
         setFeedback(null)
@@ -276,7 +282,10 @@ export function SightWords({ progress, onBack, addStars, recordSightWord }) {
 
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-          <BackButton onClick={() => { setSelectedLevel(null); setCurrent(null); setQueue([]) }} />
+          <BackButton onClick={() => {
+            if (advanceTimerRef.current) { clearTimeout(advanceTimerRef.current); advanceTimerRef.current = null }
+            setSelectedLevel(null); setCurrent(null); setQueue([])
+          }} />
           <div style={{ fontSize: '18px', fontWeight: 700, color: '#6b7280' }}>
             Score: {score.correct}/{score.total}
           </div>

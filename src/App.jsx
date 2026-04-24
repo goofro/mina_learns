@@ -643,6 +643,7 @@ export default function App() {
           progress={progress}
           onBack={() => setScreen('home')}
           resetProgress={resetProgress}
+          profile={activeProfile}
         />
       )}
 

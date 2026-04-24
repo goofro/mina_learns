@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { PIN_KEY } from './ParentLogin'
 import { VERSION, CHANGELOG } from '../../version'
+import { exportProfile } from '../../utils/profileBackup'
 
 export const CUSTOM_WORDS_KEY = 'mina_custom_words'
 export const ART_SETTINGS_KEY = 'mina_art_settings'
@@ -15,7 +16,7 @@ function loadArtSettings() {
   try { return { ...DEFAULT_ART_SETTINGS, ...JSON.parse(localStorage.getItem(ART_SETTINGS_KEY) || '{}') } } catch { return DEFAULT_ART_SETTINGS }
 }
 
-export function ParentSettings({ progress, resetProgress }) {
+export function ParentSettings({ progress, resetProgress, profile }) {
   const [newPin, setNewPin] = useState('')
   const [confirmPin, setConfirmPin] = useState('')
   const [pinMsg, setPinMsg] = useState(null)
@@ -61,14 +62,7 @@ export function ParentSettings({ progress, resetProgress }) {
   }
 
   function handleExport() {
-    const data = JSON.stringify(progress, null, 2)
-    const blob = new Blob([data], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `mina-progress-${new Date().toISOString().slice(0, 10)}.json`
-    a.click()
-    URL.revokeObjectURL(url)
+    if (profile) exportProfile(profile.id, profile.name)
   }
 
   return (
@@ -110,16 +104,21 @@ export function ParentSettings({ progress, resetProgress }) {
         </div>
       </SettingsCard>
 
-      {/* Export Progress */}
-      <SettingsCard title="📤 Export Progress Data">
-        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '12px' }}>
-          Download Mina's progress data as a JSON file for backup.
+      {/* Profile Backup */}
+      <SettingsCard title="💾 Profile Backup">
+        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '4px' }}>
+          Export this profile as a backup file — includes all progress, stars, custom words, art settings, and saved drawings.
+          Restore it on any device using the Import button on the profile picker screen.
+        </p>
+        <p style={{ fontSize: '12px', color: '#9ca3af', marginBottom: '14px' }}>
+          Your backup includes saved artwork and may be a few MB in size.
         </p>
         <button
           onClick={handleExport}
+          disabled={!profile}
           style={{ background: '#10b981', color: 'white', border: 'none', borderRadius: '10px', padding: '12px 24px', fontSize: '14px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}
         >
-          Download Progress.json
+          📥 Export {profile?.name || 'Profile'} Backup
         </button>
       </SettingsCard>
 

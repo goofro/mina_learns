@@ -12,7 +12,7 @@ const TABS = [
   { id: 'settings', label: '⚙️ Settings', emoji: '⚙️' },
 ]
 
-export function ParentDashboard({ progress, onBack, resetProgress }) {
+export function ParentDashboard({ progress, onBack, resetProgress, profile }) {
   const [tab, setTab] = useState('overview')
 
   return (
@@ -71,7 +71,7 @@ export function ParentDashboard({ progress, onBack, resetProgress }) {
         {tab === 'progress' && <ProgressReport progress={progress} />}
         {tab === 'milestones' && <MilestoneTracker progress={progress} />}
         {tab === 'goals' && <WeeklyGoals progress={progress} />}
-        {tab === 'settings' && <ParentSettings progress={progress} resetProgress={resetProgress} />}
+        {tab === 'settings' && <ParentSettings progress={progress} resetProgress={resetProgress} profile={profile} />}
       </div>
     </div>
   )
