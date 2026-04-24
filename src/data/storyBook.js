@@ -442,6 +442,102 @@
 // page-9.jpg  → "A crow finally reaching the water with his beak, drinking happily from the pitcher full of pebbles, looking very satisfied, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 // page-10.jpg → "A happy crow flying away from the garden refreshed, the pitcher sitting behind him with pebbles visible inside, sunny and cheerful scene, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
 //
+// ─── thumbelina ───────────────────────────────────────────────────────────────
+// page-1.jpg  → "A tiny magical girl no bigger than a thumb sleeping peacefully inside a beautiful open tulip flower, warm golden light, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A tiny girl sitting in a walnut-shell bed with a rose-petal blanket inside a cozy dollhouse, smiling happily, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A tiny girl floating on a big green lily pad on a sparkling pond, a friendly frog family watching from the bank, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A tiny girl sheltering under a large autumn leaf in a golden forest, a friendly mouse peeking from a doorway nearby, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A tiny girl gently placing a leaf blanket over a small injured swallow in a cozy nest of straw, looking at the bird with care, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A tiny girl riding on the back of a large friendly swallow flying through a bright blue sky over fields and mountains, arms spread wide with joy, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A beautiful flower garden full of flowers as big as trees, a tiny fairy prince with wings welcoming a tiny girl with a bow, other flower fairies cheering, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A tiny girl receiving delicate fairy wings from a flower fairy, other flower fairies cheering and celebrating all around her, children's book illustration style, vibrant colors, magical, joyful, no text, suitable for children ages 4 to 7"
+//
+// ─── wind-and-sun ─────────────────────────────────────────────────────────────
+// page-1.jpg  → "A friendly cartoon sun with a smiling face and a cartoon wind cloud with puffed cheeks facing each other in a bright sky, looking competitive, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A cheerful traveller wearing a warm brown coat walking along a sunny country path, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A cartoon wind blowing fiercely at a traveller who clutches his coat tightly with both hands, leaning into the wind, looking determined, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A smiling cartoon sun shining warm golden rays down on a traveller who fans his face and starts to unbutton his coat, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A traveller happily removing his coat and folding it over his arm, smiling up at a warm golden sun, a cartoon wind looking surprised and impressed in the background, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A smiling sun and a friendly wind shaking cartoon hands in a cheerful sky, the sun looking wise and the wind looking thoughtful, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── snow-white ───────────────────────────────────────────────────────────────
+// page-1.jpg  → "A kind girl with black hair and a yellow dress in a castle courtyard, birds and butterflies around her, looking gentle and happy, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A queen looking into a large ornate glowing magic mirror on a castle wall, looking vain and self-satisfied, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A girl with black hair running happily through a bright enchanted forest, colourful birds guiding her along the path, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A girl with black hair finding a tiny cosy cottage in a forest clearing, peeking through the window in delight, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A girl with black hair eating soup at a long table with seven very small cheerful dwarves, everyone laughing together, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A girl with black hair lying peacefully asleep on a small bed, seven worried small dwarves watching over her with flowers around the bed, soft golden light, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A girl with black hair opening her eyes and sitting up, seven small dwarves cheering and jumping for joy around her, golden light pouring in, children's book illustration style, vibrant colors, joyful, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A girl with black hair and seven small dwarves celebrating outside the cottage with singing and dancing, a rainbow overhead, flowers everywhere, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── rapunzel ─────────────────────────────────────────────────────────────────
+// page-1.jpg  → "A girl with incredibly long golden hair sitting at the window of a tall tower in a green forest, birds perched on the sill, smiling at the view, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A girl in a tower singing, birds perching on the windowsill to listen, her long golden hair flowing down the tower's outer wall, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A kind prince on a white horse in a forest, looking up at a tall tower with a surprised and delighted expression as he hears beautiful singing, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A prince climbing up a long rope of thick golden hair on the outside of a tall tower, a girl at the window smiling and helping to pull, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A girl with golden hair and a prince sitting by a tower window sharing books and stories with sunlight streaming in, warm and friendly, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A girl with very long golden hair braiding it into a thick rope-ladder at the tower window, concentrating hard with tongue out, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A girl climbing down a golden hair ladder from a tall tower, a prince waiting below to catch her, both looking excited, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A girl with golden hair and a prince riding on horseback through a sunny meadow, the girl looking at flowers and birds with wonder and joy, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── milkmaid-pail ────────────────────────────────────────────────────────────
+// page-1.jpg  → "A cheerful girl in a farm apron carrying a large pail of fresh white milk balanced on her head, walking along a sunny country path, children's book illustration style, vibrant colors, warm and friendly, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A girl with a thought bubble showing a bag of coins, looking pleased with herself while walking with a milk pail on her head, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A girl daydreaming in a thought bubble about a basket of eggs hatching into fluffy yellow chicks, happy expression, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A girl daydreaming in a thought bubble about herself in a beautiful new dress dancing at a village celebration, everyone admiring her, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A girl tossing her head proudly but the pail of milk flies off and crashes to the ground, milk splashing everywhere, look of total shock on her face, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A girl sitting sadly beside an empty tipped-over pail in a sunny road, milk soaking into the dirt, looking embarrassed and sorry, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── cowherd-weaver-girl ──────────────────────────────────────────────────────
+// page-1.jpg  → "A beautiful woman in flowing celestial robes sitting at a magical loom weaving colourful clouds in the sky, a palace in the clouds behind her, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A kind young man tending cattle in beautiful green fields under a starry sky, East Asian traditional setting, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A young woman in celestial robes and a young man meeting by a river, looking at each other with happy surprise, flowers blooming around them, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A young couple happily living together by a river, tending cattle and weaving, surrounded by flowers and butterflies, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A majestic Queen of Heaven drawing a glowing river of stars across the sky with her hairpin, two sad figures separated on either side, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A huge flock of magpies flying up into the night sky and forming a living bridge of birds across the Milky Way, East Asian art style, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A woman in celestial robes and a young man meeting joyfully on a bridge of magpies across a river of stars, tears of happiness, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A family on Earth looking up at the Milky Way on a clear night, two bright stars glowing on either side, East Asian art style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── urashima-taro ────────────────────────────────────────────────────────────
+// page-1.jpg  → "A kind young Japanese fisherman sitting by the sea with a fishing rod, watching the waves, peaceful and content, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A young fisherman gently picking up a small green sea turtle that had been teased by other children, looking at it with kindness, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A young fisherman kneeling and gently releasing a small turtle into the sparkling sea, the turtle looking back at him gratefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A large beautiful sea turtle surfacing beside a fisherman in the ocean, the fisherman looking surprised and delighted, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A young man riding on the back of a large sea turtle diving beneath shimmering blue-green waves, colourful fish swimming alongside, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A magnificent underwater palace with coral gates and glowing fish-lanterns, a young man arriving and being welcomed by sea creatures, traditional Japanese style, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A young man at a grand underwater feast with the Dragon King and dancing fish and sea creatures in a coral hall, traditional Japanese style, children's book illustration style, vibrant colors, joyful, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A young fisherman arriving safely back on shore, waving goodbye to a large turtle in the water, the sun rising behind him, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+//
+// ─── nian-monster ─────────────────────────────────────────────────────────────
+// page-1.jpg  → "A dark shaggy monster with glowing eyes creeping toward a sleeping Chinese village on a cold winter night, lanterns dark, everyone hiding inside, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A brave smiling elderly Chinese woman standing alone in a village street at night, hands on hips, completely unafraid as the monster approaches, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "The monster stopping in shock and recoiling from a bright red door covered in red banners and glowing red lanterns, looking terrified, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "An elderly woman banging pots and pans together making tremendous noise, the monster covering its ears and backing away in terror, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "The monster running away into dark mountains as the whole village lights up with red lanterns and fireworks, people cheering and laughing, children's book illustration style, vibrant colors, joyful, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A Chinese village celebrating New Year at dawn with red decorations, lanterns, children in new clothes, and colourful fireworks bursting in the sky, children's book illustration style, vibrant colors, joyful, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "Families sharing red envelopes and a big New Year feast at a round table, everyone smiling, traditional Chinese setting, children's book illustration style, vibrant colors, warm and joyful, no text, suitable for children ages 4 to 7"
+//
+// ─── issun-boshi ──────────────────────────────────────────────────────────────
+// page-1.jpg  → "A tiny Japanese boy no bigger than a thumb standing on the palm of his mother's hand, both parents looking at him with love and wonder, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A tiny brave boy holding a sewing needle as a tiny sword, wearing a thimble as a hat, looking adventurous and determined, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A tiny boy sailing in a red lacquered rice bowl down a river, using a chopstick as an oar, looking excited, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A tiny boy standing bravely before a tall Japanese lord in a grand hall, offering his services, the lord looking curious and amused, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A tiny boy walking beside a kind Japanese princess through a palace garden, both smiling, she looking after him carefully, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "Two large horned Oni demons appearing on a road confronting a tiny brave boy who stands his ground with a needle-sword, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A tiny boy tickling the inside of an Oni demon's mouth causing the Oni to look very alarmed and uncomfortable, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "Two Oni demons running away and dropping a glowing magical mallet, a princess picking it up while a tiny brave boy cheers triumphantly, traditional Japanese style, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-9.jpg  → "A boy growing tall in a flash of golden sparkles while a princess watches in amazement holding a magic mallet, traditional Japanese style, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+//
+// ─── anansi-stories ───────────────────────────────────────────────────────────
+// page-1.jpg  → "A friendly cartoon spider with big eyes sitting in a web looking at a glowing treasure chest of stories in the sky above, West African setting, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-2.jpg  → "A spider climbing a golden thread up to a sky palace where a majestic Sky God in golden robes sits on a cloud throne, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-3.jpg  → "A spider holding a very long stick next to a large python coiled around a tree, apparently measuring them, looking clever, West African forest setting, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-4.jpg  → "A spider looking satisfied as a large leopard falls into a pit in the ground, West African forest setting, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-5.jpg  → "A spider holding a large gourd jar as a swarm of hornets fly inside it, looking triumphant, West African forest setting, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-6.jpg  → "A spider presenting a python, a caged leopard, and a jar of hornets to an astonished Sky God in his cloud palace, the Sky God's mouth open in amazement, children's book illustration style, vibrant colors, no text, suitable for children ages 4 to 7"
+// page-7.jpg  → "A spider receiving a huge glowing golden box overflowing with glittering stories from a smiling Sky God, West African art style, children's book illustration style, vibrant colors, magical, no text, suitable for children ages 4 to 7"
+// page-8.jpg  → "A spider opening a glowing box releasing hundreds of glowing story-butterflies that fly out to happy people all around the world, West African art style, children's book illustration style, vibrant colors, magical, joyful, no text, suitable for children ages 4 to 7"
+//
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const STORY_BOOKS = [
@@ -1945,6 +2041,50 @@ export const STORY_BOOKS = [
       {
         scene: ['🦁', '🐭', '🎉', '🌟'],
         text: 'One by one the ropes snapped. The lion stepped free, shook his great mane, and looked down at the tiny mouse with wonder and deep gratitude. "You were right, little friend," he said softly. "No act of kindness is ever too small. Thank you." And from that day, the mighty lion and the tiny mouse were the very best of friends.',
+      },
+    ],
+  },
+
+  {
+    id: 'thumbelina',
+    title: 'Thumbelina',
+    subtitle: 'A tiny girl finds where she belongs',
+    coverEmoji: '🌷',
+    origin: 'western',
+    color: '#ec4899',
+    shadow: '#be185d',
+    pages: [
+      {
+        scene: ['🌷', '✨', '👶', '🌸'],
+        text: 'A kind woman wished for a tiny child more than anything in the world. One day a fairy granted her wish — and from a flower seed grew the most wonderful surprise. When the tulip bloomed, there inside sat a tiny, perfect girl, no bigger than your thumb. The woman named her Thumbelina.',
+      },
+      {
+        scene: ['🌰', '🌸', '😴', '🏠'],
+        text: 'Thumbelina slept in a walnut shell with a rose-petal blanket and a violet-leaf pillow. By day she sang and played among the flowers, and her mother thought she was the most delightful thing in all the world.',
+      },
+      {
+        scene: ['🐸', '🌿', '🌊', '😟'],
+        text: 'One morning a friendly but bothersome frog hopped in and decided Thumbelina would make a perfect friend for his son. He carried her off on a lily pad in the middle of the pond. Thumbelina sat on the leaf and cried — she missed her mother terribly!',
+      },
+      {
+        scene: ['🐟', '🌊', '🍃', '😊'],
+        text: 'The fish in the pond had heard her crying and felt very sorry for her. They nibbled through the lily pad stem so it floated free, and a friendly butterfly pulled the leaf along with a strand of grass. Away she drifted, far from the frog, down the sparkling stream.',
+      },
+      {
+        scene: ['🍂', '🐭', '🏠', '❄️'],
+        text: 'Autumn came and the world grew cold. Thumbelina was shivering under a fallen leaf when a kind little field mouse found her. "You poor dear — come inside and get warm!" said the mouse, and took her into a cosy underground home full of acorns and soft moss.',
+      },
+      {
+        scene: ['🐦', '❄️', '🤲', '💛'],
+        text: 'That winter Thumbelina found a small swallow lying in the cold tunnel, his wing hurt. Every day she brought him crumbs and kept him warm under a grass blanket, talking to him softly. Slowly, slowly, the swallow grew strong again.',
+      },
+      {
+        scene: ['🐦', '🌸', '☀️', '🌍'],
+        text: 'When spring arrived the swallow stretched his great wings and said, "Come with me, Thumbelina — I will carry you somewhere warm and wonderful!" She held on tight to his soft feathers and up they soared, over forests and mountains, all the way to a land of endless sunshine and flowers.',
+      },
+      {
+        scene: ['🌺', '🧚', '👑', '💞'],
+        text: 'The swallow set her down gently in the heart of a beautiful white flower — and there stood a tiny prince with wings just like a dragonfly\'s. He had never seen anyone so lovely. "Will you be my friend and stay here always?" he asked. Thumbelina looked around at the flowers and the sunshine and her dear swallow nearby, and smiled the biggest smile of her life. "Yes," she said. "I am finally home."',
       },
     ],
   },
