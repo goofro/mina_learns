@@ -2172,4 +2172,47 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'rapunzel',
+    title: 'Rapunzel',
+    subtitle: 'The girl in the tower',
+    coverEmoji: '🏰',
+    origin: 'western',
+    color: '#a78bfa',
+    shadow: '#7c3aed',
+    pages: [
+      {
+        scene: ['👶', '🌿', '🏡', '🌙'],
+        text: 'Long ago, a couple lived next to a walled garden belonging to an enchantress. The wife longed for the green rapunzel plant that grew there. When the enchantress found the husband sneaking in to pick it, she agreed to let him take the plant — but only if they gave her the baby that was coming.',
+      },
+      {
+        scene: ['👧', '🏰', '🔒', '🦱'],
+        text: 'The couple agreed, and when a baby girl was born the enchantress took her and named her Rapunzel. She was kind to Rapunzel, but as Rapunzel grew into a girl with golden hair as long as a room, the enchantress kept her locked in a tall stone tower with no door and no stairs.',
+      },
+      {
+        scene: ['🦱', '🏰', '🧙‍♀️', '⬆️'],
+        text: 'Every day the enchantress would stand beneath the tower and call, "Rapunzel, Rapunzel, let down your hair!" And Rapunzel would toss her long golden braid out the window for the enchantress to climb. Rapunzel sang beautifully all day to pass the time, and her voice carried far through the forest.',
+      },
+      {
+        scene: ['🤴', '🌲', '🎵', '❤️'],
+        text: 'One afternoon a young prince rode through the forest and heard the singing. He followed the sound to the tower but could find no door. He watched for many days until he saw the enchantress call out and climb the golden hair. That evening he stood beneath the tower and called the same words.',
+      },
+      {
+        scene: ['🦱', '🤴', '😮', '😊'],
+        text: 'Down came the braid, and up climbed the prince. Rapunzel was startled — she had never seen anyone but the enchantress — but the prince was kind and gentle. Soon they were talking and laughing like old friends. He visited many evenings, and together they made a plan so she could escape.',
+      },
+      {
+        scene: ['🧙‍♀️', '😠', '✂️', '😢'],
+        text: 'But the enchantress discovered the secret. In her fury she cut off Rapunzel\'s beautiful hair and sent her far away to a distant land. Then she waited in the tower. When the prince called out that evening and climbed up, he found only the enchantress — and in shock he fell from the window.',
+      },
+      {
+        scene: ['🌵', '👧', '🌟', '🎶'],
+        text: 'The prince wandered through the land, while Rapunzel lived alone and learned to find food and shelter on her own. She was lonely, but she was brave, and she never stopped singing and hoping that someday things would be better.',
+      },
+      {
+        scene: ['🤴', '👧', '💧', '✨'],
+        text: 'At last the wandering prince found Rapunzel. When she saw him she ran to him and wept for joy — and her tears, falling on his eyes, let him see clearly again. They returned together to his kingdom, where they were welcomed with great joy, and they lived happily for the rest of their days.',
+      },
+    ],
+  },
 ]
