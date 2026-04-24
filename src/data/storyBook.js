@@ -2128,4 +2128,48 @@ export const STORY_BOOKS = [
       },
     ],
   },
+
+  {
+    id: 'snow-white',
+    title: 'Snow White',
+    subtitle: 'Kindness is the most beautiful thing of all',
+    coverEmoji: '🍎',
+    origin: 'western',
+    color: '#ef4444',
+    shadow: '#b91c1c',
+    pages: [
+      {
+        scene: ['👧', '🖤', '🌸', '🏰'],
+        text: 'Once there was a kind girl named Snow White who had hair as black as night and cheeks as rosy as apples. She loved every creature in the kingdom — the birds, the deer, the tiny beetles in the garden. Everyone who met her felt a little happier afterwards.',
+      },
+      {
+        scene: ['🪞', '👸', '✨', '😤'],
+        text: 'The queen had a magic mirror on her wall, and every morning she asked it, "Mirror, mirror, who is the fairest of all?" For years the mirror always answered her name. But one day it said, "Snow White." The queen frowned and stomped her foot. She was not happy at all.',
+      },
+      {
+        scene: ['👧', '🌲', '🐦', '🏃'],
+        text: 'Snow White ran into the deep forest. But she was not afraid — the birds sang to guide her, and the sunlight came through the trees in long golden beams. She ran and ran until she was quite out of breath, and then she spotted something wonderful.',
+      },
+      {
+        scene: ['🏠', '🍄', '😲', '🪟'],
+        text: 'There was a tiny cottage, no bigger than a garden shed, with seven little chairs around a little table and seven little beds in a row. "Hello?" called Snow White softly. Nobody answered. So she tidied up a little, made a pot of soup, and sat down to wait.',
+      },
+      {
+        scene: ['⛏️', '👨‍👨‍👦', '😄', '🍲'],
+        text: 'That evening seven small miners came marching home from the mountain, their picks on their shoulders. They were very surprised to find a girl at their table — but even more surprised to smell the most delicious soup! "Please stay!" they said. "We could use a friend." And Snow White smiled and said yes.',
+      },
+      {
+        scene: ['🍎', '😴', '🌸', '🕯️'],
+        text: 'The jealous queen used her magic to make a special apple — one bite and Snow White fell into a deep, peaceful sleep, as if dreaming the loveliest dream. The seven friends found her and were so sad. They laid her gently on a bed of flowers and kept watch over her every day.',
+      },
+      {
+        scene: ['🤴', '🌹', '👁️', '✨'],
+        text: 'A kind prince was riding through the forest when he heard the seven friends talking about their sleeping friend. He came to see, and the moment he spoke her name softly, Snow White opened her eyes. Perhaps it was his kindness that broke the spell — for kindness is the most powerful magic of all.',
+      },
+      {
+        scene: ['🎉', '⛏️', '👧', '🌈'],
+        text: 'Snow White hugged each of the seven friends tightly. They danced and cheered until the stars came out. As for the queen, she looked in her mirror one more time — and this time the mirror said, "The fairest thing of all is a kind heart." And deep down, even the queen knew that was true.',
+      },
+    ],
+  },
 ]
