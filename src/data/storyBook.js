@@ -2379,4 +2379,43 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'issun-boshi',
+    title: 'Issun-Boshi',
+    subtitle: 'The one-inch boy who had a giant heart',
+    coverEmoji: '🌸',
+    origin: 'chinese',
+    color: '#f472b6',
+    shadow: '#be185d',
+    pages: [
+      {
+        scene: ['👶', '📏', '👨‍👩‍👦', '😊'],
+        text: 'An old couple who had long wished for a child were overjoyed when a tiny baby was born to them — but he was no bigger than a thumb. They named him Issun-Boshi, which means "one-inch boy." He never grew any taller, yet he had a heart as big as the whole sky.',
+      },
+      {
+        scene: ['👦', '🍜', '🥢', '⚔️'],
+        text: 'Issun-Boshi made himself a sword from a sewing needle and a boat from a rice bowl, and used a chopstick as an oar. When he was old enough, he said to his parents, "I am going to the capital to seek my fortune." They hugged him — very carefully — and wished him well.',
+      },
+      {
+        scene: ['🍚', '🌊', '🏙️', '🌅'],
+        text: 'He rowed his rice-bowl boat all the way down the river to the great capital. It took many days, and the river was wide and the current was strong, but Issun-Boshi paddled steadily and sang to keep his spirits up. At last the rooftops of the city appeared on the horizon.',
+      },
+      {
+        scene: ['🏯', '👨‍💼', '🎎', '✨'],
+        text: 'In the city, Issun-Boshi found work at the house of a great lord. He was so tiny that he lived in the lord\'s sleeve and slept in a little nest of silk thread. He worked hard, ran quick errands, and made everyone smile. The lord\'s daughter, Princess Sanjo, became his closest friend.',
+      },
+      {
+        scene: ['👿', '😱', '⚔️', '💪'],
+        text: 'One day an oni — a fearsome demon with a giant club — appeared at the city gate and snatched Princess Sanjo. Issun-Boshi leaped from the princess\'s sleeve onto the demon\'s nose. He poked and prodded with his needle-sword until the oni howled and dropped the princess and fled.',
+      },
+      {
+        scene: ['✨', '🪄', '🌟', '😮'],
+        text: 'In its haste the oni dropped something on the ground — a magic mallet. Princess Sanjo picked it up and gave it a shake. "I wish Issun-Boshi were full-sized!" she said. At once the little boy began to grow — up, up, up — until he stood tall and straight, a fine young man.',
+      },
+      {
+        scene: ['👦', '👑', '🌸', '😄'],
+        text: 'The lord rewarded Issun-Boshi with land and honour, and in time he and Princess Sanjo were married. He sent gifts to his old parents and brought them to live in comfort. He never forgot where he came from — for it was his tiny size that had taught him courage, cleverness, and the value of a big heart.',
+      },
+    ],
+  },
 ]
