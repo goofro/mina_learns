@@ -2297,4 +2297,47 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'urashima-taro',
+    title: 'Urashima Taro',
+    subtitle: 'The fisherman who visited the sea palace',
+    coverEmoji: '🐢',
+    origin: 'chinese',
+    color: '#0ea5e9',
+    shadow: '#0369a1',
+    pages: [
+      {
+        scene: ['🎣', '🐢', '🌊', '👦'],
+        text: 'Long ago in a fishing village in Japan, there lived a kind young man named Urashima Taro. One morning he found some children teasing a small turtle on the beach. He chased the children away gently and carried the turtle to the water\'s edge. "There you go, little friend," he said, and watched it swim away.',
+      },
+      {
+        scene: ['🐢', '🌊', '✨', '🏰'],
+        text: 'The next day the turtle came back. It lifted its head from the waves and spoke in a soft voice. "I am a messenger from Ryūgū-jō, the Dragon Palace under the sea. The Sea Princess wishes to thank you. Will you come with me?" Urashima Taro was amazed — but he climbed onto the turtle\'s back.',
+      },
+      {
+        scene: ['🌊', '🐠', '🦑', '🏰'],
+        text: 'Down, down, down they went through glittering green water. Fish of every colour darted past, and the coral shone like a garden of jewels. At last they arrived at a palace of pearl and coral, and the Sea Princess herself came out to welcome Urashima Taro with a warm smile.',
+      },
+      {
+        scene: ['🏰', '🎶', '🍱', '😄'],
+        text: 'The Sea Princess showed him wonders he had never imagined — great halls where the four seasons were always present at once, spring blossoms and summer waves and autumn leaves and winter snow all side by side. He feasted and danced and listened to music, and it seemed as though only a few days had passed.',
+      },
+      {
+        scene: ['🏠', '💭', '😢', '🎁'],
+        text: 'But in his heart Urashima Taro began to miss his home, his mother, and the salty smell of the sea. He told the princess he must return. She understood, and gave him a beautiful lacquered box tied with ribbon. "Keep this safe," she said, "and never, never open it."',
+      },
+      {
+        scene: ['🐢', '🏖️', '😮', '👴'],
+        text: 'The turtle carried him back to his village. But everything looked strange. The houses were different, the faces were unknown, and the paths had changed. He asked about his mother and was told she had been gone for three hundred years. What felt like days in the sea palace had been centuries on land.',
+      },
+      {
+        scene: ['📦', '❓', '💨', '👴'],
+        text: 'In his sadness and confusion, Urashima Taro forgot the princess\'s warning. He untied the ribbon and opened the box. A plume of white smoke rose from it — the three hundred years of time that had been sealed inside. At once his hair turned white and his back bent, and he became a very old man.',
+      },
+      {
+        scene: ['🌊', '🐢', '🌟', '🙏'],
+        text: 'People still tell the story of Urashima Taro to remember two things: that a single kind act — saving a small turtle — can lead to wonders beyond imagining, and that it is wise to think carefully before opening something you have been asked to keep closed.',
+      },
+    ],
+  },
 ]
