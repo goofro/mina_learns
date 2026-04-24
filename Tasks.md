@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-24 (BUG-013: Sight Words quiz start fix; FEAT-060: profile export/import)  
+**Last updated:** 2026-04-24 (CHORE-005: added 9 new stories — Thumbelina, Wind & Sun, Snow White, Rapunzel, Milkmaid & Pail, Cowherd & Weaver Girl, Urashima Taro, Nian & New Year, Issun-Boshi)  
 **Current version:** v1.33.0
 
 ---
@@ -765,7 +765,7 @@ Each domain shows a simple progress bar (activities attempted / total available)
 
 ---
 
-### [ ] CHORE-005: Find and add more stories — Western and Eastern cultures
+### [~] CHORE-005: Find and add more stories — Western and Eastern cultures
 **Priority:** Low
 **Description:** Expand the Story Library beyond the current 27 stories. Aim for a diverse mix of cultures with strong moral lessons, age-appropriate themes, and vivid imagery that lends itself to illustration. All stories must be **public domain** (see copyright note in session notes). Suggested areas to explore:
 
@@ -787,6 +787,8 @@ Each domain shows a simple progress bar (activities attempted / total available)
 - Native American folk tales (How the Raven Stole the Sun)
 
 **How to add:** Follow the existing story format in `src/data/storyBook.js` — add an entry with `id`, `title`, `subtitle`, `coverEmoji`, `origin` (`'western'` or `'chinese'`), `color`, `shadow`, and `pages` (8–12 pages, each with `scene` emoji array and `text`). Add AI image prompts in the comments block at the top of the file.
+
+**Added so far (2026-04-24):** Thumbelina, The Wind and the Sun, Snow White, Rapunzel, The Milkmaid and Her Pail, The Cowherd and the Weaver Girl, Urashima Taro, Nian and the New Year, Issun-Boshi — 9 stories, library now at 37 stories total.
 
 ---
 
@@ -860,6 +862,11 @@ Alternatively, delete them via GitHub → Settings → Branches.
 ---
 
 ## 📝 Session Notes
+
+### 2026-04-24 – CHORE-005: 9 new stories added (library now 37 stories)
+- BUG-013 fix: Sight Words quiz start-from-word-1 (useRef timer cancellation)
+- FEAT-060: Profile export/import — `profileBackup.js` helpers, ProfilePicker import UI, ParentSettings export button
+- CHORE-005 (partial): Thumbelina, The Wind and the Sun, Snow White, Rapunzel, The Milkmaid and Her Pail, The Cowherd and the Weaver Girl, Urashima Taro, Nian and the New Year, Issun-Boshi — each committed individually
 
 ### 2026-04-20 – PWA deployment + service worker + image fixes v1.33.0
 - FEAT-041 complete: app deployed to https://goofro.github.io/mina_learns/ via GitHub Actions
