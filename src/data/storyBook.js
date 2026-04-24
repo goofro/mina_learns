@@ -2088,4 +2088,44 @@ export const STORY_BOOKS = [
       },
     ],
   },
+
+  {
+    id: 'wind-and-sun',
+    title: 'The Wind and the Sun',
+    subtitle: 'Kindness is stronger than force',
+    coverEmoji: '☀️',
+    origin: 'western',
+    color: '#f59e0b',
+    shadow: '#d97706',
+    pages: [
+      {
+        scene: ['💨', '☀️', '💬', '🏆'],
+        text: 'One bright morning the Wind and the Sun began to argue. "I am the strongest!" boomed the Wind, swirling his great grey clouds. "No — I am!" smiled the Sun warmly. They bickered and blustered until the Wind said, "Let us have a contest to settle it once and for all!"',
+      },
+      {
+        scene: ['🚶', '🧥', '🛤️', '🌿'],
+        text: 'Down below on a winding country road walked a cheerful traveller wrapped in a thick warm coat. "There is our test," said the Sun. "Whoever can make that traveller take off his coat — wins!" The Wind cracked his knuckles and grinned. "Easy," he said. "Watch me."',
+      },
+      {
+        scene: ['💨', '🌪️', '🧥', '😤'],
+        text: 'The Wind took a huge breath and blew with all his might. WHOOOOSH! Trees bent double. Leaves flew in every direction. The traveller gasped and grabbed his coat with both hands, pulling it tighter and tighter around himself. The harder the Wind blew, the harder the traveller held on.',
+      },
+      {
+        scene: ['💨', '😤', '🧥', '💪'],
+        text: 'The Wind huffed and puffed until his cheeks were bright red. He blew cold blasts and sharp gusts. He howled and whistled. But the traveller just ducked his head, clutched his coat with white knuckles, and kept on walking. Not one button came undone.',
+      },
+      {
+        scene: ['💨', '😮‍💨', '☀️', '😊'],
+        text: 'At last the Wind gave up, completely out of breath. "Your turn," he panted. The Sun smiled gently and began to shine. Soft golden light spread across the road like warm honey. The traveller looked up and blinked.',
+      },
+      {
+        scene: ['☀️', '😊', '🌡️', '🧥'],
+        text: 'The Sun shone a little warmer. Then warmer still. The traveller stopped and rolled up his sleeves. He fanned his face with his hat. Then, with a happy sigh, he unbuttoned his coat and slipped it right off, draping it over his arm as he strolled along.',
+      },
+      {
+        scene: ['☀️', '💨', '🤝', '💡'],
+        text: 'The Wind stared. The Sun had done in minutes what all his furious blowing could not. "But — how?" spluttered the Wind. The Sun chuckled kindly. "Gentleness gets further than force, old friend. The harder you pushed, the tighter he held on. Warmth opens what bluster never can."',
+      },
+    ],
+  },
 ]
