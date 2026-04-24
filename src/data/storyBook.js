@@ -2340,4 +2340,43 @@ export const STORY_BOOKS = [
       },
     ],
   },
+  {
+    id: 'nian-new-year',
+    title: 'Nian and the New Year',
+    subtitle: 'How the Spring Festival began',
+    coverEmoji: '🧨',
+    origin: 'chinese',
+    color: '#ef4444',
+    shadow: '#b91c1c',
+    pages: [
+      {
+        scene: ['🏔️', '👾', '🌑', '😨'],
+        text: 'Long ago at the end of every winter, a fearsome creature called Nian would come down from the mountains. Nian was enormous, with sharp teeth and terrible eyes that glowed in the dark. Every year the villagers would lock their doors, put out their lamps, and hide until the creature had passed.',
+      },
+      {
+        scene: ['👴', '🏡', '🚪', '😊'],
+        text: 'One New Year\'s Eve an old man arrived in the village. The villagers were packing to flee to the hills as usual, but the old man said calmly, "I will stay in the village tonight. I know something about this creature that you do not." The villagers thought he was very brave — or perhaps very foolish.',
+      },
+      {
+        scene: ['🔴', '🏮', '🚪', '✨'],
+        text: 'That evening the old man decorated the village in red — red paper on every door, red lanterns in every window. Red was the colour of fire and luck, and he had a feeling Nian would not like it at all. Then he sat down to wait.',
+      },
+      {
+        scene: ['🧨', '💥', '👾', '😱'],
+        text: 'At midnight Nian came stalking down from the mountain. But when the creature reached the village it stopped. The red decorations flickered in the lamplight, and then the old man lit a long string of firecrackers — BANG BANG BANG! The noise echoed off the mountains like thunder.',
+      },
+      {
+        scene: ['👾', '🏃', '🌄', '😌'],
+        text: 'Nian had never heard such a sound, and the creature was terrified. It turned and ran as fast as it could, back up the mountain and deep into the dark forest. The old man watched it go with a quiet smile. "Nian fears red, fire, and loud noise," he explained. "It always has."',
+      },
+      {
+        scene: ['🌅', '🎉', '🏮', '😄'],
+        text: 'When the sun rose the villagers came back down from the hills to find the village safe and gleaming with red lanterns. They cheered and laughed and danced through the streets. The old man slipped away quietly before anyone could ask where he had come from.',
+      },
+      {
+        scene: ['🧨', '🏮', '🥟', '👨‍👩‍👧‍👦'],
+        text: 'And that is why every year at the New Year the streets fill with red lanterns, firecrackers snap and pop through the night, and families gather to eat dumplings and celebrate together. They are not just celebrating a new year — they are remembering the night a village was brave enough to face its fear.',
+      },
+    ],
+  },
 ]
