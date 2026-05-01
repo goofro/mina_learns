@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-05-01 (BUG-014: Spelling TTS too fast; BUG-015: Art Studio counter off by one; fix: Back button on all activity done screens)  
+**Last updated:** 2026-05-01 (BUG-016: Color by Number zone mismatch)  
 **Current version:** v1.33.0
 
 ---
@@ -508,6 +508,16 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** The Art Studio daily activity counter consistently shows one fewer completed activity than actually done. E.g. Mina completes 3 activities but the counter shows 2/3. The counter appears to read the session count before the most recent session is saved, or the count misses the session recorded for the activity just returned from.  
 **Fix:** Investigate `getTodayCount()` in `HomeScreen.jsx`. The counter likely reads `progress.sessions` at mount/render time but `recordSession` writes to localStorage after the component re-mounts. Ensure the counter is derived reactively (re-reads sessions after each navigation back to home) rather than caching a stale count. Check whether an off-by-one exists in the date comparison or session recording timing.  
 **Files:** `src/components/home/HomeScreen.jsx`, `src/store/useProgress.js`
+
+---
+
+### [ ] BUG-016: Color by Number — zone colors don't match their number labels
+**Screen:** Art Studio → Color by Number  
+**Reported:** 2026-05-01  
+**Priority:** High  
+**Description:** Several zones in the Color by Number scenes have the wrong number assigned, so tapping a zone fills it with a color that doesn't match the number shown. E.g. a zone labelled "3" fills with the color for number 5. The number-to-color mapping in the scene data is mismatched with the actual zone definitions.  
+**Fix:** Audit each scene in `ColorByNumber.jsx` — for every zone, verify that its `color` property matches the color assigned to that number in the legend. Re-number zones or correct the color assignments so the number shown on screen always matches the fill color applied on tap.  
+**File:** `src/components/art/ColorByNumber.jsx`
 
 ---
 
