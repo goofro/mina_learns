@@ -156,6 +156,10 @@ export function NumberOrder({ onBack, addStars }) {
               style={{ background: level.color, color: 'white', border: 'none', borderRadius: '16px', padding: '16px 24px', fontSize: '18px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
               Play Again
             </button>
+              <button onClick={onBack}
+                style={{ background: 'white', color: '#6b7280', border: '3px solid #d1d5db', borderRadius: '16px', padding: '12px 28px', fontSize: '16px', fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', marginTop: '12px' }}>
+                ← Back
+              </button>
           </div>
         </div>
       </div>

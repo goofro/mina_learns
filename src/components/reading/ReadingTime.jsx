@@ -204,6 +204,10 @@ export function ReadingTime({ onBack, addStars }) {
               Read Again!
             </button>
           </div>
+          <button onClick={onBack}
+            style={{ background: 'white', color: '#6b7280', border: '3px solid #d1d5db', borderRadius: '16px', padding: '12px 28px', fontSize: '16px', fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', marginTop: '12px' }}>
+            ← Back
+          </button>
         </div>
       </div>
     )
