@@ -118,7 +118,7 @@ const SCENES = [
     zones: [
       { id: 1, num: 1, color: '#4ade80', name: 'Green' },
       { id: 2, num: 2, color: '#86efac', name: 'Light Green' },
-      { id: 3, num: 3, color: '#fef08a', name: 'Yellow' },
+      { id: 3, num: 3, color: '#65a30d', name: 'Leaf Green' },
       { id: 4, num: 4, color: '#f87171', name: 'Pink' },
     ],
     render(fills, sel, onZ) {

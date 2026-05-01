@@ -32,7 +32,7 @@ export function SpellIt({ levelId, onBack, addStars }) {
     setBank(buildBank(word.word))
     setFeedback(null)
     setFirstTry(true)
-    speak(word.word, { rate: 0.7 })
+    speak(word.word, { rate: 0.5 })
   }, [])
 
   useEffect(() => { initWord(words[0]) }, [])
@@ -137,7 +137,7 @@ export function SpellIt({ levelId, onBack, addStars }) {
         <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
           <TwEmoji emoji={current.emoji} size={96} />
           <button
-            onClick={() => speak(current.word, { rate: 0.7 })}
+            onClick={() => speak(current.word, { rate: 0.5 })}
             style={{ background: level.color, color: 'white', border: 'none', borderRadius: '999px', padding: '10px 24px', fontSize: '16px', fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', boxShadow: `0 4px 0 ${level.shadow}` }}>
             🔊 Hear it
           </button>

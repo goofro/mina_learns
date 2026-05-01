@@ -145,6 +145,7 @@ export default function App() {
 
   function navigate(to, subject) {
     if (subject) setSessionStart({ subject, time: Date.now() })
+    else if (to === 'home') setSessionStart(null)
     setScreen(to)
   }
 
@@ -155,6 +156,15 @@ export default function App() {
       setSessionStart(null)
     }
     setScreen(to)
+  }
+
+  function finishActivity(hub) {
+    if (sessionStart) {
+      const duration = Math.max(1, Math.round((Date.now() - sessionStart.time) / 60000))
+      recordSession(sessionStart.subject, duration)
+      setSessionStart(null)
+    }
+    setScreen(hub)
   }
 
   // Show profile picker if no profile is active (after all hooks)
@@ -203,24 +213,24 @@ export default function App() {
       {screen === 'spelling' && (
         <SpellingHome
           onNavigate={(activity, levelId) => { setActiveSpellingLevel(levelId); navigate(activity, 'spelling') }}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'spellit' && (
-        <SpellIt levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
+        <SpellIt levelId={activeSpellingLevel} onBack={() => finishActivity('spelling')} addStars={addStars} />
       )}
       {screen === 'missingletterspell' && (
-        <MissingLetter levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
+        <MissingLetter levelId={activeSpellingLevel} onBack={() => finishActivity('spelling')} addStars={addStars} />
       )}
       {screen === 'spellfrommemory' && (
-        <SpellFromMemory levelId={activeSpellingLevel} onBack={() => navigate('spelling')} addStars={addStars} />
+        <SpellFromMemory levelId={activeSpellingLevel} onBack={() => finishActivity('spelling')} addStars={addStars} />
       )}
 
       {/* Writing screens */}
       {screen === 'writing' && (
         <WritingHome
           onNavigate={(id) => navigate(id, 'writing')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
 
@@ -229,48 +239,48 @@ export default function App() {
         <ReadingHome
           stars={progress.stars}
           onNavigate={(id) => navigate(id, 'reading')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'lettersounds' && (
-        <LetterSounds onBack={() => navigate('reading')} />
+        <LetterSounds onBack={() => finishActivity('reading')} />
       )}
       {screen === 'sightwords' && (
         <SightWords
           progress={progress}
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
           recordSightWord={recordSightWord}
         />
       )}
       {screen === 'phonics' && (
         <PhonicsGame
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
           recordPhonics={recordPhonics}
         />
       )}
       {screen === 'sentences' && (
         <SentenceReader
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'wordfamilies' && (
         <WordFamilies
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'rhymingmatch' && (
         <RhymingMatch
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'phonicsrules' && (
         <PhonicsRules
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
         />
       )}
       {screen === 'lettertracing' && (
@@ -297,75 +307,75 @@ export default function App() {
         </div>
       )}
       {screen === 'lettertracing-letters' && (
-        <LetterTracer mode="letters" onBack={() => navigate('lettertracing')} addStars={addStars} />
+        <LetterTracer mode="letters" onBack={() => finishActivity('lettertracing')} addStars={addStars} />
       )}
       {screen === 'lettertracing-numbers' && (
-        <LetterTracer mode="numbers" onBack={() => navigate('lettertracing')} addStars={addStars} />
+        <LetterTracer mode="numbers" onBack={() => finishActivity('lettertracing')} addStars={addStars} />
       )}
       {screen === 'storylibrary' && (
         <StoryLibrary
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           onSelectStory={(id) => { setActiveStoryId(id); navigate('storyreader', 'reading') }}
         />
       )}
       {screen === 'storyreader' && (
         <StoryReader
           storyId={activeStoryId}
-          onBack={() => navigate('storylibrary')}
+          onBack={() => finishActivity('storylibrary')}
           addStars={addStars}
         />
       )}
       {screen === 'readingtime' && (
         <ReadingTime
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'vowelsconsonants' && (
         <VowelsConsonants
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'letterconfusion' && (
         <LetterConfusion
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'endingsounds' && (
         <EndingSounds
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'syllableclapping' && (
         <SyllableClapping
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'wordpicturematch' && (
         <WordPictureMatch
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
       {screen === 'nametracer' && (
         <NameTracer
-          onBack={() => navigate('writing')}
+          onBack={() => finishActivity('writing')}
           addStars={addStars}
         />
       )}
       {screen === 'strokepractice' && (
         <StrokePractice
-          onBack={() => navigate('writing')}
+          onBack={() => finishActivity('writing')}
           addStars={addStars}
         />
       )}
       {screen === 'picturevocab' && (
         <PictureVocab
-          onBack={() => navigate('reading')}
+          onBack={() => finishActivity('reading')}
           addStars={addStars}
         />
       )}
@@ -375,36 +385,36 @@ export default function App() {
         <CognitiveHome
           stars={progress.stars}
           onNavigate={(id) => navigate(id, 'cognitive')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'sortit' && (
         <SortIt
-          onBack={() => navigate('cognitive')}
+          onBack={() => finishActivity('cognitive')}
           addStars={addStars}
         />
       )}
       {screen === 'whathappensnext' && (
         <WhatHappensNext
-          onBack={() => navigate('cognitive')}
+          onBack={() => finishActivity('cognitive')}
           addStars={addStars}
         />
       )}
       {screen === 'sequencinggame' && (
         <SequencingGame
-          onBack={() => navigate('cognitive')}
+          onBack={() => finishActivity('cognitive')}
           addStars={addStars}
         />
       )}
       {screen === 'mazegame' && (
         <MazeGame
-          onBack={() => navigate('cognitive')}
+          onBack={() => finishActivity('cognitive')}
           addStars={addStars}
         />
       )}
       {screen === 'rhythmgame' && (
         <RhythmGame
-          onBack={() => navigate('cognitive')}
+          onBack={() => finishActivity('cognitive')}
           addStars={addStars}
         />
       )}
@@ -414,46 +424,46 @@ export default function App() {
         <ScienceHome
           stars={progress.stars}
           onNavigate={(id) => navigate(id, 'science')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'dinosaurs' && (
-        <DinosaurExplorer onBack={() => navigate('science')} addStars={addStars} />
+        <DinosaurExplorer onBack={() => finishActivity('science')} addStars={addStars} />
       )}
       {screen === 'animalworld' && (
-        <AnimalWorld onBack={() => navigate('science')} addStars={addStars} />
+        <AnimalWorld onBack={() => finishActivity('science')} addStars={addStars} />
       )}
       {screen === 'mybody' && (
-        <MyBody onBack={() => navigate('science')} addStars={addStars} />
+        <MyBody onBack={() => finishActivity('science')} addStars={addStars} />
       )}
       {screen === 'lifecycles' && (
-        <LifeCycles onBack={() => navigate('science')} addStars={addStars} />
+        <LifeCycles onBack={() => finishActivity('science')} addStars={addStars} />
       )}
 
       {/* Art Studio screens */}
       {screen === 'artstudio' && (
         <ArtStudioHome
           onNavigate={(id) => navigate(id, 'artstudio')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'colormixer' && (
-        <ColorMixer onBack={() => navigate('artstudio')} addStars={addStars} />
+        <ColorMixer onBack={() => finishActivity('artstudio')} addStars={addStars} />
       )}
       {screen === 'colorbynumber' && (
-        <ColorByNumber onBack={() => navigate('artstudio')} addStars={addStars} />
+        <ColorByNumber onBack={() => finishActivity('artstudio')} addStars={addStars} />
       )}
       {screen === 'freedrawstudio' && (
-        <FreeDrawStudio onBack={() => navigate('artstudio')} />
+        <FreeDrawStudio onBack={() => finishActivity('artstudio')} />
       )}
       {screen === 'traceshapes' && (
-        <TraceShapes onBack={() => navigate('artstudio')} addStars={addStars} />
+        <TraceShapes onBack={() => finishActivity('artstudio')} addStars={addStars} />
       )}
 
       {/* Games screens */}
       {screen === 'games' && (
         <MemoryGame
-          onBack={() => goBack('home')}
+          onBack={() => finishActivity('home')}
           addStars={addStars}
         />
       )}
@@ -463,26 +473,26 @@ export default function App() {
         <MathHome
           stars={progress.stars}
           onNavigate={(id) => navigate(id, 'math')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'counting' && (
         <CountingGame
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
         />
       )}
       {screen === 'numberrecognition' && (
         <NumberRecognition
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
         />
       )}
       {screen === 'moreorless' && (
         <MoreOrLess
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
           difficultyLevel={diffLevel('moreorless')}
@@ -491,14 +501,14 @@ export default function App() {
       )}
       {screen === 'shapes' && (
         <ShapeMatch
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
         />
       )}
       {screen === 'addition' && (
         <AdditionGame
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
           difficultyLevel={diffLevel('addition')}
@@ -507,7 +517,7 @@ export default function App() {
       )}
       {screen === 'subtraction' && (
         <SubtractionGame
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
           difficultyLevel={diffLevel('subtraction')}
@@ -516,7 +526,7 @@ export default function App() {
       )}
       {screen === 'subitizing' && (
         <Subitizing
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
           recordMath={recordMath}
           difficultyLevel={diffLevel('subitizing')}
@@ -525,43 +535,43 @@ export default function App() {
       )}
       {screen === 'numberbonds' && (
         <NumberBonds
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'patternrecog' && (
         <PatternRecognition
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'sizecomparison' && (
         <SizeComparison
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'numberorder' && (
         <NumberOrder
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'spatialconcepts' && (
         <SpatialConcepts
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'shapes3d' && (
         <Shapes3D
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
       {screen === 'moneyconcepts' && (
         <MoneyConcepts
-          onBack={() => navigate('math')}
+          onBack={() => finishActivity('math')}
           addStars={addStars}
         />
       )}
@@ -571,30 +581,30 @@ export default function App() {
         <CalendarHome
           stars={progress.stars}
           onNavigate={(id) => navigate(id, 'calendar')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
       {screen === 'daysofweek' && (
         <DaysOfWeek
-          onBack={() => navigate('calendar')}
+          onBack={() => finishActivity('calendar')}
           addStars={addStars}
         />
       )}
       {screen === 'monthsofyear' && (
         <MonthsOfYear
-          onBack={() => navigate('calendar')}
+          onBack={() => finishActivity('calendar')}
           addStars={addStars}
         />
       )}
       {screen === 'tellingtime' && (
         <TellingTime
-          onBack={() => navigate('calendar')}
+          onBack={() => finishActivity('calendar')}
           addStars={addStars}
         />
       )}
       {screen === 'weatherseasons' && (
         <WeatherSeasons
-          onBack={() => navigate('calendar')}
+          onBack={() => finishActivity('calendar')}
           addStars={addStars}
         />
       )}
@@ -603,7 +613,7 @@ export default function App() {
       {screen === 'stickerbook' && (
         <StickerBook
           stars={progress.stars}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
 
@@ -612,21 +622,21 @@ export default function App() {
         <SkillMap
           stars={progress.stars}
           onNavigate={(id, subject) => navigate(id, subject || 'reading')}
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
         />
       )}
 
       {/* Story Time screens */}
       {screen === 'storybookhome' && (
         <StoryBookHome
-          onBack={() => goBack('home')}
+          onBack={() => navigate('home')}
           onSelectStory={(id) => { setActiveStoryBookId(id); navigate('storybookreader', 'storytime') }}
         />
       )}
       {screen === 'storybookreader' && (
         <StoryBookReader
           storyId={activeStoryBookId}
-          onBack={() => navigate('storybookhome')}
+          onBack={() => finishActivity('storybookhome')}
           addStars={addStars}
         />
       )}

@@ -37,7 +37,7 @@ export function SpellFromMemory({ levelId, onBack, addStars }) {
     setFirstTry(true)
     setShowPhase('flash')
     setCountdown(Math.ceil(FLASH_MS / 1000))
-    speak(word.word, { rate: 0.7 })
+    speak(word.word, { rate: 0.5 })
   }, [])
 
   useEffect(() => { startSpell(words[0]) }, [])

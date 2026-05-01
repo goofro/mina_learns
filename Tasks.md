@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-05-01 (BUG-016: Color by Number zone mismatch)  
+**Last updated:** 2026-05-01 (BUG-014/015/016 fixed: spelling TTS rate, activity counter, lily pad color)  
 **Current version:** v1.33.0
 
 ---
@@ -491,7 +491,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-014: Spelling — TTS reads words too fast
+### [x] BUG-014: Spelling — TTS reads words too fast
 **Screen:** Spelling → all activities (Spell It!, Missing Letter, Spell from Memory)  
 **Reported:** 2026-05-01  
 **Priority:** High  
@@ -501,7 +501,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-015: Art Studio daily gate — counter shows one fewer than actual completed activities
+### [x] BUG-015: Art Studio daily gate — counter shows one fewer than actual completed activities
 **Screen:** Home → Art Studio (daily gate)  
 **Reported:** 2026-05-01  
 **Priority:** High  
@@ -511,7 +511,7 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 
 ---
 
-### [ ] BUG-016: Color by Number — zone colors don't match their number labels
+### [x] BUG-016: Color by Number — zone colors don't match their number labels
 **Screen:** Art Studio → Color by Number  
 **Reported:** 2026-05-01  
 **Priority:** High  

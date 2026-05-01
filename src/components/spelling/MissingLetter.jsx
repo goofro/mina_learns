@@ -28,7 +28,7 @@ export function MissingLetter({ levelId, onBack, addStars }) {
   const current = words[idx]
 
   const readWord = useCallback(() => {
-    speak(current.word, { rate: 0.7 })
+    speak(current.word, { rate: 0.5 })
   }, [current])
 
   // Auto-read on mount / word change
@@ -51,7 +51,7 @@ export function MissingLetter({ levelId, onBack, addStars }) {
           setQuestion(buildQuestion(words[next]))
           setFeedback(null)
           setChosen(null)
-          setTimeout(() => speak(words[next].word, { rate: 0.7 }), 300)
+          setTimeout(() => speak(words[next].word, { rate: 0.5 }), 300)
         }
       }, 1000)
     } else {
