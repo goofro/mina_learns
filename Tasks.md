@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-04-24 (CHORE-005: added 9 new stories — Thumbelina, Wind & Sun, Snow White, Rapunzel, Milkmaid & Pail, Cowherd & Weaver Girl, Urashima Taro, Nian & New Year, Issun-Boshi)  
+**Last updated:** 2026-05-01 (BUG-014: Spelling TTS too fast; BUG-015: Art Studio counter off by one; fix: Back button on all activity done screens)  
 **Current version:** v1.33.0
 
 ---
@@ -488,6 +488,26 @@ Each rule should have: a child-facing explanation with TTS, 4–6 example words 
 **Description:** When starting a Sight Words level, the quiz begins partway through the word list rather than at the first word. The word queue appears to be shuffled or offset incorrectly so the first word shown is not index 0 of the level's word list.  
 **Fix:** Investigate how the word queue is initialised in `SightWords.jsx`. Check whether `useState` is picking up a stale value, whether the shuffle is applied before or after state is set, or whether the initial word index is non-zero. Ensure `queue` is reset to a freshly shuffled copy of the full word list starting from index 0 each time a level is selected.  
 **File:** `src/components/reading/SightWords.jsx`
+
+---
+
+### [ ] BUG-014: Spelling — TTS reads words too fast
+**Screen:** Spelling → all activities (Spell It!, Missing Letter, Spell from Memory)  
+**Reported:** 2026-05-01  
+**Priority:** High  
+**Description:** The text-to-speech voice reads spelling words too quickly for Mina to understand them clearly. Words should be spoken at roughly half the current speed so she has time to process each letter sound before spelling.  
+**Fix:** In `SpellIt.jsx`, `MissingLetter.jsx`, and `SpellFromMemory.jsx`, find all `speak()` calls that read the target word and reduce the rate. The default rate in `speech.js` is 0.85 — for spelling words, use rate 0.5 or lower. Pass `{ rate: 0.5 }` as the options argument to `speak()`.  
+**Files:** `src/components/spelling/SpellIt.jsx`, `src/components/spelling/MissingLetter.jsx`, `src/components/spelling/SpellFromMemory.jsx`
+
+---
+
+### [ ] BUG-015: Art Studio daily gate — counter shows one fewer than actual completed activities
+**Screen:** Home → Art Studio (daily gate)  
+**Reported:** 2026-05-01  
+**Priority:** High  
+**Description:** The Art Studio daily activity counter consistently shows one fewer completed activity than actually done. E.g. Mina completes 3 activities but the counter shows 2/3. The counter appears to read the session count before the most recent session is saved, or the count misses the session recorded for the activity just returned from.  
+**Fix:** Investigate `getTodayCount()` in `HomeScreen.jsx`. The counter likely reads `progress.sessions` at mount/render time but `recordSession` writes to localStorage after the component re-mounts. Ensure the counter is derived reactively (re-reads sessions after each navigation back to home) rather than caching a stale count. Check whether an off-by-one exists in the date comparison or session recording timing.  
+**Files:** `src/components/home/HomeScreen.jsx`, `src/store/useProgress.js`
 
 ---
 
