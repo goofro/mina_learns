@@ -165,10 +165,12 @@ export function useProgress(profileId) {
     })
   }, [])
 
-  const recordSession = useCallback((subject, durationMinutes) => {
+  const recordSession = useCallback((subject, durationMinutes, activityScreen) => {
     const now = new Date().toISOString()
     setProgress(p => {
-      const sessions = [...(p.sessions || []), { subject, duration: durationMinutes, date: now }]
+      const entry = { subject, duration: durationMinutes, date: now }
+      if (activityScreen) entry.screen = activityScreen
+      const sessions = [...(p.sessions || []), entry]
       const { streak, lastActiveDate } = computeStreak(p.streak || 0, p.lastActiveDate)
       return {
         ...p,

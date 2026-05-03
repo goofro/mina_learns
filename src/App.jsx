@@ -86,6 +86,8 @@ import { SpellFromMemory } from './components/spelling/SpellFromMemory'
 import { ParentLogin } from './components/parent/ParentLogin'
 import { ParentDashboard } from './components/parent/ParentDashboard'
 import { ProfilePicker, loadProfiles, ACTIVE_PROFILE_KEY } from './components/profiles/ProfilePicker'
+import { DailyReview } from './components/home/DailyReview'
+import { DailyLesson } from './components/home/DailyLesson'
 
 function loadActiveProfile() {
   try {
@@ -161,7 +163,7 @@ export default function App() {
   function finishActivity(hub) {
     if (sessionStart) {
       const duration = Math.max(1, Math.round((Date.now() - sessionStart.time) / 60000))
-      recordSession(sessionStart.subject, duration)
+      recordSession(sessionStart.subject, duration, screen)
       setSessionStart(null)
     }
     setScreen(hub)
@@ -192,6 +194,7 @@ export default function App() {
           stars={progress.stars}
           sessions={progress.sessions || []}
           profileName={activeProfile.name}
+          progress={progress}
           onNavigate={(subject) => {
             if (subject === 'reading') navigate('reading', 'reading')
             else if (subject === 'math') navigate('math', 'math')
@@ -205,7 +208,27 @@ export default function App() {
             else if (subject === 'storytime') navigate('storybookhome', 'storytime')
             else if (subject === 'skillmap') navigate('skillmap')
             else if (subject === 'stickerbook') navigate('stickerbook')
+            else if (subject === 'dailylesson') navigate('dailylesson')
+            else if (subject === 'dailyreview') navigate('dailyreview')
           }}
+        />
+      )}
+
+      {/* Daily lesson + review */}
+      {screen === 'dailylesson' && (
+        <DailyLesson
+          sessions={progress.sessions || []}
+          onNavigate={(activityScreen, activitySubject) => navigate(activityScreen, activitySubject || 'reading')}
+          onBack={() => navigate('home')}
+        />
+      )}
+      {screen === 'dailyreview' && (
+        <DailyReview
+          progress={progress}
+          onBack={() => navigate('home')}
+          addStars={addStars}
+          recordSightWord={recordSightWord}
+          recordPhonics={recordPhonics}
         />
       )}
 

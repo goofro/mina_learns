@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { speak } from '../../utils/speech'
 import { TwEmoji } from '../shared/TwEmoji'
 import { ART_SETTINGS_KEY } from '../parent/ParentSettings'
+import { getLessonProgress } from '../../data/dailyLesson'
+import { hasReviewItems } from '../../data/reviewQueue'
 
 function getGreetings(name) {
   return [
@@ -34,7 +36,7 @@ const COLLAGE_SLOTS = [
   { top: '68vh', right: '8px',  rotate:  7  },
 ]
 
-export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName = 'Mina' }) {
+export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName = 'Mina', progress = null }) {
   const starUnlocked = stars >= ART_UNLOCK_STARS
   const greetings = getGreetings(profileName)
   const [greeting] = useState(() => greetings[Math.floor(Math.random() * greetings.length)])
@@ -125,6 +127,75 @@ export function HomeScreen({ onNavigate, stars = 0, sessions = [], profileName =
             {greeting}
           </div>
         </div>
+
+        {/* Daily Lesson + Review quick-action strip */}
+        {(() => {
+          const { count, lesson } = getLessonProgress(sessions)
+          const allDone = count === lesson.length
+          const showReview = progress && hasReviewItems(progress)
+          if (!showReview && allDone && count > 0) return null
+          return (
+            <div style={{ display: 'flex', gap: '12px', marginBottom: '24px', flexWrap: 'wrap', justifyContent: 'center', width: '100%', maxWidth: '800px' }}>
+              <button
+                onClick={() => onNavigate('dailylesson')}
+                style={{
+                  flex: '1 1 220px',
+                  background: allDone ? 'linear-gradient(135deg, #d1fae5, #a7f3d0)' : 'linear-gradient(135deg, #fef9c3, #fde68a)',
+                  border: `3px solid ${allDone ? '#10b981' : '#f59e0b'}`,
+                  borderRadius: '20px',
+                  padding: '16px 20px',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  boxShadow: `0 4px 0 ${allDone ? '#6ee7b7' : '#d97706'}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  textAlign: 'left',
+                }}
+              >
+                <span style={{ fontSize: '28px' }}>📅</span>
+                <div>
+                  <div style={{ fontSize: '15px', fontWeight: 900, color: '#1f2937' }}>Today's Lesson</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280' }}>
+                    {allDone ? '✅ All done!' : `${count}/${lesson.length} activities done`}
+                  </div>
+                </div>
+                {!allDone && (
+                  <div style={{ marginLeft: 'auto', display: 'flex', gap: '4px' }}>
+                    {lesson.map((_, i) => (
+                      <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i < count ? '#f59e0b' : '#e5e7eb' }} />
+                    ))}
+                  </div>
+                )}
+              </button>
+              {showReview && (
+                <button
+                  onClick={() => onNavigate('dailyreview')}
+                  style={{
+                    flex: '1 1 180px',
+                    background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)',
+                    border: '3px solid #10b981',
+                    borderRadius: '20px',
+                    padding: '16px 20px',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    boxShadow: '0 4px 0 #6ee7b7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    textAlign: 'left',
+                  }}
+                >
+                  <span style={{ fontSize: '28px' }}>🔄</span>
+                  <div>
+                    <div style={{ fontSize: '15px', fontWeight: 900, color: '#1f2937' }}>Review Words</div>
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280' }}>Practise tricky words</div>
+                  </div>
+                </button>
+              )}
+            </div>
+          )
+        })()}
 
         {/* Subject buttons */}
         <div

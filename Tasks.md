@@ -5,7 +5,7 @@
 - Add notes under each task as work progresses
 - Update "Last updated" when editing
 
-**Last updated:** 2026-05-01 (BUG-014/015/016 fixed: spelling TTS rate, activity counter, lily pad color)  
+**Last updated:** 2026-05-03 (FEAT-061–073 added; FEAT-062 + FEAT-064 implemented: daily review + daily lesson)  
 **Current version:** v1.33.0
 
 ---
@@ -747,6 +747,105 @@ Each domain shows a simple progress bar (activities attempted / total available)
 **Description:** The drawing pad in Art Studio → Free Drawing is too small. Expand the canvas to fill as much of the screen as possible — ideally edge-to-edge on tablets. Move the toolbar (colors, brush sizes, eraser, stamps) to a compact sidebar or collapsible strip so it doesn't eat into canvas space. Ensure the canvas resolution scales up with its display size so drawings don't look pixelated.  
 **File:** `src/components/art/FreeDrawStudio.jsx`  
 **Fixed:** Already done as part of FEAT-042 ✅ — Canvas is `position: fixed` filling the full viewport (minus StarBar), colors live in a 68px left sidebar, tools in a slim top bar. Internal resolution is 1600×1000 with CSS scaling so there's no pixelation.
+
+---
+
+### [ ] FEAT-061: Adaptive difficulty — auto-adjust based on recent accuracy
+**Priority:** High  
+**Description:** Activities currently require manual level-setting. Add automatic difficulty adjustment that watches the child's last 5–10 answers per activity and nudges the level up (≥85% accuracy for 2+ sessions) or down (<50%). A gentle "Level up!" toast when promoted, no shame message when levelled down — just silently easier questions. `recordActivityResult` already handles window-based adjustment; wire it into the remaining activities that don't yet call it (counting, number recognition, shapes, word families, rhyming, syllables, etc.).  
+**Files:** individual activity components + `src/store/useProgress.js`
+
+---
+
+### [x] FEAT-062: Spaced repetition daily review mode
+**Priority:** High  
+**Description:** Surface words Mina has struggled with (answered wrong ≥ once, accuracy < 80%) for a focused daily review session. A "Review" button appears on the home screen when there are items waiting. The review quiz shows each word with TTS + emoji, then asks Mina to pick the correct word from 3 choices. Correct answers record progress; the item graduates out once accuracy reaches 80% over 3+ attempts. Covers sight words (from SightWords activity) and CVC phonics words (from Word Blending activity).  
+**Files to create:** `src/data/reviewQueue.js`, `src/components/home/DailyReview.jsx`  
+**Files to modify:** `src/store/useProgress.js` (add `screen` to session records), `src/App.jsx` (routing + pass screen to recordSession), `src/components/home/HomeScreen.jsx` (Review button)
+
+---
+
+### [ ] FEAT-063: Decodable mini-stories — stories built from practised phonics patterns
+**Priority:** High  
+**Description:** After completing a CVC group (e.g. "-at" words), unlock a short 6–8 sentence decodable story that uses ONLY those patterns ("The big fat cat sat on a mat."). Bridges phonics drill to actual reading. Each CVC group in `phonicsLessons.js` gets one companion story. Story renders in the same word-highlight + TTS format as Reading Time. Unlock status stored in progress. Accessible from the Word Blending celebration screen ("Read a story with these words!").  
+**Files:** `src/data/decodableStories.js` (new), `src/components/reading/DecodableReader.jsx` (new), `src/components/reading/PhonicsGame.jsx` (unlock link on done screen)
+
+---
+
+### [x] FEAT-064: Guided daily lesson — three-activity plan on home screen
+**Priority:** High  
+**Description:** A "Today's Lesson" button on the home screen opens a three-card plan showing one reading, one math, and one other activity recommended for today. Activities rotate deterministically by date so a different set appears each day. Cards show a checkmark once the activity has been completed today (tracked via session `screen` field). Completing all three triggers a small celebration. The home screen button shows a "2/3 done" badge if in progress.  
+**Files to create:** `src/components/home/DailyLesson.jsx`, `src/data/dailyLesson.js`  
+**Files to modify:** `src/App.jsx` (routing + pass screen to recordSession in finishActivity), `src/components/home/HomeScreen.jsx` (Today's Lesson button + badge)
+
+---
+
+### [ ] FEAT-065: Word Mastery Wall — visual trophy room for learned words
+**Priority:** Medium  
+**Description:** A dedicated screen (accessible from home or Skill Map) showing all words Mina has mastered (accuracy ≥ 80% over ≥ 3 attempts), grouped by category: Sight Words, Phonics (CVC) Words, Spelling Words. Each word appears as a colourful tile with its emoji. Total count and a fill-bar per category. Tapping a tile speaks the word. Motivating to watch grow. Stored entirely from existing `progress.reading.sightWords` and `progress.reading.phonics` data — no new tracking needed.  
+**Files to create:** `src/components/home/WordMasteryWall.jsx`  
+**Files to modify:** `src/components/home/HomeScreen.jsx` (button), `src/App.jsx` (routing)
+
+---
+
+### [ ] FEAT-066: Printable achievement certificates
+**Priority:** Medium  
+**Description:** When Mina hits a milestone (finishes all Level 1 spelling, reads 10 stories, earns 100 stars, completes a daily lesson streak), a "🎓 Get Your Certificate!" button appears on the celebration screen. Tapping it opens a print-ready HTML page (new window / `window.print()`) showing a colourful certificate: "This certifies that [name] has [achievement] on [date]". No server needed — generated entirely client-side. Parents can print or save as PDF.  
+**Files to create:** `src/utils/certificate.js` (generateCertificateHTML), `src/components/shared/CertificateButton.jsx`  
+**Files to modify:** relevant milestone / celebration screens
+
+---
+
+### [ ] FEAT-067: Story world map — pin each story's country of origin
+**Priority:** Medium  
+**Description:** After finishing a story in Story Time, a pin lights up on a simple illustrated world map showing where the story comes from (Japan for Urashima Taro, China for Cowherd & Weaver Girl, etc.). The map screen is accessible from the Story Time hub. Read stories show a filled pin, unread stories show a faded pin with "?" — inviting discovery. Tapping a pin shows the story title and a "Read it!" button. Builds cultural awareness alongside reading motivation.  
+**Files to create:** `src/components/storybook/StoryWorldMap.jsx`, SVG world map asset  
+**Files to modify:** `src/data/storyBook.js` (add `country` + lat/lng to each story), `src/components/storybook/StoryBookHome.jsx` (map button)
+
+---
+
+### [ ] FEAT-068: Number line activity
+**Priority:** Medium  
+**Description:** Tap-to-count along a scrollable number line from 1–20 (then 1–100 in a harder mode). Each number is a bubble that "pops" with a sound when tapped in sequence. Wrong-order tap shakes the bubble. Builds number-sense and bridges counting → addition. Includes a "Count up!" (tap 1→20) and "Fill the gap!" variant (some numbers are missing, child taps the correct missing one from 3 choices). Accessible from Math World.  
+**Files to create:** `src/components/math/NumberLine.jsx`  
+**Files to modify:** `src/components/math/MathHome.jsx`, `src/App.jsx`
+
+---
+
+### [ ] FEAT-069: Custom word lists — parents add school words to spelling & sight words
+**Priority:** Medium  
+**Description:** In the Parent Dashboard → Settings, a "Custom Words" section lets parents type in up to 20 words from Mina's school curriculum (e.g. her teacher's weekly spelling list). Those words appear as a new "My Words" level in both Spell It! and Missing Letter alongside the built-in levels. Words are stored per-profile in localStorage. Simple add/remove UI with validation (letters only, 2–8 chars). No emoji needed — custom words show a ✏️ placeholder.  
+**Files to modify:** `src/components/parent/ParentSettings.jsx`, `src/data/spellingWords.js` (accept dynamic levels), `src/store/useProgress.js` (store custom words)
+
+---
+
+### [ ] FEAT-070: Measurement activities — longer, heavier, holds more
+**Priority:** Low  
+**Description:** Three short quiz modes in Math World: (1) Length — which object is longer/shorter? (2) Weight — which is heavier/lighter? (tap cartoon objects like elephant vs feather). (3) Capacity — which holds more/less? Each mode shows two illustrated objects side by side; child taps the answer. 10 questions per round, 1 star per correct answer. Builds pre-measurement intuition missing from the current math section.  
+**Files to create:** `src/components/math/MeasurementGame.jsx`  
+**Files to modify:** `src/components/math/MathHome.jsx`, `src/App.jsx`
+
+---
+
+### [ ] FEAT-071: Emotions & social vocabulary activity
+**Priority:** Low  
+**Description:** "How does [character] feel?" — show a scenario card (text + emoji scene) and ask Mina to pick the matching emotion face from 4 options (happy, sad, scared, surprised, angry, excited). Also includes a "Name that feeling" mode: show an emoji face, pick the word. ~20 scenarios + 6 emotions. Builds emotional literacy and expressive vocabulary. Lives in the Reading or Cognitive hub.  
+**Files to create:** `src/data/emotionsData.js`, `src/components/reading/EmotionsGame.jsx`  
+**Files to modify:** `src/components/reading/ReadingHome.jsx` or `CognitiveHome.jsx`, `src/App.jsx`
+
+---
+
+### [ ] FEAT-072: Global mute / volume toggle
+**Priority:** Low  
+**Description:** A 🔊/🔇 button in the StarBar lets the user mute all TTS and sound effects with one tap. State stored in localStorage so it persists across sessions. When muted, `speak()` and sound-effect calls are silently skipped. Useful when Mina is in a quiet place or when a parent wants to read aloud themselves. Simple implementation: a `useMute()` hook that wraps the existing `speak()` utility.  
+**Files to modify:** `src/utils/speech.js`, `src/components/shared/StarBar.jsx`, possibly `src/utils/sounds.js`
+
+---
+
+### [ ] FEAT-073: Session resume — continue mid-activity after closing
+**Priority:** Low  
+**Description:** If Mina closes the app or navigates away mid-activity (e.g. word 6 of 10 in Spell It!), save the current position to localStorage. On next launch, a "Continue where you left off?" banner appears at the top of the relevant hub. Tapping it resumes from the saved word index. Covers: Spell It!, Missing Letter, Spell from Memory, SightWords quiz, PhonicsGame. Simple: store `{ screen, levelId, wordIndex, date }` in `mina_resume_state` and clear it on activity completion.  
+**Files to modify:** spelling and reading activity components, `src/App.jsx`
 
 ---
 
